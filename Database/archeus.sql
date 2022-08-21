@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2022 at 12:12 PM
+-- Generation Time: Aug 21, 2022 at 10:38 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -30,18 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `ad_id` int(11) NOT NULL,
   `ad_username` varchar(255) NOT NULL,
-  `ad_pass` varchar(255) NOT NULL
+  `ad_pass` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`ad_id`, `ad_username`, `ad_pass`) VALUES
-(1, 'anika', 'anika1234'),
-(2, 'zyan', 'zyan1234'),
-(3, 'sadman', 'sadman1234'),
-(4, 'azwad', 'azwad1234');
+INSERT INTO `admin` (`ad_id`, `ad_username`, `ad_pass`, `role`) VALUES
+(1, 'anika', 'anika1234', 'admin'),
+(2, 'zyan', 'zyan1234', 'admin'),
+(3, 'sadman', 'sadman1234', 'admin'),
+(4, 'azwad', 'azwad1234', 'admin');
 
 -- --------------------------------------------------------
 
@@ -75,15 +76,16 @@ CREATE TABLE `student` (
   `st_dept` varchar(255) NOT NULL,
   `st_contact` int(11) NOT NULL,
   `st_dob` date NOT NULL,
-  `st_gender` varchar(255) NOT NULL
+  `st_gender` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`st_id`, `st_username`, `st_name`, `st_email`, `st_pass`, `st_dept`, `st_contact`, `st_dob`, `st_gender`) VALUES
-(1, '011183001', 'korim begum', 'kbegum@bscse.uiu.ac.bd', 'kbegum1234', 'CSE', 1612345689, '2022-08-02', 'Male');
+INSERT INTO `student` (`st_id`, `st_username`, `st_name`, `st_email`, `st_pass`, `st_dept`, `st_contact`, `st_dob`, `st_gender`, `role`) VALUES
+(1, '011183001', 'korim begum', 'kbegum@bscse.uiu.ac.bd', 'kbegum1234', 'CSE', 1612345689, '2022-08-02', 'Male', 'student');
 
 -- --------------------------------------------------------
 
@@ -95,15 +97,16 @@ CREATE TABLE `teacher` (
   `t_id` int(11) NOT NULL,
   `t_username` varchar(255) NOT NULL,
   `t_email` varchar(255) NOT NULL,
-  `t_pass` varchar(255) NOT NULL
+  `t_pass` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `teacher`
 --
 
-INSERT INTO `teacher` (`t_id`, `t_username`, `t_email`, `t_pass`) VALUES
-(1, 'FAI', 'fai@uiu.ac.bd', 'fai1234');
+INSERT INTO `teacher` (`t_id`, `t_username`, `t_email`, `t_pass`, `role`) VALUES
+(1, 'FAI', 'fai@uiu.ac.bd', 'fai1234', 'teacher');
 
 --
 -- Indexes for dumped tables
