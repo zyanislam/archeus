@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | Archeus</title>
 
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="welcome.css">
+=======
+    <link rel="stylesheet" href="student_signup.css">
+>>>>>>> Stashed changes
 
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
@@ -30,7 +34,104 @@
         </div>
 
         <div class="mid">
+<<<<<<< Updated upstream
 
+=======
+            <div class="contentbox">
+
+                <div>
+                    <br>
+                    <br>
+                    <p class="welcometag">Sign Up | Student</p>
+
+                    <form action="student_signupprocess.php" method="POST" enctype="multipart/form-data">
+                        <div>
+                            <div class="field">
+                                <input class="inup" type="text" placeholder="ID" name="s_user" id="s_user">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div>
+                            <div class="field">
+                                <input class="inup" type="text" placeholder="Name" name="s_name" id="s_name">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div>
+                            <div class="field">
+                                <input class="inup" type="text" placeholder="Email" name="s_email" id="s_email">
+                            </div>
+                        </div>
+
+                        <br>
+
+
+                        <!-- ddd = drop down department -->
+                        <div class="field">
+                            <select class="inup_ddd" name="s_dept" id="s_dept">
+                                <option value="">Department</option>
+                                <option value="EEE">EEE</option>
+                                <option value="CSE">CSE</option>
+                                <option value="CE">CE</option>
+                                <option value="BBA">BBA</option>
+                                <option value="ECO">ECO</option>
+                            </select>
+                        </div>
+
+                        <br>
+
+                        <div>
+                            <label>DOB</label>
+                            <span class="field">
+                                <input class="inup_short" type="date" name="s_dob" id="s_dob">
+                            </span>
+
+                            <span class="field">
+                                <select class="inup_dd" name="s_gender" id="s_gender">
+                                    <option value="">Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </span>
+                        </div>
+
+                        <br>
+
+                        <div class="field">
+                            <input class="inup" type="password" placeholder="Password" name="s_pass" id="s_pass">
+                        </div>
+
+                        <br>
+
+                        <div class="field">
+                            <input class="inup" type="password" placeholder="Confirm Password" name="s_cpass" id="s_cpass">
+                        </div>
+
+                        <div class="spaceboxv"></div>
+
+                        <div id="buttonspan">
+                            <div>
+                                <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Submit</button>
+                            </div>
+
+                            <div class="spaceboxv2"></div>
+
+                            <div>
+                                <a class="ui orange button huge" name="signup" onclick="window.location.href = 'welcome.php';" id="buttonbox2">Go Back</a>
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <form>
+
+                </div>
+            </div>
+>>>>>>> Stashed changes
         </div>
 
         <div class="bottom">
