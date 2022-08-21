@@ -25,7 +25,7 @@
     <div class="layout">
         <div class="top">
             <div>
-                Archeus
+                Archeuss
             </div>
         </div>
 
