@@ -37,28 +37,34 @@
                     <br>
                     <p class="welcometag">Welcome</p>
 
-                    <div>
-                        <span id="fieldtag">username</span>
-                        <div class="field">
-                            <input class="inup" type="number" name="id">
-                        </div>
+                    <div class="signin">
+                        <form action="login.php" method="POST" enctype="multipart/form-data">
+                            <div class="fields">
+                                <div class="field">
+                                <input class="inup" type="text" placeholder="User-ID" name="id">
+                                </div>
+
+                                <br>
+                                <span></span>
+                                <div class="field">
+                                <input class="inup" type="password" placeholder="Password" name="pass">
+                                </div>
+
+                                <span></span>
+
+                                <br>
+
+                            <span id="buttonspan">
+                                <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Sign In</button>
+
+                                <span class="spaceboxh"></span>
+                                <a class="ui orange button huge" name="signup" id="buttonbox2" onclick="window.location.href = 'signup.php';">Sign Up</a>
+                            </span>
+
+                            </div> 
+                        </form>
+                        
                     </div>
-
-                    <br>
-                    <span id="fieldtag">password</span>
-
-                    <div class="field">
-                        <input class="inup" type="password" name="pass">
-                    </div>
-
-                    <div class="spaceboxv"></div>
-
-                    <span id="buttonspan">
-                        <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Sign In</button>
-
-                        <span class="spaceboxh"></span>
-                        <a class="ui orange button huge" name="signup" id="buttonbox2">Sign Up</a>
-                    </span>
 
                     <br>
                     <br>
