@@ -37,7 +37,8 @@
                     <br>
                     <p class="welcometag">Welcome</p>
 
-                   <form action="welcomeprocess.php" method="POST">
+                    <form action="welcomeprocess.php" method="POST" enctype="multipart/form-data">
+
                         <div>
                             <span id="fieldtag">username</span>
                             <div class="field">
@@ -67,7 +68,7 @@
                         <span id="forgotpw">Forgot Password?</span>
 
                         <br>
-                   <form>
+                        <form>
 
                 </div>
             </div>
