@@ -25,7 +25,7 @@
     <div class="layout">
         <div class="top">
             <div>
-                Archeuss
+                Archeus
             </div>
         </div>
 
@@ -41,7 +41,7 @@
                         <div>
                             <span id="fieldtag">username</span>
                             <div class="field">
-                                <input class="inup" type="text" name="s_user" id="s_user">
+                                <input class="inup" type="text" name="user" id="user">
                             </div>
                         </div>
 
@@ -49,7 +49,7 @@
                         <span id="fieldtag">password</span>
 
                         <div class="field">
-                            <input class="inup" type="password" name="s_pass" id="s_pass">
+                            <input class="inup" type="password" name="pass" id="pass">
                         </div>
 
                         <div class="spaceboxv"></div>
