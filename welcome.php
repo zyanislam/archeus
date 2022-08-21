@@ -25,7 +25,7 @@
     <div class="layout">
         <div class="top">
             <div>
-                Archeuss
+                Archeus
             </div>
         </div>
 
@@ -37,35 +37,38 @@
                     <br>
                     <p class="welcometag">Welcome</p>
 
-                    <div>
-                        <span id="fieldtag">username</span>
-                        <div class="field">
-                            <input class="inup" type="number" name="id">
+                    <form action="welcomeprocess.php" method="POST" enctype="multipart/form-data">
+
+                        <div>
+                            <span id="fieldtag">username</span>
+                            <div class="field">
+                                <input class="inup" type="text" name="user" id="user">
+                            </div>
                         </div>
-                    </div>
 
-                    <br>
-                    <span id="fieldtag">password</span>
+                        <br>
+                        <span id="fieldtag">password</span>
 
-                    <div class="field">
-                        <input class="inup" type="password" name="pass">
-                    </div>
+                        <div class="field">
+                            <input class="inup" type="password" name="pass" id="pass">
+                        </div>
 
-                    <div class="spaceboxv"></div>
+                        <div class="spaceboxv"></div>
 
-                    <span id="buttonspan">
-                        <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Sign In</button>
+                        <span id="buttonspan">
+                            <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Sign In</button>
 
-                        <span class="spaceboxh"></span>
-                        <a class="ui orange button huge" name="signup" id="buttonbox2">Sign Up</a>
-                    </span>
+                            <span class="spaceboxh"></span>
+                            <a class="ui orange button huge" name="signup" id="buttonbox2">Sign Up</a>
+                        </span>
 
-                    <br>
-                    <br>
+                        <br>
+                        <br>
 
-                    <span id="forgotpw">Forgot Password?</span>
+                        <span id="forgotpw">Forgot Password?</span>
 
-                    <br>
+                        <br>
+                        <form>
 
                 </div>
             </div>
