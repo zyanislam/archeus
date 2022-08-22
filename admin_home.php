@@ -9,7 +9,6 @@
 
     <link rel="stylesheet" href="admin_home.css">
 
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
@@ -47,7 +46,6 @@
                 <span>
                     <a class="ui orange button huge" name="signup" onclick="window.location.href = 'teacher_signup.php';" id="t_signup">Sign Up</a>
                 </span>
-
 
             </div>
 

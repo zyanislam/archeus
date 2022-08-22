@@ -7,9 +7,9 @@
 .layout{
     display: flex;
     flex-direction: column;min-height: 100vh;
-    background-color: aliceblue;
     background-repeat: no-repeat;
     background-size: cover;
+    background-image: linear-gradient(to bottom right, rgb(160, 139, 254), rgb(239, 232, 242));
 }
 
 .top{
@@ -46,7 +46,7 @@
     font-size: 17px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-weight: 00;
 }
 
 .contentbox{
