@@ -1,6 +1,6 @@
 <?php
 /*
-1.WE will receive data of Student Register information here
+1.WE will receive data of teacher Register information here
 2.IF the data is valid, we will store it in Database and forward to login page.
 3.Else forward to Sign up page.
 cname,cemail,cpass,caddress
@@ -8,16 +8,16 @@ id=st_user, name=st_name, email=st_email, dept=st_dept, dob=st_dob,
 gender=st_gender, pass=st_pass, cpass=st_cpass
 */
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
+if($_SERVER['REQUEST_METHOD'] == "POST"){
     //checking if the info are valid and not empty.
-    if (
+    if(
         !empty($_POST["t_name"]) && !empty($_POST["t_user"]) &&
         !empty($_POST["t_email"]) && !empty($_POST["t_dept"]) &&
         !empty($_POST["t_des"]) &&
         isset($_POST["t_name"]) && isset($_POST["t_user"]) &&
         isset($_POST["t_email"]) && isset($_POST["t_dept"]) &&
         isset($_POST["t_des"])
-    ) {
+    ){
         //storing the informations in variables
         $tname = $_POST["t_name"];
         $tuser = $_POST["t_user"];
@@ -38,24 +38,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             //after successful registration forwarding to login page
             echo '<script>alert("Registration completed successfully!!");</script>';
             echo "<script>location.assign('admin_home.php')</script>";
-        } catch (PDOException $ex) {
+        }catch (PDOException $ex){
             //if found error forward to register page
             echo '<script>
              alert("Oops!! Caught An Error");
              </script>';
-            echo "<script>location.assign('teacher_signupprocess.php')</script>";
+            echo "<script>location.assign('teacher_signup.php')</script>";
         }
-    } else {
+    }else{
         //if any value is empty or invalid, then forward to register page again.
-        echo '<script>
-         alert("Oops!! Empty Error");
-         </script>';
-        echo "<script>location.assign('teacher_signupprocess.php')</script>";
+            echo '<script>alert("You forgot to put your information in one of the fields. Check again");</script>';
+            echo"<script>location.assign('teacher_signup.php')</script>";
     }
-} else {
+}else{
     //forwarding to register page if not post method.
     echo '<script>
     alert("Not Post Method");
     </script>';
-    echo "<script>location.assign('teacher_signupprocess.php')</scrpit>";
+    echo "<script>location.assign('teacher_signup.php')</scrpit>";
 }
