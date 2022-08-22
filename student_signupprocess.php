@@ -29,36 +29,46 @@ gender=st_gender, pass=st_pass, cpass=st_cpass
          $sgender=$_POST["st_gender"];
          $spass=$_POST["st_pass"];
          $scpass=$_POST["st_cpass"];
+
+         $test_id=$suser; //storing user id for validation check
+         $sub = substr($test_id,0,3); 
          
          /*trying to access database and store all the information there.*/
          try{
              //creating connection with Archeus database
             include "db_connect.php";
-            //  $conn=new PDO('mysql:host=localhost:3306;dbname=archeus;','root','');
-            //  $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-            //  $conn->exec($sqlquery);
            
-            //database code executing
-            $sqlquery="INSERT INTO student(st_id,st_username,st_name,st_email,st_pass,st_dept,st_contact,st_dob,st_gender,role) VALUES(NULL,'$suser','$sname','$semail','$spass','$sdept',NULL,'$sdob','$sgender','student')";
-            mysqli_query($conn, $sqlquery);
-            
-            //after successful registration forwarding to login page
-            echo '<script>alert("Registration completed successfully!! Login to Process");</script>';
-            echo"<script>location.assign('welcome.php')</script>";
-             
+            if($spass!=$scpass){
+                echo '<script>alert("Passwords does not match. Try again.");</script>';
+                echo"<script>location.assign('student_signup.php')</script>";
+            }
+            else if(strlen($suser)!=9){
+                echo '<script>alert("Invalid user ID. Try again.");</script>';
+                echo"<script>location.assign('student_signup.php')</script>";
+            }
+            else{
+                //every entry is valid and ready to be registered
+                //database code executing
+                $sqlquery="INSERT INTO student(st_id,st_username,st_name,st_email,st_pass,st_dept,st_contact,st_dob,st_gender,role) VALUES(NULL,'$suser','$sname','$semail','$spass','$sdept',NULL,'$sdob','$sgender','student')";
+                mysqli_query($conn, $sqlquery);
+                
+                //after successful registration forwarding to login page
+                echo '<script>alert("Registration completed successfully!! Login to Process");</script>';
+                echo"<script>location.assign('welcome.php')</script>";
+            }   
          }catch(PDOException $ex){
              //if found error forward to register page
              echo '<script>
              alert("catch error");
              </script>';
-            echo"<script>location.assign('student_signupprocess.php')</script>";
+            echo"<script>location.assign('student_signup.php')</script>";
          }
      }else{
          //if any value is empty or invalid, then forward to register page again.
          echo '<script>
-         alert("empty error");
+         alert("You forgot to put your information in one of the fields. Check again.");
          </script>';
-         echo"<script>location.assign('student_signupprocess.php')</script>";
+         echo"<script>location.assign('student_signup.php')</script>";
      }
  }
 else{
@@ -66,6 +76,6 @@ else{
     echo '<script>
     alert("not post method");
     </script>';
-    echo"<script>location.assign('student_signupprocess.php')</scrpit>";
+    echo"<script>location.assign('student_signup.php')</scrpit>";
 }
 ?>
