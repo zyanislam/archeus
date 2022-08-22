@@ -30,8 +30,6 @@ gender=st_gender, pass=st_pass, cpass=st_cpass
          $spass=$_POST["st_pass"];
          $scpass=$_POST["st_cpass"];
 
-         $test_id=$suser; //storing user id for validation check
-         $sub = substr($test_id,0,3); 
          
          /*trying to access database and store all the information there.*/
          try{
