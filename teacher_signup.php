@@ -9,7 +9,6 @@
 
     <link rel="stylesheet" href="teacher_signup.css">
 
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
@@ -82,10 +81,6 @@
                         </div>
 
                         <br>
-
-                        <div class="field">
-                            <input class="inup" type="password" placeholder="Confirm Password" name="s_cpass" id="s_cpass">
-                        </div>
 
                         <div class="spaceboxv"></div>
 
