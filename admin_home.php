@@ -30,13 +30,26 @@
             </div>
 
             <div id="top_logout">
-                <a class="ui orange button huge" name="signup" onclick="window.location.href = 'welcome.php';" id="buttonbox2">Logout</a>
+                <a class="ui orange button huge" name="signup" onclick="window.location.href = 'welcome.php';" id="logout_button">Logout</a>
             </div>
 
 
         </div>
 
         <div class="mid">
+            <div class="contentbox">
+                <span>
+                    <label>Create Teacher Account</label>
+                </span>
+
+                <span class="spaceboxh"></span>
+
+                <span>
+                    <a class="ui orange button huge" name="signup" onclick="window.location.href = 'teacher_signup.php';" id="t_signup">Sign Up</a>
+                </span>
+
+
+            </div>
 
         </div>
 

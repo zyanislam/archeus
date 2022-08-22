@@ -26,6 +26,11 @@
     color: white;
 }
 
+#top_title{
+    flex-grow: 1;
+    padding-left: 150px;
+}
+
 .mid{
     width: 100%;
     flex-grow: 1;
@@ -44,7 +49,21 @@
     font-weight: 600;
 }
 
-#buttonbox2{
+.contentbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2450px;
+    height: auto;
+    font-size: 22px;
+    background-color: #2C2B39;
+    opacity: .85;
+    border-radius: 53px;
+    padding: 20px !important;
+    color: white;
+}
+
+#logout_button{
     width: 145px;
     height: 52px;
     border-radius: 29px;
@@ -54,7 +73,18 @@
     background-color:#8178ff;
 }
 
-#top_title{
-    flex-grow: 1;
-    padding-left: 150px;
+#t_signup{
+    width: 154px;
+    height: 54px;
+    border-radius: 29px;
+    font-size: 21px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 500;
+    background-color:#8178ff;    
 }
+
+.spaceboxh{
+    width: 17px;
+}
+
+

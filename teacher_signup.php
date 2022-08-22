@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up | Archeus</title>
+    <title>Teacher Sign Up | Archeus</title>
 
-    <link rel="stylesheet" href="welcome.css">
-    <link rel="stylesheet" href="student_signup.css">
+    <link rel="stylesheet" href="teacher_signup.css">
 
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
@@ -36,12 +35,12 @@
                 <div>
                     <br>
                     <br>
-                    <p class="welcometag">Sign Up | Student</p>
+                    <p class="welcometag">Sign Up | Teacher</p>
 
-                    <form action="student_signupprocess.php" method="POST" enctype="multipart/form-data">
+                    <form action="teacher_signupprocess.php" method="POST" enctype="multipart/form-data">
                         <div>
                             <div class="field">
-                                <input class="inup" type="text" placeholder="ID" name="st_user" id="st_user">
+                                <input class="inup" type="text" placeholder="Name" name="t_name" id="t_name">
                             </div>
                         </div>
 
@@ -49,7 +48,7 @@
 
                         <div>
                             <div class="field">
-                                <input class="inup" type="text" placeholder="Name" name="st_name" id="st_name">
+                                <input class="inup" type="text" placeholder="Username" name="t_user" id="t_user">
                             </div>
                         </div>
 
@@ -57,7 +56,7 @@
 
                         <div>
                             <div class="field">
-                                <input class="inup" type="text" placeholder="Email" name="st_email" id="st_email">
+                                <input class="inup" type="text" placeholder="Email" name="t_email" id="t_email">
                             </div>
                         </div>
 
@@ -66,7 +65,7 @@
 
                         <!-- ddd = drop down department -->
                         <div class="field">
-                            <select class="inup_ddd" name="st_dept" id="st_dept">
+                            <select class="inup_ddd" name="t_dept" id="t_dept">
                                 <option value="">Department</option>
                                 <option value="EEE">EEE</option>
                                 <option value="CSE">CSE</option>
@@ -78,31 +77,14 @@
 
                         <br>
 
-                        <div>
-                            <label>DOB</label>
-                            <span class="field">
-                                <input class="inup_short" type="date" name="st_dob" id="st_dob">
-                            </span>
-
-                            <span class="field">
-                                <select class="inup_dd" name="st_gender" id="st_gender">
-                                    <option value="">Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </span>
+                        <div class="field">
+                            <input class="inup" type="text" placeholder="Designation" name="t_des" id="t_des">
                         </div>
 
                         <br>
 
                         <div class="field">
-                            <input class="inup" type="password" placeholder="Password" name="st_pass" id="st_pass">
-                        </div>
-
-                        <br>
-
-                        <div class="field">
-                            <input class="inup" type="password" placeholder="Confirm Password" name="st_cpass" id="st_cpass">
+                            <input class="inup" type="password" placeholder="Confirm Password" name="s_cpass" id="s_cpass">
                         </div>
 
                         <div class="spaceboxv"></div>
@@ -115,7 +97,7 @@
                             <div class="spaceboxv2"></div>
 
                             <div>
-                                <a class="ui orange button huge" name="signup" onclick="window.location.href = 'welcome.php';" id="buttonbox2">Go Back</a>
+                                <a class="ui orange button huge" name="signup" onclick="window.location.href = 'admin_home.php';" id="buttonbox2">Go Back</a>
                             </div>
 
                         </div>
