@@ -56,7 +56,7 @@
                         <div class="spaceboxv"></div>
 
                         <span id="buttonspan">
-                            <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Sign In</button>
+                            <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Login</button>
 
                             <span class="spaceboxh"></span>
                             <a class="ui orange button huge" name="signup" onclick="window.location.href = 'student_signup.php';" id="buttonbox2">Sign Up</a>
