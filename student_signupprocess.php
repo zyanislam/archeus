@@ -21,28 +21,30 @@ gender=st_gender, pass=st_pass, cpass=st_cpass
          isset($_POST["st_pass"]) && isset($_POST["st_cpass"])
        ){
          //storing the informations in variables
-         $user=$_POST["st_user"];
-         $name=$_POST["st_name"];
-         $email=$_POST["st_email"];
-         $dept=$_POST["st_dept"];
-         $dob=$_POST["st_dob"];
-         $gender=$_POST["st_gender"];
-         $pass=$_POST["st_pass"];
-         $cpass=$_POST["st_cpass"];
+         $suser=$_POST["st_user"];
+         $sname=$_POST["st_name"];
+         $semail=$_POST["st_email"];
+         $sdept=$_POST["st_dept"];
+         $sdob=$_POST["st_dob"];
+         $sgender=$_POST["st_gender"];
+         $spass=$_POST["st_pass"];
+         $scpass=$_POST["st_cpass"];
          
          /*trying to access database and store all the information there.*/
          try{
              //creating connection with Archeus database
-             $conn=new PDO('mysql:host=localhost:3306;dbname=archeus;','root','');
-             $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            include "db_connect.php";
+            //  $conn=new PDO('mysql:host=localhost:3306;dbname=archeus;','root','');
+            //  $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            //  $conn->exec($sqlquery);
            
-             //database code executing
-             $sqlquery="INSERT INTO student(st_id,st_username,st_name,st_email,st_pass,st_dept,st_contact,st_dob,st_gender,role) VALUES(NULL,'$user','$name','$email','$pass','$dept',NULL,'$dob','$gender','student')";
-             $conn->exec($sqlquery);
+            //database code executing
+            $sqlquery="INSERT INTO student(st_id,st_username,st_name,st_email,st_pass,st_dept,st_contact,st_dob,st_gender,role) VALUES(NULL,'$suser','$sname','$semail','$spass','$sdept',NULL,'$sdob','$sgender','student')";
+            mysqli_query($conn, $sqlquery);
             
-             //after successful registration forwarding to login page
-             echo '<script>alert("Registration completed successfully!! Login to Process");</script>';
-             echo"<script>location.assign('welcome.php')</script>";
+            //after successful registration forwarding to login page
+            echo '<script>alert("Registration completed successfully!! Login to Process");</script>';
+            echo"<script>location.assign('welcome.php')</script>";
              
          }catch(PDOException $ex){
              //if found error forward to register page
