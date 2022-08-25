@@ -30,6 +30,9 @@ gender=st_gender, pass=st_pass, cpass=st_cpass
          $spass=$_POST["st_pass"];
          $scpass=$_POST["st_cpass"];
 
+        //  to check pattern for student id
+        $id_pattern = "/^011|^021|^031|^111/i";
+        $email_pattern = "/@bscse.uiu.ac.bd$|@bseee.uiu.ac.bd$|@bsce.uiu.ac.bd$|@bba.uiu.ac.bd$/";
          
          /*trying to access database and store all the information there.*/
          try{
@@ -41,7 +44,15 @@ gender=st_gender, pass=st_pass, cpass=st_cpass
                 echo"<script>location.assign('student_signup.php')</script>";
             }
             else if(strlen($suser)!=9){
-                echo '<script>alert("Invalid user ID. Try again.");</script>';
+                echo '<script>alert("User ID must contain 9 digits. Try again.");</script>';
+                echo"<script>location.assign('student_signup.php')</script>";
+            }
+            else if(preg_match($id_pattern, $suser) == 0){
+                echo '<script>alert("User ID must start with 011 or 021 or 031 or 111. Try again.");</script>';
+                echo"<script>location.assign('student_signup.php')</script>";
+            }
+            else if(preg_match($email_pattern, $semail) == 0){
+                echo '<script>alert("Invalid email address. Try again.");</script>';
                 echo"<script>location.assign('student_signup.php')</script>";
             }
             else{
