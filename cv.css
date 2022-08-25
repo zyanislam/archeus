@@ -2,119 +2,37 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    color: #1c1c1c;
-}
-
-
-.layout{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .top{
-    background-color: #2C2B39;
     width: 100%;
-    height: 70px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Expletus-Sans-Medium', sans-serif !important;
-    text-align: center;
-    font-size: 36px;
-    color: white
+    height: 50px;
 }
 
-#logo{
-    color: white !important;
+.logo{
+    background-color: #1c1c1c;
+    color: #f3f3f3;
+    font-family: 'Poppins', sans-serif;
 }
 
-#back{
-    background-color: #2C2B39;
-    border: 0;
-}
-
-.go_back{
-    color: white;
-}
-
-.mid{
-    width: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: #f3f3f3;
-    justify-content: center;
-    align-items: center;
-}
-
-.cv_head{
-    display: flex;
-    color: white;
-    padding: 40px;
-    
-}
-
-.basic{
-    width: 900px;
-    color: white;
-}
-
-.basic_head{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-.fcol{
-    display: flex;
-    justify-content: center;
-}
-
-.fcol1{
-    display: flex;
+input[type=text]{
     width: 50%;
-    justify-content: center;
 }
 
-.fcol2{
-    display: flex;
+input[type=email]{
     width: 50%;
-    justify-content: center;
 }
 
-.add_skill{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
+input[type=number]{
+    width: 50%;
 }
 
-.add_skill label{
-    text-align: center;
+input[type=url]{
+    width: 50%;
 }
 
-#add{
-    width: 15%;
-    height: 35px;
-    border: none;
-}
-
-.add_btn{
-    color: rgb(196, 46, 46);
-}
-
-.submit{
-    display: flex;
-    justify-content: right;
-    border: none;
-}
-
-.submit_btn{
-    color: rgb(80, 173, 80);
+.add1{
+    background-color: #1c1c1c;
 }
 
 .bottom{
@@ -124,5 +42,4 @@
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    color: #1c1c1c;
 }
