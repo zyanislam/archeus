@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2022 at 06:34 PM
+-- Generation Time: Aug 25, 2022 at 07:30 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -69,6 +69,7 @@ CREATE TABLE `cv_basic` (
 
 CREATE TABLE `cv_eca` (
   `eca_id` int(11) NOT NULL,
+  `st_username` varchar(255) NOT NULL,
   `eca_name` varchar(255) DEFAULT NULL,
   `eca_desc` varchar(255) DEFAULT NULL,
   `eca_link` varchar(255) DEFAULT NULL
@@ -82,6 +83,7 @@ CREATE TABLE `cv_eca` (
 
 CREATE TABLE `cv_edu` (
   `edu_id` int(11) NOT NULL,
+  `st_username` varchar(255) NOT NULL,
   `edu_school` varchar(255) DEFAULT NULL,
   `edu_school_start` varchar(255) DEFAULT NULL,
   `edu_school_end` varchar(255) DEFAULT NULL,
@@ -104,6 +106,7 @@ CREATE TABLE `cv_edu` (
 
 CREATE TABLE `cv_skill` (
   `skill_id` int(11) NOT NULL,
+  `st_username` varchar(255) NOT NULL,
   `skill_name` varchar(255) DEFAULT NULL,
   `skill_desc` varchar(255) DEFAULT NULL,
   `skill_related_project` varchar(255) DEFAULT NULL,
@@ -126,18 +129,34 @@ CREATE TABLE `student` (
   `st_contact` int(11) DEFAULT NULL,
   `st_dob` date NOT NULL,
   `st_gender` varchar(255) NOT NULL,
-  `role` varchar(255) NOT NULL
+  `profile_picture` blob DEFAULT NULL,
+  `role` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`st_id`, `st_username`, `st_name`, `st_email`, `st_pass`, `st_dept`, `st_contact`, `st_dob`, `st_gender`, `role`) VALUES
-(1, '011183001', 'korim begum', 'kbegum@bscse.uiu.ac.bd', 'kbegum1234', 'CSE', 1612345689, '2022-08-02', 'Male', 'student'),
-(3, '011182035', 'Anika Tahsin', 'anika@ieee.org', 'anika1234', 'CSE', NULL, '1996-10-26', 'Female', 'student'),
-(4, '011183070', 'Fahad Al Islam', 'fislam@gmail.com', 'fahad1234', 'CSE', NULL, '2022-08-22', 'Male', 'student'),
-(10, '011183013', 'sad', 'sad@gmail.com', '1234', 'CSE', NULL, '2022-08-22', 'Male', 'student');
+INSERT INTO `student` (`st_id`, `st_username`, `st_name`, `st_email`, `st_pass`, `st_dept`, `st_contact`, `st_dob`, `st_gender`, `profile_picture`, `role`, `status`) VALUES
+(3, '011182035', 'Anika Tahsin', 'anika@ieee.org', 'anika1234', 'CSE', NULL, '1996-10-26', 'Female', NULL, 'student', 0),
+(4, '011183070', 'Fahad Al Islam', 'fislam@gmail.com', 'fahad1234', 'CSE', NULL, '2022-08-22', 'Male', NULL, 'student', 0),
+(19, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-08-25', 'Male', NULL, 'student', 0),
+(20, '011182033', 'an', 'an@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-08-25', 'Female', NULL, 'student', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_log`
+--
+
+CREATE TABLE `student_log` (
+  `stlog_id` int(11) NOT NULL,
+  `st_username` varchar(255) NOT NULL,
+  `st_name` varchar(255) NOT NULL,
+  `stlog_login_date_time` datetime NOT NULL DEFAULT current_timestamp(),
+  `stlog_logout_date_time` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -163,7 +182,22 @@ CREATE TABLE `teacher` (
 INSERT INTO `teacher` (`t_id`, `t_username`, `t_name`, `t_email`, `t_pass`, `t_dept`, `t_des`, `role`) VALUES
 (1, 'FAI', 'Fahad Al Islam', 'fai@uiu.ac.bd', 'fai1234', 'CSE', 'Lecturer', 'teacher'),
 (2, 'a', 'Anika', 'a', '1234', 'EEE', 'x', 'teacher'),
-(3, 'b', 'An', 'a', '1234', 'CE', 'c', 'teacher');
+(3, 'b', 'An', 'a', '1234', 'CE', 'c', 'teacher'),
+(4, 'X', 'Mr X', 'x@gmail.com', '1234', 'CE', 'lecturer', 'teacher');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher_log`
+--
+
+CREATE TABLE `teacher_log` (
+  `tlog_id` int(11) NOT NULL,
+  `t_username` varchar(255) NOT NULL,
+  `tlog_name` varchar(255) NOT NULL,
+  `tlog_login_date_time` datetime NOT NULL DEFAULT current_timestamp(),
+  `tlog_logout_date_time` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -187,19 +221,22 @@ ALTER TABLE `cv_basic`
 -- Indexes for table `cv_eca`
 --
 ALTER TABLE `cv_eca`
-  ADD PRIMARY KEY (`eca_id`);
+  ADD PRIMARY KEY (`eca_id`),
+  ADD KEY `fk3` (`st_username`);
 
 --
 -- Indexes for table `cv_edu`
 --
 ALTER TABLE `cv_edu`
-  ADD PRIMARY KEY (`edu_id`);
+  ADD PRIMARY KEY (`edu_id`),
+  ADD KEY `fk2` (`st_username`);
 
 --
 -- Indexes for table `cv_skill`
 --
 ALTER TABLE `cv_skill`
-  ADD PRIMARY KEY (`skill_id`);
+  ADD PRIMARY KEY (`skill_id`),
+  ADD KEY `fk4` (`st_username`);
 
 --
 -- Indexes for table `student`
@@ -210,11 +247,25 @@ ALTER TABLE `student`
   ADD UNIQUE KEY `st_email` (`st_email`);
 
 --
+-- Indexes for table `student_log`
+--
+ALTER TABLE `student_log`
+  ADD PRIMARY KEY (`stlog_id`),
+  ADD KEY `fk1` (`st_username`);
+
+--
 -- Indexes for table `teacher`
 --
 ALTER TABLE `teacher`
   ADD PRIMARY KEY (`t_id`),
   ADD UNIQUE KEY `t_username` (`t_username`);
+
+--
+-- Indexes for table `teacher_log`
+--
+ALTER TABLE `teacher_log`
+  ADD PRIMARY KEY (`tlog_id`),
+  ADD KEY `fk5` (`t_username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -254,13 +305,25 @@ ALTER TABLE `cv_skill`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `st_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `st_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `student_log`
+--
+ALTER TABLE `student_log`
+  MODIFY `stlog_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `teacher_log`
+--
+ALTER TABLE `teacher_log`
+  MODIFY `tlog_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -271,6 +334,36 @@ ALTER TABLE `teacher`
 --
 ALTER TABLE `cv_basic`
   ADD CONSTRAINT `ct1` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
+
+--
+-- Constraints for table `cv_eca`
+--
+ALTER TABLE `cv_eca`
+  ADD CONSTRAINT `fk3` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
+
+--
+-- Constraints for table `cv_edu`
+--
+ALTER TABLE `cv_edu`
+  ADD CONSTRAINT `fk2` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
+
+--
+-- Constraints for table `cv_skill`
+--
+ALTER TABLE `cv_skill`
+  ADD CONSTRAINT `fk4` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
+
+--
+-- Constraints for table `student_log`
+--
+ALTER TABLE `student_log`
+  ADD CONSTRAINT `fk1` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
+
+--
+-- Constraints for table `teacher_log`
+--
+ALTER TABLE `teacher_log`
+  ADD CONSTRAINT `fk5` FOREIGN KEY (`t_username`) REFERENCES `teacher` (`t_username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
