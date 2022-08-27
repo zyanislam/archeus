@@ -5,25 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Home | Archeus</title>
 
+    <!----======== CSS ======== -->
     <link rel="stylesheet" href="teacher_home.css">
 
-
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    <title>Teacher Home | Archeus</title>
 </head>
 
-<body>
-
+<body class="dark">
     <div class="layout">
-
         <div class="top">
             <div id="top_title">
                 Archeus
@@ -32,24 +35,164 @@
             <div id="top_logout">
                 <a class="ui orange button huge" name="signup" onclick="window.location.href = 'welcome.php';" id="buttonbox2">Logout</a>
             </div>
-
-
         </div>
 
         <div class="mid">
+            <nav class="sidebar open">
+                <header>
+                    <div class="image-text">
 
-        </div>
+                        <div class="text logo-text">
+                            <span class="name">Archeus</span>
+                            <span class="profession">Teacher Home</span>
+                        </div>
+                    </div>
 
-        <div class="bottom">
-            <div>
-                Developed by
+                </header>
+
+                <div class="menu-bar">
+                    <div class="menu">
+
+                        <li class="search-box">
+                            <i class='bx bx-search icon'></i>
+                            <input type="text" placeholder="Search...">
+                        </li>
+
+                        <ul class="menu-links">
+                            <li class="nav-link" id="link_list">
+                                <a href="#">
+                                    <i class='bx bxs-pencil icon' style='color:#f24e1e'></i>
+                                    <span class="text nav-text" id="menuitems">Edit Profile</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link" id="link_list">
+                                <a href="#">
+                                    <i class='bx bx-bookmarks icon' style='color:#ffffff'></i>
+                                    <span class="text nav-text" id="menuitems">Student List</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="bottom-content">
+
+                        <!-- <li class="mode">
+                        <div class="sun-moon">
+                            <i class='bx bx-moon icon moon'></i>
+                            <i class='bx bx-sun icon sun'></i>
+                        </div>
+                        <span class="mode-text text">Dark mode</span>
+
+                        <div class="toggle-switch">
+                            <span class="switch"></span>
+                        </div>
+                        </li> -->
+                        <div id="bottomdev" align="right">
+                            <div>
+                                Developed by
+                            </div>
+                            <div class="spaceboxv"></div>
+                            <div>
+                                Deadly Diamond Of Death | 2022
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </nav>
+
+            <div class="contentbox">
+
+                <div class="ui card postbox">
+                    <div class="content">
+                        <i class="right floated like icon"></i>
+                        <i class="right floated star icon"></i>
+                        <div class="header" id="textline">Post 1</div>
+                        <div class="description">
+                            <p id="textline"></p>
+                        </div>
+                    </div>
+
+                    <div class="extra content">
+                        <span class="left floated like textline">
+                            <i class="like icon"></i>
+                            Like
+                        </span>
+                    </div>
+                </div>
+
+                <div class="ui card postbox">
+                    <div class="content">
+                        <i class="right floated like icon"></i>
+                        <i class="right floated star icon"></i>
+                        <div class="header" id="textline">Post 2</div>
+                        <div class="description">
+                            <p id="textline"></p>
+                        </div>
+                    </div>
+
+                    <div class="extra content">
+                        <span class="left floated like textline">
+                            <i class="like icon"></i>
+                            Like
+                        </span>
+                    </div>
+                </div>
+
+                <div class="ui card postbox">
+                    <div class="content">
+                        <i class="right floated like icon"></i>
+                        <i class="right floated star icon"></i>
+                        <div class="header" id="textline">Post 3</div>
+                        <div class="description">
+                            <p id="textline"></p>
+                        </div>
+                    </div>
+
+                    <div class="extra content">
+                        <span class="left floated like textline">
+                            <i class="like icon"></i>
+                            Like
+                        </span>
+                    </div>
+                </div>
+
             </div>
-            <div>
-                Deadly Diamond Of Death | 2022
-            </div>
         </div>
-
     </div>
+
+
+    <script>
+        const body = document.querySelector('body'),
+            sidebar = body.querySelector('nav'),
+            toggle = body.querySelector(".toggle"),
+            searchBtn = body.querySelector(".search-box"),
+            modeSwitch = body.querySelector(".toggle-switch"),
+            modeText = body.querySelector(".mode-text");
+
+
+        toggle.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        })
+
+        searchBtn.addEventListener("click", () => {
+            sidebar.classList.remove("close");
+        })
+
+        modeSwitch.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            if (body.classList.contains("dark")) {
+                modeText.innerText = "Light mode";
+            } else {
+                modeText.innerText = "Dark mode";
+
+            }
+        });
+    </script>
 
 </body>
 
