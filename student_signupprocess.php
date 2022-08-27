@@ -38,8 +38,15 @@ gender=st_gender, pass=st_pass, cpass=st_cpass
          try{
              //creating connection with Archeus database
             include "db_connect.php";
-           
-            if($spass!=$scpass){
+            $sqlquery1="SELECT * FROM student WHERE st_username='$suser' ";
+            $returnobj1=mysqli_query($conn, $sqlquery1);
+
+            if($returnobj1){
+                //it means this id already belongs to a student and cannot be taken.
+                echo '<script>alert("This ID already exists.");</script>';
+                echo"<script>location.assign('student_signup.php')</script>";
+            }
+            else if($spass!=$scpass){
                 echo '<script>alert("Passwords does not match. Try again.");</script>';
                 echo"<script>location.assign('student_signup.php')</script>";
             }
