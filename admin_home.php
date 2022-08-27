@@ -29,7 +29,7 @@
             </div>
 
             <div id="top_logout">
-                <a class="ui orange button huge" name="signup" onclick="window.location.href = 'welcome.php';" id="logout_button">Logout</a>
+                <a class="ui orange button huge" name="signup" onclick="window.location.href = 'admin_logoutprocess.php';" id="logout_button">Logout</a>
             </div>
 
 
