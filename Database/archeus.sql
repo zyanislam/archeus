@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2022 at 07:30 PM
+-- Generation Time: Aug 27, 2022 at 06:21 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -101,16 +101,54 @@ CREATE TABLE `cv_edu` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cv_skill`
+-- Table structure for table `cv_project`
 --
 
-CREATE TABLE `cv_skill` (
-  `skill_id` int(11) NOT NULL,
+CREATE TABLE `cv_project` (
+  `project_id` int(11) NOT NULL,
   `st_username` varchar(255) NOT NULL,
-  `skill_name` varchar(255) DEFAULT NULL,
-  `skill_desc` varchar(255) DEFAULT NULL,
-  `skill_related_project` varchar(255) DEFAULT NULL,
-  `skill_type` varchar(255) DEFAULT NULL
+  `project_name` varchar(255) NOT NULL,
+  `project_desc` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cv_publication`
+--
+
+CREATE TABLE `cv_publication` (
+  `pub_id` int(11) NOT NULL,
+  `st_username` varchar(255) NOT NULL,
+  `pub_title` varchar(255) NOT NULL,
+  `pub_year_published` date NOT NULL,
+  `pub_link` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cv_soft_skill`
+--
+
+CREATE TABLE `cv_soft_skill` (
+  `soft_skill_id` int(11) NOT NULL,
+  `st_username` varchar(255) NOT NULL,
+  `soft_skill_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cv_tech_skill`
+--
+
+CREATE TABLE `cv_tech_skill` (
+  `tech_skill_id` int(11) NOT NULL,
+  `st_username` varchar(255) NOT NULL,
+  `tech_skill_name` varchar(255) DEFAULT NULL,
+  `tech_skill_desc` varchar(255) DEFAULT NULL,
+  `tech_skill_related_project` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -232,10 +270,31 @@ ALTER TABLE `cv_edu`
   ADD KEY `fk2` (`st_username`);
 
 --
--- Indexes for table `cv_skill`
+-- Indexes for table `cv_project`
 --
-ALTER TABLE `cv_skill`
-  ADD PRIMARY KEY (`skill_id`),
+ALTER TABLE `cv_project`
+  ADD PRIMARY KEY (`project_id`),
+  ADD KEY `fk6` (`st_username`);
+
+--
+-- Indexes for table `cv_publication`
+--
+ALTER TABLE `cv_publication`
+  ADD PRIMARY KEY (`pub_id`),
+  ADD KEY `fk8` (`st_username`);
+
+--
+-- Indexes for table `cv_soft_skill`
+--
+ALTER TABLE `cv_soft_skill`
+  ADD PRIMARY KEY (`soft_skill_id`),
+  ADD KEY `fk7` (`st_username`);
+
+--
+-- Indexes for table `cv_tech_skill`
+--
+ALTER TABLE `cv_tech_skill`
+  ADD PRIMARY KEY (`tech_skill_id`),
   ADD KEY `fk4` (`st_username`);
 
 --
@@ -296,16 +355,34 @@ ALTER TABLE `cv_edu`
   MODIFY `edu_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `cv_skill`
+-- AUTO_INCREMENT for table `cv_project`
 --
-ALTER TABLE `cv_skill`
-  MODIFY `skill_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `cv_project`
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cv_publication`
+--
+ALTER TABLE `cv_publication`
+  MODIFY `pub_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cv_soft_skill`
+--
+ALTER TABLE `cv_soft_skill`
+  MODIFY `soft_skill_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cv_tech_skill`
+--
+ALTER TABLE `cv_tech_skill`
+  MODIFY `tech_skill_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `st_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `st_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `student_log`
@@ -348,9 +425,27 @@ ALTER TABLE `cv_edu`
   ADD CONSTRAINT `fk2` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
 
 --
--- Constraints for table `cv_skill`
+-- Constraints for table `cv_project`
 --
-ALTER TABLE `cv_skill`
+ALTER TABLE `cv_project`
+  ADD CONSTRAINT `fk6` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
+
+--
+-- Constraints for table `cv_publication`
+--
+ALTER TABLE `cv_publication`
+  ADD CONSTRAINT `fk8` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
+
+--
+-- Constraints for table `cv_soft_skill`
+--
+ALTER TABLE `cv_soft_skill`
+  ADD CONSTRAINT `fk7` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
+
+--
+-- Constraints for table `cv_tech_skill`
+--
+ALTER TABLE `cv_tech_skill`
   ADD CONSTRAINT `fk4` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
 
 --
