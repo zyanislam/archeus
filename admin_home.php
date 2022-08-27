@@ -37,15 +37,60 @@
 
         <div class="mid">
             <div class="contentbox">
-                <span>
-                    <label>Create Teacher Account</label>
-                </span>
+                <div>
+                    <span>
+                        <label>Create Teacher Account</label>
+                    </span>
 
-                <span class="spaceboxh"></span>
+                    <span class="spaceboxh"></span>
 
-                <span>
-                    <a class="ui orange button huge" name="signup" onclick="window.location.href = 'teacher_signup.php';" id="t_signup">Sign Up</a>
-                </span>
+                    <span>
+                        <a class="ui orange button huge" name="signup" onclick="window.location.href = 'teacher_signup.php';" id="t_signup">Sign Up</a>
+                    </span>
+                </div>
+
+                <div class="spaceboxv"></div>
+                <div class="spaceboxv"></div>
+
+                <div class="usertable">
+                    <div>
+                        <label>Student</label>
+                        <table id="displaytb" align="center">
+                            <tr id="displaytr">
+                                <th>Username/ID</th>
+                                <th>Name</th>
+                                <th>Last Login Time</th>
+                                <th>Last Logout Time</th>
+                                <th>Delete</th>
+                                <th>Update</th>
+                            </tr>
+
+
+
+
+                        </table>
+                    </div>
+
+                    <div class="spaceboxh2"></div>
+
+                    <div>
+                        <label>Teacher</label>
+                        <table id="displaytb" align="center">
+                            <tr id="displaytr">
+                                <th>Username/ID</th>
+                                <th>Name</th>
+                                <th>Last Login Time</th>
+                                <th>Last Logout Time</th>
+                                <th>Delete</th>
+                                <th>Update</th>
+                            </tr>
+
+
+
+
+                        </table>
+                    </div>
+                </div>
 
             </div>
 
