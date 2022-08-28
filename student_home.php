@@ -33,101 +33,156 @@
             </div>
 
             <div id="top_logout">
-                <a class="ui orange button huge" name="signup" onclick="window.location.href = 'student_logoutprocess.php';" id="buttonbox2">Logout</a>
+                <a class="ui orange button huge" name="logout" onclick="window.location.href = 'student_logoutprocess.php';" id="buttonbox2">Logout</a>
             </div>
         </div>
 
-        <nav class="sidebar open">
-            <header>
-                <div class="image-text">
+        <div class="mid">
+            <nav class="sidebar open">
+                <header>
+                    <div class="image-text">
 
-                    <div class="text logo-text">
-                        <span class="name">Archeus</span>
-                        <span class="profession">Student Home</span>
-                    </div>
-                </div>
-
-            </header>
-
-            <div class="menu-bar">
-                <div class="menu">
-
-                    <li class="search-box">
-                        <i class='bx bx-search icon'></i>
-                        <input type="text" placeholder="Search...">
-                    </li>
-
-                    <ul class="menu-links">
-                        <li class="nav-link" id="link_list">
-                            <a href="#">
-                                <i class='bx bxs-pencil icon' style='color:#f24e1e'></i>
-                                <span class="text nav-text" id="menuitems">Edit Profile</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-link" id="link_list">
-                            <a href="#">
-                                <i class='bx bx-bookmarks icon' style='color:#ffffff'></i>
-                                <span class="text nav-text" id="menuitems">Bookmark</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-link" id="link_list">
-                            <a href="#">
-                                <i class='bx bx-check icon' style='color:#4ecb71'></i>
-                                <span class="text nav-text" id="menuitems">Validation Request</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-link" id="link_list">
-                            <a href="#">
-                                <i class='bx bxs-message-square-dots icon' style='color:#8490ff'></i>
-                                <span class="text nav-text" id="menuitems">CV Drops</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-link" id="link_list">
-                            <a href="#">
-                                <i class='bx bx-message-square-dots icon' style='color:#ffffff'></i>
-                                <span class="text nav-text" id="menuitems">View CV</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div class="bottom-content">
-
-                    <!-- <li class="mode">
-                        <div class="sun-moon">
-                            <i class='bx bx-moon icon moon'></i>
-                            <i class='bx bx-sun icon sun'></i>
-                        </div>
-                        <span class="mode-text text">Dark mode</span>
-
-                        <div class="toggle-switch">
-                            <span class="switch"></span>
-                        </div>
-                    </li> -->
-                    <div id="bottomdev" align="right">
-                        <div>
-                            Developed by
-                        </div>
-                        <div class="spaceboxv"></div>
-                        <div>
-                            Deadly Diamond Of Death | 2022
+                        <div class="text logo-text">
+                            <span class="name">Archeus</span>
+                            <span class="profession">Student Home</span>
                         </div>
                     </div>
 
+                </header>
+
+                <div class="menu-bar">
+                    <div class="menu">
+
+                        <li class="search-box">
+                            <i class='bx bx-search icon'></i>
+                            <input type="text" placeholder="Search...">
+                        </li>
+
+                        <ul class="menu-links">
+                            <li class="nav-link" id="link_list">
+                                <a href="#">
+                                    <i class='bx bxs-pencil icon' style='color:#f24e1e'></i>
+                                    <span class="text nav-text" id="menuitems">Edit Profile</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link" id="link_list">
+                                <a href="#">
+                                    <i class='bx bx-bookmarks icon' style='color:#ffffff'></i>
+                                    <span class="text nav-text" id="menuitems">Bookmark</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link" id="link_list">
+                                <a href="#">
+                                    <i class='bx bx-check icon' style='color:#4ecb71'></i>
+                                    <span class="text nav-text" id="menuitems">Validation Request</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link" id="link_list">
+                                <a href="#">
+                                    <i class='bx bxs-message-square-dots icon' style='color:#8490ff'></i>
+                                    <span class="text nav-text" id="menuitems">CV Drops</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link" id="link_list">
+                                <a href="#">
+                                    <i class='bx bx-message-square-dots icon' style='color:#ffffff'></i>
+                                    <span class="text nav-text" id="menuitems">View CV</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="bottom-content">
+
+                        <!-- <li class="mode">
+                            <div class="sun-moon">
+                                <i class='bx bx-moon icon moon'></i>
+                                <i class='bx bx-sun icon sun'></i>
+                            </div>
+                            <span class="mode-text text">Dark mode</span>
+
+                            <div class="toggle-switch">
+                                <span class="switch"></span>
+                            </div>
+                        </li> -->
+                        <div id="bottomdev" align="right">
+                            <div>
+                                Developed by
+                            </div>
+                            <div class="spaceboxv"></div>
+                            <div>
+                                Deadly Diamond Of Death | 2022
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
+            </nav>
+
+            <div class="contentbox">
+
+                <div class="ui card postbox">
+                    <div class="content">
+                        <i class="right floated like icon"></i>
+                        <i class="right floated star icon"></i>
+                        <div class="header" id="textline">Post 1</div>
+                        <div class="description">
+                            <p id="textline"></p>
+                        </div>
+                    </div>
+
+                    <div class="extra content">
+                        <span class="left floated like textline">
+                            <i class="like icon"></i>
+                            Like
+                        </span>
+                    </div>
+                </div>
+
+                <div class="ui card postbox">
+                    <div class="content">
+                        <i class="right floated like icon"></i>
+                        <i class="right floated star icon"></i>
+                        <div class="header" id="textline">Post 2</div>
+                        <div class="description">
+                            <p id="textline"></p>
+                        </div>
+                    </div>
+
+                    <div class="extra content">
+                        <span class="left floated like textline">
+                            <i class="like icon"></i>
+                            Like
+                        </span>
+                    </div>
+                </div>
+
+                <div class="ui card postbox">
+                    <div class="content">
+                        <i class="right floated like icon"></i>
+                        <i class="right floated star icon"></i>
+                        <div class="header" id="textline">Post 3</div>
+                        <div class="description">
+                            <p id="textline"></p>
+                        </div>
+                    </div>
+
+                    <div class="extra content">
+                        <span class="left floated like textline">
+                            <i class="like icon"></i>
+                            Like
+                        </span>
+                    </div>
+                </div>
+
             </div>
-
-        </nav>
-
-        <div>
-
         </div>
-
     </div>
 
 

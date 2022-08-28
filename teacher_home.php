@@ -33,7 +33,7 @@
             </div>
 
             <div id="top_logout">
-                <a class="ui orange button huge" name="signup" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
+                <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
             </div>
         </div>
 
