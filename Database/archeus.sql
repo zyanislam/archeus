@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2022 at 06:21 PM
+-- Generation Time: Aug 28, 2022 at 07:43 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -154,6 +154,48 @@ CREATE TABLE `cv_tech_skill` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `post_student`
+--
+
+CREATE TABLE `post_student` (
+  `stpost_id` int(11) NOT NULL,
+  `st_username` varchar(255) NOT NULL,
+  `st_name` varchar(255) NOT NULL,
+  `stpost_title` varchar(255) DEFAULT NULL,
+  `stpost_desc` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `post_student`
+--
+
+INSERT INTO `post_student` (`stpost_id`, `st_username`, `st_name`, `stpost_title`, `stpost_desc`) VALUES
+(1, '011182035', 'Anika', 'Need one member for fydp', 'All the requirements here...');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_teacher`
+--
+
+CREATE TABLE `post_teacher` (
+  `tpost_id` int(11) NOT NULL,
+  `t_username` varchar(255) NOT NULL,
+  `t_name` varchar(255) NOT NULL,
+  `tpost_title` varchar(255) DEFAULT NULL,
+  `tpost_desc` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `post_teacher`
+--
+
+INSERT INTO `post_teacher` (`tpost_id`, `t_username`, `t_name`, `tpost_title`, `tpost_desc`) VALUES
+(1, 'FAI', 'Fahad Al Islam', 'This is Title', 'This is description');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `student`
 --
 
@@ -193,7 +235,7 @@ CREATE TABLE `student_log` (
   `st_username` varchar(255) NOT NULL,
   `st_name` varchar(255) NOT NULL,
   `stlog_login_date_time` datetime NOT NULL DEFAULT current_timestamp(),
-  `stlog_logout_date_time` datetime NOT NULL DEFAULT current_timestamp()
+  `stlog_logout_date_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -219,7 +261,7 @@ CREATE TABLE `teacher` (
 
 INSERT INTO `teacher` (`t_id`, `t_username`, `t_name`, `t_email`, `t_pass`, `t_dept`, `t_des`, `role`) VALUES
 (1, 'FAI', 'Fahad Al Islam', 'fai@uiu.ac.bd', 'fai1234', 'CSE', 'Lecturer', 'teacher'),
-(2, 'a', 'Anika', 'a', '1234', 'EEE', 'x', 'teacher'),
+(2, 'AT', 'Anika Tahsin', 'at@uiu.ac.bd', '1234', 'CSE', 'Professor', 'teacher'),
 (3, 'b', 'An', 'a', '1234', 'CE', 'c', 'teacher'),
 (4, 'X', 'Mr X', 'x@gmail.com', '1234', 'CE', 'lecturer', 'teacher');
 
@@ -296,6 +338,20 @@ ALTER TABLE `cv_soft_skill`
 ALTER TABLE `cv_tech_skill`
   ADD PRIMARY KEY (`tech_skill_id`),
   ADD KEY `fk4` (`st_username`);
+
+--
+-- Indexes for table `post_student`
+--
+ALTER TABLE `post_student`
+  ADD PRIMARY KEY (`stpost_id`),
+  ADD KEY `fk9` (`st_username`);
+
+--
+-- Indexes for table `post_teacher`
+--
+ALTER TABLE `post_teacher`
+  ADD PRIMARY KEY (`tpost_id`),
+  ADD KEY `fk10` (`t_username`);
 
 --
 -- Indexes for table `student`
@@ -379,6 +435,18 @@ ALTER TABLE `cv_tech_skill`
   MODIFY `tech_skill_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `post_student`
+--
+ALTER TABLE `post_student`
+  MODIFY `stpost_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `post_teacher`
+--
+ALTER TABLE `post_teacher`
+  MODIFY `tpost_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
@@ -447,6 +515,18 @@ ALTER TABLE `cv_soft_skill`
 --
 ALTER TABLE `cv_tech_skill`
   ADD CONSTRAINT `fk4` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
+
+--
+-- Constraints for table `post_student`
+--
+ALTER TABLE `post_student`
+  ADD CONSTRAINT `fk9` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
+
+--
+-- Constraints for table `post_teacher`
+--
+ALTER TABLE `post_teacher`
+  ADD CONSTRAINT `fk10` FOREIGN KEY (`t_username`) REFERENCES `teacher` (`t_username`);
 
 --
 -- Constraints for table `student_log`
