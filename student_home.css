@@ -373,3 +373,38 @@ body.dark .home .text{
 .spaceboxv{
     height: 10px;
 }
+
+.mid{
+    display: flex;
+    flex-direction: row;
+}
+
+.contentbox{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    height: 985px;
+    width:1500px;
+    background-color: white;
+    top: 75px;
+    left: 470px;
+    border-radius: 38px;
+    border: 0px;
+    padding: 20px
+}
+
+.postbox{
+    background-color: #2C2B39 !important;
+    height: 150px;
+    width: 800px !important;
+    color: #fff !important;
+    border-radius: 18px !important;
+}
+
+.textline{
+    color: white;
+}
+
+#textline{
+    color: white;
+}
