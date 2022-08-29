@@ -27,7 +27,17 @@
 
 <body class="dark">
     <div class="layout">
-        <div class="top">
+
+        <nav class="navbar fixed-top navbar top">
+            <div id="top_title">
+                Archeus
+            </div>
+            <div id="top_logout">
+                <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
+            </div>
+        </nav>
+
+        <!-- <div class="top">
             <div id="top_title">
                 Archeus
             </div>
@@ -35,7 +45,7 @@
             <div id="top_logout">
                 <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
             </div>
-        </div>
+        </div> -->
 
         <div class="mid">
             <nav class="sidebar open">
@@ -104,63 +114,218 @@
 
             </nav>
 
-            <div class="contentbox">
+            <div class="bg_contentbox">
 
-                <div class="ui card postbox">
-                    <div class="content">
-                        <i class="right floated like icon"></i>
-                        <i class="right floated star icon"></i>
-                        <div class="header" id="textline">Post 1</div>
-                        <div class="description">
-                            <p id="textline"></p>
+                <div class="contentbox">
+
+                    <form action="newpost_process.php" method="POST" enctype="multipart/form-data">
+
+                        <div class="ui card newpostbox">
+
+                            <p id="write">Write about an upcoming opportunity</p>
+
+                            <input class="inup" type="text" name="post_title" id="post_title" placeholder="Title Of Your Post">
+
+                            <span class="spaceboxv"></span>
+
+                            <textarea class="form-control" placeholder="Describe The Opportunity For The Students" id="newpost" style="height: 80px;"></textarea>
+
+                            <span class="spaceboxv2"></span>
+
+                            <div align="right">
+                                <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Post</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                    <span class="spaceboxv"></span>
+
+                    <div class="ui card postbox">
+                        <div class="content">
+                            <i class="right floated like icon"></i>
+                            <i class="right floated star icon"></i>
+                            <div class="header" id="textline">Post 1</div>
+                            <div class="description">
+                                <p id="textline"></p>
+                            </div>
+                        </div>
+
+                        <div class="extra content">
+                            <span class="left floated like textline">
+                                <i class="like icon"></i>
+                                Like
+                            </span>
                         </div>
                     </div>
 
-                    <div class="extra content">
-                        <span class="left floated like textline">
-                            <i class="like icon"></i>
-                            Like
-                        </span>
-                    </div>
-                </div>
+                    <div class="ui card postbox">
+                        <div class="content">
+                            <i class="right floated like icon"></i>
+                            <i class="right floated star icon"></i>
+                            <div class="header" id="textline">Post 3</div>
+                            <div class="description">
+                                <p id="textline"></p>
+                            </div>
+                        </div>
 
-                <div class="ui card postbox">
-                    <div class="content">
-                        <i class="right floated like icon"></i>
-                        <i class="right floated star icon"></i>
-                        <div class="header" id="textline">Post 2</div>
-                        <div class="description">
-                            <p id="textline"></p>
+                        <div class="extra content">
+                            <span class="left floated like textline">
+                                <i class="like icon"></i>
+                                Like
+                            </span>
                         </div>
                     </div>
 
-                    <div class="extra content">
-                        <span class="left floated like textline">
-                            <i class="like icon"></i>
-                            Like
-                        </span>
-                    </div>
-                </div>
+                    <div class="ui card postbox">
+                        <div class="content">
+                            <i class="right floated like icon"></i>
+                            <i class="right floated star icon"></i>
+                            <div class="header" id="textline">Post 4</div>
+                            <div class="description">
+                                <p id="textline"></p>
+                            </div>
+                        </div>
 
-                <div class="ui card postbox">
-                    <div class="content">
-                        <i class="right floated like icon"></i>
-                        <i class="right floated star icon"></i>
-                        <div class="header" id="textline">Post 3</div>
-                        <div class="description">
-                            <p id="textline"></p>
+                        <div class="extra content">
+                            <span class="left floated like textline">
+                                <i class="like icon"></i>
+                                Like
+                            </span>
                         </div>
                     </div>
 
-                    <div class="extra content">
-                        <span class="left floated like textline">
-                            <i class="like icon"></i>
-                            Like
-                        </span>
+                    <div class="ui card postbox">
+                        <div class="content">
+                            <i class="right floated like icon"></i>
+                            <i class="right floated star icon"></i>
+                            <div class="header" id="textline">Post 5</div>
+                            <div class="description">
+                                <p id="textline"></p>
+                            </div>
+                        </div>
+
+                        <div class="extra content">
+                            <span class="left floated like textline">
+                                <i class="like icon"></i>
+                                Like
+                            </span>
+                        </div>
                     </div>
+
+                    <div class="ui card postbox">
+                        <div class="content">
+                            <i class="right floated like icon"></i>
+                            <i class="right floated star icon"></i>
+                            <div class="header" id="textline">Post 6</div>
+                            <div class="description">
+                                <p id="textline"></p>
+                            </div>
+                        </div>
+
+                        <div class="extra content">
+                            <span class="left floated like textline">
+                                <i class="like icon"></i>
+                                Like
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="ui card postbox">
+                        <div class="content">
+                            <i class="right floated like icon"></i>
+                            <i class="right floated star icon"></i>
+                            <div class="header" id="textline">Post 7</div>
+                            <div class="description">
+                                <p id="textline"></p>
+                            </div>
+                        </div>
+
+                        <div class="extra content">
+                            <span class="left floated like textline">
+                                <i class="like icon"></i>
+                                Like
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="ui card postbox">
+                        <div class="content">
+                            <i class="right floated like icon"></i>
+                            <i class="right floated star icon"></i>
+                            <div class="header" id="textline">Post 8</div>
+                            <div class="description">
+                                <p id="textline"></p>
+                            </div>
+                        </div>
+
+                        <div class="extra content">
+                            <span class="left floated like textline">
+                                <i class="like icon"></i>
+                                Like
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="ui card postbox">
+                        <div class="content">
+                            <i class="right floated like icon"></i>
+                            <i class="right floated star icon"></i>
+                            <div class="header" id="textline">Post 9</div>
+                            <div class="description">
+                                <p id="textline"></p>
+                            </div>
+                        </div>
+
+                        <div class="extra content">
+                            <span class="left floated like textline">
+                                <i class="like icon"></i>
+                                Like
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="ui card postbox">
+                        <div class="content">
+                            <i class="right floated like icon"></i>
+                            <i class="right floated star icon"></i>
+                            <div class="header" id="textline">Post 10</div>
+                            <div class="description">
+                                <p id="textline"></p>
+                            </div>
+                        </div>
+
+                        <div class="extra content">
+                            <span class="left floated like textline">
+                                <i class="like icon"></i>
+                                Like
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="ui card postbox">
+                        <div class="content">
+                            <i class="right floated like icon"></i>
+                            <i class="right floated star icon"></i>
+                            <div class="header" id="textline">Post 11</div>
+                            <div class="description">
+                                <p id="textline"></p>
+                            </div>
+                        </div>
+
+                        <div class="extra content">
+                            <span class="left floated like textline">
+                                <i class="like icon"></i>
+                                Like
+                            </span>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
+
         </div>
     </div>
 
@@ -189,7 +354,6 @@
                 modeText.innerText = "Light mode";
             } else {
                 modeText.innerText = "Dark mode";
-
             }
         });
     </script>
