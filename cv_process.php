@@ -96,15 +96,19 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                 //Getting student ID:
 
                 $getid="SELECT st_username FROM student WHERE st_email='$email'";
-                $returnid=mysqli_query($conn, $sqlquery1);
+                $returnid=mysqli_query($conn, $getid);
+
+                $row = mysqli_fetch_assoc($returnid);
+
+                $id = $row['st_username'];
 
                 //Storing into cv basic table:
-                $sqlquery1 = "INSERT INTO cv_basic(cv_id, st_username, st_name, st_email, st_contact, st_city, st_facebook, st_linkedin) VALUES(NULL,'$returnid','$name','$email','$phone','$city','$fb','$li')";
+                $sqlquery1 = "INSERT INTO cv_basic(cv_id, st_username, st_name, st_email, st_contact, st_city, st_facebook, st_linkedin) VALUES(NULL,'$id','$name','$email','$phone','$city','$fb','$li')";
                 mysqli_query($conn, $sqlquery1);
                 
                 
                 //Storing into edu table:
-                $sqlquery1="INSERT INTO cv_edu(st_username,	edu_school,	edu_school_start, edu_school_end, edu_college, edu_college_start, edu_college_end, edu_uni, edu_uni_start, edu_uni_end, edu_uni_dept, edu_uni_major, edu_uni_cgpa) VALUES('$returnid','$ss', '$syear', '$eyear', '$hs', '$hs_syear', '$hs_eyear', '$uni', '$u_syear', '$u_eyear', '$dept', '$major', '$cgpa')";
+                $sqlquery1="INSERT INTO cv_edu(st_username,	edu_school,	edu_school_start, edu_school_end, edu_college, edu_college_start, edu_college_end, edu_uni, edu_uni_start, edu_uni_end, edu_uni_dept, edu_uni_major, edu_uni_cgpa) VALUES('$id','$ss', '$syear', '$eyear', '$hs', '$hs_syear', '$hs_eyear', '$uni', '$u_syear', '$u_eyear', '$dept', '$major', '$cgpa')";
                 mysqli_query($conn, $sqlquery1);
 
 
@@ -113,7 +117,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                 for($i=0;$i<count($e_name);$i++)
                 {
                  
-                    $sqlquery2="INSERT INTO cv_eca(st_username, eca_name, eca_desc, eca_link) VALUES('$returnid','$e_name[$i]','$e_des[$i]','$link[$i]')";
+                    $sqlquery2="INSERT INTO cv_eca(st_username, eca_name, eca_desc, eca_link) VALUES('$id','$e_name[$i]','$e_des[$i]','$link[$i]')";
                     mysqli_query($conn, $sqlquery2);	 
                  
                 }
@@ -123,7 +127,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                 for($i=0;$i<count($t_skill);$i++)
                 {
                  
-                    $sqlquery3="INSERT INTO cv_tech_skill(st_username, tech_skill_name, tech_skill_desc, tech_skill_related_project) VALUES ('$returnid','$t_skill[$i]','$t_des[$i]','$rp[$i]')";
+                    $sqlquery3="INSERT INTO cv_tech_skill(st_username, tech_skill_name, tech_skill_desc, tech_skill_related_project) VALUES ('$id','$t_skill[$i]','$t_des[$i]','$rp[$i]')";
                     mysqli_query($conn, $sqlquery3); 
                  
                 }
@@ -133,7 +137,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                 for($i=0;$i<count($s_skill);$i++)
                 {
                  
-                    $sqlquery4="INSERT INTO cv_soft_skill(st_username, soft_skill_name) VALUES('$returnid','$s_skill[$i]')";
+                    $sqlquery4="INSERT INTO cv_soft_skill(st_username, soft_skill_name) VALUES('$id','$s_skill[$i]')";
                     mysqli_query($conn, $sqlquery4); 
                  
                 }
@@ -143,7 +147,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                 for($i=0;$i<count($p_name);$i++)
                 {
                  
-                    $sqlquery5="INSERT INTO cv_project(st_username, project_name, project_desc) VALUES('$returnid','$p_name[$i]','$p_des[$i]')";
+                    $sqlquery5="INSERT INTO cv_project(st_username, project_name, project_desc) VALUES('$id','$p_name[$i]','$p_des[$i]')";
                     mysqli_query($conn, $sqlquery5); 
                  
                 }
@@ -153,7 +157,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                 for($i=0;$i<count($title);$i++)
                 {
                  
-                    $sqlquery6="INSERT INTO cv_publication(st_username, pub_title, pub_year_published, pub_link) VALUES('$returnid','$title[$i]',' $year_p[$i]','$pub_link[$i]')";
+                    $sqlquery6="INSERT INTO cv_publication(st_username, pub_title, pub_year_published, pub_link) VALUES('$id','$title[$i]',' $year_p[$i]','$pub_link[$i]')";
                     mysqli_query($conn, $sqlquery6); 
                  
                 }
