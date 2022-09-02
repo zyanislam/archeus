@@ -8,90 +8,84 @@ id=st_user, name=st_name, email=st_email, dept=st_dept, dob=st_dob,
 gender=st_gender, pass=st_pass, cpass=st_cpass
 */
 
- if($_SERVER['REQUEST_METHOD']=="POST"){
-     //checking if the info are valid and not empty.
-     if(
-         !empty($_POST["st_user"]) && !empty($_POST["st_name"]) &&
-         !empty($_POST["st_email"]) && !empty($_POST["st_dept"]) &&
-         !empty($_POST["st_dob"]) && !empty($_POST["st_gender"]) &&
-         !empty($_POST["st_pass"]) && !empty($_POST["st_cpass"]) &&
-         isset($_POST["st_user"]) && isset($_POST["st_name"]) && 
-         isset($_POST["st_email"]) && isset($_POST["st_dept"]) &&
-         isset($_POST["st_dob"]) && isset($_POST["st_gender"]) &&
-         isset($_POST["st_pass"]) && isset($_POST["st_cpass"])
-       ){
-         //storing the informations in variables
-         $suser=$_POST["st_user"];
-         $sname=$_POST["st_name"];
-         $semail=$_POST["st_email"];
-         $sdept=$_POST["st_dept"];
-         $sdob=$_POST["st_dob"];
-         $sgender=$_POST["st_gender"];
-         $spass=$_POST["st_pass"];
-         $scpass=$_POST["st_cpass"];
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    //checking if the info are valid and not empty.
+    if (
+        !empty($_POST["st_user"]) && !empty($_POST["st_name"]) &&
+        !empty($_POST["st_email"]) && !empty($_POST["st_dept"]) &&
+        !empty($_POST["st_dob"]) && !empty($_POST["st_gender"]) &&
+        !empty($_POST["st_pass"]) && !empty($_POST["st_cpass"]) &&
+        isset($_POST["st_user"]) && isset($_POST["st_name"]) &&
+        isset($_POST["st_email"]) && isset($_POST["st_dept"]) &&
+        isset($_POST["st_dob"]) && isset($_POST["st_gender"]) &&
+        isset($_POST["st_pass"]) && isset($_POST["st_cpass"])
+    ) {
+        //storing the informations in variables
+        $suser = $_POST["st_user"];
+        $sname = $_POST["st_name"];
+        $semail = $_POST["st_email"];
+        $sdept = $_POST["st_dept"];
+        $sdob = $_POST["st_dob"];
+        $sgender = $_POST["st_gender"];
+        $spass = $_POST["st_pass"];
+        $scpass = $_POST["st_cpass"];
 
         //  to check pattern for student id
         $id_pattern = "/^011|^021|^031|^111/i";
         $email_pattern = "/@bscse.uiu.ac.bd$|@bseee.uiu.ac.bd$|@bsce.uiu.ac.bd$|@bba.uiu.ac.bd$/";
-         
-         /*trying to access database and store all the information there.*/
-         try{
-             //creating connection with Archeus database
-            include "db_connect.php";
-            $sqlquery1="SELECT * FROM student WHERE st_username='$suser' ";
-            $returnobj1=mysqli_query($conn, $sqlquery1);
 
-            if($returnobj1){
-                //it means this id already belongs to a student and cannot be taken.
-                echo '<script>alert("This ID already exists.");</script>';
-                echo"<script>location.assign('student_signup.php')</script>";
-            }
-            else if($spass!=$scpass){
+        /*trying to access database and store all the information there.*/
+        try {
+            //creating connection with Archeus database
+            include "db_connect.php";
+            $sqlquery1 = "SELECT * FROM student WHERE st_username='$suser' ";
+            $returnobj1 = mysqli_query($conn, $sqlquery1);
+
+            // if($returnobj1){
+            //     //it means this id already belongs to a student and cannot be taken.
+            //     echo '<script>alert("This ID already exists.");</script>';
+            //     echo"<script>location.assign('student_signup.php')</script>";
+            // }
+            if ($spass != $scpass) {
                 echo '<script>alert("Passwords does not match. Try again.");</script>';
-                echo"<script>location.assign('student_signup.php')</script>";
-            }
-            else if(strlen($suser)!=9){
+                echo "<script>location.assign('student_signup.php')</script>";
+            } else if (strlen($suser) != 9) {
                 echo '<script>alert("User ID must contain 9 digits. Try again.");</script>';
-                echo"<script>location.assign('student_signup.php')</script>";
-            }
-            else if(preg_match($id_pattern, $suser) == 0){
+                echo "<script>location.assign('student_signup.php')</script>";
+            } else if (preg_match($id_pattern, $suser) == 0) {
                 echo '<script>alert("User ID must start with 011 or 021 or 031 or 111. Try again.");</script>';
-                echo"<script>location.assign('student_signup.php')</script>";
-            }
-            else if(preg_match($email_pattern, $semail) == 0){
+                echo "<script>location.assign('student_signup.php')</script>";
+            } else if (preg_match($email_pattern, $semail) == 0) {
                 echo '<script>alert("Invalid email address. Try again.");</script>';
-                echo"<script>location.assign('student_signup.php')</script>";
-            }
-            else{
+                echo "<script>location.assign('student_signup.php')</script>";
+            } else {
                 //every entry is valid and ready to be registered
                 //database code executing
-                $sqlquery="INSERT INTO student(st_id,st_username,st_name,st_email,st_pass,st_dept,st_contact,st_dob,st_gender,role) VALUES(NULL,'$suser','$sname','$semail','$spass','$sdept',NULL,'$sdob','$sgender','student')";
+                $sqlquery = "INSERT INTO student(st_id,st_username,st_name,st_email,st_pass,st_dept,st_contact,st_dob,st_gender,role) VALUES(NULL,'$suser','$sname','$semail','$spass','$sdept',NULL,'$sdob','$sgender','student')";
                 mysqli_query($conn, $sqlquery);
-                
+
                 //after successful registration forwarding to login page
-                echo '<script>alert("Registration completed successfully!! Login to Process");</script>';
-                echo"<script>location.assign('welcome.php')</script>";
-            }   
-         }catch(PDOException $ex){
-             //if found error forward to register page
-             echo '<script>
+                // echo '<script>alert("Registration completed successfully!! Login to Process");</script>';
+                echo "<script>location.assign('student_signup_success.php')</script>";
+            }
+        } catch (PDOException $ex) {
+            //if found error forward to register page
+            echo '<script>
              alert("catch error");
              </script>';
-            echo"<script>location.assign('student_signup.php')</script>";
-         }
-     }else{
-         //if any value is empty or invalid, then forward to register page again.
-         echo '<script>
+            echo "<script>location.assign('student_signup.php')</script>";
+        }
+    } else {
+        //if any value is empty or invalid, then forward to register page again.
+        echo '<script>
          alert("You forgot to put your information in one of the fields. Check again.");
          </script>';
-         echo"<script>location.assign('student_signup.php')</script>";
-     }
- }
-else{
+        echo "<script>location.assign('student_signup.php')</script>";
+    }
+} else {
     //forwarding to register page if not post method.
     echo '<script>
     alert("not post method");
     </script>';
-    echo"<script>location.assign('student_signup.php')</scrpit>";
+    echo "<script>location.assign('student_signup.php')</scrpit>";
 }
-?>
