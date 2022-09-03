@@ -35,6 +35,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             $sqlquery = "INSERT INTO teacher(t_id, t_username, t_name, t_email, t_pass, t_dept, t_des, role) VALUES(NULL, '$tuser', '$tname', '$temail', '1234', '$tdept', '$tdes', 'teacher')";
             mysqli_query($conn, $sqlquery);
 
+            $sqlquery2="INSERT INTO teacher_log(tlog_id,t_username,	tlog_name) VALUES(NULL,'$tuser','$tname') ";
+            mysqli_query($conn, $sqlquery2);
+
             //after successful registration forwarding to login page
             echo '<script>alert("Registration completed successfully!!");</script>';
             echo "<script>location.assign('admin_home.php')</script>";
