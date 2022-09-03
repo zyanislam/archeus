@@ -50,14 +50,7 @@
 
     <section class="dashboard">
         <div class="top">
-            <i class="uil uil-bars sidebar-toggle"></i>
-
-            <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
-            </div>
-
-            <!--<img src="images/profile.jpg" alt="">-->
+            
         </div>
 
         <div class="dash-content">
@@ -68,11 +61,11 @@
                 </div>
 
                 <div class="buttons">
-                    <div class="box box1">
-                        <a href="#" class="btn btn-primary btn-lg active p-5" role="button" aria-pressed="true">Add Students</a>
+                    <div>
+                        <button class="inup">Add Students</button>
                     </div>
-                    <div class="box box2">
-                        <a href="#" class="btn btn-primary btn-lg active p-5" role="button" aria-pressed="true">Add Teachers</a>
+                    <div>
+                        <button class="inup">Add Teachers</button>
                     </div>
                 </div>
             </div>
@@ -86,12 +79,15 @@
                 <div class="activity-data">
                     <div class="data names">
                         <span class="data-title">Name</span>
+                        <span class="data-list">Prem Shahi</span>
                     </div>
                     <div class="data email">
                         <span class="data-title">Email</span>
+                        <span class="data-list">Prem Shahi</span>
                     </div>
                     <div class="data joined">
                         <span class="data-title">Joined</span>
+                        <span class="data-list">Prem Shahi</span>
                     </div>
                 </div>
             </div>
