@@ -83,6 +83,13 @@
                                 </a>
                             </li>
 
+                            <li class="nav-link" id="link_list">
+                                <a href="#">
+                                    <i class="bx bx-check icon" style="color:#4ecb71"></i>
+                                    <span class="text nav-text" id="menuitems">Pending Validation Requests</span>
+                                </a>
+                            </li>
+
                         </ul>
                     </div>
 
@@ -142,185 +149,47 @@
 
                     <span class="spaceboxv"></span>
 
-                    <div class="ui card postbox">
-                        <div class="content">
-                            <i class="right floated like icon"></i>
-                            <i class="right floated star icon"></i>
-                            <div class="header" id="textline">Post 1</div>
-                            <div class="description">
-                                <p id="textline"></p>
-                            </div>
-                        </div>
+                    <?php
+                    try{
+                        $conn=new PDO('mysql:host=localhost:3306;dbname=archeus;','root','');
+                        $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-                        <div class="extra content">
-                            <span class="left floated like textline">
-                                <i class="like icon"></i>
-                                Like
-                            </span>
-                        </div>
-                    </div>
+                        $sqlquery="SELECT * FROM post_teacher";
+                        $returnobj=$conn->query($sqlquery);
 
-                    <div class="ui card postbox">
-                        <div class="content">
-                            <i class="right floated like icon"></i>
-                            <i class="right floated star icon"></i>
-                            <div class="header" id="textline">Post 3</div>
-                            <div class="description">
-                                <p id="textline"></p>
-                            </div>
-                        </div>
+                        if($returnobj->rowCount()==0){
+                            ///no data found
+                            echo"No data found"; 
+                        }
+                        else{
+                            /*<?php echo $row['id'];?>*/
+                            //tpost_id,t_username, t_name,tpost_title, tpost_desc
+                            $tabledata=$returnobj->fetchAll();
+                            foreach($tabledata AS $row){
+                                ?>
+                                <div class="ui card postbox">
+                                    <div class="content">
+                                        <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
+                                        <div class="header" id="post_title"><?php echo $row['tpost_title'];?></div>
+                                        <div class="header" id="author_name"><?php echo $row['t_name'];?> | Author</div>
 
-                        <div class="extra content">
-                            <span class="left floated like textline">
-                                <i class="like icon"></i>
-                                Like
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="ui card postbox">
-                        <div class="content">
-                            <i class="right floated like icon"></i>
-                            <i class="right floated star icon"></i>
-                            <div class="header" id="textline">Post 4</div>
-                            <div class="description">
-                                <p id="textline"></p>
-                            </div>
-                        </div>
-
-                        <div class="extra content">
-                            <span class="left floated like textline">
-                                <i class="like icon"></i>
-                                Like
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="ui card postbox">
-                        <div class="content">
-                            <i class="right floated like icon"></i>
-                            <i class="right floated star icon"></i>
-                            <div class="header" id="textline">Post 5</div>
-                            <div class="description">
-                                <p id="textline"></p>
-                            </div>
-                        </div>
-
-                        <div class="extra content">
-                            <span class="left floated like textline">
-                                <i class="like icon"></i>
-                                Like
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="ui card postbox">
-                        <div class="content">
-                            <i class="right floated like icon"></i>
-                            <i class="right floated star icon"></i>
-                            <div class="header" id="textline">Post 6</div>
-                            <div class="description">
-                                <p id="textline"></p>
-                            </div>
-                        </div>
-
-                        <div class="extra content">
-                            <span class="left floated like textline">
-                                <i class="like icon"></i>
-                                Like
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="ui card postbox">
-                        <div class="content">
-                            <i class="right floated like icon"></i>
-                            <i class="right floated star icon"></i>
-                            <div class="header" id="textline">Post 7</div>
-                            <div class="description">
-                                <p id="textline"></p>
-                            </div>
-                        </div>
-
-                        <div class="extra content">
-                            <span class="left floated like textline">
-                                <i class="like icon"></i>
-                                Like
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="ui card postbox">
-                        <div class="content">
-                            <i class="right floated like icon"></i>
-                            <i class="right floated star icon"></i>
-                            <div class="header" id="textline">Post 8</div>
-                            <div class="description">
-                                <p id="textline"></p>
-                            </div>
-                        </div>
-
-                        <div class="extra content">
-                            <span class="left floated like textline">
-                                <i class="like icon"></i>
-                                Like
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="ui card postbox">
-                        <div class="content">
-                            <i class="right floated like icon"></i>
-                            <i class="right floated star icon"></i>
-                            <div class="header" id="textline">Post 9</div>
-                            <div class="description">
-                                <p id="textline"></p>
-                            </div>
-                        </div>
-
-                        <div class="extra content">
-                            <span class="left floated like textline">
-                                <i class="like icon"></i>
-                                Like
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="ui card postbox">
-                        <div class="content">
-                            <i class="right floated like icon"></i>
-                            <i class="right floated star icon"></i>
-                            <div class="header" id="textline">Post 10</div>
-                            <div class="description">
-                                <p id="textline"></p>
-                            </div>
-                        </div>
-
-                        <div class="extra content">
-                            <span class="left floated like textline">
-                                <i class="like icon"></i>
-                                Like
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="ui card postbox">
-                        <div class="content">
-                            <i class="right floated like icon"></i>
-                            <i class="right floated star icon"></i>
-                            <div class="header" id="textline">Post 11</div>
-                            <div class="description">
-                                <p id="textline"></p>
-                            </div>
-                        </div>
-
-                        <div class="extra content">
-                            <span class="left floated like textline">
-                                <i class="like icon"></i>
-                                Like
-                            </span>
-                        </div>
-                    </div>
+                                        <div class="description">
+                                            <p id="post_desc"><?php echo $row['tpost_desc'];?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        }
+                    }catch(PDOException $ex){
+                        //if found error forward to login page
+                        // echo"<script>location.assign('welcome.php')</script>";
+                        echo '<script>
+                        alert("Found error");
+                        window.location = "welcome.php";
+                        </script>';
+                    }
+                    ?>
 
                 </div>
 
