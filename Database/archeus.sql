@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2022 at 07:43 AM
+-- Generation Time: Sep 03, 2022 at 11:07 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -47,6 +47,18 @@ INSERT INTO `admin` (`ad_id`, `ad_username`, `ad_pass`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bookmark_post`
+--
+
+CREATE TABLE `bookmark_post` (
+  `id` int(11) NOT NULL,
+  `user_id` varchar(255) NOT NULL,
+  `bookmarked_post_id` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cv_basic`
 --
 
@@ -55,7 +67,7 @@ CREATE TABLE `cv_basic` (
   `st_username` varchar(255) NOT NULL,
   `st_name` varchar(255) NOT NULL,
   `st_email` varchar(255) NOT NULL,
-  `st_contact` int(11) NOT NULL,
+  `st_contact` varchar(255) NOT NULL,
   `st_city` varchar(255) DEFAULT NULL,
   `st_facebook` varchar(255) DEFAULT NULL,
   `st_linkedin` varchar(255) DEFAULT NULL
@@ -183,7 +195,7 @@ CREATE TABLE `post_teacher` (
   `t_username` varchar(255) NOT NULL,
   `t_name` varchar(255) NOT NULL,
   `tpost_title` varchar(255) DEFAULT NULL,
-  `tpost_desc` varchar(255) DEFAULT NULL
+  `tpost_desc` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -191,7 +203,11 @@ CREATE TABLE `post_teacher` (
 --
 
 INSERT INTO `post_teacher` (`tpost_id`, `t_username`, `t_name`, `tpost_title`, `tpost_desc`) VALUES
-(1, 'FAI', 'Fahad Al Islam', 'This is Title', 'This is description');
+(1, 'FAI', 'Fahad Al Islam', 'Intership at BAT', '\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"'),
+(2, 'AT', 'Anika Tahsin', 'Need FrontEnd Developer at Robi', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor '),
+(3, 'b', 'An', 'Job Vacancy at Grameen Phone', '\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia volupt'),
+(4, 'X', 'Mr X', 'Fellowship at Google', '\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollit'),
+(5, 'AT', 'Anika Tahsin', 'Need FrontEnd Developer at UIU IT Dept', 'What I find remarkable is that this text has been the industry\'s standard dummy text ever since some printer in the 1500s took a galley of type and scrambled it to make a type specimen book; it has survived not only four centuries of letter-by-letter resetting but even the leap into electronic typesetting, essentially unchanged except for an occasional \'ing\' or \'y\' thrown in. It\'s ironic that when the then-understood Latin was scrambled, it became as incomprehensible as Greek;');
 
 -- --------------------------------------------------------
 
@@ -222,7 +238,8 @@ INSERT INTO `student` (`st_id`, `st_username`, `st_name`, `st_email`, `st_pass`,
 (3, '011182035', 'Anika Tahsin', 'anika@ieee.org', 'anika1234', 'CSE', NULL, '1996-10-26', 'Female', NULL, 'student', 0),
 (4, '011183070', 'Fahad Al Islam', 'fislam@gmail.com', 'fahad1234', 'CSE', NULL, '2022-08-22', 'Male', NULL, 'student', 0),
 (19, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-08-25', 'Male', NULL, 'student', 0),
-(20, '011182033', 'an', 'an@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-08-25', 'Female', NULL, 'student', 0);
+(24, '011182033', 'kamado tanjiro', 'tan@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-08-30', 'Male', NULL, 'student', 0),
+(25, '011172035', 'x', 'x@bseee.uiu.ac.bd', '1234', 'CSE', NULL, '2022-09-03', 'Male', NULL, 'student', 0);
 
 -- --------------------------------------------------------
 
@@ -234,9 +251,19 @@ CREATE TABLE `student_log` (
   `stlog_id` int(11) NOT NULL,
   `st_username` varchar(255) NOT NULL,
   `st_name` varchar(255) NOT NULL,
-  `stlog_login_date_time` datetime NOT NULL DEFAULT current_timestamp(),
+  `stlog_login_date_time` datetime DEFAULT NULL,
   `stlog_logout_date_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student_log`
+--
+
+INSERT INTO `student_log` (`stlog_id`, `st_username`, `st_name`, `stlog_login_date_time`, `stlog_logout_date_time`) VALUES
+(6, '011182033', 'kamado tanjiro', '2022-08-30 01:33:30', '2022-08-30 01:35:55'),
+(7, '011182035', 'Anika Tahsin', '2022-08-30 02:33:26', '2022-08-30 02:33:45'),
+(8, '011183070', 'Fahad Islam', '2022-08-30 01:38:14', '2022-08-30 01:38:40'),
+(9, '011172035', 'x', '2022-09-03 10:15:02', '2022-09-03 10:15:15');
 
 -- --------------------------------------------------------
 
@@ -263,7 +290,8 @@ INSERT INTO `teacher` (`t_id`, `t_username`, `t_name`, `t_email`, `t_pass`, `t_d
 (1, 'FAI', 'Fahad Al Islam', 'fai@uiu.ac.bd', 'fai1234', 'CSE', 'Lecturer', 'teacher'),
 (2, 'AT', 'Anika Tahsin', 'at@uiu.ac.bd', '1234', 'CSE', 'Professor', 'teacher'),
 (3, 'b', 'An', 'a', '1234', 'CE', 'c', 'teacher'),
-(4, 'X', 'Mr X', 'x@gmail.com', '1234', 'CE', 'lecturer', 'teacher');
+(4, 'X', 'Mr X', 'x@gmail.com', '1234', 'CE', 'lecturer', 'teacher'),
+(10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', '1234', 'CSE', 'lecturer', 'teacher');
 
 -- --------------------------------------------------------
 
@@ -275,9 +303,16 @@ CREATE TABLE `teacher_log` (
   `tlog_id` int(11) NOT NULL,
   `t_username` varchar(255) NOT NULL,
   `tlog_name` varchar(255) NOT NULL,
-  `tlog_login_date_time` datetime NOT NULL DEFAULT current_timestamp(),
-  `tlog_logout_date_time` datetime NOT NULL DEFAULT current_timestamp()
+  `tlog_login_date_time` datetime DEFAULT NULL,
+  `tlog_logout_date_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `teacher_log`
+--
+
+INSERT INTO `teacher_log` (`tlog_id`, `t_username`, `tlog_name`, `tlog_login_date_time`, `tlog_logout_date_time`) VALUES
+(3, 'AH', 'Abir Hasan', '2022-09-04 02:56:36', '2022-09-04 02:56:41');
 
 --
 -- Indexes for dumped tables
@@ -289,6 +324,12 @@ CREATE TABLE `teacher_log` (
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`ad_id`),
   ADD UNIQUE KEY `ad_username` (`ad_username`);
+
+--
+-- Indexes for table `bookmark_post`
+--
+ALTER TABLE `bookmark_post`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `cv_basic`
@@ -393,6 +434,12 @@ ALTER TABLE `admin`
   MODIFY `ad_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `bookmark_post`
+--
+ALTER TABLE `bookmark_post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `cv_basic`
 --
 ALTER TABLE `cv_basic`
@@ -444,31 +491,31 @@ ALTER TABLE `post_student`
 -- AUTO_INCREMENT for table `post_teacher`
 --
 ALTER TABLE `post_teacher`
-  MODIFY `tpost_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `tpost_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `st_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `st_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `student_log`
 --
 ALTER TABLE `student_log`
-  MODIFY `stlog_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `stlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `teacher_log`
 --
 ALTER TABLE `teacher_log`
-  MODIFY `tlog_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `tlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
