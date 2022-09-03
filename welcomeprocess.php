@@ -38,6 +38,12 @@ user,pass
                  //login successful
                  session_start();
                  $_SESSION['st_user']=$username;
+
+                 date_default_timezone_set('Asia/Dhaka');
+                 $login_date = date('y-m-d g:i:s');
+
+                 $sql1="UPDATE student_log SET stlog_login_date_time='$login_date', stlog_logout_date_time='--' WHERE st_username='$username' ";
+                 $logintime = $conn->query($sql1);
                  
                  //forwarding to home page
                  echo"<script>location.assign('student_home.php')</script>";  
