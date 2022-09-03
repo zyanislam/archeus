@@ -9,7 +9,7 @@
     <title>Admin Home</title>
 
     <link rel="stylesheet" href="admin_hp.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
 </head>
 
@@ -26,22 +26,22 @@
         <div class="menu-items">
             <ul class="nav-links">
                 <li><a href="#">
-                        <i class="uil uil-estate"></i>
+                        <i class='bx bx-home'></i>
                         <span class="link-name">Home</span>
                     </a></li>
                 <li><a href="#">
-                        <i class="uil uil-files-landscapes"></i>
+                        <i class='bx bxs-group' ></i>
                         <span class="link-name">Students</span>
                     </a></li>
                 <li><a href="#">
-                        <i class="uil uil-chart"></i>
-                        <span class="link-name">Teacher</span>
+                        <i class='bx bxs-user' ></i>
+                        <span class="link-name">Teachers</span>
                     </a></li>
             </ul>
 
             <ul class="logout-mode">
                 <li><a href="#">
-                        <i class="uil uil-signout"></i>
+                        <i class='bx bx-log-out' ></i>
                         <span class="link-name">Logout</span>
                     </a></li>
             </ul>
@@ -56,24 +56,33 @@
         <div class="dash-content">
             <div class="overview">
                 <div class="title">
-                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <i class='bx bxs-dashboard' ></i>
                     <span class="text">Dashboard</span>
                 </div>
 
-                <div class="buttons">
-                    <div>
-                        <button class="inup">Add Students</button>
+                <div class="boxes">
+                    <div class="box box1">
+                        <i class='bx bx-male-female' ></i>
+                        <span class="text">Total Students</span>
+                        <span class="number"></span>
                     </div>
-                    <div>
-                        <button class="inup">Add Teachers</button>
+                    <div class="box box2">
+                        <i class='bx bxs-user' ></i>
+                        <span class="text">Total Teachers</span>
+                        <span class="number"></span>
+                    </div>
+                    <div class="box box3">
+                        <i class='bx bxs-user-account' ></i>
+                        <span class="text">Total Users</span>
+                        <span class="number"></span>
                     </div>
                 </div>
             </div>
 
             <div class="activity">
                 <div class="title">
-                    <i class="uil uil-clock-three"></i>
-                    <span class="text">Accounts</span>
+                    <i class='bx bxs-user-badge' ></i>
+                    <span class="text">Teachers</span>
                 </div>
 
                 <div class="activity-data">
