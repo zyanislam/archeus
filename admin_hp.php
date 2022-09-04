@@ -37,6 +37,10 @@
                         <i class='bx bxs-user' ></i>
                         <span class="link-name">Teachers</span>
                     </a></li>
+                <li><a href="#">
+                    <i class='bx bx-plus-circle'></i>
+                        <span class="link-name">Create Teacher Account</span>
+                    </a></li>
             </ul>
 
             <ul class="logout-mode">

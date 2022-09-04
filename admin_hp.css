@@ -62,9 +62,11 @@ body.dark .activity-data::-webkit-scrollbar-thumb:hover{
 }
 
 nav{
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 100%;
-    width: 450px;
+    width: 250px;
     padding: 10px 14px;
     background-color: var(--panel-color);
     border-right: 1px solid var(--border-color);
@@ -89,7 +91,7 @@ nav .logo-image img{
 }
 
 nav .logo-name .logo_name{
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 600;
     color: var(--text-color);
     margin-left: 14px;
@@ -105,7 +107,6 @@ nav .menu-items{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 }
 .menu-items li{
     list-style: none;
@@ -130,16 +131,16 @@ body.dark li a:hover:before{
     background-color: var(--text-color);
 }
 .menu-items li a i{
-    font-size: 26px;
-    min-width: 100%;
+    font-size: 24px;
+    min-width: 45px;
     height: 100%;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     color: var(--black-light-color);
 }
 .menu-items li a .link-name{
-    font-size: 26px;
+    font-size: 18px;
     font-weight: 400;
     color: var(--black-light-color);    
     transition: var(--tran-05);
@@ -201,10 +202,10 @@ body.dark .switch:before{
 
 .dashboard{
     position: relative;
-    left: 450px;
+    left: 250px;
     background-color: var(--panel-color);
     min-height: 100vh;
-    width: calc(100% - 450px);
+    width: calc(100% - 250px);
     padding: 10px 14px;
     transition: var(--tran-05);
 }
