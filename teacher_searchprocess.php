@@ -62,6 +62,9 @@
                     // found a string
                     $sqlquery1 = "SELECT * FROM student WHERE (st_name LIKE '%$search%')";
                     $returnobj1 = $conn->query($sqlquery1);
+
+                    $sqlquery2 = "SELECT * FROM post_teacher WHERE (t_name LIKE '%$search%')";
+                    $returnobj2 = $conn->query($sqlquery2);
                     
                     if($returnobj1->rowCount()==0){
                         ///no data found
@@ -71,10 +74,6 @@
                         // st_id, st_username, st_name, st_email, st_dept
                         $searchdata=$returnobj1->fetchAll();
                         foreach($searchdata AS $row){
-                            echo $row['st_username'];
-                            echo $row['st_name'];
-                            echo $row['st_email'];
-                            echo $row['st_dept'];
                             ?>  
                                 <div class="temp">
                                     <div class="ui card postbox">
@@ -84,6 +83,37 @@
                                             <div class="header" id="author_name"><?php echo $row['st_username'];?> </div>
                                             <div class="description">
                                                 <p id="post_desc"><?php echo $row['st_email'];?> | Dept: <?php echo $row['st_dept'];?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php
+                        }
+                    }
+                    
+                    if($returnobj2->rowCount()==0){
+                        // do nothing
+                    }
+                    else{
+                        //tpost_id,t_username,t_name,tpost_title,tpost_desc
+                        ?>
+                            <span class="spaceboxv"></span>
+                            <span class="spaceboxv"></span>
+                            <h1 class="people">Posts</h1>
+                        <?php
+
+                        $searchdata2=$returnobj2->fetchAll();
+                        foreach($searchdata2 AS $row){
+                            ?>  
+                                <div class="temp">
+                                    <div class="ui card postbox">
+                                        <div class="content">
+                                            <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
+                                            <div class="header" id="post_title"><?php echo $row['tpost_title'];?></div>
+                                            <div class="header" id="author_name"><?php echo $row['t_name'];?> |Author</div>
+
+                                            <div class="description">
+                                                <p id="post_desc"><?php echo $row['tpost_desc'];?></p>
                                             </div>
                                         </div>
                                     </div>
