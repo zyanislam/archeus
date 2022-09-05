@@ -128,7 +128,7 @@
 
                 <div class="contentbox">
 
-                    <form action="newpost_process.php" method="POST" enctype="multipart/form-data">
+                    <form action="teacher_newpostprocess.php" method="POST" enctype="multipart/form-data">
 
                         <div class="ui card newpostbox">
 
@@ -138,7 +138,7 @@
 
                             <span class="spaceboxv"></span>
 
-                            <textarea class="form-control" placeholder="Describe The Opportunity For The Students" id="newpost" style="height: 80px;"></textarea>
+                            <textarea class="form-control" placeholder="Describe The Opportunity For The Students" name="newpost" id="newpost" style="height: 80px;"></textarea>
 
                             <span class="spaceboxv2"></span>
 

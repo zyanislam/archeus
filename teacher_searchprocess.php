@@ -38,7 +38,6 @@
         <span class="spaceboxv"></span> <span class="spaceboxv"></span>
         <span class="spaceboxv"></span>
         <span class="spaceboxv"></span>
-        <h1 class="people">People</h1>
 
         <!-- search backend here -->
         <?php
@@ -68,10 +67,14 @@
                     
                     if($returnobj1->rowCount()==0){
                         ///no data found
-                        echo"No data found"; 
+                        ?>
+                        <h2 class="no_data"><?php echo"No data found"; ?></h2>
+                        <?php
                     }
                     else{
                         // st_id, st_username, st_name, st_email, st_dept
+                        ?> <h1 class="people">People</h1> <?php
+
                         $searchdata=$returnobj1->fetchAll();
                         foreach($searchdata AS $row){
                             ?>  

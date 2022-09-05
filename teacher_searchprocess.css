@@ -505,3 +505,7 @@ body.dark .home .text{
     flex-direction: column;
     align-items: center;
 }
+
+.no_data{
+    color: white !important;
+}
