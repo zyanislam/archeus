@@ -30,22 +30,22 @@
                         <span class="link-name">Home</span>
                     </a></li>
                 <li><a href="#">
-                        <i class='bx bxs-group' ></i>
+                        <i class='bx bxs-group'></i>
                         <span class="link-name">Students</span>
                     </a></li>
                 <li><a href="#">
-                        <i class='bx bxs-user' ></i>
+                        <i class='bx bxs-user'></i>
                         <span class="link-name">Teachers</span>
                     </a></li>
                 <li><a href="#">
-                    <i class='bx bx-plus-circle'></i>
+                        <i class='bx bx-plus-circle'></i>
                         <span class="link-name">Create Teacher Account</span>
                     </a></li>
             </ul>
 
             <ul class="logout-mode">
                 <li><a href="#">
-                        <i class='bx bx-log-out' ></i>
+                        <i class='bx bx-log-out'></i>
                         <span class="link-name">Logout</span>
                     </a></li>
             </ul>
@@ -54,38 +54,40 @@
 
     <section class="dashboard">
         <div class="top">
-            
+
         </div>
 
         <div class="dash-content">
             <div class="overview">
                 <div class="title">
-                    <i class='bx bxs-dashboard' ></i>
+                    <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
                 </div>
 
                 <div class="boxes">
                     <div class="box box1">
-                        <i class='bx bx-male-female' ></i>
+                        <i class='bx bx-male-female'></i>
                         <span class="text">Total Students</span>
                         <span class="number"></span>
                     </div>
                     <div class="box box2">
-                        <i class='bx bxs-user' ></i>
+                        <i class='bx bxs-user'></i>
                         <span class="text">Total Teachers</span>
                         <span class="number"></span>
                     </div>
                     <div class="box box3">
-                        <i class='bx bxs-user-account' ></i>
+                        <i class='bx bxs-user-account'></i>
                         <span class="text">Total Users</span>
                         <span class="number"></span>
                     </div>
                 </div>
             </div>
 
+            <!-- Mid Table (Teacher Table) -->
+
             <div class="activity">
                 <div class="title">
-                    <i class='bx bxs-user-badge' ></i>
+                    <i class='bx bxs-user-badge'></i>
                     <span class="text">Teachers</span>
                 </div>
 
@@ -104,6 +106,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
