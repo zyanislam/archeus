@@ -63,10 +63,13 @@
                 <div class="menu-bar">
                     <div class="menu">
 
+                    <!-- search here -->
+                    <form action="teacher_searchprocess.php" method="GET" enctype="multipart/form-data">
                         <li class="search-box">
                             <i class='bx bx-search icon'></i>
-                            <input type="text" placeholder="Search...">
+                            <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
                         </li>
+                    </form>
 
                         <ul class="menu-links">
                             <li class="nav-link" id="link_list">
@@ -149,6 +152,7 @@
 
                     <span class="spaceboxv"></span>
 
+                    <!-- here is the feed-post BackEnd Part -->
                     <?php
                     try{
                         $conn=new PDO('mysql:host=localhost:3306;dbname=archeus;','root','');
@@ -190,7 +194,8 @@
                         </script>';
                     }
                     ?>
-
+                    <!-- BackEnd ends here -->
+                    
                 </div>
 
             </div>
