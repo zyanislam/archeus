@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2022 at 07:46 PM
+-- Generation Time: Sep 05, 2022 at 10:39 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -170,7 +170,7 @@ CREATE TABLE `cv_tech_skill` (
 --
 
 CREATE TABLE `post_student` (
-  `stpost_id` int(11) NOT NULL,
+  `stpost_id` varchar(255) NOT NULL,
   `st_username` varchar(255) NOT NULL,
   `st_name` varchar(255) NOT NULL,
   `stpost_title` varchar(255) DEFAULT NULL,
@@ -182,7 +182,7 @@ CREATE TABLE `post_student` (
 --
 
 INSERT INTO `post_student` (`stpost_id`, `st_username`, `st_name`, `stpost_title`, `stpost_desc`) VALUES
-(1, '011182035', 'Anika', 'Need one member for fydp', 'All the requirements here...');
+('1', '011182035', 'Anika', 'Need one member for fydp', 'All the requirements here...');
 
 -- --------------------------------------------------------
 
@@ -191,7 +191,7 @@ INSERT INTO `post_student` (`stpost_id`, `st_username`, `st_name`, `stpost_title
 --
 
 CREATE TABLE `post_teacher` (
-  `tpost_id` int(11) NOT NULL,
+  `tpost_id` varchar(255) NOT NULL,
   `t_username` varchar(255) NOT NULL,
   `t_name` varchar(255) NOT NULL,
   `tpost_title` varchar(255) DEFAULT NULL,
@@ -204,12 +204,13 @@ CREATE TABLE `post_teacher` (
 --
 
 INSERT INTO `post_teacher` (`tpost_id`, `t_username`, `t_name`, `tpost_title`, `tpost_desc`, `tpost_datetime`) VALUES
-(1, 'AT', 'Anika Tahsin', 'Internship at BAT', '\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"', '2022-09-05 22:00:14'),
-(2, 'FAI', 'Fahad Al Islam', 'Need FrontEnd Developer at Robi', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ', '2022-09-05 22:00:14'),
-(3, 'b', 'An', 'Job Vacancy at Grameen Phone', '\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia volupt', '2022-09-05 22:00:14'),
-(4, 'X', 'Mr X', 'Fellowship at Google', '\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollit', '2022-09-05 22:00:14'),
-(5, 'AT', 'Anika Tahsin', 'Need FrontEnd Developer at UIU IT Dept', 'What I find remarkable is that this text has been the industry\'s standard dummy text ever since some printer in the 1500s took a galley of type and scrambled it to make a type specimen book; it has survived not only four centuries of letter-by-letter resetting but even the leap into electronic typesetting, essentially unchanged except for an occasional \'ing\' or \'y\' thrown in. It\'s ironic that when the then-understood Latin was scrambled, it became as incomprehensible as Greek;', '2022-09-05 22:00:14'),
-(6, 'FAI', 'Fahad Al Islam', 'Need an Intern', '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet sodales felis. Duis nunc eros, mattis at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula eu.”', '2022-09-05 22:04:44');
+('1', 'AT', 'Anika Tahsin', 'Internship at BAT', '\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"', '2022-09-05 22:00:14'),
+('2', 'FAI', 'Fahad Al Islam', 'Need FrontEnd Developer at Robi', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ', '2022-09-05 22:00:14'),
+('3', 'b', 'An', 'Job Vacancy at Grameen Phone', '\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia volupt', '2022-09-05 22:00:14'),
+('4', 'X', 'Mr X', 'Fellowship at Google', '\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollit', '2022-09-05 22:00:14'),
+('5', 'AT', 'Anika Tahsin', 'Need FrontEnd Developer at UIU IT Dept', 'What I find remarkable is that this text has been the industry\'s standard dummy text ever since some printer in the 1500s took a galley of type and scrambled it to make a type specimen book; it has survived not only four centuries of letter-by-letter resetting but even the leap into electronic typesetting, essentially unchanged except for an occasional \'ing\' or \'y\' thrown in. It\'s ironic that when the then-understood Latin was scrambled, it became as incomprehensible as Greek;', '2022-09-05 22:00:14'),
+('6', 'FAI', 'Fahad Al Islam', 'Need an Intern', '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet sodales felis. Duis nunc eros, mattis at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula eu.”', '2022-09-05 22:04:44'),
+('7', 'AT', 'Anika Tahsin', 'new post', 'acvd', '2022-09-06 12:08:20');
 
 -- --------------------------------------------------------
 
@@ -275,9 +276,8 @@ INSERT INTO `student_log` (`stlog_id`, `st_username`, `st_name`, `stlog_login_da
 
 CREATE TABLE `tags_student` (
   `id` int(11) NOT NULL,
-  `post_student_id` int(11) NOT NULL,
+  `post_student_id` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -289,9 +289,8 @@ CREATE TABLE `tags_student` (
 
 CREATE TABLE `tags_teacher` (
   `id` int(11) NOT NULL,
-  `post_teacher_id` int(11) NOT NULL,
+  `post_teacher_id` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -444,7 +443,7 @@ ALTER TABLE `student_log`
 --
 ALTER TABLE `tags_student`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk11` (`post_student_id`);
+  ADD KEY `fk13` (`post_student_id`);
 
 --
 -- Indexes for table `tags_teacher`
@@ -524,18 +523,6 @@ ALTER TABLE `cv_soft_skill`
 --
 ALTER TABLE `cv_tech_skill`
   MODIFY `tech_skill_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `post_student`
---
-ALTER TABLE `post_student`
-  MODIFY `stpost_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `post_teacher`
---
-ALTER TABLE `post_teacher`
-  MODIFY `tpost_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `student`
@@ -626,12 +613,6 @@ ALTER TABLE `post_student`
   ADD CONSTRAINT `fk9` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
 
 --
--- Constraints for table `post_teacher`
---
-ALTER TABLE `post_teacher`
-  ADD CONSTRAINT `fk10` FOREIGN KEY (`t_username`) REFERENCES `teacher` (`t_username`);
-
---
 -- Constraints for table `student_log`
 --
 ALTER TABLE `student_log`
@@ -641,7 +622,7 @@ ALTER TABLE `student_log`
 -- Constraints for table `tags_student`
 --
 ALTER TABLE `tags_student`
-  ADD CONSTRAINT `fk11` FOREIGN KEY (`post_student_id`) REFERENCES `post_student` (`stpost_id`);
+  ADD CONSTRAINT `fk13` FOREIGN KEY (`post_student_id`) REFERENCES `post_student` (`stpost_id`);
 
 --
 -- Constraints for table `tags_teacher`
