@@ -13,20 +13,39 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         //storing the informations in variables
         $tpost_title = $_POST["post_title"];
         $tpost_newpost = $_POST["newpost"];
+        $skills = $_POST['skills'];
 
         /*trying to access database and store all the information there.*/
         try {
             //creating connection with Archeus database
             include "db_connect.php";
 
+            $postID = uniqid();
+            
+
+
+            //Splitting Tags array for database input:
+
+            $arr = (explode(',',$skills));
+
+            //Inserting tags into Database:
+
+            for($i=0;$i<count($arr);$i++){
+                echo $arr[$i];
+                $insert_query = "INSERT INTO tags_teacher (id, post_teacher_id, skills) VALUES (NULL,'$postID', '$arr[$i]')";
+                mysqli_query($conn, $insert_query);   
+                }
+
+
             //every entry is valid and ready to be registered
             //database code executing
             //tpost_id,t_username,t_name,tpost_title,tpost_desc,tpost_datetime
 
+
             date_default_timezone_set('Asia/Dhaka');
             $login_date = date('y-m-d g:i:s');
 
-            $sqlquery = "INSERT INTO post_teacher(tpost_id, t_username, t_name, tpost_title, tpost_desc, tpost_datetime) VALUES(NULL, 'AT', 'Anika Tahsin', '$tpost_title', '$tpost_newpost','$login_date')";
+            $sqlquery = "INSERT INTO post_teacher(tpost_id, t_username, t_name, tpost_title, tpost_desc, tpost_datetime) VALUES($postID, 'AT', 'Anika Tahsin', '$tpost_title', '$tpost_newpost','$login_date')";
             mysqli_query($conn, $sqlquery);
 
             //after successful registration forwarding to login page
