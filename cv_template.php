@@ -96,9 +96,34 @@
                     <li><small>Description</small></li>
                     <li><a href="#">Link</a></li>
                 </ul>
-                <span class="subtitle">Soft Skills</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="line"></div>
+                <div id="diamond">
+                    <i class='bx bx-book-alt bs-xs' id="icons"></i>
+                    <h5 class="title">Projects</h5>
+                </div>
+                <div id="line"></div>
                 <ul class="text">
-                    <li>Skill name</li>
+                    <li>Project name</li>
+                    <li><small>Description</small></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="line"></div>
+                <div id="diamond">
+                    <i class='bx bx-edit-alt bx-xs' id="icons"></i>
+                    <h5 class="title">Publications</h5>
+                </div>
+                <div id="line"></div>
+                <ul class="text">
+                    <li>Title</li>
+                    <li>Year Published</li>
+                    <li><a href="#">Link</a></li>
                 </ul>
             </div>
         </div>
