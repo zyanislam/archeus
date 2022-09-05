@@ -63,13 +63,13 @@
                 <div class="menu-bar">
                     <div class="menu">
 
-                    <!-- search here -->
-                    <form action="teacher_searchprocess.php" method="GET" enctype="multipart/form-data">
-                        <li class="search-box">
-                            <i class='bx bx-search icon'></i>
-                            <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
-                        </li>
-                    </form>
+                        <!-- search here -->
+                        <form action="teacher_searchprocess.php" method="GET" enctype="multipart/form-data">
+                            <li class="search-box">
+                                <i class='bx bx-search icon'></i>
+                                <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
+                            </li>
+                        </form>
 
                         <ul class="menu-links">
                             <li class="nav-link" id="link_list">
@@ -136,18 +136,17 @@
 
                             <input class="inup" type="text" name="post_title" id="post_title" placeholder="Title Of Your Post">
 
-                            <div class="col-xs-8">
-                                <h3>Tags:</h3>
-
-                                <input type="text" id="skills" name="skills" data-role="tagsinput"  />	
-
-                            </div>
-
                             <span class="spaceboxv"></span>
 
                             <textarea class="form-control" placeholder="Describe The Opportunity For The Students" name="newpost" id="newpost" style="height: 80px;"></textarea>
 
                             <span class="spaceboxv2"></span>
+
+                            <div class="col-xs-8">
+
+                                <input class="inup" type="text" id="skills" name="skills" data-role="tagsinput" placeholder="#Tags" />
+
+                            </div>
 
                             <div align="right">
                                 <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Post</button>
@@ -161,38 +160,37 @@
 
                     <!-- here is the feed-post BackEnd Part -->
                     <?php
-                    try{
-                        $conn=new PDO('mysql:host=localhost:3306;dbname=archeus;','root','');
-                        $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                    try {
+                        $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
+                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                        $sqlquery="SELECT * FROM post_teacher";
-                        $returnobj=$conn->query($sqlquery);
+                        $sqlquery = "SELECT * FROM post_teacher";
+                        $returnobj = $conn->query($sqlquery);
 
-                        if($returnobj->rowCount()==0){
+                        if ($returnobj->rowCount() == 0) {
                             ///no data found
-                            echo"No data found"; 
-                        }
-                        else{
+                            echo "No data found";
+                        } else {
                             /*<?php echo $row['id'];?>*/
                             //tpost_id,t_username, t_name,tpost_title, tpost_desc
-                            $tabledata=$returnobj->fetchAll();
-                            foreach($tabledata AS $row){
-                                ?>
+                            $tabledata = $returnobj->fetchAll();
+                            foreach ($tabledata as $row) {
+                    ?>
                                 <div class="ui card postbox">
                                     <div class="content">
                                         <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
-                                        <div class="header" id="post_title"><?php echo $row['tpost_title'];?></div>
-                                        <div class="header" id="author_name"><?php echo $row['t_name'];?> | Author</div>
+                                        <div class="header" id="post_title"><?php echo $row['tpost_title']; ?></div>
+                                        <div class="header" id="author_name"><?php echo $row['t_name']; ?> | Author</div>
 
                                         <div class="description">
-                                            <p id="post_desc"><?php echo $row['tpost_desc'];?></p>
+                                            <p id="post_desc"><?php echo $row['tpost_desc']; ?></p>
                                         </div>
                                     </div>
                                 </div>
-                                <?php
+                    <?php
                             }
                         }
-                    }catch(PDOException $ex){
+                    } catch (PDOException $ex) {
                         //if found error forward to login page
                         // echo"<script>location.assign('welcome.php')</script>";
                         echo '<script>
@@ -202,7 +200,7 @@
                     }
                     ?>
                     <!-- BackEnd ends here -->
-                    
+
                 </div>
 
             </div>
