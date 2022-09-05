@@ -411,7 +411,7 @@ body.dark .home .text{
     flex-direction: column;
     align-items: center;
     height: auto;
-    width: 1200px;
+    width: 1700px;
     background-color: #27272c !important;
     top: 75px;
     left: 570px;
@@ -491,12 +491,12 @@ body.dark .home .text{
 }
 
 .iconbox{
-    font-size: 30px !important;
+    font-size: 45px !important;
 }
 
 .profilebox{
-    width: 500px !important;
-    height: 400px !important;
+    width: 450px !important;
+    height: 410px !important;
     background-color: white;
     border-radius: 29px !important;
     display: flex;
@@ -506,20 +506,27 @@ body.dark .home .text{
 }
 
 
-.userimg{
-    width: 150px;
-    height: 150px;
-    background-color: rgb(255, 141, 27);
-    margin-bottom: 20px;
-}
-
 #userimg{
+    width: 140px;
+    height: 140px;
+    background-color: #8178ff;
+    margin-bottom: 20px;
     border-radius: 50% !important;
 }
 
 .user_name_div{
-    font-size: 25px !important;
+    font-size: 23px !important;
     color: black;
+    text-align: center;
+    margin: 5px !important;
+}
+
+p{
+    margin: 0 !important;
+}
+
+#user_des{
+    font-size: 16px;
 }
 
 .user_misc{
@@ -528,13 +535,66 @@ body.dark .home .text{
     color: #989898;
     justify-content: space-around;
     width: 100% !important;
+    align-items: center;
+    margin-top: 20px;
 }
 
-#pointbox{
+#smallmiscbox{
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 #point_no{
-    font-size: 2em;
+    font-size: 18px;
 }
+
+#content_title{
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    color: rgb(33, 33, 33);
+}
+
+/* <div class="contentbox">
+
+<div class="ui card profilebox">
+    <div class="userimg" id="userimg">
+
+    </div>
+
+    <div class="user_name_div">
+        <p> User's Name</p>
+        <p id="user_des"> User's Designation</p>
+    </div>
+
+    <div class="user_misc">
+
+        <i class='bx bxl-linkedin-square iconbox' style='color:#45b3ff'></i>
+
+        <div id="smallmiscbox">
+            <p id="content_title">ID</p>
+            <p id="point_no">011XXXXXX/XX</p>
+        </div>
+
+
+        <div id="smallmiscbox">
+            <p id="content_title">Points</p>
+            <p id="point_no">42</p>
+        </div>
+
+    </div>
+
+    <div class="user_misc">
+
+        <p id="content_title">email: </p>
+
+        <div id="smallmiscbox">
+            <p id="content_title">Dept</p>
+            <p id="point_no">XXX</p>
+        </div>
+
+    </div>
+
+</div>
+</div> */

@@ -54,32 +54,32 @@
                 <div class="menu-bar">
                     <div class="menu">
 
-                    <!-- search here -->
-                    <form action="teacher_searchprocess.php" method="GET" enctype="multipart/form-data">
-                        <li class="search-box">
-                            <i class='bx bx-search icon'></i>
-                            <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
-                        </li>
-                    </form>
+                        <!-- search here -->
+                        <form action="teacher_searchprocess.php" method="GET" enctype="multipart/form-data">
+                            <li class="search-box">
+                                <i class='bx bx-search icon'></i>
+                                <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
+                            </li>
+                        </form>
 
                         <ul class="menu-links">
                             <li class="nav-link" id="link_list">
                                 <a href="#">
-                                    <i class='bx bxs-pencil icon' style='color:#f24e1e'></i>
+                                    <i class='bx bx-target-lock icon' style='color:#ec9e3d'></i>
                                     <span class="text nav-text" id="menuitems">All</span>
                                 </a>
                             </li>
 
                             <li class="nav-link" id="link_list">
                                 <a href="#">
-                                    <i class='bx bx-bookmarks icon' style='color:#ffffff'></i>
+                                    <i class='bx bxs-user-circle icon' style='color:#77a0ff'></i>
                                     <span class="text nav-text" id="menuitems">People</span>
                                 </a>
                             </li>
 
                             <li class="nav-link" id="link_list">
                                 <a href="#">
-                                    <i class="bx bx-check icon" style="color:#4ecb71"></i>
+                                    <i class='bx bxs-message-edit icon' style='color:#ffffff'></i>
                                     <span class="text nav-text" id="menuitems">Posts</span>
                                 </a>
                             </li>
@@ -115,26 +115,44 @@
 
                         <div class="user_name_div">
                             <p> User's Name</p>
+                            <p id="user_des"> User's Designation</p>
                         </div>
 
                         <div class="user_misc">
-                            
+
                             <i class='bx bxl-linkedin-square iconbox' style='color:#45b3ff'></i>
 
-                            <div id="pointbox">
-                                <p>Points</p>
+                            <div id="smallmiscbox">
+                                <p id="content_title">ID</p>
+                                <p id="point_no">011XXXXXX/XX</p>
+                            </div>
+
+
+                            <div id="smallmiscbox">
+                                <p id="content_title">Points</p>
                                 <p id="point_no">42</p>
                             </div>
-                        
+
                         </div>
-                       
+
+                        <div class="user_misc">
+
+                            <p id="content_title">email: </p>
+
+                            <div id="smallmiscbox">
+                                <p id="content_title">Dept</p>
+                                <p id="point_no">XXX</p>
+                            </div>
+
+                        </div>
+
                     </div>
-                    
                 </div>
 
             </div>
 
         </div>
+
     </div>
 
 
