@@ -136,6 +136,13 @@
 
                             <input class="inup" type="text" name="post_title" id="post_title" placeholder="Title Of Your Post">
 
+                            <div class="col-xs-8">
+                                <h3>Tags:</h3>
+
+                                <input type="text" id="skills" name="skills" data-role="tagsinput"  />	
+
+                            </div>
+
                             <span class="spaceboxv"></span>
 
                             <textarea class="form-control" placeholder="Describe The Opportunity For The Students" name="newpost" id="newpost" style="height: 80px;"></textarea>
