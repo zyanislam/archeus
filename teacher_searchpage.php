@@ -30,7 +30,7 @@
 
         <nav class="navbar fixed-top navbar top">
             <div id="top_title">
-                Archeus
+                <span class="home_button" onclick="window.location.href = 'teacher_home.php';">Archeus</span>
             </div>
             <div id="top_logout">
                 <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
@@ -54,32 +54,32 @@
                 <div class="menu-bar">
                     <div class="menu">
 
-                        <!-- search here -->
-                        <form action="teacher_searchprocess.php" method="GET" enctype="multipart/form-data">
-                            <li class="search-box">
-                                <i class='bx bx-search icon'></i>
-                                <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
-                            </li>
-                        </form>
+                    <!-- search here -->
+                    <form action="teacher_searchpage.php" method="GET" enctype="multipart/form-data">
+                        <li class="search-box">
+                            <i class='bx bx-search icon'></i>
+                            <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
+                        </li>
+                    </form>
 
                         <ul class="menu-links">
                             <li class="nav-link" id="link_list">
                                 <a href="#">
-                                    <i class='bx bx-target-lock icon' style='color:#ec9e3d'></i>
+                                    <i class='bx bxs-pencil icon' style='color:#f24e1e'></i>
                                     <span class="text nav-text" id="menuitems">All</span>
                                 </a>
                             </li>
 
                             <li class="nav-link" id="link_list">
                                 <a href="#">
-                                    <i class='bx bxs-user-circle icon' style='color:#77a0ff'></i>
+                                    <i class='bx bx-bookmarks icon' style='color:#ffffff'></i>
                                     <span class="text nav-text" id="menuitems">People</span>
                                 </a>
                             </li>
 
                             <li class="nav-link" id="link_list">
                                 <a href="#">
-                                    <i class='bx bxs-message-edit icon' style='color:#ffffff'></i>
+                                    <i class="bx bx-check icon" style="color:#4ecb71"></i>
                                     <span class="text nav-text" id="menuitems">Posts</span>
                                 </a>
                             </li>
@@ -108,51 +108,123 @@
 
                 <div class="contentbox">
 
-                    <div class="ui card profilebox">
-                        <div class="userimg" id="userimg">
+                    <?php
+                    /*this is the backend of teacher home search
+                    1. we will search for student , teacher profiles firstly
+                    2. secondly search for posts using post title and author
+                    */
 
-                        </div>
+                        if(isset($_GET['t_seacrh'])){
+                            $search=$_GET['t_seacrh'];
+                        }
 
-                        <div class="user_name_div">
-                            <p> User's Name</p>
-                            <p id="user_des"> User's Designation</p>
-                        </div>
+                        try{
+                            $conn=new PDO('mysql:host=localhost:3306;dbname=archeus;','root','');
+                            $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-                        <div class="user_misc">
+                            if(empty($search)){
+                                echo "<script>location.assign('teacher_home.php')</script>";
+                            }
+                            else if($search==' '){
+                                echo "<script>location.assign('teacher_searchpage.php')</script>";
+                                ?>
+                                    <h2 class="no_data"><?php echo"No data found"; ?></h2>
+                                <?php
+                            }
+                            else{
+                                // found a string
+                                $sqlquery1 = "SELECT * FROM student WHERE (st_name LIKE '%$search%')";
+                                $returnobj1 = $conn->query($sqlquery1);
 
-                            <i class='bx bxl-linkedin-square iconbox' style='color:#45b3ff'></i>
+                                $sqlquery2 = "SELECT * FROM post_teacher WHERE (t_name LIKE '%$search%') ORDER BY tpost_datetime DESC";
+                                $returnobj2 = $conn->query($sqlquery2);
 
-                            <div id="smallmiscbox">
-                                <p id="content_title">ID</p>
-                                <p id="point_no">011XXXXXX/XX</p>
-                            </div>
+                                if($returnobj1->rowCount()==0){
+                                    ///no data found
+                                    ?>
+                                    <h2 class="no_data"><?php echo"No data found"; ?></h2>
+                                    <?php
+                                }
+                                else{
+                                    // st_id, st_username, st_name, st_email, st_dept
+                                    ?> <h1 class="people">People</h1> <?php
+            
+                                    $searchdata=$returnobj1->fetchAll();
+                                    foreach($searchdata AS $row){
+                                        ?>  
+                                        <!-- here -->
+                                        <div class="ui card profilebox">
+                                            <div class="userimg" id="userimg">
+                                            </div>
+                                            <div class="user_name_div">
+                                                <p><?php echo $row['st_name'];?></p>
+                                            </div>
+                                            <div class="user_misc">
+                                                <div id="pointbox">
+                                                    <p><?php echo $row['st_username'];?> | <?php echo $row['st_dept'];?></p>
+                                                    <p><?php echo $row['st_email'];?></p>
+                                                    
+                                                </div>
+                                                <i class='bx bxl-linkedin-square iconbox' id="pointbox" style='color:#45b3ff'></i>
+                                                <div id="pointbox">
+                                                    <p>Points</p>
+                                                    <p id="point_no"><?php echo $row['st_point'];?></p>
+                                                </div>                   
+                                            </div>                     
+                                        </div>
+                                        <!-- here -->
+                                        <?php
+                                    }
+                                }
 
+                                if($returnobj2->rowCount()==0){
+                                    // do nothing
+                                }
+                                else{
+                                    //tpost_id,t_username,t_name,tpost_title,tpost_desc
+                                    ?>
+                                        <span class="spaceboxv"></span>
+                                        <span class="spaceboxv"></span>
+                                        <h1 class="people">Posts</h1>
+                                    <?php
+            
+                                    $searchdata2=$returnobj2->fetchAll();
+                                    foreach($searchdata2 AS $row){
+                                        ?>  
+                                            <div class="temp">
+                                                <div class="ui card postbox">
+                                                    <div class="content">
+                                                        <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
+                                                        <div class="header" id="post_title"><?php echo $row['tpost_title'];?></div>
+                                                        <div class="header" id="author_name"><?php echo $row['t_name'];?> | Author</div>
+            
+                                                        <div class="description">
+                                                            <p id="post_desc"><?php echo $row['tpost_desc'];?></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="spaceboxv2"></span>
+                                        <?php
+                                    }
+                                }
+                            }
+                        }catch(PDOException $ex){
+                                //if found error forward to login page
+                                // echo"<script>location.assign('welcome.php')</script>";
+                                echo '<script>
+                                alert("Found error");
+                                window.location = "teacher_home.php";
+                                </script>';
+                        }
+                    ?>
+                    <!-- backend ends here -->
 
-                            <div id="smallmiscbox">
-                                <p id="content_title">Points</p>
-                                <p id="point_no">42</p>
-                            </div>
-
-                        </div>
-
-                        <div class="user_misc">
-
-                            <p id="content_title">email: </p>
-
-                            <div id="smallmiscbox">
-                                <p id="content_title">Dept</p>
-                                <p id="point_no">XXX</p>
-                            </div>
-
-                        </div>
-
-                    </div>
                 </div>
 
             </div>
 
         </div>
-
     </div>
 
 

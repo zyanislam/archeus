@@ -492,4 +492,12 @@ body.dark .home .text{
     font-size: 30px !important;
 }
 
+.home_button{
+    cursor: pointer;
+    
+}
 
+#skills{
+    color: black !important;
+    background-color:#695CFE !important;
+}

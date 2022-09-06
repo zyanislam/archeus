@@ -408,3 +408,8 @@ body.dark .home .text{
 #textline{
     color: white;
 }
+
+.home_button{
+    cursor: pointer;
+    
+}

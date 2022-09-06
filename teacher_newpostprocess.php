@@ -21,9 +21,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             include "db_connect.php";
 
             $postID = uniqid();
+
+            //every entry is valid and ready to be registered
+            //database code executing
+            //tpost_id,t_username,t_name,tpost_title,tpost_desc,tpost_datetime
+
+            date_default_timezone_set('Asia/Dhaka');
+            $post_date = date('y-m-d g:i:s');
+
+            $sqlquery = "INSERT INTO post_teacher(tpost_id, t_username, t_name, tpost_title, tpost_desc, tpost_datetime) VALUES('$postID', 'AT', 'Anika Tahsin', '$tpost_title', '$tpost_newpost','$post_date')";
+            mysqli_query($conn, $sqlquery);
+
             
-
-
             //Splitting Tags array for database input:
 
             $arr = (explode(',',$skills));
@@ -32,21 +41,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
             for($i=0;$i<count($arr);$i++){
                 echo $arr[$i];
-                $insert_query = "INSERT INTO tags_teacher (id, post_teacher_id, skills) VALUES (NULL,'$postID', '$arr[$i]')";
+                $insert_query = "INSERT INTO tags_teacher (id, post_teacher_id, tag_name, created_at) VALUES (NULL,'$postID', '$arr[$i]','$post_date')";
                 mysqli_query($conn, $insert_query);   
-                }
-
-
-            //every entry is valid and ready to be registered
-            //database code executing
-            //tpost_id,t_username,t_name,tpost_title,tpost_desc,tpost_datetime
-
-
-            date_default_timezone_set('Asia/Dhaka');
-            $login_date = date('y-m-d g:i:s');
-
-            $sqlquery = "INSERT INTO post_teacher(tpost_id, t_username, t_name, tpost_title, tpost_desc, tpost_datetime) VALUES($postID, 'AT', 'Anika Tahsin', '$tpost_title', '$tpost_newpost','$login_date')";
-            mysqli_query($conn, $sqlquery);
+            }
 
             //after successful registration forwarding to login page
             echo "<script>location.assign('teacher_home.php')</script>";

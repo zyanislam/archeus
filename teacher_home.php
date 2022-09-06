@@ -15,13 +15,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+    <script src="custom_tags_input.js"></script>
     <title>Teacher Home | Archeus</title>
 </head>
 
@@ -30,11 +35,12 @@
 
         <nav class="navbar fixed-top navbar top">
             <div id="top_title">
-                Archeus
+                <span class="home_button" onclick="window.location.href = 'teacher_home.php';">Archeus</span>
             </div>
             <div id="top_logout">
                 <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
             </div>
+            
         </nav>
 
         <!-- <div class="top">
@@ -64,7 +70,7 @@
                     <div class="menu">
 
                         <!-- search here -->
-                        <form action="teacher_searchprocess.php" method="GET" enctype="multipart/form-data">
+                        <form action="teacher_searchpage.php" method="GET" enctype="multipart/form-data">
                             <li class="search-box">
                                 <i class='bx bx-search icon'></i>
                                 <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
@@ -142,10 +148,9 @@
 
                             <span class="spaceboxv2"></span>
 
+                            <label class="col-xs-3 control-label"><h2>Tags:</h2></label>
                             <div class="col-xs-8">
-
-                                <input class="inup" type="text" id="skills" name="skills" data-role="tagsinput" placeholder="#Tags" />
-
+                                <input type="text" id="skills" name="skills" data-role="tagsinput"  />				
                             </div>
 
                             <div align="right">
@@ -164,7 +169,7 @@
                         $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                        $sqlquery = "SELECT * FROM post_teacher";
+                        $sqlquery = "SELECT * FROM post_teacher ORDER BY tpost_datetime DESC";
                         $returnobj = $conn->query($sqlquery);
 
                         if ($returnobj->rowCount() == 0) {
