@@ -29,7 +29,7 @@
     <div class="layout">
         <div class="top">
             <div id="top_title">
-                Archeus
+                <span class="home_button" onclick="window.location.href = 'student_home.php';">Archeus</span>
             </div>
 
             <div id="top_logout">
@@ -90,7 +90,7 @@
                             <li class="nav-link" id="link_list">
                                 <a href="#">
                                     <i class='bx bx-message-square-dots icon' style='color:#ffffff'></i>
-                                    <span class="text nav-text" id="menuitems">View CV</span>
+                                    <span class="text nav-text" id="menuitems" onclick="window.location.href = 'cv_template.php';">View CV</span>
                                 </a>
                             </li>
 
