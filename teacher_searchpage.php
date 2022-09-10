@@ -131,18 +131,26 @@
                             <?php
                         } else {
                             // found a string
-                            $sqlquery1 = "SELECT * FROM student WHERE (st_name LIKE '%$search%')";
+                            $sqlquery1 = "SELECT * FROM student WHERE (st_name LIKE '%$search%') OR (st_username LIKE '%$search%') OR (st_email LIKE '%$search%')";
                             $returnobj1 = $conn->query($sqlquery1);
 
-                            $sqlquery2 = "SELECT * FROM post_teacher WHERE (t_name LIKE '%$search%') ORDER BY tpost_datetime DESC";
+                            // $sqlquery3 = "SELECT * FROM teacher WHERE (t_name LIKE '%$search%') OR (t_username LIKE '%$search%') OR (t_email LIKE '%$search%')";
+                            // $returnobj3 = $conn->query($sqlquery3);
+
+                            $sqlquery2 = "SELECT * FROM post_teacher WHERE (t_name LIKE '%$search%') OR (t_username LIKE '%$search%') OR (tpost_title LIKE '%$search%') ORDER BY tpost_datetime DESC";
                             $returnobj2 = $conn->query($sqlquery2);
 
-                            if ($returnobj1->rowCount() == 0) {
+                            // $sqlquery4 = "SELECT * FROM post_student WHERE (st_name LIKE '%$search%') OR (st_username LIKE '%$search%') OR (stpost_title LIKE '%$search%') ORDER BY stpost_datetime DESC";
+                            // $returnobj4 = $conn->query($sqlquery4);
+
+                            if ($returnobj1->rowCount() == 0 && $returnobj2->rowCount() == 0 && $returnobj3->rowCount() == 0) {
                                 ///no data found
-                            ?>
-                                <h2 class="no_data"><?php echo "No data found"; ?></h2>
-                            <?php
-                            } else {
+                                ?><h2 class="no_data"><?php echo "No data found"; ?></h2><?php
+                            } 
+                            else if($returnobj1->rowCount() == 0){
+                                // do nothing
+                            }
+                            else {
                                 // st_id, st_username, st_name, st_email, st_dept
                             ?> <h1 class="people">People</h1>
                                 <?php
@@ -181,26 +189,6 @@
 
                                     <span class="spaceboxv2"></span>
 
-                                    <!-- <div class="ui card profilebox">
-                                        <div class="userimg" id="userimg">
-                                        </div>
-                                        <div class="user_name_div">
-                                            <p><?php echo $row['st_name']; ?></p>
-                                        </div>
-                                        <div class="user_misc">
-                                            <div id="pointbox">
-                                                <p><?php echo $row['st_username']; ?> | <?php echo $row['st_dept']; ?></p>
-                                                <p><?php echo $row['st_email']; ?></p>
-
-                                            </div>
-                                            <i class='bx bxl-linkedin-square iconbox' id="pointbox" style='color:#45b3ff'></i>
-                                            <div id="pointbox">
-                                                <p>Points</p>
-                                                <p id="point_no"><?php echo $row['st_point']; ?></p>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <!-- here -->
                                 <?php
                                 }
                             }
