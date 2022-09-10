@@ -76,7 +76,16 @@
                         <br>
 
                         <div class="field">
-                            <input class="inup" type="text" placeholder="Designation" name="t_des" id="t_des">
+                            <select class="inup_ddd" name="t_des" id="t_dept">
+                                <option value="">Designation</option>
+                                <option value="Vice Chancellor">Vice Chancellor</option>
+                                <option value="Pro-Vice Chancellor">Pro-Vice Chancellor</option>
+                                <option value="Professor">Professor</option>
+                                <option value="Associate Professor">Associate Professor</option>
+                                <option value="Assistant Professor">Assistant Professor</option>
+                                <option value="Lecturer">Lecturer</option>
+                            </select>
+                            <!-- <input class="inup" type="text" placeholder="Designation" name="t_des" id="t_des"> -->
                         </div>
 
                         <br>
