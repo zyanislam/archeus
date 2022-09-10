@@ -39,14 +39,14 @@
                     </a></li>
                 <li><a href="#">
                         <i class='bx bx-plus-circle'></i>
-                        <span class="link-name">Create Teacher Account</span>
+                        <span class="link-name" onclick="window.location.href = 'teacher_signup.php';">Create Teacher Account</span>
                     </a></li>
             </ul>
 
             <ul class="logout-mode">
                 <li><a href="#">
                         <i class='bx bx-log-out'></i>
-                        <span class="link-name">Logout</span>
+                        <span class="link-name" onclick="window.location.href = 'admin_logoutprocess.php';">Logout</span>
                     </a></li>
             </ul>
         </div>
@@ -63,24 +63,51 @@
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
                 </div>
+                <!-- Main content box here -->
+                <?php
+                try{
+                    include "db_connect.php";
+                    // total student
+                    $sqlquery1="SELECT COUNT(*) FROM student";
+                    $result1 =mysqli_query($conn, $sqlquery1);
+                    $row1 = mysqli_fetch_assoc($result1);
+                    foreach($row1 as $x){
+                        $total_student = $x;
+                    }
+                    // total teacher
+                    $sqlquery2="SELECT COUNT(*) FROM teacher";
+                    $result2 =mysqli_query($conn, $sqlquery2);
+                    $row2 = mysqli_fetch_assoc($result2);
+                    foreach($row2 as $x){
+                        $total_teacher = $x;
+                    }
+                    // total user
+                    $total_user = $total_student + $total_teacher;
 
-                <div class="boxes">
-                    <div class="box box1">
-                        <i class='bx bx-male-female'></i>
-                        <span class="text">Total Students</span>
-                        <span class="number"></span>
-                    </div>
-                    <div class="box box2">
-                        <i class='bx bxs-user'></i>
-                        <span class="text">Total Teachers</span>
-                        <span class="number"></span>
-                    </div>
-                    <div class="box box3">
-                        <i class='bx bxs-user-account'></i>
-                        <span class="text">Total Users</span>
-                        <span class="number"></span>
-                    </div>
-                </div>
+                ?>
+                    <div class="boxes">
+                        <div class="box box1">
+                            <i class='bx bx-male-female'></i>
+                            <span class="text">Total Students</span>
+                            <span class="number"><?php echo $total_student; ?></span>
+                        </div>
+                        <div class="box box2">
+                            <i class='bx bxs-user'></i>
+                            <span class="text">Total Teachers</span>
+                            <span class="number"><?php echo $total_teacher; ?></span>
+                        </div>
+                        <div class="box box3">
+                            <i class='bx bxs-user-account'></i>
+                            <span class="text">Total Users</span>
+                            <span class="number"><?php echo $total_user; ?></span>
+                        </div>
+                    </div>                   
+                <?php
+                }catch (PDOException $ex) {
+                    echo '<script>alert("Found error");window.location = "welcome.php";</script>';
+                }
+                ?>
+                
             </div>
 
             <!-- Mid Table (Teacher Table) -->
