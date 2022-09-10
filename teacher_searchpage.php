@@ -134,14 +134,14 @@
                             $sqlquery1 = "SELECT * FROM student WHERE (st_name LIKE '%$search%') OR (st_username LIKE '%$search%') OR (st_email LIKE '%$search%')";
                             $returnobj1 = $conn->query($sqlquery1);
 
-                            // $sqlquery3 = "SELECT * FROM teacher WHERE (t_name LIKE '%$search%') OR (t_username LIKE '%$search%') OR (t_email LIKE '%$search%')";
-                            // $returnobj3 = $conn->query($sqlquery3);
+                            $sqlquery3 = "SELECT * FROM teacher WHERE (t_name LIKE '%$search%') OR (t_username LIKE '%$search%') OR (t_email LIKE '%$search%')";
+                            $returnobj3 = $conn->query($sqlquery3);
 
                             $sqlquery2 = "SELECT * FROM post_teacher WHERE (t_name LIKE '%$search%') OR (t_username LIKE '%$search%') OR (tpost_title LIKE '%$search%') ORDER BY tpost_datetime DESC";
                             $returnobj2 = $conn->query($sqlquery2);
 
-                            // $sqlquery4 = "SELECT * FROM post_student WHERE (st_name LIKE '%$search%') OR (st_username LIKE '%$search%') OR (stpost_title LIKE '%$search%') ORDER BY stpost_datetime DESC";
-                            // $returnobj4 = $conn->query($sqlquery4);
+                            $sqlquery4 = "SELECT * FROM post_student WHERE (st_name LIKE '%$search%') OR (st_username LIKE '%$search%') OR (stpost_title LIKE '%$search%') ORDER BY stpost_datetime DESC";
+                            $returnobj4 = $conn->query($sqlquery4);
 
                             if ($returnobj1->rowCount() == 0 && $returnobj2->rowCount() == 0 && $returnobj3->rowCount() == 0) {
                                 ///no data found
