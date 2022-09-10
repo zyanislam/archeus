@@ -54,13 +54,13 @@
                 <div class="menu-bar">
                     <div class="menu">
 
-                    <!-- search here -->
-                    <form action="teacher_searchpage.php" method="GET" enctype="multipart/form-data">
-                        <li class="search-box">
-                            <i class='bx bx-search icon'></i>
-                            <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
-                        </li>
-                    </form>
+                        <!-- search here -->
+                        <form action="teacher_searchpage.php" method="GET" enctype="multipart/form-data">
+                            <li class="search-box">
+                                <i class='bx bx-search icon'></i>
+                                <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
+                            </li>
+                        </form>
 
                         <ul class="menu-links">
                             <li class="nav-link" id="link_list">
@@ -114,109 +114,136 @@
                     2. secondly search for posts using post title and author
                     */
 
-                        if(isset($_GET['t_seacrh'])){
-                            $search=$_GET['t_seacrh'];
-                        }
+                    if (isset($_GET['t_seacrh'])) {
+                        $search = $_GET['t_seacrh'];
+                    }
 
-                        try{
-                            $conn=new PDO('mysql:host=localhost:3306;dbname=archeus;','root','');
-                            $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                    try {
+                        $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
+                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                            if(empty($search)){
-                                echo "<script>location.assign('teacher_home.php')</script>";
-                            }
-                            else if($search==' '){
-                                echo "<script>location.assign('teacher_searchpage.php')</script>";
-                                ?>
-                                    <h2 class="no_data"><?php echo"No data found"; ?></h2>
+                        if (empty($search)) {
+                            echo "<script>location.assign('teacher_home.php')</script>";
+                        } else if ($search == ' ') {
+                            echo "<script>location.assign('teacher_searchpage.php')</script>";
+                    ?>
+                            <h2 class="no_data"><?php echo "No data found"; ?></h2>
+                            <?php
+                        } else {
+                            // found a string
+                            $sqlquery1 = "SELECT * FROM student WHERE (st_name LIKE '%$search%')";
+                            $returnobj1 = $conn->query($sqlquery1);
+
+                            $sqlquery2 = "SELECT * FROM post_teacher WHERE (t_name LIKE '%$search%') ORDER BY tpost_datetime DESC";
+                            $returnobj2 = $conn->query($sqlquery2);
+
+                            if ($returnobj1->rowCount() == 0) {
+                                ///no data found
+                            ?>
+                                <h2 class="no_data"><?php echo "No data found"; ?></h2>
+                            <?php
+                            } else {
+                                // st_id, st_username, st_name, st_email, st_dept
+                            ?> <h1 class="people">People</h1>
                                 <?php
-                            }
-                            else{
-                                // found a string
-                                $sqlquery1 = "SELECT * FROM student WHERE (st_name LIKE '%$search%')";
-                                $returnobj1 = $conn->query($sqlquery1);
+                                $searchdata = $returnobj1->fetchAll();
+                                foreach ($searchdata as $row) {
+                                ?>
+                                    <!-- here -->
 
-                                $sqlquery2 = "SELECT * FROM post_teacher WHERE (t_name LIKE '%$search%') ORDER BY tpost_datetime DESC";
-                                $returnobj2 = $conn->query($sqlquery2);
-
-                                if($returnobj1->rowCount()==0){
-                                    ///no data found
-                                    ?>
-                                    <h2 class="no_data"><?php echo"No data found"; ?></h2>
-                                    <?php
-                                }
-                                else{
-                                    // st_id, st_username, st_name, st_email, st_dept
-                                    ?> <h1 class="people">People</h1> <?php
-            
-                                    $searchdata=$returnobj1->fetchAll();
-                                    foreach($searchdata AS $row){
-                                        ?>  
-                                        <!-- here -->
+                                    <div class="row-md-4">
                                         <div class="ui card profilebox">
                                             <div class="userimg" id="userimg">
                                             </div>
                                             <div class="user_name_div">
-                                                <p><?php echo $row['st_name'];?></p>
+                                                <p><?php echo $row['st_name']; ?></p>
                                             </div>
+                                            <div>
+                                                <label id="emaillabel"><em>(<?php echo $row['st_email']; ?>)</em></label>
+                                            </div>
+                                            <span class="spaceboxv"></span>
                                             <div class="user_misc">
                                                 <div id="pointbox">
-                                                    <p><?php echo $row['st_username'];?> | <?php echo $row['st_dept'];?></p>
-                                                    <p><?php echo $row['st_email'];?></p>
-                                                    
+                                                    <label id="point_no">ID</label>
+                                                    <span class="spaceboxv"></span>
+                                                    <label><?php echo $row['st_username']; ?></label>
                                                 </div>
+
                                                 <i class='bx bxl-linkedin-square iconbox' id="pointbox" style='color:#45b3ff'></i>
                                                 <div id="pointbox">
-                                                    <p>Points</p>
-                                                    <p id="point_no"><?php echo $row['st_point'];?></p>
-                                                </div>                   
-                                            </div>                     
-                                        </div>
-                                        <!-- here -->
-                                        <?php
-                                    }
-                                }
-
-                                if($returnobj2->rowCount()==0){
-                                    // do nothing
-                                }
-                                else{
-                                    //tpost_id,t_username,t_name,tpost_title,tpost_desc
-                                    ?>
-                                        <span class="spaceboxv"></span>
-                                        <span class="spaceboxv"></span>
-                                        <h1 class="people">Posts</h1>
-                                    <?php
-            
-                                    $searchdata2=$returnobj2->fetchAll();
-                                    foreach($searchdata2 AS $row){
-                                        ?>  
-                                            <div class="temp">
-                                                <div class="ui card postbox">
-                                                    <div class="content">
-                                                        <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
-                                                        <div class="header" id="post_title"><?php echo $row['tpost_title'];?></div>
-                                                        <div class="header" id="author_name"><?php echo $row['t_name'];?> | Author</div>
-            
-                                                        <div class="description">
-                                                            <p id="post_desc"><?php echo $row['tpost_desc'];?></p>
-                                                        </div>
-                                                    </div>
+                                                    <label id="point_no">Points</label>
+                                                    <span class="spaceboxv"></span>
+                                                    <label><?php echo $row['st_point']; ?></label>
                                                 </div>
                                             </div>
-                                            <span class="spaceboxv2"></span>
-                                        <?php
-                                    }
+                                        </div>
+                                    </div>
+
+                                    <span class="spaceboxv2"></span>
+
+                                    <!-- <div class="ui card profilebox">
+                                        <div class="userimg" id="userimg">
+                                        </div>
+                                        <div class="user_name_div">
+                                            <p><?php echo $row['st_name']; ?></p>
+                                        </div>
+                                        <div class="user_misc">
+                                            <div id="pointbox">
+                                                <p><?php echo $row['st_username']; ?> | <?php echo $row['st_dept']; ?></p>
+                                                <p><?php echo $row['st_email']; ?></p>
+
+                                            </div>
+                                            <i class='bx bxl-linkedin-square iconbox' id="pointbox" style='color:#45b3ff'></i>
+                                            <div id="pointbox">
+                                                <p>Points</p>
+                                                <p id="point_no"><?php echo $row['st_point']; ?></p>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <!-- here -->
+                                <?php
                                 }
                             }
-                        }catch(PDOException $ex){
-                                //if found error forward to login page
-                                // echo"<script>location.assign('welcome.php')</script>";
-                                echo '<script>
+
+                            if ($returnobj2->rowCount() == 0) {
+                                // do nothing
+                            } else {
+                                //tpost_id,t_username,t_name,tpost_title,tpost_desc
+                                ?>
+                                <span class="spaceboxv"></span>
+                                <span class="spaceboxv"></span>
+                                <h1 class="people">Posts</h1>
+                                <?php
+
+                                $searchdata2 = $returnobj2->fetchAll();
+                                foreach ($searchdata2 as $row) {
+                                ?>
+                                    <div class="temp">
+                                        <div class="ui card postbox">
+                                            <div class="content">
+                                                <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
+                                                <div class="header" id="post_title"><?php echo $row['tpost_title']; ?></div>
+                                                <div class="header" id="author_name"><?php echo $row['t_name']; ?> | Author</div>
+
+                                                <div class="description">
+                                                    <p id="post_desc"><?php echo $row['tpost_desc']; ?></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="spaceboxv2"></span>
+                    <?php
+                                }
+                            }
+                        }
+                    } catch (PDOException $ex) {
+                        //if found error forward to login page
+                        // echo"<script>location.assign('welcome.php')</script>";
+                        echo '<script>
                                 alert("Found error");
                                 window.location = "teacher_home.php";
                                 </script>';
-                        }
+                    }
                     ?>
                     <!-- backend ends here -->
 
