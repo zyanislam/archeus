@@ -568,7 +568,7 @@ body.dark .home .text{
 }
 
 .no_data{
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
 }
 
 .home_button{
