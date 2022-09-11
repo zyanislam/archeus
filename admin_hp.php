@@ -20,26 +20,26 @@
                 <!--<img src="images/logo.png" alt="">-->
             </div>
 
-            <span class="logo_name">Admin Home</span>
+            <span class="logo_name">Archeus</span>
         </div>
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="#">
-                        <i class='bx bx-home'></i>
-                        <span class="link-name">Home</span>
+                <li><a href="admin_hp.php">
+                        <i class='bx bx-home active'></i>
+                        <span class="link-name active">Home</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="admin_student.php">
                         <i class='bx bxs-group'></i>
-                        <span class="link-name" onclick="window.location.href = 'admin_student.php';">Students</span>
+                        <span class="link-name">Students</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="admin_teacher.php">
                         <i class='bx bxs-user'></i>
                         <span class="link-name">Teachers</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="teacher_signup.php">
                         <i class='bx bx-plus-circle'></i>
-                        <span class="link-name" onclick="window.location.href = 'teacher_signup.php';">Create Teacher
+                        <span class="link-name">Create Teacher
                             Account</span>
                     </a></li>
             </ul>
