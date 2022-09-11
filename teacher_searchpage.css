@@ -390,6 +390,10 @@ body.dark .home .text{
     height: 20px;
 }
 
+.spaceboxh{
+    width: 18px;
+}
+
 .mid{
     display: flex;
     flex-direction: row;
@@ -491,8 +495,8 @@ body.dark .home .text{
 }
 
 .iconbox{
-    font-size: 46px !important;
-    margin-right: 5px;
+    font-size: 38px !important;
+    margin-right: 20px;
 }
 
 .profilebox{
@@ -504,7 +508,7 @@ body.dark .home .text{
     flex-direction: row !important;
     align-items: center;
     justify-content: center;
-    padding: 20px !important;
+    padding: 20px 40px !important;
     color: #ffffff !important;
     box-shadow: 5px 5px 20px !important;
 
@@ -512,14 +516,18 @@ body.dark .home .text{
 
 .imgdiv{
     margin: 10px 15px !important;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .infodiv{
     flex-grow: 1;
-    margin: 10px 25px !important;
+    margin: 10px 55px !important;
 }
 
 .icondiv{
+    display: flex;
     flex-direction: row;
 }
 
@@ -528,36 +536,81 @@ body.dark .home .text{
     width: 140px;
     height: 140px;
     background-color: rgb(255, 179, 179);
-    margin-bottom: 20px;
+}
+
+
+.userimg2{
+    width: 140px;
+    height: 140px;
+    background-color: rgb(127, 125, 255);
 }
 
 .user_name{
-    font-size: 28px;
+    font-size: 26px;
     font: "Poppins";
 }
 
 .user_id{
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 500;
+    color: #c3c3c3;
+}
+
+.user_des{
+    font-size: 23px;
+    font-weight: 500;
+    color: #c3c3c3;
 }
 
 .user_phone{
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 500;
 }
 
 .user_email{
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 400;
 }
 
+.user_dept{
+    font-size: 22px;
+    font-weight: 500;
+}
+
 .spanboxphone{
-    /* justify-content: center !important; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
     align-items: center !important;
-    text-align: center;
+}
+
+.spanboxroom{
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.user_room{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.user_roomno{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.emaildeptbox{
+    display: flex;
+    flex-direction: row;
 }
 
 #userimg{
+    border-radius: 50% !important;
+}
+
+#userimg2{
     border-radius: 50% !important;
 }
 
@@ -573,7 +626,6 @@ body.dark .home .text{
     justify-content: space-around;
     align-items: center;
     width: 100% !important;
-    
 }
 
 #pointbox{
@@ -614,5 +666,10 @@ body.dark .home .text{
 
 .home_button{
     cursor: pointer;
-    
+}
+
+#hrtag{
+    background-color:rgb(102, 102, 102) !important;
+    height:1.5px !important;
+    width:1200px;
 }
