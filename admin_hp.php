@@ -31,7 +31,7 @@
                     </a></li>
                 <li><a href="#">
                         <i class='bx bxs-group'></i>
-                        <span class="link-name">Students</span>
+                        <span class="link-name" onclick="window.location.href = 'admin_student.php';">Students</span>
                     </a></li>
                 <li><a href="#">
                         <i class='bx bxs-user'></i>
@@ -39,14 +39,16 @@
                     </a></li>
                 <li><a href="#">
                         <i class='bx bx-plus-circle'></i>
-                        <span class="link-name" onclick="window.location.href = 'teacher_signup.php';">Create Teacher Account</span>
+                        <span class="link-name" onclick="window.location.href = 'teacher_signup.php';">Create Teacher
+                            Account</span>
                     </a></li>
             </ul>
 
             <ul class="logout-mode">
                 <li><a href="#">
                         <i class='bx bx-log-out'></i>
-                        <span class="link-name" onclick="window.location.href = 'admin_logoutprocess.php';">Logout</span>
+                        <span class="link-name"
+                            onclick="window.location.href = 'admin_logoutprocess.php';">Logout</span>
                     </a></li>
             </ul>
         </div>
@@ -84,55 +86,73 @@
                     // total user
                     $total_user = $total_student + $total_teacher;
 
+                    // teacher list
+                    $sqlquery3="SELECT * FROM teacher";
+                    $result3 =mysqli_query($conn, $sqlquery3);
+                    // $row3 = mysqli_fetch_assoc($result3);
+
                 ?>
-                    <div class="boxes">
-                        <div class="box box1">
-                            <i class='bx bx-male-female'></i>
-                            <span class="text">Total Students</span>
-                            <span class="number"><?php echo $total_student; ?></span>
-                        </div>
-                        <div class="box box2">
-                            <i class='bx bxs-user'></i>
-                            <span class="text">Total Teachers</span>
-                            <span class="number"><?php echo $total_teacher; ?></span>
-                        </div>
-                        <div class="box box3">
-                            <i class='bx bxs-user-account'></i>
-                            <span class="text">Total Users</span>
-                            <span class="number"><?php echo $total_user; ?></span>
-                        </div>
-                    </div>                   
+                <div class="boxes">
+                    <div class="box box1">
+                        <i class='bx bx-male-female'></i>
+                        <span class="text">Total Students</span>
+                        <span class="number"><?php echo $total_student; ?></span>
+                    </div>
+                    <div class="box box2">
+                        <i class='bx bxs-user'></i>
+                        <span class="text">Total Teachers</span>
+                        <span class="number"><?php echo $total_teacher; ?></span>
+                    </div>
+                    <div class="box box3">
+                        <i class='bx bxs-user-account'></i>
+                        <span class="text">Total Users</span>
+                        <span class="number"><?php echo $total_user; ?></span>
+                    </div>
+                </div>
+
+                <!-- Mid Table (Teacher Table) -->
+
+                <div class="activity">
+                    <div class="title">
+                        <i class='bx bxs-user-badge'></i>
+                        <span class="text">Teachers</span>
+                    </div>
+
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Joined</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                foreach($result3 as $x){
+                                    ?>  
+                                        <tr>
+                                            <td><?php echo $x['t_name']; ?></td>
+                                            <td><?php echo $x['t_email']; ?></td>
+                                            <td>Joined date will be added later</td>
+                                        </tr>
+                                    <?php
+                                }
+                            ?>
+                            
+                            <!-- and so on... -->
+                        </tbody>
+                    </table>
+                </div>
                 <?php
                 }catch (PDOException $ex) {
                     echo '<script>alert("Found error");window.location = "welcome.php";</script>';
                 }
                 ?>
-                
+
             </div>
 
-            <!-- Mid Table (Teacher Table) -->
-
-            <div class="activity">
-                <div class="title">
-                    <i class='bx bxs-user-badge'></i>
-                    <span class="text">Teachers</span>
-                </div>
-
-                <div class="activity-data">
-                    <div class="data names">
-                        <span class="data-title">Name</span>
-                        <span class="data-list">Prem Shahi</span>
-                    </div>
-                    <div class="data email">
-                        <span class="data-title">Email</span>
-                        <span class="data-list">Prem Shahi</span>
-                    </div>
-                    <div class="data joined">
-                        <span class="data-title">Joined</span>
-                        <span class="data-list">Prem Shahi</span>
-                    </div>
-                </div>
-            </div>
+            
+        </div>
 
         </div>
     </section>
