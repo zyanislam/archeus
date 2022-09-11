@@ -171,8 +171,8 @@
 
                             <div>
                                 <select class="field" name="post_teacher" id="post_teacher">
-                                    <option value="">Department</option>
-                                    <option value="EEE">EEE</option>
+                                    <option value="">Teacher List</option>
+                                    <option value="AH">Abir Hasan</option>
                                 </select>
                             </div>
 
