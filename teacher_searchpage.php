@@ -143,19 +143,19 @@
                             $sqlquery4 = "SELECT * FROM post_student WHERE (st_name LIKE '%$search%') OR (st_username LIKE '%$search%') OR (stpost_title LIKE '%$search%') ORDER BY stpost_datetime DESC";
                             $returnobj4 = $conn->query($sqlquery4);
 
-                            if ($returnobj1->rowCount() == 0 && $returnobj2->rowCount() == 0 && $returnobj3->rowCount() == 0) {
+                            if ($returnobj1->rowCount() == 0 && $returnobj2->rowCount() == 0 && $returnobj3->rowCount() == 0 && $returnobj4->rowCount() == 0) {
                                 ///no data found
-                                ?><h2 class="no_data" id="no_data"><?php echo "No data found"; ?></h2><?php
+                            ?>
+                                <h2 class="no_data" id="no_data"><?php echo "No data found"; ?></h2>
+                                <?php
 
                                 // first split data using space
                                 $str = $search;
                                 $pattern = "/ /i";
                                 $splitted_data = preg_split($pattern, $str);
+                            } else {
 
-                            } 
-                            else{
-
-                                if($returnobj1->rowCount() != 0){
+                                if ($returnobj1->rowCount() != 0) {
                                     // st_id, st_username, st_name, st_email, st_dept
                                 ?> <h1 class="people">Student</h1>
                                     <?php
@@ -163,169 +163,177 @@
                                     foreach ($searchdata1 as $row) {
                                     ?>
                                         <!-- here -->
-    
-                                        <!-- <div class="row-md-4">
-                                            <div class="ui card profilebox">
-                                                <div class="userimg" id="userimg">
-                                                </div>
-                                                <div class="user_name_div">
-                                                    <p><?php echo $row['st_name']; ?></p>
-                                                </div>
-                                                <div>
-                                                    <label id="emaillabel"><em>(<?php echo $row['st_email']; ?>)</em></label>
-                                                </div>
-                                                <span class="spaceboxv"></span>
-                                                <div class="user_misc">
-                                                    <div id="pointbox">
-                                                        <label id="point_no">ID</label>
-                                                        <span class="spaceboxv"></span>
-                                                        <label><?php echo $row['st_username']; ?></label>
-                                                    </div>
-    
-                                                    <i class='bx bxl-linkedin-square iconbox' id="pointbox" style='color:#45b3ff'></i>
-                                                    <div id="pointbox">
-                                                        <label id="point_no">Points</label>
-                                                        <span class="spaceboxv"></span>
-                                                        <label><?php echo $row['st_point']; ?></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
 
                                         <div class="ui card profilebox">
-                                            <div class = "imgdiv">
+                                            <div class="imgdiv">
                                                 <div class="userimg" id="userimg">
                                                 </div>
                                             </div>
-                                            <div class = "infodiv">
 
-                                                <div class = "">
-                                                    <label class = "user_name">Fahad Al Islam hehe</label>
-                                                    <label class = "user_id"><em>(011183070)</em></label>
+                                            <div class="infodiv">
+
+                                                <div class="">
+                                                    <label class="user_name"><?php echo $row['st_name']; ?></label>
+                                                    <label class="user_id"><em>(<?php echo $row['st_username']; ?>)</em></label>
                                                 </div>
 
                                                 <div class="spaceboxv2"></div>
 
-                                                <div class = "">
-                                                    <label class = "user_email">fislam183070@bscse.uiu.ac.bd</label>
+                                                <div class="emaildeptbox">
+                                                    <label class="user_email"><?php echo $row['st_email']; ?></label>
+
+                                                    <span class="spaceboxh"></span>
+                                                    <p>|</p>
+                                                    <span class="spaceboxh"></span>
+
+                                                    <label class="user_dept"><?php echo $row['st_dept']; ?></label>
                                                 </div>
 
                                                 <div class="spaceboxv2"></div>
 
-                                                <div class = "icondiv">
+                                                <div class="icondiv">
                                                     <i class='bx bxl-linkedin-square iconbox' style='color:#45b3ff'></i>
-                                                    <i class='bx bxs-cube-alt iconbox' style='color:#b471f6'  ></i>
-                                                    <span class="spanboxphone">
-                                                        <i class='bx bxs-phone iconbox' style='color:#357ef4'  ></i>
-                                                        <label class = "user_phone">016xxxxxxxx</label>
-                                                    </span>
+                                                    <i class='bx bxs-cube-alt iconbox' style='color:#b471f6'></i>
+                                                    <div class="spanboxphone">
+                                                        <i class='bx bxs-phone iconbox' style='color:#357ef4'></i>
+                                                        <label class="user_phone"><?php echo $row['st_contact']; ?></label>
+                                                    </div>
                                                 </div>
+
                                             </div>
+
                                         </div>
-    
-                                        <span class="spaceboxv2"></span>
-    
+
+                                        <span class="spaceboxv"></span>
+
                                     <?php
                                     }
                                 }
 
-                                if($returnobj3->rowCount() != 0){
+                                if ($returnobj3->rowCount() != 0) {
                                     // st_id, st_username, st_name, st_email, st_dept
-                                ?> <h1 class="people">Teacher</h1>
+                                    ?>
+                                    <span class="spaceboxv"></span>
+                                    <span class="spaceboxv"></span>
+                                    <div id="hrtag"></div>
+                                    <h1 class="people">Teacher</h1>
+
                                     <?php
                                     $searchdata3 = $returnobj3->fetchAll();
                                     foreach ($searchdata3 as $row) {
                                     ?>
                                         <!-- here -->
-    
-                                        <div class="row-md-4">
-                                            <div class="ui card profilebox">
-                                                <div class="userimg" id="userimg">
+
+                                        <div class="ui card profilebox">
+                                            <div class="imgdiv">
+                                                <div class="userimg2" id="userimg2">
                                                 </div>
-                                                <div class="user_name_div">
-                                                    <p><?php echo $row['t_name']; ?></p>
+                                            </div>
+
+                                            <div class="infodiv">
+
+                                                <div class="">
+                                                    <label class="user_name"><?php echo $row['t_name']; ?></label>
+                                                    <label class="user_des"><em>(<?php echo $row['t_des']; ?>)</em></label>
                                                 </div>
-                                                <div>
-                                                    <label id="emaillabel"><em>(<?php echo $row['t_email']; ?>)</em></label>
+
+                                                <div class="spaceboxv2"></div>
+
+                                                <div class="emaildeptbox">
+                                                    <label class="user_email"><?php echo $row['t_email']; ?></label>
+
+                                                    <span class="spaceboxh"></span>
+                                                    <p>|</p>
+                                                    <span class="spaceboxh"></span>
+
+                                                    <label class="user_dept"><?php echo $row['t_dept']; ?></label>
+
+                                                    <span class="spaceboxh"></span>
+                                                    <p>|</p>
+                                                    <span class="spaceboxh"></span>
+
+
+                                                    <label class="user_room"><em>Room:</em></label>
+                                                    <span class="spaceboxh"></span>
+                                                    <label class="user_roomno"> <?php echo $row['t_room']; ?></label>
+
                                                 </div>
-                                                <span class="spaceboxv"></span>
-                                                <div class="user_misc">
-                                                    <div id="pointbox">
-                                                        <label id="point_no">ID</label>
-                                                        <span class="spaceboxv"></span>
-                                                        <label><?php echo $row['t_username']; ?></label>
-                                                    </div>
-    
-                                                    <i class='bx bxl-linkedin-square iconbox' id="pointbox" style='color:#45b3ff'></i>
-                                                    <div id="pointbox">
-                                                        <span class="spaceboxv"></span>
+
+                                                <div class="spaceboxv2"></div>
+
+                                                <div class="icondiv">
+                                                    <i class='bx bxl-linkedin-square iconbox' style='color:#45b3ff'></i>
+                                                    <i class='bx bxs-cube-alt iconbox' style='color:#b471f6'></i>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <span class="spaceboxv2"></span>
+
+                                    <?php
+                                    }
+                                }
+
+                                if ($returnobj2->rowCount() != 0) {
+                                    ?>
+
+                                    <span class="spaceboxv"></span>
+                                    <span class="spaceboxv"></span>
+                                    <div id="hrtag"></div>
+                                    <h1 class="people">Teacher Posts</h1>
+                                    <?php
+
+                                    $searchdata2 = $returnobj2->fetchAll();
+                                    foreach ($searchdata2 as $row) {
+                                    ?>
+                                        <div class="temp">
+                                            <div class="ui card postbox">
+                                                <div class="content">
+                                                    <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
+                                                    <div class="header" id="post_title"><?php echo $row['tpost_title']; ?></div>
+                                                    <div class="header" id="author_name"><?php echo $row['t_name']; ?> | Author</div>
+
+                                                    <div class="description">
+                                                        <p id="post_desc"><?php echo $row['tpost_desc']; ?></p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-    
                                         <span class="spaceboxv2"></span>
-    
                                     <?php
                                     }
                                 }
 
-                                if($returnobj2->rowCount() != 0){
+                                if ($returnobj4->rowCount() != 0) {
                                     ?>
-                                        <span class="spaceboxv"></span>
-                                        <span class="spaceboxv"></span>
-                                        <h1 class="people">Teacher Posts</h1>
-                                        <?php
+                                    <span class="spaceboxv"></span>
+                                    <span class="spaceboxv"></span>
+                                    <div id="hrtag"></div>
+                                    <h1 class="people">Student Posts</h1>
+                                    <?php
 
-                                        $searchdata2 = $returnobj2->fetchAll();
-                                        foreach ($searchdata2 as $row) {
-                                        ?>
-                                            <div class="temp">
-                                                <div class="ui card postbox">
-                                                    <div class="content">
-                                                        <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
-                                                        <div class="header" id="post_title"><?php echo $row['tpost_title']; ?></div>
-                                                        <div class="header" id="author_name"><?php echo $row['t_name']; ?> | Author</div>
+                                    $searchdata4 = $returnobj4->fetchAll();
+                                    foreach ($searchdata4 as $row) {
+                                    ?>
+                                        <div class="temp">
+                                            <div class="ui card postbox">
+                                                <div class="content">
+                                                    <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
+                                                    <div class="header" id="post_title"><?php echo $row['stpost_title']; ?></div>
+                                                    <div class="header" id="author_name"><?php echo $row['st_name']; ?> | Author</div>
 
-                                                        <div class="description">
-                                                            <p id="post_desc"><?php echo $row['tpost_desc']; ?></p>
-                                                        </div>
+                                                    <div class="description">
+                                                        <p id="post_desc"><?php echo $row['stpost_desc']; ?></p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <span class="spaceboxv2"></span>
-                                    <?php
+                                        </div>
+                                        <span class="spaceboxv2"></span>
+                    <?php
                                     }
                                 }
-
-                                if($returnobj4->rowCount() != 0){
-                                    ?>
-                                        <span class="spaceboxv"></span>
-                                        <span class="spaceboxv"></span>
-                                        <h1 class="people">Student Posts</h1>
-                                        <?php
-
-                                        $searchdata4 = $returnobj4->fetchAll();
-                                        foreach ($searchdata4 as $row) {
-                                        ?>
-                                            <div class="temp">
-                                                <div class="ui card postbox">
-                                                    <div class="content">
-                                                        <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
-                                                        <div class="header" id="post_title"><?php echo $row['stpost_title']; ?></div>
-                                                        <div class="header" id="author_name"><?php echo $row['st_name']; ?> | Author</div>
-
-                                                        <div class="description">
-                                                            <p id="post_desc"><?php echo $row['stpost_desc']; ?></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <span class="spaceboxv2"></span>
-                                    <?php
-                                    }
-                                }
-
                             }
                         }
                     } catch (PDOException $ex) {
