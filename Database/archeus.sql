@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2022 at 08:09 PM
+-- Generation Time: Sep 11, 2022 at 09:01 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -363,6 +363,7 @@ CREATE TABLE `teacher` (
   `t_pass` varchar(255) NOT NULL,
   `t_dept` varchar(255) NOT NULL,
   `t_des` varchar(255) NOT NULL,
+  `t_room` varchar(255) NOT NULL,
   `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -370,13 +371,13 @@ CREATE TABLE `teacher` (
 -- Dumping data for table `teacher`
 --
 
-INSERT INTO `teacher` (`t_id`, `t_username`, `t_name`, `t_email`, `t_pass`, `t_dept`, `t_des`, `role`) VALUES
-(1, 'FAI', 'Fahad Al Islam', 'fai@uiu.ac.bd', 'fai1234', 'CSE', 'Lecturer', 'teacher'),
-(2, 'AT', 'Anika Tahsin', 'at@uiu.ac.bd', '1234', 'CSE', 'Professor', 'teacher'),
-(3, 'b', 'An', 'a', '1234', 'CE', 'c', 'teacher'),
-(4, 'X', 'Mr X', 'x@gmail.com', '1234', 'CE', 'lecturer', 'teacher'),
-(10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', '1234', 'CSE', 'lecturer', 'teacher'),
-(11, 'KSM', 'Kazi Sajeed Mehrab', 'ksm@uiu.ac.bd', '1234', 'CSE', 'Lecturer', 'teacher');
+INSERT INTO `teacher` (`t_id`, `t_username`, `t_name`, `t_email`, `t_pass`, `t_dept`, `t_des`, `t_room`, `role`) VALUES
+(1, 'FAI', 'Fahad Al Islam', 'fai@uiu.ac.bd', 'fai1234', 'CSE', 'Lecturer', '201', 'teacher'),
+(2, 'AT', 'Anika Tahsin', 'at@uiu.ac.bd', '1234', 'CSE', 'Professor', '638/B', 'teacher'),
+(3, 'b', 'An', 'a', '1234', 'CE', 'c', '', 'teacher'),
+(4, 'X', 'Mr X', 'x@gmail.com', '1234', 'CE', 'lecturer', '', 'teacher'),
+(10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', '1234', 'CSE', 'lecturer', '', 'teacher'),
+(11, 'KSM', 'Kazi Sajeed Mehrab', 'ksm@uiu.ac.bd', '1234', 'CSE', 'Lecturer', '', 'teacher');
 
 -- --------------------------------------------------------
 
