@@ -491,21 +491,36 @@ body.dark .home .text{
 }
 
 .iconbox{
-    font-size: 49px !important;
+    font-size: 46px !important;
+    margin-right: 5px;
 }
 
 .profilebox{
-    width: 700px !important;
-    height: 350px !important;
+    width: 900px !important;
+    height: 200px !important;
     background-color: #2a2a34 !important;
     border-radius: 29px !important;
     display: flex;
-    flex-direction: column;
+    flex-direction: row !important;
     align-items: center;
     justify-content: center;
     padding: 20px !important;
     color: #ffffff !important;
     box-shadow: 5px 5px 20px !important;
+
+}
+
+.imgdiv{
+    margin: 10px 15px !important;
+}
+
+.infodiv{
+    flex-grow: 1;
+    margin: 10px 25px !important;
+}
+
+.icondiv{
+    flex-direction: row;
 }
 
 
@@ -514,6 +529,32 @@ body.dark .home .text{
     height: 140px;
     background-color: rgb(255, 179, 179);
     margin-bottom: 20px;
+}
+
+.user_name{
+    font-size: 28px;
+    font: "Poppins";
+}
+
+.user_id{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.user_phone{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.user_email{
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.spanboxphone{
+    /* justify-content: center !important; */
+    align-items: center !important;
+    text-align: center;
 }
 
 #userimg{

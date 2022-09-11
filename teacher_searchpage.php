@@ -164,7 +164,7 @@
                                     ?>
                                         <!-- here -->
     
-                                        <div class="row-md-4">
+                                        <!-- <div class="row-md-4">
                                             <div class="ui card profilebox">
                                                 <div class="userimg" id="userimg">
                                                 </div>
@@ -188,6 +188,37 @@
                                                         <span class="spaceboxv"></span>
                                                         <label><?php echo $row['st_point']; ?></label>
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+                                        <div class="ui card profilebox">
+                                            <div class = "imgdiv">
+                                                <div class="userimg" id="userimg">
+                                                </div>
+                                            </div>
+                                            <div class = "infodiv">
+
+                                                <div class = "">
+                                                    <label class = "user_name">Fahad Al Islam</label>
+                                                    <label class = "user_id"><em>(011183070)</em></label>
+                                                </div>
+
+                                                <div class="spaceboxv2"></div>
+
+                                                <div class = "">
+                                                    <label class = "user_email">fislam183070@bscse.uiu.ac.bd</label>
+                                                </div>
+
+                                                <div class="spaceboxv2"></div>
+
+                                                <div class = "icondiv">
+                                                    <i class='bx bxl-linkedin-square iconbox' style='color:#45b3ff'></i>
+                                                    <i class='bx bxs-cube-alt iconbox' style='color:#b471f6'  ></i>
+                                                    <span class="spanboxphone">
+                                                        <i class='bx bxs-phone iconbox' style='color:#357ef4'  ></i>
+                                                        <label class = "user_phone">016xxxxxxxx</label>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
