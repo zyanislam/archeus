@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2022 at 07:56 PM
+-- Generation Time: Sep 11, 2022 at 08:09 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -174,15 +174,16 @@ CREATE TABLE `post_student` (
   `st_username` varchar(255) NOT NULL,
   `st_name` varchar(255) NOT NULL,
   `stpost_title` varchar(255) DEFAULT NULL,
-  `stpost_desc` varchar(255) DEFAULT NULL
+  `stpost_desc` varchar(255) DEFAULT NULL,
+  `stpost_datetime` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `post_student`
 --
 
-INSERT INTO `post_student` (`stpost_id`, `st_username`, `st_name`, `stpost_title`, `stpost_desc`) VALUES
-('1', '011182035', 'Anika', 'Need one member for fydp', 'All the requirements here...');
+INSERT INTO `post_student` (`stpost_id`, `st_username`, `st_name`, `stpost_title`, `stpost_desc`, `stpost_datetime`) VALUES
+('1', '011182035', 'Anika', 'Need one member for fydp', 'All the requirements here...', '2022-09-11 00:33:21');
 
 -- --------------------------------------------------------
 
@@ -211,9 +212,9 @@ INSERT INTO `post_teacher` (`tpost_id`, `t_username`, `t_name`, `tpost_title`, `
 ('5', 'FAI', 'Fahad Al Islam', 'Need FrontEnd Developer at UIU IT Dept', 'What I find remarkable is that this text has been the industry\'s standard dummy text ever since some printer in the 1500s took a galley of type and scrambled it to make a type specimen book; it has survived not only four centuries of letter-by-letter resetting but even the leap into electronic typesetting, essentially unchanged except for an occasional \'ing\' or \'y\' thrown in. It\'s ironic that when the then-understood Latin was scrambled, it became as incomprehensible as Greek;', '2022-09-05 22:09:14'),
 ('6', 'AT', 'Anika Tahsin', 'Need an Intern', '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet sodales felis. Duis nunc eros, mattis at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula eu.”', '2022-09-05 22:10:44'),
 ('6316ef9b4055f', 'AT', 'Anika Tahsin', 'new post', 'abcd', '2022-09-06 01:25:35'),
-('6316f02a6bdba', 'AT', 'Anika Tahsin', 'new post 2', 'very important post ', '2022-09-06 01:00:58'),
-('6316f0e9be51b', 'AT', 'Anika Tahsin', 'new post 3', 'fghj', '2022-09-06 01:04:09'),
-('6316f86897eeb', 'AT', 'Anika Tahsin', 'fd', 'dfd', '2022-09-06 01:36:08');
+('6316f02a6bdba', 'AH', 'Abir Hasan', 'new post 2', 'very important post ', '2022-09-06 01:00:58'),
+('6316f0e9be51b', 'AH', 'Abir Hasan', 'new post 3', 'fghj', '2022-09-06 01:04:09'),
+('6316f86897eeb', 'FAI', 'Fahad Al Islam', 'New Post 4', 'dfd', '2022-09-06 01:36:08');
 
 -- --------------------------------------------------------
 
@@ -273,7 +274,40 @@ INSERT INTO `student_log` (`stlog_id`, `st_username`, `st_name`, `stlog_login_da
 (6, '011182033', 'kamado tanjiro', '2022-08-30 01:33:30', '2022-08-30 01:35:55'),
 (7, '011182035', 'Anika Tahsin', '2022-08-30 02:33:26', '2022-08-30 02:33:45'),
 (8, '011183070', 'Fahad Islam', '2022-08-30 01:38:14', '2022-08-30 01:38:40'),
-(9, '011172035', 'x', '2022-09-03 10:15:02', '2022-09-03 10:15:15');
+(9, '011172035', 'x', '2022-09-03 10:15:02', '2022-09-03 10:15:15'),
+(10, '011182035', 'anika', '2022-09-11 01:52:50', NULL),
+(11, '011182035', 'anika', '2022-09-11 01:53:42', NULL),
+(12, '011182035', 'anika', '2022-09-11 01:54:05', NULL),
+(13, '011182035', 'anika', '2022-09-11 01:54:29', NULL),
+(14, '011182035', 'anika', '2022-09-11 01:55:27', NULL),
+(15, '011182035', 'anika', '2022-09-11 01:58:46', NULL),
+(16, '011182035', 'anika', '2022-09-11 01:58:58', NULL),
+(17, '011182035', 'anika', '2022-09-11 02:00:52', NULL),
+(18, '011182035', 'anika', '2022-09-11 02:00:55', NULL),
+(19, '011182035', 'anika', '2022-09-11 02:01:10', NULL),
+(20, '011182035', 'anika', '2022-09-11 02:01:39', NULL),
+(21, '011182035', 'anika', '2022-09-11 02:03:37', NULL),
+(22, '011182035', 'anika', '2022-09-11 02:04:11', NULL),
+(23, '011182035', 'anika', '2022-09-11 02:07:23', NULL),
+(24, '011182035', 'anika', '2022-09-11 02:07:45', NULL),
+(25, '011182035', 'anika', '2022-09-11 02:27:47', NULL),
+(26, '011182035', 'anika', '2022-09-11 02:27:49', NULL),
+(27, '011182035', 'anika', '2022-09-11 02:28:02', NULL),
+(28, '011182035', 'anika', '2022-09-11 02:28:04', NULL),
+(29, '011182035', 'anika', '2022-09-11 02:28:41', NULL),
+(30, '011182035', 'anika', '2022-09-11 02:35:19', NULL),
+(31, '011182035', 'anika', '2022-09-11 02:35:40', NULL),
+(32, '011182035', 'anika', '2022-09-11 03:34:08', NULL),
+(33, '011182035', 'anika', '2022-09-11 04:44:16', NULL),
+(34, '011182035', 'anika', '2022-09-11 04:44:56', NULL),
+(35, '011182035', 'anika', '2022-09-11 04:47:14', NULL),
+(36, '011182035', 'anika', '2022-09-11 04:47:27', NULL),
+(37, '011182035', 'anika', '2022-09-11 04:48:42', NULL),
+(38, '011182035', 'anika', '2022-09-11 04:50:12', NULL),
+(39, '011182035', 'anika', '2022-09-11 04:51:01', NULL),
+(40, '011182035', 'anika', '2022-09-11 04:51:02', NULL),
+(41, '011182035', 'anika', '2022-09-11 04:51:24', NULL),
+(42, '011182035', 'anika', '2022-09-11 04:51:41', NULL);
 
 -- --------------------------------------------------------
 
@@ -341,7 +375,8 @@ INSERT INTO `teacher` (`t_id`, `t_username`, `t_name`, `t_email`, `t_pass`, `t_d
 (2, 'AT', 'Anika Tahsin', 'at@uiu.ac.bd', '1234', 'CSE', 'Professor', 'teacher'),
 (3, 'b', 'An', 'a', '1234', 'CE', 'c', 'teacher'),
 (4, 'X', 'Mr X', 'x@gmail.com', '1234', 'CE', 'lecturer', 'teacher'),
-(10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', '1234', 'CSE', 'lecturer', 'teacher');
+(10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', '1234', 'CSE', 'lecturer', 'teacher'),
+(11, 'KSM', 'Kazi Sajeed Mehrab', 'ksm@uiu.ac.bd', '1234', 'CSE', 'Lecturer', 'teacher');
 
 -- --------------------------------------------------------
 
@@ -362,7 +397,8 @@ CREATE TABLE `teacher_log` (
 --
 
 INSERT INTO `teacher_log` (`tlog_id`, `t_username`, `tlog_name`, `tlog_login_date_time`, `tlog_logout_date_time`) VALUES
-(3, 'AH', 'Abir Hasan', '2022-09-04 02:56:36', '2022-09-04 02:56:41');
+(3, 'AH', 'Abir Hasan', '2022-09-04 02:56:36', '2022-09-04 02:56:41'),
+(4, 'KSM', 'Kazi Sajeed Mehrab', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -555,7 +591,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `student_log`
 --
 ALTER TABLE `student_log`
-  MODIFY `stlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `stlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `tags_student`
@@ -573,13 +609,13 @@ ALTER TABLE `tags_teacher`
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `teacher_log`
 --
 ALTER TABLE `teacher_log`
-  MODIFY `tlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `tlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
