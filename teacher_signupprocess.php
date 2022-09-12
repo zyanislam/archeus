@@ -8,16 +8,16 @@ id=st_user, name=st_name, email=st_email, dept=st_dept, dob=st_dob,
 gender=st_gender, pass=st_pass, cpass=st_cpass
 */
 
-if($_SERVER['REQUEST_METHOD'] == "POST"){
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     //checking if the info are valid and not empty.
-    if(
+    if (
         !empty($_POST["t_name"]) && !empty($_POST["t_user"]) &&
         !empty($_POST["t_email"]) && !empty($_POST["t_dept"]) &&
         !empty($_POST["t_des"]) &&
         isset($_POST["t_name"]) && isset($_POST["t_user"]) &&
         isset($_POST["t_email"]) && isset($_POST["t_dept"]) &&
         isset($_POST["t_des"])
-    ){
+    ) {
         //storing the informations in variables
         $tname = $_POST["t_name"];
         $tuser = $_POST["t_user"];
@@ -35,25 +35,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             $sqlquery = "INSERT INTO teacher(t_id, t_username, t_name, t_email, t_pass, t_dept, t_des, role) VALUES(NULL, '$tuser', '$tname', '$temail', '1234', '$tdept', '$tdes', 'teacher')";
             mysqli_query($conn, $sqlquery);
 
-            $sqlquery2="INSERT INTO teacher_log(tlog_id,t_username,	tlog_name) VALUES(NULL,'$tuser','$tname') ";
+            $sqlquery2 = "INSERT INTO teacher_log(tlog_id,t_username,	tlog_name) VALUES(NULL,'$tuser','$tname') ";
             mysqli_query($conn, $sqlquery2);
 
             //after successful registration forwarding to login page
-            echo '<script>alert("Registration completed successfully!!");</script>';
-            echo "<script>location.assign('admin_home.php')</script>";
-        }catch (PDOException $ex){
+            echo "<script>location.assign('teacher_signupsuccess.php')</script>";
+        } catch (PDOException $ex) {
             //if found error forward to register page
             echo '<script>
              alert("Oops!! Caught An Error");
              </script>';
             echo "<script>location.assign('teacher_signup.php')</script>";
         }
-    }else{
+    } else {
         //if any value is empty or invalid, then forward to register page again.
-            echo '<script>alert("You forgot to put your information in one of the fields. Check again");</script>';
-            echo"<script>location.assign('teacher_signup.php')</script>";
+        echo '<script>alert("You forgot to put your information in one of the fields. Check again");</script>';
+        echo "<script>location.assign('teacher_signup.php')</script>";
     }
-}else{
+} else {
     //forwarding to register page if not post method.
     echo '<script>
     alert("Not Post Method");

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Created | Archeus</title>
 
-    <link rel="stylesheet" href="student_signupsuccess.css">
+    <link rel="stylesheet" href="teacher_signupsuccess.css">
 
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
@@ -32,16 +32,16 @@
         <div class="mid">
             <div class="contentbox">
                 <p id="success_message1">
-                    You have successfully created your Student Account in Archeus
+                    You have successfully created your Teacher Account in Archeus
                 </p>
 
                 <span class="spaceboxv"></span>
 
                 <p id="success_message2">
-                    Go back to Home Page & Login
+                    Go back to Admin Page
                 </p>
 
-                <a class="ui orange button huge" name="signup" onclick="window.location.href = 'welcome.php';" id="buttonbox1">Go Back</a>
+                <a class="ui orange button huge" name="signup" onclick="window.location.href = 'admin_hp.php';" id="buttonbox1">Go Back</a>
 
             </div>
         </div>

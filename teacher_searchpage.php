@@ -146,7 +146,9 @@
                             if ($returnobj1->rowCount() == 0 && $returnobj2->rowCount() == 0 && $returnobj3->rowCount() == 0 && $returnobj4->rowCount() == 0) {
                                 ///no data found
                             ?>
-                                <h2 class="no_data" id="no_data"><?php echo "No data found"; ?></h2>
+                                <img id="gothimage" src="Images/Juice.png" alt="Goth Juice" style="width:500px;height:700px;">
+                                <label class="no_data" id="no_data1"><?php echo "No data found"; ?></label>
+                                <label class="no_data" id="no_data"><?php echo "--- Drink some Goth Juice & try again! ---"; ?></label>
                                 <?php
 
                                 // first split data using space
