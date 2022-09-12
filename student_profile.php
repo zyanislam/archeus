@@ -22,32 +22,27 @@
 
 <body>
     <div class="layout">
-        <div class="top">
+
+        <nav class="navbar fixed-top navbar top">
 
             <div id="top_title">
-                Archeus
+                <span class="home_button" onclick="window.location.href = 'teacher_home.php';">Archeus</span>
             </div>
 
             <div id="top_logout">
-                <a class="ui orange button huge" name="signup" onclick="window.location.href = 'welcome.php';" id="logout_button">Logout</a>
+                <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
             </div>
 
-        </div>
+        </nav>
 
         <div class="mid">
+
             <div class="contentbox">
 
             </div>
+
         </div>
 
-        <div class="bottom">
-            <div>
-                Developed by
-            </div>
-            <div>
-                Deadly Diamond Of Death | 2022
-            </div>
-        </div>
     </div>
 
 

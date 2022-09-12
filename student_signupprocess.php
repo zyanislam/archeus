@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                 //after successful registration forwarding to login page
                 // echo '<script>alert("Registration completed successfully!! Login to Process");</script>';
-                echo "<script>location.assign('student_signup_success.php')</script>";
+                echo "<script>location.assign('student_signupsuccess.php')</script>";
             }
         } catch (PDOException $ex) {
             //if found error forward to register page
