@@ -64,9 +64,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $sqlquery = "INSERT INTO student(st_id,st_username,st_name,st_email,st_pass,st_dept,st_contact,st_dob,st_gender,role) VALUES(NULL,'$suser','$sname','$semail','$spass','$sdept',NULL,'$sdob','$sgender','student')";
                 mysqli_query($conn, $sqlquery);
 
+                $sqlquery2 = "INSERT INTO student_log(stlog_id,st_username,st_name) VALUES(NULL,'$suser','$sname') ";
+                mysqli_query($conn, $sqlquery2);
+
                 //after successful registration forwarding to login page
                 // echo '<script>alert("Registration completed successfully!! Login to Process");</script>';
-                echo "<script>location.assign('student_signup_success.php')</script>";
+                echo "<script>location.assign('student_signupsuccess.php')</script>";
             }
         } catch (PDOException $ex) {
             //if found error forward to register page

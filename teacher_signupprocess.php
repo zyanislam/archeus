@@ -30,9 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             //creating connection with Archeus database
             include "db_connect.php";
 
+            date_default_timezone_set('Asia/Dhaka');
+            $joined_date = date('y-m-d g:i:s');
+
             //every entry is valid and ready to be registered
             //database code executing
-            $sqlquery = "INSERT INTO teacher(t_id, t_username, t_name, t_email, t_pass, t_dept, t_des, role) VALUES(NULL, '$tuser', '$tname', '$temail', '1234', '$tdept', '$tdes', 'teacher')";
+            $sqlquery = "INSERT INTO teacher(t_id, t_username, t_name, t_email, t_pass, t_dept, t_des, role,t_joined_date) VALUES(NULL, '$tuser', '$tname', '$temail', '1234', '$tdept', '$tdes', 'teacher','$joined_date')";
             mysqli_query($conn, $sqlquery);
 
             $sqlquery2 = "INSERT INTO teacher_log(tlog_id,t_username,	tlog_name) VALUES(NULL,'$tuser','$tname') ";
