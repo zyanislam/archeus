@@ -63,7 +63,10 @@
 
             // student list
             $sqlquery1="SELECT * FROM student";
-            $result1 =mysqli_query($conn, $sqlquery1);
+            $result1 = mysqli_query($conn, $sqlquery1);
+
+            $sqlquery2="SELECT * FROM student_log";
+            $result2 = mysqli_query($conn, $sqlquery2);
             ?>
         <table class="styled-table">
             <thead>

@@ -133,7 +133,7 @@
                                         <tr>
                                             <td><?php echo $x['t_name']; ?></td>
                                             <td><?php echo $x['t_email']; ?></td>
-                                            <td>Joined date will be added later</td>
+                                            <td><?php echo $x['t_joined_date']; ?></td>
                                         </tr>
                                     <?php
                                 }
