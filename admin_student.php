@@ -61,12 +61,14 @@
         try{
             include "db_connect.php";
 
-            // student list
-            $sqlquery1="SELECT * FROM student";
+            $sqlquery1="SELECT student.st_username, student.st_name, student.st_email, student.status, 
+                                student_log.stlog_login_date_time, student_log.stlog_logout_date_time
+                        FROM student
+                        INNER JOIN student_log ON student.st_username = student_log.st_username
+                        ORDER BY student.st_name";
+
             $result1 = mysqli_query($conn, $sqlquery1);
 
-            $sqlquery2="SELECT * FROM student_log";
-            $result2 = mysqli_query($conn, $sqlquery2);
             ?>
         <table class="styled-table">
             <thead>
@@ -88,9 +90,9 @@
                     <td><?php echo $x['st_username']; ?></td>
                     <td><?php echo $x['st_name']; ?></td>
                     <td><?php echo $x['st_email']; ?></td>
-                    <td>ssg</td>
-                    <td>xdfd</td>
-                    <td>sdas</td>
+                    <td><?php echo $x['stlog_login_date_time']; ?></td>
+                    <td><?php echo $x['stlog_logout_date_time']; ?></td>
+                    <td><?php echo $x['status']; ?></td>
                     <td class="toggle">
                         <label class="switch">
                             <input type="checkbox">

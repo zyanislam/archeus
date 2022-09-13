@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2022 at 11:00 PM
+-- Generation Time: Sep 13, 2022 at 08:32 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -245,12 +245,12 @@ CREATE TABLE `student` (
 
 INSERT INTO `student` (`st_id`, `st_username`, `st_name`, `st_email`, `st_pass`, `st_dept`, `st_contact`, `st_dob`, `st_gender`, `profile_picture`, `role`, `status`, `st_point`, `st_github`) VALUES
 (3, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '1234', 'CSE', '015xxxxxxxx', '1996-10-26', 'Female', NULL, 'student', 1, 0, 'https://github.com/anikatahsin3'),
-(4, '011183070', 'Fahad Al Islam', 'fislam@bscse.uiu.ac.bd', '1234', 'CSE', '016xxxxxxxx', '2022-08-22', 'Male', NULL, 'student', 0, 0, NULL),
-(19, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-08-25', 'Male', NULL, 'student', 0, 0, NULL),
-(24, '011182033', 'kamado tanjiro', 'tan@bscse.uiu.ac.bd', '1234', 'CSE', '018xxxxxxxx', '2022-08-30', 'Male', NULL, 'student', 0, 0, NULL),
-(25, '011172035', 'x', 'x@bseee.uiu.ac.bd', '1234', 'CSE', '01xxxxxxxxx', '2022-09-03', 'Male', NULL, 'student', 0, 0, NULL),
-(26, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-09-06', 'Male', NULL, 'student', 0, 0, NULL),
-(28, '011182000', 'a', 'a@bscse.uiu.ac.bd', '1234', 'EEE', NULL, '2022-09-06', 'Female', NULL, 'student', 0, 0, NULL),
+(4, '011183070', 'Fahad Al Islam', 'fislam@bscse.uiu.ac.bd', '1234', 'CSE', '016xxxxxxxx', '2022-08-22', 'Male', NULL, 'student', 1, 0, NULL),
+(19, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-08-25', 'Male', NULL, 'student', 1, 0, NULL),
+(24, '011182033', 'kamado tanjiro', 'tan@bscse.uiu.ac.bd', '1234', 'CSE', '018xxxxxxxx', '2022-08-30', 'Male', NULL, 'student', 1, 0, NULL),
+(25, '011172035', 'x', 'x@bseee.uiu.ac.bd', '1234', 'CSE', '01xxxxxxxxx', '2022-09-03', 'Male', NULL, 'student', 1, 0, NULL),
+(26, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-09-06', 'Male', NULL, 'student', 1, 1, NULL),
+(28, '011182000', 'a', 'a@bscse.uiu.ac.bd', '1234', 'EEE', NULL, '2022-09-06', 'Female', NULL, 'student', 1, 0, NULL),
 (31, '011183040', 'Abdullah Masud', 'aa@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-09-13', 'Male', NULL, 'student', 0, 0, NULL);
 
 -- --------------------------------------------------------
@@ -276,7 +276,10 @@ INSERT INTO `student_log` (`stlog_id`, `st_username`, `st_name`, `stlog_login_da
 (7, '011182035', 'Anika Tahsin', '2022-09-13 02:33:27', '2022-09-13 02:33:37'),
 (8, '011183070', 'Fahad Islam', '2022-08-30 01:38:14', '2022-08-30 01:38:40'),
 (9, '011172035', 'x', '2022-09-03 10:15:02', '2022-09-03 10:15:15'),
-(43, '011183040', 'Abdullah Masud', NULL, NULL);
+(43, '011183040', 'Abdullah Masud', NULL, NULL),
+(44, '011183013', 'Sadman Sakib', '2022-09-13 07:54:16', '2022-09-13 07:54:16'),
+(45, '011183021', 'Azwad Zarif', '2022-09-13 07:54:16', '2022-09-13 07:54:16'),
+(46, '011182000', 'a', '2022-09-13 07:55:45', '2022-09-13 07:55:45');
 
 -- --------------------------------------------------------
 
@@ -344,8 +347,6 @@ CREATE TABLE `teacher` (
 INSERT INTO `teacher` (`t_id`, `t_username`, `t_name`, `t_email`, `t_pass`, `t_dept`, `t_des`, `t_room`, `role`, `t_joined_date`) VALUES
 (1, 'FAI', 'Fahad Al Islam', 'fai@uiu.ac.bd', 'fai1234', 'CSE', 'Lecturer', '201', 'teacher', '2022-09-13 01:52:26'),
 (2, 'AT', 'Anika Tahsin', 'at@uiu.ac.bd', '1234', 'CSE', 'Professor', '638/B', 'teacher', '2022-09-13 01:52:26'),
-(3, 'b', 'An', 'a', '1234', 'CE', 'c', '', 'teacher', '2022-09-13 01:52:26'),
-(4, 'X', 'Mr X', 'x@gmail.com', '1234', 'CE', 'lecturer', '', 'teacher', '2022-09-13 01:52:26'),
 (10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', '1234', 'CSE', 'lecturer', '', 'teacher', '2022-09-13 01:52:26'),
 (11, 'KSM', 'Kazi Sajeed Mehrab', 'ksm@uiu.ac.bd', '1234', 'CSE', 'Lecturer', '', 'teacher', '2022-09-13 01:52:26'),
 (12, 'SS', 'Shakkhar Shatabda', 'ss@uiu.ac.bd', '1234', 'CSE', 'Associate Professor', '', 'teacher', '2022-09-13 01:58:19');
@@ -371,7 +372,9 @@ CREATE TABLE `teacher_log` (
 INSERT INTO `teacher_log` (`tlog_id`, `t_username`, `tlog_name`, `tlog_login_date_time`, `tlog_logout_date_time`) VALUES
 (3, 'AH', 'Abir Hasan', '2022-09-04 02:56:36', '2022-09-04 02:56:41'),
 (4, 'KSM', 'Kazi Sajeed Mehrab', NULL, NULL),
-(5, 'SS', 'Shakkhar Shatabda', NULL, NULL);
+(5, 'SS', 'Shakkhar Shatabda', NULL, NULL),
+(6, 'FAI', 'Fahad Al Islam', '2022-09-13 07:51:41', '2022-09-13 07:51:41'),
+(7, 'AT', 'Anika Tahsin', '2022-09-13 07:51:41', '2022-09-13 07:51:41');
 
 --
 -- Indexes for dumped tables
@@ -564,7 +567,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `student_log`
 --
 ALTER TABLE `student_log`
-  MODIFY `stlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `stlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `tags_student`
@@ -588,7 +591,7 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `teacher_log`
 --
 ALTER TABLE `teacher_log`
-  MODIFY `tlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `tlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

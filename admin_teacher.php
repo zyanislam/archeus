@@ -62,13 +62,19 @@
             include "db_connect.php";
 
             // student list
-            $sqlquery1="SELECT * FROM student";
+            // $sqlquery1="SELECT * FROM student";
+            $sqlquery1="SELECT teacher.t_username, teacher.t_name, teacher.t_email, 
+                                teacher_log.tlog_login_date_time, teacher_log.tlog_logout_date_time
+                        FROM teacher
+                        INNER JOIN teacher_log ON teacher.t_username = teacher_log.t_username
+                        ORDER BY teacher.t_name";
+
             $result1 =mysqli_query($conn, $sqlquery1);
             ?>
                 <table class="styled-table">
                 <thead>
                     <tr>
-                        <th>Student ID</th>
+                        <th>Teacher ID</th>
                         <th>Name</th>
                         <th>E-mail</th>
                         <th>Login time</th>
@@ -80,11 +86,11 @@
                         foreach($result1 as $x){
                             ?>
                                 <tr>
-                                    <td><?php echo $x['st_username']; ?></td>
-                                    <td><?php echo $x['st_name']; ?></td>
-                                    <td><?php echo $x['st_email']; ?></td>
-                                    <td>ssg</td>
-                                    <td>xdfd</td>
+                                    <td><?php echo $x['t_username']; ?></td>
+                                    <td><?php echo $x['t_name']; ?></td>
+                                    <td><?php echo $x['t_email']; ?></td>
+                                    <td><?php echo $x['tlog_login_date_time']; ?></td>
+                                    <td><?php echo $x['tlog_logout_date_time']; ?></td>
                                 </tr>
                             <?php
                         }
