@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    color: rgb(255, 255, 255);
     /* background-color: #1d1d25; */
 }
 
@@ -115,16 +116,30 @@ body{
 
 .mid{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 10px !important;
     height:fit-content;
     padding-bottom: 90px !important;
-    justify-content: center;
+    align-items: center;
 }
 
 .bg_contentbox{
     position: relative;
     height: auto;
+}
+
+.topinfobox{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    width: 2200px;
+    /* background-color: #27272c !important; */
+    top: 75px;
+    border-radius: 38px;
+    border: 0px;
+    padding: 20px;
 }
 
 .contentbox{
@@ -141,3 +156,68 @@ body{
     padding: 20px;
 }
 
+.leftinfo{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin-right: 50px;
+}
+
+.midinfo{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.rightinfo{
+    display: flex;
+    flex-direction: row;
+    margin-right: 100px;
+}
+
+.userinfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.userimg{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(255, 179, 179);
+    margin: 15px;
+    margin-right: 35px;
+}
+
+#userimg{
+    border-radius: 50% !important;
+}
+
+.user_name{
+    font-size: 40px;
+    color: white;
+    margin: 10px;
+}
+
+.user_id{
+    font-size: 40px;
+    color: white;
+    margin: 10px;
+}
+
+.user_uni{
+    font-size: 30px;
+    color: white;
+    margin: 10px;
+}
+
+.iconbox{
+    font-size: 40px !important;
+    margin-right: 20px;
+}
+
+.basicdiv{
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+}

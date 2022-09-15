@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="student_profile.css">
 
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
@@ -36,6 +37,50 @@
         </nav>
 
         <div class="mid">
+
+            <div class="topinfobox">
+
+                <div class="leftinfo">
+
+                    <div class="imgdiv">
+                        <div class="userimg" id="userimg">
+                        </div>
+                    </div>
+
+                    <div class="userinfo">
+                        <div>
+                            <label class="user_name">Fahad AL Islam</label>
+                            <label class="user_id"><em>(011183070)</em></label>
+                        </div>
+
+                        <label class="user_uni">4th year at United International University</label>
+                    </div>
+
+                </div>
+
+                <div class="midinfo">
+                    <div class="imgdiv">
+                        <i class='bx bxs-bookmark-alt iconbox' style='color:#7b7fed'></i>
+
+                        <i class='bx bx-file iconbox' style='color:#f8881a'></i>
+                    </div>
+
+                </div>
+
+                <div class="rightinfo">
+                    <div class="basicdiv">
+                        <label class="user_phone">Contact Details: </label>
+                        <label class="user_dept">Department: </label>
+                        <label class="user_email">Email: </label>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
 
             <div class="contentbox">
 
