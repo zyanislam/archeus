@@ -20,18 +20,30 @@ if (
     /*trying to access database and check if the login information are valid.*/
     try {
         //creating connection with EMed database
-        $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn1 = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
+        $conn1->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        include "db_connect.php";
 
         //database code executing
         $sqlquery1 = "SELECT * FROM student WHERE st_username='$username' AND st_pass='$pass' ";
-        $returnobj1 = $conn->query($sqlquery1);
+        $returnobj1 = $conn1->query($sqlquery1);
 
         $sqlquery2 = "SELECT * FROM teacher WHERE t_username='$username' AND t_pass='$pass' ";
-        $returnobj2 = $conn->query($sqlquery2);
+        $returnobj2 = $conn1->query($sqlquery2);
 
         $sqlquery3 = "SELECT * FROM admin WHERE ad_username='$username' AND ad_pass='$pass' ";
-        $returnobj3 = $conn->query($sqlquery3);
+        $returnobj3 = $conn1->query($sqlquery3);
+
+        //email verification 
+        $getmail="SELECT st_email FROM student WHERE st_username='$username' AND st_pass='$pass' ";
+        $mailget=mysqli_query($conn, $getmail);
+        $row = mysqli_fetch_assoc($mailget);
+        $email = $row['st_email'];
+
+        $result = mysqli_query($conn, $sqlquery1);
+        $user = mysqli_fetch_object($result); 
+
+
 
         if ($returnobj1->rowCount() == 1) {
             //it means this login information belongs to a student and is valid.
@@ -43,11 +55,24 @@ if (
             $login_date = date('y-m-d g:i:s');
 
             $sql1 = "UPDATE student_log SET stlog_login_date_time='$login_date', stlog_logout_date_time='--' WHERE st_username='$username' ";
-            $logintime = $conn->query($sql1);
+            $logintime = $conn1->query($sql1);
 
-            //forwarding to home page
-            echo "<script>location.assign('student_home.php')</script>";
-        } else if ($returnobj2->rowCount() == 1) {
+            // //forwarding to home page
+            // echo "<script>location.assign('email-verification.php.php')</script>";
+
+            if ($user->email_verified_at == null)
+            {
+                header("Location: email-verification.php?email=" . $email);
+            }
+            else{
+                echo "<script>location.assign('student_home.php')</script>";
+
+            }
+        }
+        
+           
+            
+        else if ($returnobj2->rowCount() == 1) {
             //it means this login information belongs to a teacher and is valid.
             //login successful
             session_start();
@@ -57,7 +82,7 @@ if (
             $login_date = date('y-m-d g:i:s');
 
             $sql1 = "UPDATE teacher_log SET tlog_login_date_time='$login_date', tlog_logout_date_time='--' WHERE t_username='$username' ";
-            $logintime = $conn->query($sql1);
+            $logintime = $conn1->query($sql1);
 
             //forwarding to home page
             echo "<script>location.assign('teacher_home.php')</script>";
@@ -75,7 +100,8 @@ if (
                  alert("Sorry! Your User or Password does not match");
                  </script>';
             echo "<script>location.assign('welcome.php')</script>";
-        }
+        }  
+        
     } catch (PDOException $ex) {
         //if found error forward to login page
         // echo"<script>location.assign('welcome.php')</script>";
