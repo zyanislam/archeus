@@ -11,22 +11,58 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
 
 </head>
 
 <body>
     <div class="layout">
-        <div class="top">
-            <div>
-                Archeus
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <!--<img src="images/logo.png" alt="">-->
             </div>
+
+            <span class="logo_name">Archeus</span>
         </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="admin_hp.php">
+                        <i class='bx bx-home'></i>
+                        <span class="link-name">Home</span>
+                    </a></li>
+                <li><a href="admin_student.php">
+                        <i class='bx bxs-group'></i>
+                        <span class="link-name">Students</span>
+                    </a></li>
+                <li><a href="admin_teacher.php">
+                        <i class='bx bxs-user'></i>
+                        <span class="link-name">Teachers</span>
+                    </a></li>
+                <li><a href="teacher_signup.php">
+                        <i class='bx bx-plus-circle active'></i>
+                        <span class="link-name active">Create Teacher
+                            Account</span>
+                    </a></li>
+            </ul>
+
+            <ul class="logout-mode">
+                <li><a href="#">
+                        <i class='bx bx-log-out'></i>
+                        <span class="link-name"
+                            onclick="window.location.href = 'admin_logoutprocess.php';">Logout</span>
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
 
         <div class="mid">
             <div class="contentbox">
