@@ -4,15 +4,15 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     if(
         //checking if the info are valid and not empty.
 
-        !empty($_POST["name"]) && !empty($_POST["email"]) &&
-        !empty($_POST["phone"]) && !empty($_POST["city"]) &&
-        !empty($_POST["fb"]) && !empty($_POST["li"]) && 
-        !empty($_POST["ss"]) && !empty($_POST["syear"]) &&
-        !empty($_POST["eyear"]) && !empty($_POST["hs"]) &&
-        !empty($_POST["hs_syear"]) && !empty($_POST["hs_eyear"]) &&
-        !empty($_POST["uni"]) && !empty($_POST["u_syear"]) &&
-        !empty($_POST["u_eyear"]) && !empty($_POST["dept"]) &&
-        !empty($_POST["major"]) && !empty($_POST["cgpa"]) &&
+        // !empty($_POST["name"]) && !empty($_POST["email"]) &&
+        // !empty($_POST["phone"]) && !empty($_POST["city"]) &&
+        // !empty($_POST["fb"]) && !empty($_POST["li"]) && 
+        // !empty($_POST["ss"]) && !empty($_POST["syear"]) &&
+        // !empty($_POST["eyear"]) && !empty($_POST["hs"]) &&
+        // !empty($_POST["hs_syear"]) && !empty($_POST["hs_eyear"]) &&
+        // !empty($_POST["uni"]) && !empty($_POST["u_syear"]) &&
+        // !empty($_POST["u_eyear"]) && !empty($_POST["dept"]) &&
+        // !empty($_POST["major"]) && !empty($_POST["cgpa"]) &&
         // !empty($_POST["t_skill"]) && !empty($_POST["des"]) &&
         // !empty($_POST["rp"]) && !empty($_POST["s_skill"]) &&
         // !empty($_POST["e_name"]) && !empty($_POST["role"]) &&
@@ -138,7 +138,10 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                 {
                  
                     $sqlquery4="INSERT INTO cv_soft_skill(st_username, soft_skill_name) VALUES('$id','$s_skill[$i]')";
-                    mysqli_query($conn, $sqlquery4); 
+                    mysqli_query($conn, $sqlquery4);
+
+                    $sqlquery10="INSERT INTO  tags_student(id, post_student_id, tag_name) VALUES (NULL,'$id','$s_skill[$i]')";
+                    mysqli_query($conn, $sqlquery10);
                  
                 }
 
