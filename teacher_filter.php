@@ -33,7 +33,7 @@
             </div>
 
             <div id="top_logout">
-                <a class="ui orange button huge" name="logout" onclick="window.location.href = 'student_logoutprocess.php';" id="buttonbox2">Logout</a>
+                <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
             </div>
         </div>
 
@@ -64,15 +64,15 @@
                         <ul class="menu-links">
                             <li class="nav-link" id="link_list">
                                 <a href="#">
-                                    <i class='bx bxs-pencil icon' style='color:#f24e1e'></i>
-                                    <span class="text nav-text" id="menuitems">Edit Profile</span>
+                                    <i class='bx bx-home-smile icon' style='color:#857de7'></i>
+                                    <span class="text nav-text" onclick="window.location.href = 'teacher_home.php';" id="menuitems">Home Page</span>
                                 </a>
                             </li>
 
                             <li class="nav-link" id="link_list">
                                 <a href="#">
-                                    <i class='bx bx-bookmarks icon' style='color:#ffffff'></i>
-                                    <span class="text nav-text" id="menuitems">Student List</span>
+                                    <i class='bx bxs-pencil icon' style='color:#f24e1e'></i>
+                                    <span class="text nav-text" onclick="window.location.href = 'teacher_editprofile.php';" id="menuitems">Edit Profile</span>
                                 </a>
                             </li>
 

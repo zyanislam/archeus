@@ -367,7 +367,7 @@ body.dark .home .text{
     font-family: Helvetica, sans-serif;
     font-weight: 500;
     background-color:#8178ff;
-    margin-left: 15px !important;
+    margin-left: 55px !important;
 }
 
 #link_list{
@@ -411,7 +411,7 @@ body.dark .home .text{
     flex-direction: row;
     align-items: center;
     height: auto;
-    width: auto;
+    width: 1400px;
     background-color: #27272c !important;
     top: 75px;
     left: 570px;

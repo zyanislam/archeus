@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="student_home.css">
+    <link rel="stylesheet" href="teacher_home.css">
 
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -16,26 +16,42 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+    <script src="custom_tags_input.js"></script>
     <title>Student Home | Archeus</title>
 </head>
 
 <body class="dark">
     <div class="layout">
-        <div class="top">
+
+        <nav class="navbar fixed-top navbar top">
             <div id="top_title">
                 <span class="home_button" onclick="window.location.href = 'student_home.php';">Archeus</span>
             </div>
-
             <div id="top_logout">
                 <a class="ui orange button huge" name="logout" onclick="window.location.href = 'student_logoutprocess.php';" id="buttonbox2">Logout</a>
             </div>
-        </div>
+
+        </nav>
+
+        <!-- <div class="top">
+            <div id="top_title">
+                Archeus
+            </div>
+
+            <div id="top_logout">
+                <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
+            </div>
+        </div> -->
 
         <div class="mid">
             <nav class="sidebar open">
@@ -61,6 +77,13 @@
                         <ul class="menu-links">
                             <li class="nav-link" id="link_list">
                                 <a href="#">
+                                    <i class='bx bx-home-smile icon' style='color:#857de7'></i>
+                                    <span class="text nav-text" onclick="window.location.href = 'student_home.php';" id="menuitems">Home Page</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link" id="link_list">
+                                <a href="#">
                                     <i class='bx bxs-pencil icon' style='color:#f24e1e'></i>
                                     <span class="text nav-text" id="menuitems">Edit Profile</span>
                                 </a>
@@ -80,12 +103,12 @@
                                 </a>
                             </li>
 
-                            <li class="nav-link" id="link_list">
+                            <!-- <li class="nav-link" id="link_list">
                                 <a href="#">
                                     <i class='bx bxs-message-square-dots icon' style='color:#8490ff'></i>
                                     <span class="text nav-text" id="menuitems">CV Drops</span>
                                 </a>
-                            </li>
+                            </li> -->
 
                             <li class="nav-link" id="link_list">
                                 <a href="#">
@@ -125,63 +148,59 @@
 
             </nav>
 
-            <div class="contentbox">
+            <div class="bg_contentbox">
 
-                <div class="ui card postbox">
-                    <div class="content">
-                        <i class="right floated like icon"></i>
-                        <i class="right floated star icon"></i>
-                        <div class="header" id="textline">Post 1</div>
-                        <div class="description">
-                            <p id="textline"></p>
-                        </div>
-                    </div>
+                <div class="contentbox">
 
-                    <div class="extra content">
-                        <span class="left floated like textline">
-                            <i class="like icon"></i>
-                            Like
-                        </span>
-                    </div>
-                </div>
+                    <span class="spaceboxv"></span>
 
-                <div class="ui card postbox">
-                    <div class="content">
-                        <i class="right floated like icon"></i>
-                        <i class="right floated star icon"></i>
-                        <div class="header" id="textline">Post 2</div>
-                        <div class="description">
-                            <p id="textline"></p>
-                        </div>
-                    </div>
+                    <!-- here is the feed-post BackEnd Part -->
+                    <?php
+                    try {
+                        $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
+                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    <div class="extra content">
-                        <span class="left floated like textline">
-                            <i class="like icon"></i>
-                            Like
-                        </span>
-                    </div>
-                </div>
+                        $sqlquery = "SELECT * FROM post_teacher ORDER BY tpost_datetime DESC";
+                        $returnobj = $conn->query($sqlquery);
 
-                <div class="ui card postbox">
-                    <div class="content">
-                        <i class="right floated like icon"></i>
-                        <i class="right floated star icon"></i>
-                        <div class="header" id="textline">Post 3</div>
-                        <div class="description">
-                            <p id="textline"></p>
-                        </div>
-                    </div>
+                        if ($returnobj->rowCount() == 0) {
+                            ///no data found
+                            echo "No data found";
+                        } else {
+                            /*<?php echo $row['id'];?>*/
+                            //tpost_id,t_username, t_name,tpost_title, tpost_desc
+                            $tabledata = $returnobj->fetchAll();
+                            foreach ($tabledata as $row) {
+                    ?>
+                                <div class="ui card postbox">
+                                    <div class="content">
+                                        <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
+                                        <div class="header" id="post_title"><?php echo $row['tpost_title']; ?></div>
+                                        <div class="header" id="author_name"><?php echo $row['t_name']; ?> | Author</div>
 
-                    <div class="extra content">
-                        <span class="left floated like textline">
-                            <i class="like icon"></i>
-                            Like
-                        </span>
-                    </div>
+                                        <div class="description">
+                                            <p id="post_desc"><?php echo $row['tpost_desc']; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                    <?php
+                            }
+                        }
+                    } catch (PDOException $ex) {
+                        //if found error forward to login page
+                        // echo"<script>location.assign('welcome.php')</script>";
+                        echo '<script>
+                        alert("Found error");
+                        window.location = "welcome.php";
+                        </script>';
+                    }
+                    ?>
+                    <!-- BackEnd ends here -->
+
                 </div>
 
             </div>
+
         </div>
     </div>
 
@@ -210,7 +229,6 @@
                 modeText.innerText = "Light mode";
             } else {
                 modeText.innerText = "Dark mode";
-
             }
         });
     </script>

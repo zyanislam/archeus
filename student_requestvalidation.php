@@ -38,10 +38,10 @@
 
         <nav class="navbar fixed-top navbar top">
             <div id="top_title">
-                <span class="home_button" onclick="window.location.href = 'teacher_home.php';">Archeus</span>
+                <span class="home_button" onclick="window.location.href = 'student_home.php';">Archeus</span>
             </div>
             <div id="top_logout">
-                <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
+                <a class="ui orange button huge" name="logout" onclick="window.location.href = 'student_logoutprocess.php';" id="buttonbox2">Logout</a>
             </div>
 
         </nav>
@@ -146,7 +146,7 @@
 
             <div class="bg_contentbox">
                 <div class="contentbox">
-                    
+
                     <div>
                         <span class="spaceboxv2"></span>
                         <span class="spaceboxv2"></span>
