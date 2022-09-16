@@ -222,10 +222,10 @@ body{
 }
 
 .tabs{
-    position: relative;
+    position: absolute;
     width: 1920px;
     height: 700px;
-    top: 120%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -5%);
     border-radius: 30px;
@@ -234,14 +234,70 @@ body{
 }
 
 .tabs .tab_header{
+    background: #27272c;
     height: 60px;
     display: flex;
     align-items: center;
+    margin-top: 70px;
 }
 
 .tabs .tab_header > div{
+    position: relative;
     width: calc(1920px/3);
     text-align: center;
+    padding: 60px;
+    z-index: 2;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 600;
 }
 
+.tabs .tab_header > div.active{
+    color: #fff;
+}
+
+.tabs .tab_indicator{
+    position: absolute;
+    width: calc(15% - 5px);
+    height: 45px;
+    background: #8178ff;
+    top: 98px;
+    border-radius: 25px;
+    left: 195px;
+
+}
+
+.tabs .tab_body{
+    position: relative;
+    padding: 10px;
+    background: #27272c;
+    border-top: 1px solid #ddd;
+    height: calc(100% - 50%);
+    overflow: hidden;
+}
+
+.tabs .tab_body > div{
+    position: absolute;
+    top: -100%;
+    opacity: 0;
+    top: -100%;
+    transform: translateY(-10px)
+}
+
+.tabs .tab_body > div.active{
+    transform: translateY(0px);
+    opacity: 1;
+    top: 30px;
+}
+
+.tabs .tab_body h2{
+    color: #f0f0f0;
+    margin-bottom: 10px;
+
+}
+
+.tabs .tab_body p{
+    columns: #f3f3f3;
+    font-size: 20px;
+}
 

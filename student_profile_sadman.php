@@ -62,7 +62,6 @@
                 <div class="midinfo">
                     <div class="imgdiv">
                         <i class='bx bxs-bookmark-alt iconbox' style='color:#7b7fed'></i>
-
                         <i class='bx bx-file iconbox' style='color:#f8881a'></i>
                     </div>
 
@@ -82,18 +81,16 @@
 
             </div>
 
-
-            <div class="contentbox">
                 <div class="tabs">
                     <div class="tab_header">
                         <div class="active">
-                            <i class='bx bx-info-circle'></i>Personal info
+                            Personal info
                         </div>
                         <div>
-                            <i class='bx bx-code-alt'></i>Skills
+                            Skills
                         </div>
                         <div>
-                            <i class='bx bx-notepad' ></i>Projects
+                            Projects
                         </div>
                     </div>
                     <div class="tab_indicator"></div>
@@ -111,14 +108,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
         </div>
 
     </div>
 
 
-
+<script src="student_profile_sadman.js"></script>
 </body>
 
 </html>
