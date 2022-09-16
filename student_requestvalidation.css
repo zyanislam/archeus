@@ -387,7 +387,7 @@ body.dark .home .text{
 }
 
 .spaceboxv2{
-    height: 20px;
+    height: 27px;
 }
 
 .mid{
@@ -423,12 +423,16 @@ body.dark .home .text{
     height: 20px;
 }
 
+.request_title{
+    font-size: 35px !important;
+}
+
 .newpostbox{
     background-color: #2C2B39 !important;
     min-height: 230vh;
     width: 1210px !important;
     color: rgb(255, 255, 255) !important;
-    border-radius: 22px !important;
+    border-radius: 28px !important;
     border: 0px #2C2B39;
     padding: 20px 30px !important;
     justify-content: center;
@@ -453,7 +457,7 @@ body.dark .home .text{
 
 .field{
     width: 1135px;
-    height: 50px;
+    height: 55px;
     left: 1263px;
     top: 474px;
     border: 0px;
@@ -490,8 +494,10 @@ body.dark .home .text{
     color: rgb(0, 0, 0);
 }
 
-#post_title{
+#post_skill{
     font-size: 25px;
+    padding: 10px;
+    padding-left: 15px;
     margin: 5px;
 }
 
@@ -505,9 +511,25 @@ body.dark .home .text{
     margin: 5px;
 }
 
+#post_cc{
+    font-size: 25px;
+    margin: 5px;
+}
+
+#post_pro{
+    font-size: 25px;
+    margin: 5px;
+}
+
+#post_team{
+    font-size: 25px;
+    margin: 5px;
+}
+
 #post_teacher{
-    font-size: 22px;
+    font-size: 25px;
     padding: 10px;
+    padding-left: 15px;
     margin: 5px;
 }
 
