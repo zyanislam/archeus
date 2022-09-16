@@ -52,10 +52,10 @@
                 </div>
                 <div class="col">
                     <label for="link" class="form-label">Facebook</label>
-                    <input type="url" class="form-control form-control-sm inup" name='fb' id="link" required>
+                    <input type="url" class="form-control form-control-sm inup" name='fb' id="link" >
                     <br>
                     <label for="link" class="form-label">LinkedIn</label>
-                    <input type="url" class="form-control form-control-sm inup" name='li' id="link" required>
+                    <input type="url" class="form-control form-control-sm inup" name='li' id="link" >
                 </div>
 
                 <div class="cv_head text-center">
@@ -65,7 +65,7 @@
                 <br>
                 <div class="col-3"></div>
                 <div class="col">
-                    <label for="ss" class="form-label">Secondary School</label>
+                    <label for="ss" class="form-label">Secondary School/O'levels</label>
                     <input type="text" class="form-control form-control-sm inup" name='ss' id="ss" required>
                     <br>
                     <label for="syear" class="form-label">Starting Year</label>
@@ -75,7 +75,7 @@
                     <input type="number" class="form-control form-control-sm inup" name='eyear' id="eyear" required>
                     <br>
                     <br>
-                    <label for="hs" class="form-label">Higher School</label>
+                    <label for="hs" class="form-label">Higher School/A'levels</label>
                     <input type="text" class="form-control form-control-sm inup" name='hs' id="hs" required>
                     <br>
                     <label for="syear" class="form-label">Starting Year</label>
@@ -116,14 +116,14 @@
                         <div class="col"></div>
                         <div class="col">
                             <label for="t_skill" class="form-label">Skill</label>
-                            <input type="text" class="form-control form-control-sm inup" name='t_skill[]' id="t_skill" required>
+                            <input type="text" class="form-control form-control-sm inup" name='t_skill[]' id="t_skill">
                             <br>
                             <label for="des" class="form-label">Describe</label>
                             <textarea class="form-control inup" placeholder="Describe..." name='des[]' id="des"
                                 style="height: 80px;"></textarea>
                             <br>
                             <label for="rp" class="form-label">Related Projects</label>
-                            <input type="text" class="form-control form-control-sm inup" name='rp[]' id="rp" required>
+                            <input type="text" class="form-control form-control-sm inup" name='rp[]' id="rp">
                             <br>
                             <button type="button" class="btn btn-success btn-lg add1" id="buttonbox1">Add</button>
                         </div>
@@ -144,7 +144,7 @@
                         <div class="col"></div>
                         <div class="col">
                             <label for="s_skill" class="form-label">Skill</label>
-                            <input type="text" class="form-control form-control-sm inup" name='s_skill[]' id="s_skill" required>
+                            <input type="text" class="form-control form-control-sm inup" name='s_skill[]' id="s_skill" >
                             <br>
                             <button type="button" class="btn btn-success btn-lg add2" id="buttonbox1">Add</button>
                         </div>
@@ -160,7 +160,7 @@
                 <br>
 
                 <div class="cv_head text-center">
-                    <h3><u>Extra Activities</u></h3>
+                    <h3><u>Extra Activities/Club Activities</u></h3>
                 </div>
                 <br>
                 <br>
@@ -169,10 +169,10 @@
                         <div class="col"></div>
                         <div class="col">
                             <label for="e_name" class="form-label">Activity Name</label>
-                            <input type="text" class="form-control form-control-sm inup" name='e_name[]' id="e_name" required>
+                            <input type="text" class="form-control form-control-sm inup" name='e_name[]' id="e_name" >
                             <br>
                             <label for="role" class="form-label">Description</label>
-                            <input type="text" class="form-control form-control-sm inup" name='role[]' id="role" required>
+                            <input type="text" class="form-control form-control-sm inup" name='role[]' id="role" >
                             <br>
                             <label for="cont" class="form-label">Link</label>
                             <textarea class="form-control inup" placeholder="Details..." name='cont[]' id="cont"
@@ -198,10 +198,8 @@
                             <div class="col"></div>
                             <div class="col">
                                 <label for="p_name" class="form-label">Project Name</label>
-                                <input type="text" class="form-control form-control-sm inup" name='p_name[]' id="p_name" required>
+                                <input type="text" class="form-control form-control-sm inup" name='p_name[]' id="p_name" >
                                 <br>
-                                <label for="ver" class="form-label">Verified By</label>
-                                <input type="text" class="form-control form-control-sm inup" name='p_ver[]' id="ver" required>
                                 <br>
                                 <label for="p_des" class="form-label">Project Description</label>
                                 <textarea class="form-control inup" placeholder="Details..." name='p_des[]' id="p_des"
@@ -226,13 +224,13 @@
                             <div class="col"></div>
                             <div class="col">
                                 <label for="title" class="form-label">Title</label>
-                                <input type="text" class="form-control form-control-sm inup" name='title[]' id="title" required>
+                                <input type="text" class="form-control form-control-sm inup" name='title[]' id="title" >
                                 <br>
                                 <label for="year_p" class="form-label">Year Published</label>
-                                <input type="number" class="form-control form-control-sm inup" name='year_p[]' id="year_p" required>
+                                <input type="number" class="form-control form-control-sm inup" name='year_p[]' id="year_p" >
                                 <br>
                                 <label for="ver" class="form-label">Publication link</label>
-                                <input type="text" class="form-control form-control-sm inup" name='pu_ver[]' id="ver" required>
+                                <input type="text" class="form-control form-control-sm inup" name='pu_ver[]' id="ver" >
                                 <br>
                                 <button type="button" class="btn btn-success btn-lg add5" id="buttonbox1">Add</button>
                             </div>
@@ -284,14 +282,14 @@
                     <div class="col"></div>
                     <div class="col">
                         <label for="t_skill" class="form-label">Skill</label>
-                        <input type="text" class="form-control form-control-sm" name='t_skill[]' id="t_skill" required>
+                        <input type="text" class="form-control form-control-sm" name='t_skill[]' id="t_skill" >
                         <br>
                         <label for="des" class="form-label">Describe</label>
                         <textarea class="form-control" placeholder="Describe..." name='des[]' id="des"
                             style="height: 80px;"></textarea>
                         <br>
                         <label for="rp" class="form-label">Related Projects</label>
-                        <input type="text" class="form-control form-control-sm" name='rp[]' id="rp" required>
+                        <input type="text" class="form-control form-control-sm" name='rp[]' id="rp" >
                         <br>
                         <button type="button" class="btn btn-danger btn-lg remove1" id="buttonbox2">Remove</button>
                     </div>
@@ -319,7 +317,7 @@
                     <div class="col"></div>
                     <div class="col">
                         <label for="s_skill" class="form-label">Skill</label>
-                        <input type="text" class="form-control form-control-sm" name='s_skill[]' id="s_skill" required>
+                        <input type="text" class="form-control form-control-sm" name='s_skill[]' id="s_skill">
                         <br>
                         <button type="button" class="btn btn-danger btn-lg remove2" id="buttonbox2">Remove</button>
                     </div>
@@ -349,10 +347,10 @@
                     <div class="col"></div>
                     <div class="col">
                         <label for="e_name" class="form-label">Activity Name</label>
-                        <input type="text" class="form-control form-control-sm" name='e_name[]' id="e_name" required>
+                        <input type="text" class="form-control form-control-sm" name='e_name[]' id="e_name">
                         <br>
                         <label for="role" class="form-label">Description</label>
-                        <input type="text" class="form-control form-control-sm" name='role[]' id="role" required>
+                        <input type="text" class="form-control form-control-sm" name='role[]' id="role">
                         <br>
                         <label for="cont" class="form-label">Link</label>
                         <textarea class="form-control" placeholder="Details..." name='cont[]' id="cont"
@@ -384,10 +382,8 @@
                     <div class="col"></div>
                     <div class="col">
                         <label for="p_name" class="form-label">Project Name</label>
-                        <input type="text" class="form-control form-control-sm" name='p_name[]' id="p_name" required>
+                        <input type="text" class="form-control form-control-sm" name='p_name[]' id="p_name">
                         <br>
-                        <label for="ver" class="form-label">Verified By</label>
-                        <input type="text" class="form-control form-control-sm" name='p_ver[]' id="ver" required>
                         <br>
                         <label for="p_des" class="form-label">Project Description</label>
                         <textarea class="form-control" placeholder="Details..." name='p_des[]' id="p_des"
@@ -419,13 +415,13 @@
                         <div class="col"></div>
                         <div class="col">
                             <label for="title" class="form-label">Title</label>
-                            <input type="text" class="form-control form-control-sm" name='title[]' id="title" required>
+                            <input type="text" class="form-control form-control-sm" name='title[]' id="title">
                             <br>
                             <label for="year_p" class="form-label">Year Published</label>
-                            <input type="number" class="form-control form-control-sm" name='year_p[]' id="year_p" required>
+                            <input type="number" class="form-control form-control-sm" name='year_p[]' id="year_p">
                             <br>
-                            <label for="ver" class="form-label">Verified By</label>
-                            <input type="text" class="form-control form-control-sm" name='pu_ver[]' id="ver" required>
+                            <label for="ver" class="form-label">Publication link</label>
+                            <input type="text" class="form-control form-control-sm" name='pu_ver[]' id="ver">
                             <br>
                             <button type="button" class="btn btn-danger btn-lg remove5" id="buttonbox2">Remove</button>
                         </div>
