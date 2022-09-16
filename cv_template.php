@@ -1,3 +1,42 @@
+<?php
+//Database connect:
+include "db_connect.php";
+
+//Queries to fetch needed student data:
+$getskill="SELECT * FROM cv_tech_skill WHERE st_username='011183075'";
+$skillget=mysqli_query($conn, $getskill);
+
+$getsskill="SELECT * FROM cv_soft_skill WHERE st_username='011183075'";
+$sskillget=mysqli_query($conn, $getsskill);
+
+$getactivity="SELECT * FROM cv_eca WHERE st_username='011183075'";
+$activityget=mysqli_query($conn, $getactivity);
+
+$getproject="SELECT * FROM cv_project WHERE st_username='011183075'";
+$projectget=mysqli_query($conn, $getproject);
+
+$getpub="SELECT * FROM cv_publication WHERE st_username='011183075'";
+$pubget=mysqli_query($conn, $getpub);
+
+
+$getbasic="SELECT * FROM cv_basic WHERE st_username='011183075'";
+$infoget=mysqli_query($conn, $getbasic);
+$info = mysqli_fetch_array($infoget,MYSQLI_ASSOC);
+
+$getedu="SELECT * FROM cv_edu WHERE st_username='011183075'";
+$eduget=mysqli_query($conn, $getedu);
+$info1 = mysqli_fetch_array($eduget,MYSQLI_ASSOC);
+
+?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,11 +60,11 @@
             <div class="col top_part">
                 <div class="row justify-content-center">
                     <div class="col top_field">
-                        <h3 class="name">Name</h3>
+                        <h3 class="name"><?php echo "<p><strong>" . strtoupper($info['st_name']) . "</strong></p>";?></h3>
                         <br>
-                        <h5 class="category">Address <span class="gen_text">Dhaka, Bangladesh</span></h5>
-                        <h5 class="category">Phone <span class="gen_text">+88012345678911</span></h5>
-                        <h5 class="category">E-mail <span class="gen_text">gg@gmail.com</span></h5>
+                        <h5 class="category">Address: <span class="gen_text"><?php echo "<p><strong>" . strtoupper($info['st_city']) . "</strong></p>";?></span></h5>
+                        <h5 class="category">Phone: <span class="gen_text"><?php echo "<p><strong>" . strtoupper($info['st_contact']) . "</strong></p>";?></span></h5>
+                        <h5 class="category">E-mail: <span class="gen_text"><?php echo "<p><strong>" . strtoupper($info['st_email']) . "</strong></p>";?></span></h5>
                     </div>
                 </div>
             </div>
@@ -36,30 +75,42 @@
                 <div id="line"></div>
                 <div id="diamond">
                     <i class='bx bxs-graduation bx-flip-horizontal bx-xs' id="icons"></i>
-                    <h5 class="title">Education</h5>
+                    <h5 class="title">Education:</h5>
                 </div>
                 <div id="line"></div>
-                <span class="subtitle">Secondary School</span>
+                <span class="subtitle">Secondary School:</span>
+                <?php echo "<p><strong>" . strtoupper($info1['edu_school']) . "</strong></p>";?>
                 <div class="row">
-                    <div class="col text">Starting Year</div>
-                    <div class="col text">Ending Year</div>
+                    <div class="col text">Starting Year:</div>
+                    <?php echo "<p><strong>" . strtoupper($info1['edu_school_start']) . "</strong></p>";?>
+                    <div class="col text">Ending Year:</div>
+                    <?php echo "<p><strong>" . strtoupper($info1['edu_school_end']) . "</strong></p>";?>
                 </div>
                 <div id="line"></div>
-                <span class="subtitle">Higher School</span>
+                <span class="subtitle">Higher Secondary School:</span>
+                <?php echo "<p><strong>" . strtoupper($info1['edu_college']) . "</strong></p>";?>
                 <div class="row">
-                    <div class="col text">Starting Year</div>
-                    <div class="col text">Ending Year</div>
+                    <div class="col text">Starting Year:</div>
+                    <?php echo "<p><strong>" . strtoupper($info1['edu_college_start']) . "</strong></p>";?>
+                    <div class="col text">Ending Year:</div>
+                    <?php echo "<p><strong>" . strtoupper($info1['edu_college_end']) . "</strong></p>";?>
                 </div>
                 <div id="line"></div>
-                <span class="subtitle">University</span>
+                <span class="subtitle">University:</span>
+                <?php echo "<p><strong>" . strtoupper($info1['edu_uni']) . "</strong></p>";?>
                 <div class="row">
-                    <div class="col text">Starting Year</div>
-                    <div class="col text">Ending Year</div>
+                    <div class="col text">Starting Year:</div>
+                    <?php echo "<p><strong>" . strtoupper($info1['edu_uni_start']) . "</strong></p>";?>
+                    <div class="col text">Ending Year:</div>
+                    <?php echo "<p><strong>" . strtoupper($info1['edu_uni_end']) . "</strong></p>";?>
                 </div>
                 <div class="row">
-                    <div class="col text">Department</div>
-                    <div class="col text">Major</div>
-                    <div class="col text">CGPA</div>
+                    <div class="col text">Department:</div>
+                    <?php echo "<p><strong>" . strtoupper($info1['edu_uni_dept']) . "</strong></p>";?>
+                    <div class="col text">Major:</div>
+                    <?php echo "<p><strong>" . strtoupper($info1['edu_uni_major']) . "</strong></p>";?>
+                    <div class="col text">CGPA:</div>
+                    <?php echo "<p><strong>" . strtoupper($info1['edu_uni_cgpa']) . "</strong></p>";?>
                 </div>
             </div>
         </div>
@@ -68,18 +119,35 @@
                 <div id="line"></div>
                 <div id="diamond">
                     <i class='bx bx-extension bx-xs' id="icons"></i>
+
                     <h5 class="title">Skills</h5>
                 </div>
                 <div id="line"></div>
                 <span class="subtitle">Technical Skills</span>
                 <ul class="text">
-                    <li>Skill name</li>
-                    <li>Related Project</li>
-                    <li><small>Description</small></li>
+                    <?php
+                        while ($tskill = mysqli_fetch_array($skillget,MYSQLI_ASSOC)) {
+                            {
+                            echo "<p><strong>" . strtoupper($tskill['tech_skill_name']) . "</strong></p>";
+                            ?>
+                            <li>Related Project:</li>
+                            <li><?php echo "<p><strong>" . strtoupper($tskill['tech_skill_related_project']) . "</strong></p>"; ?></li>
+
+                            <?php
+                            }
+                        }
+                    ?>
                 </ul>
                 <span class="subtitle">Soft Skills</span>
                 <ul class="text">
-                    <li>Skill name</li>
+                <?php
+                        while ($info2 = mysqli_fetch_array($sskillget,MYSQLI_ASSOC)) {
+                            {
+                                 echo "<p><strong>" . strtoupper($info2['soft_skill_name']) . "<p><strong>";
+                           
+                            }
+                        }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -92,9 +160,22 @@
                 </div>
                 <div id="line"></div>
                 <ul class="text">
-                    <li>Activity name</li>
-                    <li><small>Description</small></li>
-                    <li><a href="#">Link</a></li>
+                    <?php
+                            while ($info3 = mysqli_fetch_array($activityget,MYSQLI_ASSOC)) {
+                                {   
+                                    ?><li>Activity name:</li><?php
+                                    echo "<p><strong>" . strtoupper($info3['eca_name']) . "<p><strong>";
+                                    ?>
+                                    
+                                    <li><small>Description</small></li>
+                                    <?php echo "<p><strong>" . strtoupper($info3['eca_desc']) . "<p><strong>"; ?>
+                                    <li><a href="#"><?php echo "<p><strong>" . strtoupper($info3['eca_link']) . "<p><strong>"; ?></a></li>
+                                    
+                                    <?php
+                                }
+                            }
+                        ?>
+                    
                 </ul>
             </div>
         </div>
@@ -107,8 +188,20 @@
                 </div>
                 <div id="line"></div>
                 <ul class="text">
-                    <li>Project name</li>
-                    <li><small>Description</small></li>
+                <?php
+                            while ($info4 = mysqli_fetch_array($projectget,MYSQLI_ASSOC)) {
+                                {   
+                                    ?><li>Project name:</li><?php
+                                    echo "<p><strong>" . strtoupper($info4['project_name']) . "<p><strong>";
+                                    ?>
+                                    
+                                    <li><small>Description</small></li>
+                                    <?php echo "<p><strong>" . strtoupper($info4['project_desc']) . "<p><strong>"; ?>
+                                    <?php
+                                }
+                            }
+                        ?>
+                
                 </ul>
             </div>
         </div>
@@ -121,9 +214,21 @@
                 </div>
                 <div id="line"></div>
                 <ul class="text">
-                    <li>Title</li>
-                    <li>Year Published</li>
-                    <li><a href="#">Link</a></li>
+                <?php
+                            while ($info5 = mysqli_fetch_array($pubget,MYSQLI_ASSOC)) {
+                                {   
+                                    ?><li>Title:</li><?php
+                                    echo "<p><strong>" . strtoupper($info5['pub_title']) . "<p><strong>";
+                                    ?>
+                                    <li>Year Published:</li>
+                                    <?php echo "<p><strong>" . strtoupper($info5['pub_year_published']) . "<p><strong>"; ?>
+                                    <li><a href="#"><?php echo "<p><strong>" . strtoupper($info5['pub_link']) . "<p><strong>"; ?></a></li>
+                                    
+                                    <?php
+                                }
+                            }
+                        ?>
+                    
                 </ul>
             </div>
         </div>
