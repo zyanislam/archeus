@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2022 at 09:17 PM
+-- Generation Time: Sep 16, 2022 at 04:23 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -146,7 +146,9 @@ CREATE TABLE `cv_publication` (
 CREATE TABLE `cv_soft_skill` (
   `soft_skill_id` int(11) NOT NULL,
   `st_username` varchar(255) NOT NULL,
-  `soft_skill_name` varchar(255) NOT NULL
+  `soft_skill_name` varchar(255) NOT NULL,
+  `soft_skill_verification` int(11) NOT NULL DEFAULT 0,
+  `soft_skill_toggle` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -160,7 +162,9 @@ CREATE TABLE `cv_tech_skill` (
   `st_username` varchar(255) NOT NULL,
   `tech_skill_name` varchar(255) DEFAULT NULL,
   `tech_skill_desc` varchar(255) DEFAULT NULL,
-  `tech_skill_related_project` varchar(255) DEFAULT NULL
+  `tech_skill_related_project` varchar(255) DEFAULT NULL,
+  `tech_skill_verification` int(11) NOT NULL DEFAULT 0,
+  `tech_skill_toggle` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
