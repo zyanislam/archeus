@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="student_requestvalidation.css">
+    <link rel="stylesheet" href="student_myskills.css">
 
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -16,45 +16,26 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
-    <script src="custom_tags_input.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js" type="module"></script>
-
-    <title>Request Skill Validation | Archeus</title>
+    <title>Student Home | Archeus</title>
 </head>
 
 <body class="dark">
     <div class="layout">
-
-        <nav class="navbar fixed-top navbar top">
+        <div class="top">
             <div id="top_title">
-                <span class="home_button" onclick="window.location.href = 'teacher_home.php';">Archeus</span>
-            </div>
-            <div id="top_logout">
-                <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
-            </div>
-
-        </nav>
-
-        <!-- <div class="top">
-            <div id="top_title">
-                Archeus
+                <span class="home_button" onclick="window.location.href = 'student_home.php';">Archeus</span>
             </div>
 
             <div id="top_logout">
-                <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
+                <a class="ui orange button huge" name="logout" onclick="window.location.href = 'student_logoutprocess.php';" id="buttonbox2">Logout</a>
             </div>
-        </div> -->
+        </div>
 
         <div class="mid">
             <nav class="sidebar open">
@@ -95,7 +76,7 @@
                             <li class="nav-link" id="link_list">
                                 <a href="#">
                                     <i class='bx bx-check icon' style='color:#4ecb71'></i>
-                                    <span class="text nav-text" id="menuitems">My Skills</span>
+                                    <span class="text nav-text" id="menuitems">Validation Request</span>
                                 </a>
                             </li>
 
@@ -144,76 +125,9 @@
 
             </nav>
 
-            <div class="bg_contentbox">
-                <div class="contentbox">
-                    
-                    <div>
-                        <span class="spaceboxv2"></span>
-                        <span class="spaceboxv2"></span>
-                        <h1 class="request_title">Request For Skill Validation</h1>
-                    </div>
-                    <hr class="hrsize">
-
-                    <form action="teacher_newpostprocess.php" method="POST" enctype="multipart/form-data">
-
-                        <div class="ui card newpostbox">
-
-                            <span class="spaceboxv2"></span>
-
-                            <div>
-                                <select class="field" name="post_skill" id="post_skill">
-                                    <option value="">Skill List</option>
-                                    <option value="">PHP</option>
-                                    <option value="">MySQL</option>
-                                </select>
-                            </div>
-
-                            <span class="spaceboxv2"></span>
-
-                            <input class="field" type="text" name="post_cn" id="post_cn" placeholder="Course Name">
-
-                            <span class="spaceboxv2"></span>
-
-                            <input class="field" type="text" name="post_cc" id="post_cc" placeholder="Course Code">
-
-                            <span class="spaceboxv2"></span>
-
-                            <input class="field" type="text" name="post_tri" id="post_tri" placeholder="Trimester">
-
-                            <span class="spaceboxv2"></span>
-
-                            <div>
-                                <select class="field" name="post_teacher" id="post_teacher">
-                                    <option value="">Teacher List</option>
-                                    <option value="AH">Abir Hasan</option>
-                                </select>
-                            </div>
-
-                            <span class="spaceboxv2"></span>
-
-                            <input class="field" type="text" name="post_pro" id="post_pro" placeholder="Project Name">
-
-                            <span class="spaceboxv2"></span>
-
-                            <input class="field" type="text" name="post_team" id="post_team" placeholder="Team Name">
-
-                            <span class="spaceboxv2"></span>
-
-
-                            <div align="right">
-                                <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Submit Request</button>
-                            </div>
-
-                        </div>
-
-                    </form>
-
-                </div>
-
-
+            <div class="contentbox">
 
             </div>
-
         </div>
     </div>
 
@@ -242,6 +156,7 @@
                 modeText.innerText = "Light mode";
             } else {
                 modeText.innerText = "Dark mode";
+
             }
         });
     </script>

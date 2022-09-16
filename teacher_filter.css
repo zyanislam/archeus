@@ -87,7 +87,7 @@ body.dark{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 36px;
 }
 
 .sidebar .text,
@@ -97,7 +97,7 @@ body.dark{
 }
 
 .sidebar .text{
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 500;
     white-space: nowrap;
     opacity: 1;
@@ -321,7 +321,7 @@ body.dark .home .text{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #1d1d25;
+    background-color: #d6d6d6;
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
@@ -350,13 +350,13 @@ body.dark .home .text{
 }
 
 #buttonbox1{
-    width: auto;
+    width: 154px;
     height: 54px;
-    border-radius: 20px !important;
+    border-radius: 29px !important;
     font-size: 21px;
     font-family: Helvetica, sans-serif;
     font-weight: 500;
-    background-color: #8178ff;
+    background-color: #2C2B39;
 }
 
 #buttonbox2{
@@ -367,6 +367,7 @@ body.dark .home .text{
     font-family: Helvetica, sans-serif;
     font-weight: 500;
     background-color:#8178ff;
+    margin-left: 15px !important;
 }
 
 #link_list{
@@ -387,7 +388,7 @@ body.dark .home .text{
 }
 
 .spaceboxv2{
-    height: 27px;
+    height: 20px;
 }
 
 .mid{
@@ -407,11 +408,11 @@ body.dark .home .text{
 .contentbox{
     display: flex;
     position: relative;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    height: 1150px;
-    width: 1500px;
-    background-color: #d6d6d6 !important;
+    height: auto;
+    width: auto;
+    background-color: #27272c !important;
     top: 75px;
     left: 570px;
     border-radius: 38px;
@@ -419,25 +420,6 @@ body.dark .home .text{
     padding: 20px;
 }
 
-.hrsize{
-    height: 20px;
-}
-
-.request_title{
-    font-size: 35px !important;
-}
-
-.newpostbox{
-    background-color: #2C2B39 !important;
-    min-height: 230vh;
-    width: 1210px !important;
-    color: rgb(255, 255, 255) !important;
-    border-radius: 28px !important;
-    border: 0px #2C2B39;
-    padding: 20px 30px !important;
-    justify-content: center;
-    align-items: center;
-}
 
 #write{
     font-size: 22px;
@@ -449,19 +431,7 @@ body.dark .home .text{
     left: 1263px;
     top: 474px;
     border: 0px;
-    border-radius: 44px !important;
-    padding: 20px;
-    opacity: 2 !important;
-    font-size: 18px;
-}
-
-.field{
-    width: 1135px;
-    height: 55px;
-    left: 1263px;
-    top: 474px;
-    border: 0px;
-    border-radius: 44px !important;
+    border-radius: 14px !important;
     padding: 20px;
     opacity: 2 !important;
     font-size: 18px;
@@ -494,42 +464,8 @@ body.dark .home .text{
     color: rgb(0, 0, 0);
 }
 
-#post_skill{
-    font-size: 25px;
-    padding: 10px;
-    padding-left: 15px;
-    margin: 5px;
-}
-
-#post_cn{
-    font-size: 25px;
-    margin: 5px;
-}
-
-#post_tri{
-    font-size: 25px;
-    margin: 5px;
-}
-
-#post_cc{
-    font-size: 25px;
-    margin: 5px;
-}
-
-#post_pro{
-    font-size: 25px;
-    margin: 5px;
-}
-
-#post_team{
-    font-size: 25px;
-    margin: 5px;
-}
-
-#post_teacher{
-    font-size: 25px;
-    padding: 10px;
-    padding-left: 15px;
+#post_title{
+    font-size: 30px;
     margin: 5px;
 }
 
@@ -556,4 +492,28 @@ body.dark .home .text{
 #skills{
     color: black !important;
     background-color:#695CFE !important;
+}
+
+#post_teacher{
+    font-size: 25px;
+    padding: 10px;
+    padding-left: 15px;
+    margin: 5px;
+}
+
+.field{
+    width: 300px;
+    height: 55px;
+    left: 1263px;
+    top: 474px;
+    border: 0px;
+    border-radius: 44px !important;
+    padding: 5px;
+    padding-left: 10px;
+    opacity: 2 !important;
+    font-size: 18px;
+}
+
+.filter{
+    margin: 20px;
 }
