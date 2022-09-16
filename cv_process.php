@@ -13,14 +13,14 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         !empty($_POST["uni"]) && !empty($_POST["u_syear"]) &&
         !empty($_POST["u_eyear"]) && !empty($_POST["dept"]) &&
         !empty($_POST["major"]) && !empty($_POST["cgpa"]) &&
-        !empty($_POST["t_skill"]) && !empty($_POST["des"]) &&
-        !empty($_POST["rp"]) && !empty($_POST["s_skill"]) &&
-        !empty($_POST["e_name"]) && !empty($_POST["role"]) &&
-        !empty($_POST["cont"]) && !empty($_POST["p_name"]) &&
-        !empty($_POST["p_ver"]) && !empty($_POST["p_des"]) &&
-        !empty($_POST["title"]) && !empty($_POST["year_p"]) &&
-        !empty($_POST["pu_ver"])
-        &&
+        // !empty($_POST["t_skill"]) && !empty($_POST["des"]) &&
+        // !empty($_POST["rp"]) && !empty($_POST["s_skill"]) &&
+        // !empty($_POST["e_name"]) && !empty($_POST["role"]) &&
+        // !empty($_POST["cont"]) && !empty($_POST["p_name"]) &&
+        // !empty($_POST["p_ver"]) && !empty($_POST["p_des"]) &&
+        // !empty($_POST["title"]) && !empty($_POST["year_p"]) &&
+        // !empty($_POST["pu_ver"])
+        // &&
         isset($_POST["name"]) && isset($_POST["email"]) && 
         isset($_POST["phone"]) && isset($_POST["city"]) &&
         isset($_POST["fb"]) && isset($_POST["li"]) &&
@@ -29,14 +29,14 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         isset($_POST["hs_syear"]) && isset($_POST["hs_eyear"]) &&
         isset($_POST["uni"]) && isset($_POST["u_syear"]) &&
         isset($_POST["u_eyear"]) && isset($_POST["dept"])&&
-        isset($_POST["major"]) && isset($_POST["cgpa"]) && 
-        isset($_POST["t_skill"]) && isset($_POST["des"]) &&
-        isset($_POST["rp"]) && isset($_POST["s_skill"]) &&
-        isset($_POST["e_name"]) && isset($_POST["role"])&&
-        isset($_POST["cont"]) && isset($_POST["p_name"]) && 
-        isset($_POST["p_ver"]) && isset($_POST["p_des"]) &&
-        isset($_POST["title"]) && isset($_POST["year_p"]) &&
-        isset($_POST["pu_ver"])
+        isset($_POST["major"]) && isset($_POST["cgpa"])  
+        // isset($_POST["t_skill"]) && isset($_POST["des"]) &&
+        // isset($_POST["rp"]) && isset($_POST["s_skill"]) &&
+        // isset($_POST["e_name"]) && isset($_POST["role"])&&
+        // isset($_POST["cont"]) && isset($_POST["p_name"]) && 
+        // isset($_POST["p_ver"]) && isset($_POST["p_des"]) &&
+        // isset($_POST["title"]) && isset($_POST["year_p"]) &&
+        // isset($_POST["pu_ver"])
       ){
         //storing the informations in variables
 
