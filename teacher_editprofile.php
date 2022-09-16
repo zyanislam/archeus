@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="teacher_home.css">
+    <link rel="stylesheet" href="teacher_editprofile.css">
 
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -27,7 +27,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
     <script src="custom_tags_input.js"></script>
-    <title>Teacher Home | Archeus</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js" type="module"></script>
+
+    <title>Edit Your Profile | Archeus</title>
 </head>
 
 <body class="dark">
@@ -141,79 +144,152 @@
 
                 <div class="contentbox">
 
-                    <form action="teacher_newpostprocess.php" method="POST" enctype="multipart/form-data">
+                    <span class="spaceboxv"></span>
 
-                        <div class="ui card newpostbox">
+                    <h1 class="request_title">Edit Information</h1>
 
-                            <p id="write">Write about an upcoming opportunity</p>
+                    <span class="spaceboxv2"></span>
 
-                            <input class="inup" type="text" name="post_title" id="post_title" placeholder="Title Of Your Post">
+                    <div class="rowdiv">
 
-                            <span class="spaceboxv"></span>
-
-                            <textarea class="form-control" placeholder="Describe The Opportunity For The Students" name="newpost" id="newpost" style="height: 80px;"></textarea>
-
-                            <span class="spaceboxv2"></span>
-
-                            <label class="col-xs-3 control-label">
-                                <h2>Tags:</h2>
-                            </label>
-                            <div class="col-xs-8">
-                                <input type="text" id="skills" name="skills" data-role="tagsinput" />
+                        <div class="boxdiv1">
+                            <div class="boxdivlabel">
+                                <label class="labelfield">Name</label>
                             </div>
 
-                            <div align="right">
-                                <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Post</button>
+                            <div>
+                                <input class="field" type="text" name="post_cc" id="post_cc" placeholder="Name of Teacher" disabled>
                             </div>
-
                         </div>
 
-                    </form>
+                        <div class="boxdiv1">
+                            <div class="boxdivlabel">
+                                <label class="labelfield">Email</label>
+                            </div>
+
+                            <div>
+                                <input class="field" type="text" name="post_cc" id="post_cc" placeholder="Email" disabled>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <span class="spaceboxv2"></span>
+
+
+                    <div class="rowdiv">
+
+                        <div class="boxdiv1">
+                            <div class="boxdivlabel">
+                                <label class="labelfield">User/ID</label>
+                            </div>
+
+                            <div>
+                                <input class="field" type="text" name="post_cc" id="post_cc" placeholder="User/ID" disabled>
+                            </div>
+                        </div>
+
+                        <div class="boxdiv1">
+                            <div class="boxdivlabel">
+                                <label class="labelfield">Gender</label>
+                            </div>
+
+                            <div>
+                                <input class="field" type="text" name="post_cc" id="post_cc" placeholder="Gender">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <span class="spaceboxv2"></span>
+
+                    <div class="rowdiv">
+
+                        <div class="boxdiv1">
+                            <div class="boxdivlabel">
+                                <label class="labelfield">Department</label>
+                            </div>
+
+                            <div>
+                                <input class="field" type="text" name="post_cc" id="post_cc" placeholder="Department">
+                            </div>
+                        </div>
+
+                        <div class="boxdiv1">
+                            <div class="boxdivlabel">
+                                <label class="labelfield">Room No</label>
+                            </div>
+
+                            <div>
+                                <input class="field" type="text" name="post_cc" id="post_cc" placeholder="XXX/X">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <span class="spaceboxv2"></span>
+
+                    <div class="rowdiv">
+
+                        <div class="boxdiv1">
+                            <div class="boxdivlabel">
+                                <label class="labelfield">Phone No #1</label>
+                            </div>
+
+                            <div>
+                                <input class="field" type="text" name="post_cc" id="post_cc" placeholder="01XXXXXXXXX">
+                            </div>
+                        </div>
+
+                        <div class="boxdiv1">
+                            <div class="boxdivlabel">
+                                <label class="labelfield">Phone No #2</label>
+                            </div>
+
+                            <div>
+                                <input class="field" type="text" name="post_cc" id="post_cc" placeholder="01XXXXXXXXX">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <span class="spaceboxv2"></span>
+
+                    <span class="spaceboxv2"></span>
+
+                    <h1 class="request_title">Password</h1>
+
+                    <span class="spaceboxv2"></span>
+
+
+
+                    <div class="boxdiv1">
+
+                        <input class="field" type="text" name="post_cc" id="post_cc" placeholder="Old Password">
+
+                    </div>
+
+                    <span class="spaceboxv2"></span>
+
+                    <div class="boxdiv1">
+
+                        <input class="field" type="text" name="post_cc" id="post_cc" placeholder="New Password">
+
+                    </div>
+
+                    <span class="spaceboxv2"></span>
+
+                    <div align="right">
+                        <button class="ui secondary button huge" id="buttonbox2" type="submit" name="submit">Save</button>
+                    </div>
 
                     <span class="spaceboxv"></span>
 
-                    <!-- here is the feed-post BackEnd Part -->
-                    <?php
-                    try {
-                        $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
-                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    <div align="right">
+                        <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Cancel</button>
+                    </div>
 
-                        $sqlquery = "SELECT * FROM post_teacher ORDER BY tpost_datetime DESC";
-                        $returnobj = $conn->query($sqlquery);
 
-                        if ($returnobj->rowCount() == 0) {
-                            ///no data found
-                            echo "No data found";
-                        } else {
-                            /*<?php echo $row['id'];?>*/
-                            //tpost_id,t_username, t_name,tpost_title, tpost_desc
-                            $tabledata = $returnobj->fetchAll();
-                            foreach ($tabledata as $row) {
-                    ?>
-                                <div class="ui card postbox">
-                                    <div class="content">
-                                        <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
-                                        <div class="header" id="post_title"><?php echo $row['tpost_title']; ?></div>
-                                        <div class="header" id="author_name"><?php echo $row['t_name']; ?> | Author</div>
-
-                                        <div class="description">
-                                            <p id="post_desc"><?php echo $row['tpost_desc']; ?></p>
-                                        </div>
-                                    </div>
-                                </div>
-                    <?php
-                            }
-                        }
-                    } catch (PDOException $ex) {
-                        //if found error forward to login page
-                        // echo"<script>location.assign('welcome.php')</script>";
-                        echo '<script>
-                        alert("Found error");
-                        window.location = "welcome.php";
-                        </script>';
-                    }
-                    ?>
-                    <!-- BackEnd ends here -->
 
                 </div>
 

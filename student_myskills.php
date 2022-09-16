@@ -79,13 +79,13 @@
                                     <span class="text nav-text" id="menuitems">Validation Request</span>
                                 </a>
                             </li>
-
+                            <!-- 
                             <li class="nav-link" id="link_list">
                                 <a href="#">
                                     <i class='bx bxs-message-square-dots icon' style='color:#8490ff'></i>
                                     <span class="text nav-text" id="menuitems">CV Drops</span>
                                 </a>
-                            </li>
+                            </li> -->
 
                             <li class="nav-link" id="link_list">
                                 <a href="#">

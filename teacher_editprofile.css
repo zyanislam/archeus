@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    color: #fff;
     /* background-color: #1d1d25; */
 }
 
@@ -350,8 +351,8 @@ body.dark .home .text{
 }
 
 #buttonbox1{
-    width: 154px;
-    height: 54px;
+    width: 145px;
+    height: 52px;
     border-radius: 29px !important;
     font-size: 21px;
     font-family: Helvetica, sans-serif;
@@ -386,8 +387,16 @@ body.dark .home .text{
     height: 10px;
 }
 
+.spaceboxh{
+    width: 37px;
+}
+
+.spaceboxh2{
+    width: 77px;
+}
+
 .spaceboxv2{
-    height: 20px;
+    height: 40px;
 }
 
 .mid{
@@ -410,7 +419,7 @@ body.dark .home .text{
     flex-direction: column;
     align-items: center;
     height: auto;
-    width: 1200px;
+    width: 1400px;
     background-color: #27272c !important;
     top: 75px;
     left: 570px;
@@ -419,15 +428,6 @@ body.dark .home .text{
     padding: 20px;
 }
 
-.newpostbox{
-    background-color: #8983d3 !important;
-    min-height: 230vh;
-    width: 1010px !important;
-    color: rgb(255, 255, 255) !important;
-    border-radius: 22px !important;
-    border: 0px #8178ff;
-    padding: 20px 30px !important;
-}
 
 #write{
     font-size: 22px;
@@ -443,25 +443,6 @@ body.dark .home .text{
     padding: 20px;
     opacity: 2 !important;
     font-size: 18px;
-}
-
-#newpost{
-    width: 100%;
-    border-radius: 18px !important;
-    min-height: 12vh;
-    padding: 20px;
-    font-size: 18px;
-}
-
-.postbox{
-    background-color: #ffffff !important;
-    min-height: 230px;
-    height: auto;
-    width: 1010px !important;
-    color: rgb(0, 0, 0) !important;
-    border-radius: 18px !important;
-    border: 0px !important;
-    padding: 5px !important;
 }
 
 .textline{
@@ -500,4 +481,62 @@ body.dark .home .text{
 #skills{
     color: black !important;
     background-color:#695CFE !important;
+}
+
+#post_teacher{
+    font-size: 25px;
+    padding: 10px;
+    padding-left: 15px;
+    margin: 5px;
+}
+
+.field{
+    width: 400px;
+    height: 55px;
+    left: 1263px;
+    top: 474px;
+    border: 0px;
+    border-radius: 44px !important;
+    padding: 5px;
+    padding-left: 15px !important;
+    opacity: 2 !important;
+    font-size: 18px;
+}
+
+.filter{
+    margin: 20px;
+}
+
+.request_title{
+    font-size: 33px !important;
+    text-align: center;
+}
+
+.rowdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.labelfield{
+    font-size: 25px;
+}
+
+.labelfield2{
+    font-size: 25px;
+    margin-right: 15px;;
+}
+
+.boxdiv1{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.boxdivlabel{
+    width: 250px;
+    text-align: center;
 }
