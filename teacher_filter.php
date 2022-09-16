@@ -29,7 +29,7 @@
     <div class="layout">
         <div class="top">
             <div id="top_title">
-                <span class="home_button" onclick="window.location.href = 'student_home.php';">Archeus</span>
+                <span class="home_button" onclick="window.location.href = 'teacher_home.php';">Archeus</span>
             </div>
 
             <div id="top_logout">
@@ -85,8 +85,8 @@
 
                             <li class="nav-link" id="link_list">
                                 <a href="#">
-                                    <i class='bx bx-filter-alt icon' style='color:#4873ff'  ></i>
-                                    <span class="text nav-text" id="menuitems">Filter</span>
+                                    <i class='bx bx-filter-alt icon' style='color:#4873ff'></i>
+                                    <span class="text nav-text" onclick="window.location.href = 'teacher_filter.php';" id="menuitems">Filter</span>
                                 </a>
                             </li>
 
@@ -95,17 +95,6 @@
 
                     <div class="bottom-content">
 
-                        <!-- <li class="mode">
-                        <div class="sun-moon">
-                            <i class='bx bx-moon icon moon'></i>
-                            <i class='bx bx-sun icon sun'></i>
-                        </div>
-                        <span class="mode-text text">Dark mode</span>
-
-                        <div class="toggle-switch">
-                            <span class="switch"></span>
-                        </div>
-                        </li> -->
                         <div id="bottomdev" align="right">
                             <div>
                                 Developed by
@@ -122,11 +111,71 @@
             </nav>
 
             <div class="bg_contentbox">
+
                 <div class="contentbox">
+
+                    <div class="filter">
+                        <select class="field" name="filter1" id="filter1">
+                            <option value="">Tags</option>
+                            <option value="">PHP</option>
+                            <option value="">MySQL</option>
+                            <?php
+                            try {
+                                $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
+                                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                $sqlquery = "SELECT DISTINCT tag_name FROM tags_teacher";
+                                $returnobj = $conn->query($sqlquery);
+
+                                if ($returnobj->rowCount() == 0) {
+                                    ///no data found
+                                    echo "No data found";
+                                } else {
+                                    /*<?php echo $row['id'];?>*/
+                                    //tpost_id,t_username, t_name,tpost_title, tpost_desc
+                                    $tabledata = $returnobj->fetchAll();
+                                    foreach ($tabledata as $row) {
+                            ?>
+                                        <option value=""><?php echo $row['tag_name']; ?></option>
+                            <?php
+                                    }
+                                }
+                            } catch (PDOException $ex) {
+                                //if found error forward to login page
+                                // echo"<script>location.assign('welcome.php')</script>";
+                                echo '<script>
+                                    alert("Found error");
+                                    window.location = "welcome.php";
+                                    </script>';
+                            }
+                            ?>
+
+                        </select>
+                    </div>
+
+                    <div class="filter">
+                        <select class="field" name="filter1" id="filter1">
+                            <option value="">Year</option>
+                            <option value="">PHP</option>
+                            <option value="">MySQL</option>
+                        </select>
+                    </div>
+
+                    <div class="filter">
+                        <select class="field" name="filter1" id="filter1">
+                            <option value="">Department</option>
+                            <option value="">PHP</option>
+                            <option value="">MySQL</option>
+                        </select>
+                    </div>
+
+
+                    <div align="right">
+                        <button class="ui secondary button huge" id="buttonbox2" type="submit" name="submit">Filter</button>
+                    </div>
 
                 </div>
             </div>
-            
+
         </div>
     </div>
 

@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
+
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
@@ -40,7 +40,7 @@
             <div id="top_logout">
                 <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
             </div>
-            
+
         </nav>
 
         <!-- <div class="top">
@@ -101,8 +101,8 @@
 
                             <li class="nav-link" id="link_list">
                                 <a href="#">
-                                    <i class='bx bx-filter-alt icon' style='color:#4873ff'  ></i>
-                                    <span class="text nav-text" id="menuitems">Filter</span>
+                                    <i class='bx bx-filter-alt icon' style='color:#4873ff'></i>
+                                    <span class="text nav-text" onclick="window.location.href = 'teacher_filter.php';" id="menuitems">Filter</span>
                                 </a>
                             </li>
 
@@ -155,9 +155,11 @@
 
                             <span class="spaceboxv2"></span>
 
-                            <label class="col-xs-3 control-label"><h2>Tags:</h2></label>
+                            <label class="col-xs-3 control-label">
+                                <h2>Tags:</h2>
+                            </label>
                             <div class="col-xs-8">
-                                <input type="text" id="skills" name="skills" data-role="tagsinput"  />				
+                                <input type="text" id="skills" name="skills" data-role="tagsinput" />
                             </div>
 
                             <div align="right">
