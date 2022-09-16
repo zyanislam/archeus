@@ -158,7 +158,7 @@
                             <label class="col-xs-3 control-label">
                                 <h2>Tags:</h2>
                             </label>
-                            <div class="col-xs-8">
+                            <div class="col-xs-8 tagbox">
                                 <input type="text" id="skills" name="skills" data-role="tagsinput" />
                             </div>
 
