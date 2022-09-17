@@ -124,8 +124,14 @@
                 type:"post",
                 data:{s_id:id},
                 success:function(data){
-                            console.log(data);
-                            }
+                        $hell = data.slice(-1);
+                        if($hell=='1'){
+                            swal("Status Active!");
+                        }
+                        else{
+                            swal("Status Inactive!");
+                         }
+                    }
             });
 
 
