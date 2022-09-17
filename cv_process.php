@@ -129,6 +129,9 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                  
                     $sqlquery3="INSERT INTO cv_tech_skill(st_username, tech_skill_name, tech_skill_desc, tech_skill_related_project) VALUES ('$id','$t_skill[$i]','$t_des[$i]','$rp[$i]')";
                     mysqli_query($conn, $sqlquery3); 
+
+                    $sqlquery11="INSERT INTO  tags_student(id, post_student_id, tag_name) VALUES (NULL,'$id','$t_skill[$i]')";
+                    mysqli_query($conn, $sqlquery11);
                  
                 }
                 

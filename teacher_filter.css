@@ -408,6 +408,7 @@ body.dark .home .text{
 .contentbox{
     display: flex;
     position: relative;
+    justify-content: center;
     flex-direction: row;
     align-items: center;
     height: auto;
