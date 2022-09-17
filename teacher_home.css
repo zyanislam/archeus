@@ -371,6 +371,13 @@ body.dark .home .text{
 
 #link_list{
     margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+#rightitems{
+    display: flex;
+    align-items: center;
 }
 
 #bottomdev{
@@ -410,10 +417,24 @@ body.dark .home .text{
     flex-direction: column;
     align-items: center;
     height: auto;
-    width: 1200px;
+    width: 1160px;
     background-color: #27272c !important;
     top: 75px;
     left: 570px;
+    border-radius: 38px;
+    border: 0px;
+    padding: 20px;
+}
+
+.contentbox2{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    height: 1420px;
+    width: 900px;
+    background-color: #27272c !important;
+    top: 85px;
+    left: 1755px;
     border-radius: 38px;
     border: 0px;
     padding: 20px;
@@ -489,7 +510,7 @@ body.dark .home .text{
 }
 
 .iconbox{
-    font-size: 30px !important;
+    font-size: 45px !important;
 }
 
 .home_button{
@@ -509,4 +530,11 @@ body.dark .home .text{
     padding: 2px;
     margin: 5px;
     border-radius: 10px;
+}
+
+#menuitems2{
+    font-size: 26px;
+    color:#fff;
+    font-weight: 500;
+    margin-left: 20px !important;
 }

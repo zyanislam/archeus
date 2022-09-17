@@ -219,6 +219,36 @@
 
             </div>
 
+            <div class="bg_contentbox2">
+                <div class="contentbox2">
+                    <ul class="menu-links">
+                        <li class="nav-link" id="link_list">
+                            <a id="rightitems" href="#">
+                                <i class='bx bxs-copy-alt iconbox' style='color:#ffffff'></i>
+                                <span class="text nav-text" onclick="window.location.href = 'teacher_home.php';" id="menuitems2">Home Posts</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-link" id="link_list">
+                            <a id="rightitems" href="#">
+                                <i class='bx bx-duplicate iconbox' style='color:#fc3f5b' ></i>
+                                <span class="text nav-text" onclick="window.location.href = 'teacher_editprofile.php';" id="menuitems2">Student Thesis Posts</span>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-link" id="link_list">
+                            <a id="rightitems" href="#">
+                                <i class='bx bx-filter-alt iconbox' style='color:#4873ff'></i>
+                                <span class="text nav-text" onclick="window.location.href = 'teacher_filter.php';" id="menuitems2">Filter</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
         </div>
     </div>
 
