@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    /* background-color: #1d1d25; */
 }
 
 :root{
@@ -87,7 +86,7 @@ body.dark{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 36px;
+    font-size: 33px;
 }
 
 .sidebar .text,
@@ -321,7 +320,7 @@ body.dark .home .text{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #d6d6d6;
+    background-color: #1d1d25;
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
@@ -367,7 +366,6 @@ body.dark .home .text{
     font-family: Helvetica, sans-serif;
     font-weight: 500;
     background-color:#8178ff;
-    margin-left: 55px !important;
 }
 
 #link_list{
@@ -391,6 +389,10 @@ body.dark .home .text{
     height: 20px;
 }
 
+.spaceboxh{
+    width: 18px;
+}
+
 .mid{
     display: flex;
     flex-direction: row;
@@ -403,24 +405,34 @@ body.dark .home .text{
 .bg_contentbox{
     position: relative;
     height: auto;
+    min-height: 1000px;
 }
 
 .contentbox{
     display: flex;
     position: relative;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     height: auto;
-    width: 1400px;
-    background-color: #27272c !important;
+    width: 1600px;
+    background-color: #ececec !important;
     top: 75px;
-    left: 570px;
+    left: 600px;
     border-radius: 38px;
     border: 0px;
     padding: 20px;
+    min-height: 1000px;
 }
 
+.newpostbox{
+    background-color: #FF7438 !important;
+    min-height: 230vh;
+    width: 1010px !important;
+    color: rgb(255, 255, 255) !important;
+    border-radius: 22px !important;
+    border: 0px #FF7438;
+    padding: 20px 30px !important;
+}
 
 #write{
     font-size: 22px;
@@ -482,24 +494,188 @@ body.dark .home .text{
 }
 
 .iconbox{
-    font-size: 30px !important;
+    font-size: 38px !important;
+    margin-right: 20px;
+}
+
+.profilebox{
+    width: 900px !important;
+    height: 200px !important;
+    background-color: #2a2a34 !important;
+    border-radius: 29px !important;
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px !important;
+    color: #ffffff !important;
+    box-shadow: 5px 5px 20px !important;
+
+}
+
+.imgdiv{
+    margin: 10px 15px !important;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.infodiv{
+    flex-grow: 1;
+    margin: 10px 55px !important;
+}
+
+.icondiv{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.userimg{
+    width: 140px;
+    height: 140px;
+    background-color: rgb(255, 179, 179);
+}
+
+
+.userimg2{
+    width: 140px;
+    height: 140px;
+    background-color: rgb(127, 125, 255);
+}
+
+.user_name{
+    font-size: 26px;
+    font: "Poppins";
+}
+
+.user_id{
+    font-size: 23px;
+    font-weight: 500;
+    color: #c3c3c3;
+}
+
+.user_des{
+    font-size: 23px;
+    font-weight: 500;
+    color: #c3c3c3;
+}
+
+.user_phone{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.user_email{
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.user_dept{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.spanboxphone{
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.spanboxroom{
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.user_room{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.user_roomno{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.emaildeptbox{
+    display: flex;
+    flex-direction: row;
+}
+
+#userimg{
+    border-radius: 50% !important;
+}
+
+#userimg2{
+    border-radius: 50% !important;
+}
+
+.user_name_div{
+    font-size: 25px !important;
+    color: rgb(255, 255, 255);
+}
+
+.user_misc{
+    display: flex;
+    flex-direction: row;
+    color: #ffffff;
+    justify-content: space-around;
+    align-items: center;
+    width: 100% !important;
+}
+
+#pointbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+#point_no{
+    font-size: 20px;
+}
+
+#emaillabel{
+    font-size:18px;
+}
+
+.people{
+    color: rgb(0, 0, 0) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.temp{
+    margin: 5px;
+}
+
+.no_data1{
+    color: rgb(0, 0, 0) !important;
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: 500 !important;
+}
+
+.no_data{
+    color: rgb(0, 0, 0) !important;
+    font-size: 25px;
+    margin-bottom: 10px;
 }
 
 .home_button{
     cursor: pointer;
-    
 }
 
-#skills{
-    color: black !important;
-    background-color:#695CFE !important;
-}
-
-#post_teacher{
-    font-size: 25px;
-    padding: 10px;
-    padding-left: 15px;
-    margin: 5px;
+#hrtag{
+    background-color:rgb(102, 102, 102) !important;
+    height:1.5px !important;
+    width:1200px;
 }
 
 .field{
@@ -524,4 +700,22 @@ body.dark .home .text{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.contentbox2{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 1400px;
+    background-color: #27272c !important;
+    border-radius: 38px;
+    border: 0px;
+    padding: 20px;
+}
+
+.spaceboxv2{
+    height: 40px;
 }

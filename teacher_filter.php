@@ -113,69 +113,73 @@
             <div class="bg_contentbox">
 
                 <div class="contentbox">
-                    <form class="form_div" action="teacher_filterprocess.php" method="GET" enctype="multipart/form-data">
-                        <div class="filter">
-                            <select class="field" name="tags" id="tags">
-                                <option value="">Tags</option>
-                                <?php
-                                try {
-                                    $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
-                                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                    $sqlquery = "SELECT DISTINCT tag_name FROM tags_teacher";
-                                    $returnobj = $conn->query($sqlquery);
+                    <?php
+                    try{
+                        $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
+                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                                    if ($returnobj->rowCount() == 0) {
-                                        ///no data found
-                                        echo "No data found";
-                                    } else {
-                                        /*<?php echo $row['id'];?>*/
-                                        //tpost_id,t_username, t_name,tpost_title, tpost_desc
-                                        $tabledata = $returnobj->fetchAll();
-                                        foreach ($tabledata as $row) {
-                                ?>
-                                            <option value="<?php echo $row['tag_name']; ?>"><?php echo $row['tag_name']; ?></option>
-                                <?php
+                        ?>
+                        <form class="form_div" action="teacher_filterprocess.php" method="GET" enctype="multipart/form-data">
+                            <div class="filter">
+                                <select class="field" name="tags" id="tags">
+                                    <option value="">Tags</option>
+                                    <?php
+                                        $sqlquery = "SELECT DISTINCT tag_name FROM tags_student ORDER BY tag_name ASC";
+                                        $returnobj = $conn->query($sqlquery);
+
+                                        if ($returnobj->rowCount() == 0) {
+                                            ///no data found
+                                            echo "No data found";
+                                        } else {
+                                            /*<?php echo $row['id'];?>*/
+                                            //tpost_id,t_username, t_name,tpost_title, tpost_desc
+                                            $tabledata = $returnobj->fetchAll();
+                                            foreach ($tabledata as $row) {
+                                    ?>
+                                                <option value="<?php echo $row['tag_name']; ?>"><?php echo $row['tag_name']; ?></option>
+                                    <?php
+                                            }
                                         }
-                                    }
-                                } catch (PDOException $ex) {
-                                    //if found error forward to login page
-                                    // echo"<script>location.assign('welcome.php')</script>";
-                                    echo '<script>
-                                        alert("Found error");
-                                        window.location = "welcome.php";
-                                        </script>';
-                                }
-                                ?>
+                                    ?>
+                                </select>
+                            </div>
 
-                            </select>
-                        </div>
+                            <div class="filter">
+                                <select class="field" name="year" id="year">
+                                    <option value="">Year</option>
+                                    <option value="1st">1st Year</option>
+                                    <option value="2nd">2nd Year</option>
+                                    <option value="3rd">3rd Year</option>
+                                    <option value="4th">4th Year</option>
+                                </select>
+                            </div>
 
-                        <div class="filter">
-                            <select class="field" name="year" id="year">
-                                <option value="">Year</option>
-                                <option value="1st">1st Year</option>
-                                <option value="2nd">2nd Year</option>
-                                <option value="3rd">3rd Year</option>
-                                <option value="4th">4th Year</option>
-                            </select>
-                        </div>
-
-                        <div class="filter">
-                            <select class="field" name="dept" id="dept">
-                                <option value="">Department</option>
-                                <option value="EEE">EEE</option>
-                                <option value="CSE">CSE</option>
-                                <option value="CE">CE</option>
-                                <option value="BBA">BBA</option>
-                                <option value="ECO">ECO</option>
-                            </select>
-                        </div>
+                            <div class="filter">
+                                <select class="field" name="dept" id="dept">
+                                    <option value="">Department</option>
+                                    <option value="EEE">EEE</option>
+                                    <option value="CSE">CSE</option>
+                                    <option value="CE">CE</option>
+                                    <option value="BBA">BBA</option>
+                                    <option value="ECO">ECO</option>
+                                </select>
+                            </div>
 
 
-                        <div align="right">
-                            <button class="ui secondary button huge" id="buttonbox2" type="submit" name="submit">Filter</button>
-                        </div>
-                    </form>            
+                            <div align="right">
+                                <button class="ui secondary button huge" id="buttonbox2" type="submit" name="submit">Filter</button>
+                            </div>
+                        </form>
+                        <?php
+                    }
+                    catch (PDOException $ex) {
+                        echo '<script>
+                                alert("Found error");
+                                window.location = "teacher_filter.php";
+                        </script>';
+                    }
+                           
+                    ?>         
                 </div>
             </div>
 

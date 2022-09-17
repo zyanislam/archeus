@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2022 at 12:40 AM
+-- Generation Time: Sep 17, 2022 at 09:08 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -81,7 +81,8 @@ INSERT INTO `cv_basic` (`cv_id`, `st_username`, `st_name`, `st_email`, `st_conta
 (1, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', 'AWfaf', 'fafaf', 'http://localhost/archeus/cv.php', 'http://localhost/archeus/cv.php'),
 (5, '011183070', 'Fahad Al Islam', 'fislam@bscse.uiu.ac.bd', '016XXXXXXXX', 'Dhaka', 'https://www.facebook.com/amazzyan', 'https://www.facebook.com/amazzyan'),
 (6, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '016XXXXXXXX', 'Dhaka', 'https://www.facebook.com/sakibur.sadman', 'https://www.facebook.com/sakibur.sadman'),
-(7, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '016XXXXXXXX', 'Dhaka', 'http://localhost/archeus/cv.php', 'http://localhost/archeus/cv.php');
+(7, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '016XXXXXXXX', 'Dhaka', 'http://localhost/archeus/cv.php', 'http://localhost/archeus/cv.php'),
+(8, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '016XXXXXXXX', 'Dhaka', 'http://localhost/archeus/cv.php', 'http://localhost/archeus/cv.php');
 
 -- --------------------------------------------------------
 
@@ -105,7 +106,8 @@ INSERT INTO `cv_eca` (`eca_id`, `st_username`, `eca_name`, `eca_desc`, `eca_link
 (1, '011182035', 'fafwa', 'faf', 'faaf'),
 (5, '011183070', 'tyjr', 'dgey', 'hrhewd'),
 (6, '011183013', '', '', ''),
-(7, '011183021', 'fsf', 'fa', 'afa');
+(7, '011183021', 'fsf', 'fa', 'afa'),
+(8, '011182035', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -138,7 +140,8 @@ INSERT INTO `cv_edu` (`edu_id`, `st_username`, `edu_school`, `edu_school_start`,
 (1, '011182035', 'ISC', '2006', '2015', 'ISC', '2015', '2017', 'UIU', '2018', '2023', 'CSE', 'ML', '3.91'),
 (5, '011183070', 'x', '2006', '2016', 'y', '2016', '2018', 'UIU', '2018', '2023', 'CSE', 'ML', '3.76'),
 (6, '011183013', 'x', '2005', '2015', 'y', '2015', '2017', 'UIU', '2018', '2023', 'CSE', 'ML', 'x.xx'),
-(7, '011183021', 'x', '2006', '2016', 'y', '2016', '2018', 'UIU', '2018', '2023', 'CSE', 'ML', 'x.xx');
+(7, '011183021', 'x', '2006', '2016', 'y', '2016', '2018', 'UIU', '2018', '2023', 'CSE', 'ML', 'x.xx'),
+(8, '011182035', 'ISC', '2006', '2015', 'ISC', '2015', '2017', 'UIU', '2018', '2023', 'CSE', 'ML', '3.91');
 
 -- --------------------------------------------------------
 
@@ -161,7 +164,8 @@ INSERT INTO `cv_project` (`project_id`, `st_username`, `project_name`, `project_
 (1, '011182035', 'fwa', 'fag'),
 (2, '011183070', 'wghrh', 'hfdher'),
 (3, '011183013', '', ''),
-(4, '011183021', '', '');
+(4, '011183021', '', ''),
+(5, '011182035', '', '');
 
 -- --------------------------------------------------------
 
@@ -185,7 +189,8 @@ INSERT INTO `cv_publication` (`pub_id`, `st_username`, `pub_title`, `pub_year_pu
 (1, '011182035', 'gdseg', '0000-00-00', 'gsefw'),
 (2, '011183070', 'ehebfb', '0000-00-00', 'fislam@bscse.uiu.ac.bd'),
 (3, '011183013', '', '0000-00-00', ''),
-(4, '011183021', '', '0000-00-00', '');
+(4, '011183021', '', '0000-00-00', ''),
+(5, '011182035', '', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
@@ -213,7 +218,8 @@ INSERT INTO `cv_soft_skill` (`soft_skill_id`, `st_username`, `soft_skill_name`, 
 (8, '011183070', 'html', 0, 0),
 (9, '011183070', 'css', 0, 0),
 (10, '011183013', 'django', 0, 0),
-(11, '011183021', 'php', 0, 0);
+(11, '011183021', 'php', 0, 0),
+(12, '011182035', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -241,7 +247,9 @@ INSERT INTO `cv_tech_skill` (`tech_skill_id`, `st_username`, `tech_skill_name`, 
 (6, '011172035', 'VS Code', 'Has experience on VS Code', 'aasdfghjj', 0, 0),
 (7, '011183070', 'Figma', 'Has experience on Figma', NULL, 0, 0),
 (8, '011183013', 'Technical writing', '', '', 0, 0),
-(9, '011183021', 'Swift', 'vvsvs', 'vs', 0, 0);
+(9, '011183021', 'Swift', 'vvsvs', 'vs', 0, 0),
+(10, '011182035', 'C++', '', '', 0, 0),
+(11, '011182035', 'C#', '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -328,13 +336,13 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`st_id`, `st_username`, `st_name`, `st_email`, `st_pass`, `st_dept`, `st_contact`, `st_dob`, `st_gender`, `profile_picture`, `role`, `status`, `st_point`, `st_github`, `verification_code`, `email_verified_at`, `st_year`) VALUES
-(3, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '1234', 'CSE', '015xxxxxxxx', '1996-10-26', 'Female', NULL, 'student', 0, 0, 'https://github.com/anikatahsin3', '', NULL, '1st'),
-(4, '011183070', 'Fahad Al Islam', 'fislam@bscse.uiu.ac.bd', '1234', 'CSE', '016xxxxxxxx', '2022-08-22', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '1st'),
-(19, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-08-25', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '1st'),
-(24, '011182033', 'kamado tanjiro', 'tan@bscse.uiu.ac.bd', '1234', 'CSE', '018xxxxxxxx', '2022-08-30', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '1st'),
-(25, '011172035', 'x', 'x@bseee.uiu.ac.bd', '1234', 'CSE', '01xxxxxxxxx', '2022-09-03', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '1st'),
-(26, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-09-06', 'Male', NULL, 'student', 0, 1, NULL, '', NULL, '1st'),
-(28, '011182000', 'a', 'a@bscse.uiu.ac.bd', '1234', 'EEE', NULL, '2022-09-06', 'Female', NULL, 'student', 0, 0, NULL, '', NULL, '1st'),
+(3, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '1234', 'CSE', '015xxxxxxxx', '1996-10-26', 'Female', NULL, 'student', 0, 0, 'https://github.com/anikatahsin3', '', NULL, '4th'),
+(4, '011183070', 'Fahad Al Islam', 'fislam@bscse.uiu.ac.bd', '1234', 'CSE', '016xxxxxxxx', '2022-08-22', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '4th'),
+(19, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-08-25', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '4th'),
+(24, '011182033', 'kamado tanjiro', 'tan@bscse.uiu.ac.bd', '1234', 'CSE', '018xxxxxxxx', '2022-08-30', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '2nd'),
+(25, '011172035', 'x', 'x@bseee.uiu.ac.bd', '1234', 'EEE', '01xxxxxxxxx', '2022-09-03', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '3rd'),
+(26, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-09-06', 'Male', NULL, 'student', 0, 1, NULL, '', NULL, '4th'),
+(28, '011182000', 'a', 'a@bseee.uiu.ac.bd', '1234', 'EEE', NULL, '2022-09-06', 'Female', NULL, 'student', 0, 0, NULL, '', NULL, '1st'),
 (31, '011183040', 'Abdullah Masud', 'aa@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-09-13', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '1st');
 
 -- --------------------------------------------------------
@@ -374,22 +382,34 @@ INSERT INTO `student_log` (`stlog_id`, `st_username`, `st_name`, `stlog_login_da
 CREATE TABLE `tags_student` (
   `id` int(11) NOT NULL,
   `post_student_id` varchar(255) NOT NULL,
-  `tag_name` varchar(255) NOT NULL
+  `st_name` varchar(255) NOT NULL,
+  `tag_name` varchar(255) NOT NULL,
+  `tag_st_dept` varchar(255) NOT NULL,
+  `tag_st_email` varchar(255) NOT NULL,
+  `tag_st_contact` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tags_student`
 --
 
-INSERT INTO `tags_student` (`id`, `post_student_id`, `tag_name`) VALUES
-(4, '011182035', 'php'),
-(5, '011182035', 'laravel'),
-(6, '011183070', 'html'),
-(7, '011183070', 'css'),
-(8, '011172035', 'php'),
-(9, '011172035', 'laravel'),
-(10, '011183013', 'django'),
-(11, '011183021', 'php');
+INSERT INTO `tags_student` (`id`, `post_student_id`, `st_name`, `tag_name`, `tag_st_dept`, `tag_st_email`, `tag_st_contact`) VALUES
+(4, '011182035', 'Anika Tahsin', 'php', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx'),
+(5, '011182035', 'Anika Tahsin', 'laravel', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx'),
+(6, '011183070', 'Fahad Al Islam', 'html', 'CSE', 'fislam@bscse.uiu.ac.bd', '016xxxxxxxx'),
+(7, '011183070', 'Fahad Al Islam', 'css', 'CSE', 'fislam@bscse.uiu.ac.bd', '016xxxxxxxx'),
+(8, '011172035', 'x', 'php', 'EEE', 'x@bseee.uiu.ac.bd', '01xxxxxxxxx'),
+(9, '011172035', 'x', 'laravel', 'EEE', 'x@bseee.uiu.ac.bd', '01xxxxxxxxx'),
+(10, '011183013', 'Sadman Sakib', 'django', 'CSE', 'ssakib@bscse.uiu.ac.bd', '017xxxxxxxx'),
+(11, '011183021', 'Azwad Zarif', 'php', 'CSE', 'azarif@bscse.uiu.ac.bd', 'NULL'),
+(12, '011182033', 'kamado tanjiro', 'python', 'CSE', 'tan@bscse.uiu.ac.bd', '018xxxxxxxx'),
+(13, '011182033', 'kamado tanjiro', 'laravel', 'CSE', 'tan@bscse.uiu.ac.bd', '018xxxxxxxx'),
+(14, '011182000', 'a', 'laravel', 'EEE', 'a@bseee.uiu.ac.bd', 'NULL'),
+(15, '011182000', 'a', 'django', 'EEE', 'a@bseee.uiu.ac.bd', 'NULL'),
+(16, '011183040', 'Abdullah Masud', 'Node JS', 'CSE', 'aa@bscse.uiu.ac.bd', 'NULL'),
+(17, '011183040', 'Abdullah Masud', 'JavaScript', 'CSE', 'aa@bscse.uiu.ac.bd', 'NULL'),
+(18, '011182035', 'Anika Tahsin', 'C++', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx'),
+(19, '011182035', 'Anika Tahsin', 'C#', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx');
 
 -- --------------------------------------------------------
 
@@ -573,7 +593,8 @@ ALTER TABLE `student_log`
 -- Indexes for table `tags_student`
 --
 ALTER TABLE `tags_student`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk14` (`post_student_id`);
 
 --
 -- Indexes for table `tags_teacher`
@@ -616,43 +637,43 @@ ALTER TABLE `bookmark_post`
 -- AUTO_INCREMENT for table `cv_basic`
 --
 ALTER TABLE `cv_basic`
-  MODIFY `cv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `cv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `cv_eca`
 --
 ALTER TABLE `cv_eca`
-  MODIFY `eca_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `eca_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `cv_edu`
 --
 ALTER TABLE `cv_edu`
-  MODIFY `edu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `edu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `cv_project`
 --
 ALTER TABLE `cv_project`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `cv_publication`
 --
 ALTER TABLE `cv_publication`
-  MODIFY `pub_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `pub_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `cv_soft_skill`
 --
 ALTER TABLE `cv_soft_skill`
-  MODIFY `soft_skill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `soft_skill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `cv_tech_skill`
 --
 ALTER TABLE `cv_tech_skill`
-  MODIFY `tech_skill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `tech_skill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `student`
@@ -670,7 +691,7 @@ ALTER TABLE `student_log`
 -- AUTO_INCREMENT for table `tags_student`
 --
 ALTER TABLE `tags_student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tags_teacher`
@@ -747,6 +768,12 @@ ALTER TABLE `post_student`
 --
 ALTER TABLE `student_log`
   ADD CONSTRAINT `fk1` FOREIGN KEY (`st_username`) REFERENCES `student` (`st_username`);
+
+--
+-- Constraints for table `tags_student`
+--
+ALTER TABLE `tags_student`
+  ADD CONSTRAINT `fk14` FOREIGN KEY (`post_student_id`) REFERENCES `student` (`st_username`);
 
 --
 -- Constraints for table `tags_teacher`
