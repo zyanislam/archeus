@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="admin_student.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
@@ -79,12 +79,12 @@
                     <th>Login time</th>
                     <th>Logout time</th>
                     <th>Status</th>
-                    <th></th>
+                    <!-- <th></th> -->
                 </tr>
             </thead>
             <tbody>
                 <?php 
-                        foreach($result1 as $x){
+                        while($x=mysqli_fetch_assoc($result1)){
                             ?>
                 <tr>
                     <td><?php echo $x['st_username']; ?></td>
@@ -92,12 +92,12 @@
                     <td><?php echo $x['st_email']; ?></td>
                     <td><?php echo $x['stlog_login_date_time']; ?></td>
                     <td><?php echo $x['stlog_logout_date_time']; ?></td>
-                    <td><?php echo $x['status']; ?></td>
-                    <td class="toggle">
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
+                    <td>
+                    <center>
+                        <div class="form-check form-switch">
+                            <input type="checkbox" class="form-check-input" <?php if($x['status']=='1'){echo "checked";}?> onclick="toggleStatus(<?php echo $x['st_username']?>)" id="check" >
+                        </div>
+                        </center>
                     </td>
                 </tr>
                 <?php
@@ -112,6 +112,26 @@
         }
         ?>
     </section>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.0.min.js"</script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+            
+    <script>
+        function toggleStatus(id){
+            var id =id;
+            $.ajax({
+                url:"/Archeus/toggle.php",
+                type:"post",
+                data:{s_id:id},
+                success:function(data){
+                            console.log(data);
+                            }
+            });
+
+
+
+        }
+    </script>
 </body>
 
 </html>
