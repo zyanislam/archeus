@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2022 at 08:17 PM
+-- Generation Time: Sep 19, 2022 at 01:21 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`ad_id`, `ad_username`, `ad_pass`, `role`) VALUES
-(1, 'anika', '1234', 'admin'),
+(1, 'anika', '54321', 'admin'),
 (2, 'zyan', '1234', 'admin'),
 (3, 'sadman', '1234', 'admin'),
 (4, 'azwad', '1234', 'admin');
@@ -300,7 +300,7 @@ INSERT INTO `post_teacher` (`tpost_id`, `t_username`, `t_name`, `tpost_title`, `
 ('6', 'AT', 'Anika Tahsin', 'Need an Intern', '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet sodales felis. Duis nunc eros, mattis at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula eu.”', '2022-09-05 22:10:44'),
 ('6316ef9b4055f', 'AT', 'Anika Tahsin', 'Opportunity for Higher Studies', '“What I find remarkable is that this text has been the industry\'s standard dummy text ever since some printer in the 1500s took a galley of type and scrambled it to make a type specimen book; it has survived not only four centuries of letter-by-letter resetting but even the leap into electronic typesetting, essentially unchanged except for an occasional \'ing\' or \'y\' thrown in.', '2022-09-06 01:25:35'),
 ('6316f02a6bdba', 'AH', 'Abir Hasan', 'Job vacancy at United', '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque.”', '2022-09-06 01:00:58'),
-('6316f0e9be51b', 'AH', 'Abir Hasan', 'Need BackEnd Developer ar Bexico', 'Rrow itself, let it be sorrow; let him love it; let him pursue it, ishing for its acquisitiendum. Because he will ab hold, uniess but through concer, and also of those who resist. Now a pure snore disturbeded sum dust. He ejjnoyes, in order that somewon, also with a severe one, unless of life. May a cusstums offficer somewon nothing of a poison-filled. Until, from a twho, twho chaffinch may also pursue it, not even a lump. But as twho, as a tank; a proverb, yeast; or else they tinscribe nor. Yet yet dewlap bed.”', '2022-09-06 01:04:09'),
+('6316f0e9be51b', 'AH', 'Abir Hasan', 'Need BackEnd Developer at Beximco', 'Rrow itself, let it be sorrow; let him love it; let him pursue it, ishing for its acquisitiendum. Because he will ab hold, uniess but through concer, and also of those who resist. Now a pure snore disturbeded sum dust. He ejjnoyes, in order that somewon, also with a severe one, unless of life. May a cusstums offficer somewon nothing of a poison-filled. Until, from a twho, twho chaffinch may also pursue it, not even a lump. But as twho, as a tank; a proverb, yeast; or else they tinscribe nor. Yet yet dewlap bed.”', '2022-09-06 01:04:09'),
 ('6316f86897eeb', 'FAI', 'Fahad Al Islam', 'Need RA', 'It\'s difficult to find examples of lorem ipsum in use before Letraset made it popular as a dummy text in the 1960s, although McClintock says he remembers coming across the lorem ipsum passage in a book of old metal type samples.', '2022-09-06 01:36:08'),
 ('63203729a157d', 'AT', 'Anika Tahsin', 'Need Intern', 'So far he hasn\'t relocated where he once saw the passage, but the popularity of Cicero in the 15th century supports the theory that the filler text has been used for centuries.', '2022-09-13 01:54:17');
 
@@ -335,8 +335,8 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`st_id`, `st_username`, `st_name`, `st_email`, `st_pass`, `st_dept`, `st_contact`, `st_dob`, `st_gender`, `profile_picture`, `role`, `status`, `st_point`, `st_github`, `verification_code`, `email_verified_at`, `st_year`) VALUES
-(3, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '1234', 'CSE', '015xxxxxxxx', '1996-10-26', 'Female', NULL, 'student', 1, 0, 'https://github.com/anikatahsin3', '', NULL, '4th'),
-(4, '011183070', 'Fahad Al Islam', 'fislam@bscse.uiu.ac.bd', '1234', 'CSE', '016xxxxxxxx', '2022-08-22', 'Male', NULL, 'student', 1, 0, 'https://github.com/zyanislam', '', NULL, '4th'),
+(3, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '1234', 'CSE', '015xxxxxxxx', '1996-10-26', 'Female', NULL, 'student', 1, 0, 'https://github.com/anikatahsin3', '', '2022-09-19 06:31:32', '4th'),
+(4, '011183070', 'Fahad Al Islam', 'fislam183070@bscse.uiu.ac.bd', '1234', 'CSE', '016xxxxxxxx', '2022-08-22', 'Male', NULL, 'student', 1, 0, 'https://github.com/zyanislam', '', NULL, '4th'),
 (19, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-08-25', 'Male', NULL, 'student', 1, 0, 'https://github.com/sakib-sadman', '', NULL, '4th'),
 (24, '011182033', 'kamado tanjiro', 'tan@bscse.uiu.ac.bd', '1234', 'CSE', '018xxxxxxxx', '2022-08-30', 'Male', NULL, 'student', 1, 0, 'https://github.com/tanjiro280', '', NULL, '2nd'),
 (26, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '1234', 'CSE', '019xxxxxxxx', '2022-09-06', 'Male', NULL, 'student', 1, 0, 'https://github.com/Shredder280998', '', NULL, '4th'),
@@ -363,7 +363,7 @@ CREATE TABLE `student_log` (
 
 INSERT INTO `student_log` (`stlog_id`, `st_username`, `st_name`, `stlog_login_date_time`, `stlog_logout_date_time`) VALUES
 (6, '011182033', 'kamado tanjiro', '2022-08-30 01:33:30', '2022-08-30 01:35:55'),
-(7, '011182035', 'Anika Tahsin', '2022-09-13 02:33:27', '2022-09-13 02:33:37'),
+(7, '011182035', 'Anika Tahsin', '2022-09-19 05:16:27', '2022-09-19 05:16:40'),
 (8, '011183070', 'Fahad Islam', '2022-08-30 01:38:14', '2022-08-30 01:38:40'),
 (43, '011183040', 'Abdullah Masud', NULL, NULL),
 (44, '011183013', 'Sadman Sakib', '2022-09-13 07:54:16', '2022-09-13 07:54:16'),
@@ -460,9 +460,9 @@ CREATE TABLE `teacher` (
 --
 
 INSERT INTO `teacher` (`t_id`, `t_username`, `t_name`, `t_email`, `t_pass`, `t_dept`, `t_des`, `t_room`, `role`, `t_joined_date`) VALUES
-(1, 'FAI', 'Fahad Al Islam', 'fai@uiu.ac.bd', 'fai1234', 'CSE', 'Lecturer', '201', 'teacher', '2022-09-13 01:52:26'),
-(2, 'AT', 'Anika Tahsin', 'at@uiu.ac.bd', '1234', 'CSE', 'Professor', '638/B', 'teacher', '2022-09-13 01:52:26'),
-(10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', '1234', 'CSE', 'lecturer', '', 'teacher', '2022-09-13 01:52:26'),
+(1, 'FAI', 'Fahad Al Islam', 'fai@uiu.ac.bd', '54321', 'CSE', 'Lecturer', '201', 'teacher', '2022-09-13 01:52:26'),
+(2, 'AT', 'Anika Tahsin', 'at@uiu.ac.bd', 'anika', 'CSE', 'Professor', '638/B', 'teacher', '2022-09-13 01:52:26'),
+(10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', '54321', 'CSE', 'lecturer', '', 'teacher', '2022-09-13 01:52:26'),
 (11, 'KSM', 'Kazi Sajeed Mehrab', 'ksm@uiu.ac.bd', '1234', 'CSE', 'Lecturer', '', 'teacher', '2022-09-13 01:52:26'),
 (12, 'SS', 'Shakkhar Shatabda', 'ss@uiu.ac.bd', '1234', 'CSE', 'Associate Professor', '', 'teacher', '2022-09-13 01:58:19');
 
@@ -485,11 +485,11 @@ CREATE TABLE `teacher_log` (
 --
 
 INSERT INTO `teacher_log` (`tlog_id`, `t_username`, `tlog_name`, `tlog_login_date_time`, `tlog_logout_date_time`) VALUES
-(3, 'AH', 'Abir Hasan', '2022-09-04 02:56:36', '2022-09-04 02:56:41'),
+(3, 'AH', 'Abir Hasan', '2022-09-19 03:55:00', '2022-09-19 03:57:15'),
 (4, 'KSM', 'Kazi Sajeed Mehrab', NULL, NULL),
 (5, 'SS', 'Shakkhar Shatabda', NULL, NULL),
 (6, 'FAI', 'Fahad Al Islam', '2022-09-13 07:51:41', '2022-09-13 07:51:41'),
-(7, 'AT', 'Anika Tahsin', '2022-09-13 07:51:41', '2022-09-13 07:51:41');
+(7, 'AT', 'Anika Tahsin', '2022-09-19 03:57:26', '2022-09-19 03:57:47');
 
 --
 -- Indexes for dumped tables
