@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2022 at 09:14 PM
+-- Generation Time: Sep 18, 2022 at 08:04 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -39,10 +39,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`ad_id`, `ad_username`, `ad_pass`, `role`) VALUES
-(1, 'anika', 'anika1234', 'admin'),
-(2, 'zyan', 'zyan1234', 'admin'),
-(3, 'sadman', 'sadman1234', 'admin'),
-(4, 'azwad', 'azwad1234', 'admin');
+(1, 'anika', '1234', 'admin'),
+(2, 'zyan', '1234', 'admin'),
+(3, 'sadman', '1234', 'admin'),
+(4, 'azwad', '1234', 'admin');
 
 -- --------------------------------------------------------
 
@@ -78,11 +78,11 @@ CREATE TABLE `cv_basic` (
 --
 
 INSERT INTO `cv_basic` (`cv_id`, `st_username`, `st_name`, `st_email`, `st_contact`, `st_city`, `st_facebook`, `st_linkedin`) VALUES
-(1, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', 'AWfaf', 'fafaf', 'http://localhost/archeus/cv.php', 'http://localhost/archeus/cv.php'),
+(1, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '015XXXXXXXX', 'Dhaka', 'https://www.facebook.com/anika.tahsin.94', 'http://localhost/archeus/cv.php'),
 (5, '011183070', 'Fahad Al Islam', 'fislam@bscse.uiu.ac.bd', '016XXXXXXXX', 'Dhaka', 'https://www.facebook.com/amazzyan', 'https://www.facebook.com/amazzyan'),
-(6, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '016XXXXXXXX', 'Dhaka', 'https://www.facebook.com/sakibur.sadman', 'https://www.facebook.com/sakibur.sadman'),
-(7, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '016XXXXXXXX', 'Dhaka', 'http://localhost/archeus/cv.php', 'http://localhost/archeus/cv.php'),
-(8, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '016XXXXXXXX', 'Dhaka', 'http://localhost/archeus/cv.php', 'http://localhost/archeus/cv.php');
+(6, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '017xxxxxxxx', 'Dhaka', 'https://www.facebook.com/sakibur.sadman', 'https://www.facebook.com/sakibur.sadman'),
+(7, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '019xxxxxxxx', 'Dhaka', 'https://www.facebook.com/azwad.khan.58', 'http://localhost/archeus/cv.php'),
+(8, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '015XXXXXXXX', 'Dhaka', 'https://www.facebook.com/anika.tahsin.94', 'http://localhost/archeus/cv.php');
 
 -- --------------------------------------------------------
 
@@ -103,10 +103,10 @@ CREATE TABLE `cv_eca` (
 --
 
 INSERT INTO `cv_eca` (`eca_id`, `st_username`, `eca_name`, `eca_desc`, `eca_link`) VALUES
-(1, '011182035', 'fafwa', 'faf', 'faaf'),
-(5, '011183070', 'tyjr', 'dgey', 'hrhewd'),
+(1, '011182035', 'Sketch', '', ''),
+(5, '011183070', '', '', ''),
 (6, '011183013', '', '', ''),
-(7, '011183021', 'fsf', 'fa', 'afa'),
+(7, '011183021', '', '', ''),
 (8, '011182035', '', '', '');
 
 -- --------------------------------------------------------
@@ -161,8 +161,8 @@ CREATE TABLE `cv_project` (
 --
 
 INSERT INTO `cv_project` (`project_id`, `st_username`, `project_name`, `project_desc`) VALUES
-(1, '011182035', 'fwa', 'fag'),
-(2, '011183070', 'wghrh', 'hfdher'),
+(1, '011182035', '', ''),
+(2, '011183070', '', ''),
 (3, '011183013', '', ''),
 (4, '011183021', '', ''),
 (5, '011182035', '', '');
@@ -186,11 +186,11 @@ CREATE TABLE `cv_publication` (
 --
 
 INSERT INTO `cv_publication` (`pub_id`, `st_username`, `pub_title`, `pub_year_published`, `pub_link`) VALUES
-(1, '011182035', 'gdseg', '0000-00-00', 'gsefw'),
-(2, '011183070', 'ehebfb', '0000-00-00', 'fislam@bscse.uiu.ac.bd'),
-(3, '011183013', '', '0000-00-00', ''),
-(4, '011183021', '', '0000-00-00', ''),
-(5, '011182035', '', '0000-00-00', '');
+(1, '011182035', '*Publication Title1*', '0000-00-00', ''),
+(2, '011183070', '*Publication Title2*', '0000-00-00', ''),
+(3, '011183013', '*Publication Title3*', '0000-00-00', ''),
+(4, '011183021', '*Publication Title4*', '0000-00-00', ''),
+(5, '011182035', '*Publication Title5*', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
@@ -211,15 +211,14 @@ CREATE TABLE `cv_soft_skill` (
 --
 
 INSERT INTO `cv_soft_skill` (`soft_skill_id`, `st_username`, `soft_skill_name`, `soft_skill_verification`, `soft_skill_toggle`) VALUES
-(1, '011172035', 'php', 1, 0),
-(2, '011172035', 'laravel', 1, 0),
+(2, '011183013', 'laravel', 1, 0),
 (6, '011182035', 'php', 0, 0),
 (7, '011182035', 'laravel', 0, 0),
 (8, '011183070', 'html', 0, 0),
 (9, '011183070', 'css', 0, 0),
 (10, '011183013', 'django', 0, 0),
 (11, '011183021', 'php', 0, 0),
-(12, '011182035', '', 0, 0);
+(12, '011182035', 'JS', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -242,14 +241,14 @@ CREATE TABLE `cv_tech_skill` (
 --
 
 INSERT INTO `cv_tech_skill` (`tech_skill_id`, `st_username`, `tech_skill_name`, `tech_skill_desc`, `tech_skill_related_project`, `tech_skill_verification`, `tech_skill_toggle`) VALUES
-(1, '011182035', 'C++', 'faeaf', 'efaf', 0, 0),
-(5, '011183070', 'C#', 'dafsfa', 'fsfafwf', 0, 0),
-(6, '011172035', 'VS Code', 'Has experience on VS Code', 'aasdfghjj', 0, 0),
+(1, '011182035', 'C++', 'Has Experience on C++', '', 0, 0),
+(5, '011183070', 'C#', 'Has Experience on C#', '', 0, 0),
+(6, '011182035', 'VS Code', 'Has experience on VS Code', '', 0, 0),
 (7, '011183070', 'Figma', 'Has experience on Figma', NULL, 0, 0),
 (8, '011183013', 'Technical writing', '', '', 0, 0),
-(9, '011183021', 'Swift', 'vvsvs', 'vs', 0, 0),
-(10, '011182035', 'C++', '', '', 0, 0),
-(11, '011182035', 'C#', '', '', 0, 0);
+(9, '011183021', 'Swift', 'Has Experience on Swift', '', 0, 0),
+(10, '011182035', 'C++', 'Has Experience on C++', '', 0, 0),
+(11, '011182035', 'C#', 'Has Experience on C# ', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -336,14 +335,13 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`st_id`, `st_username`, `st_name`, `st_email`, `st_pass`, `st_dept`, `st_contact`, `st_dob`, `st_gender`, `profile_picture`, `role`, `status`, `st_point`, `st_github`, `verification_code`, `email_verified_at`, `st_year`) VALUES
-(3, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '1234', 'CSE', '015xxxxxxxx', '1996-10-26', 'Female', NULL, 'student', 0, 0, 'https://github.com/anikatahsin3', '', NULL, '4th'),
-(4, '011183070', 'Fahad Al Islam', 'fislam@bscse.uiu.ac.bd', '1234', 'CSE', '016xxxxxxxx', '2022-08-22', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '4th'),
-(19, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-08-25', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '4th'),
-(24, '011182033', 'kamado tanjiro', 'tan@bscse.uiu.ac.bd', '1234', 'CSE', '018xxxxxxxx', '2022-08-30', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '2nd'),
-(25, '011172035', 'x', 'x@bseee.uiu.ac.bd', '1234', 'EEE', '01xxxxxxxxx', '2022-09-03', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '3rd'),
-(26, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-09-06', 'Male', NULL, 'student', 0, 1, NULL, '', NULL, '4th'),
-(28, '011182000', 'a', 'a@bseee.uiu.ac.bd', '1234', 'EEE', NULL, '2022-09-06', 'Female', NULL, 'student', 0, 0, NULL, '', NULL, '1st'),
-(31, '011183040', 'Abdullah Masud', 'aa@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-09-13', 'Male', NULL, 'student', 0, 0, NULL, '', NULL, '1st');
+(3, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '1234', 'CSE', '015xxxxxxxx', '1996-10-26', 'Female', NULL, 'student', 1, 0, 'https://github.com/anikatahsin3', '', NULL, '4th'),
+(4, '011183070', 'Fahad Al Islam', 'fislam@bscse.uiu.ac.bd', '1234', 'CSE', '016xxxxxxxx', '2022-08-22', 'Male', NULL, 'student', 1, 0, 'https://github.com/zyanislam', '', NULL, '4th'),
+(19, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-08-25', 'Male', NULL, 'student', 1, 0, 'https://github.com/sakib-sadman', '', NULL, '4th'),
+(24, '011182033', 'kamado tanjiro', 'tan@bscse.uiu.ac.bd', '1234', 'CSE', '018xxxxxxxx', '2022-08-30', 'Male', NULL, 'student', 1, 0, 'https://github.com/tanjiro280', '', NULL, '2nd'),
+(26, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '1234', 'CSE', '019xxxxxxxx', '2022-09-06', 'Male', NULL, 'student', 1, 0, 'https://github.com/Shredder280998', '', NULL, '4th'),
+(28, '011182000', 'Fahim Islam', 'fahim@bseee.uiu.ac.bd', '1234', 'EEE', '017xxxxxxxx', '2022-09-06', 'male', NULL, 'student', 1, 0, 'https://github.com/a', '', NULL, '1st'),
+(31, '011183040', 'Abdullah Masud', 'aa@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-09-13', 'Male', NULL, 'student', 1, 0, 'https://github.com/masud', '', NULL, '1st');
 
 -- --------------------------------------------------------
 
@@ -367,11 +365,10 @@ INSERT INTO `student_log` (`stlog_id`, `st_username`, `st_name`, `stlog_login_da
 (6, '011182033', 'kamado tanjiro', '2022-08-30 01:33:30', '2022-08-30 01:35:55'),
 (7, '011182035', 'Anika Tahsin', '2022-09-13 02:33:27', '2022-09-13 02:33:37'),
 (8, '011183070', 'Fahad Islam', '2022-08-30 01:38:14', '2022-08-30 01:38:40'),
-(9, '011172035', 'x', '2022-09-03 10:15:02', '2022-09-03 10:15:15'),
 (43, '011183040', 'Abdullah Masud', NULL, NULL),
 (44, '011183013', 'Sadman Sakib', '2022-09-13 07:54:16', '2022-09-13 07:54:16'),
 (45, '011183021', 'Azwad Zarif', '2022-09-13 07:54:16', '2022-09-13 07:54:16'),
-(46, '011182000', 'a', '2022-09-13 07:55:45', '2022-09-13 07:55:45');
+(46, '011182000', 'Fahim Islam', '2022-09-13 07:55:45', '2022-09-13 07:55:45');
 
 -- --------------------------------------------------------
 
@@ -398,14 +395,13 @@ INSERT INTO `tags_student` (`id`, `post_student_id`, `st_name`, `tag_name`, `tag
 (5, '011182035', 'Anika Tahsin', 'laravel', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx'),
 (6, '011183070', 'Fahad Al Islam', 'html', 'CSE', 'fislam@bscse.uiu.ac.bd', '016xxxxxxxx'),
 (7, '011183070', 'Fahad Al Islam', 'css', 'CSE', 'fislam@bscse.uiu.ac.bd', '016xxxxxxxx'),
-(8, '011172035', 'x', 'php', 'EEE', 'x@bseee.uiu.ac.bd', '01xxxxxxxxx'),
-(9, '011172035', 'x', 'laravel', 'EEE', 'x@bseee.uiu.ac.bd', '01xxxxxxxxx'),
+(9, '011183013', 'Sadman Sakib', 'laravel', 'EEE', 'x@bseee.uiu.ac.bd', '01xxxxxxxxx'),
 (10, '011183013', 'Sadman Sakib', 'django', 'CSE', 'ssakib@bscse.uiu.ac.bd', '017xxxxxxxx'),
 (11, '011183021', 'Azwad Zarif', 'php', 'CSE', 'azarif@bscse.uiu.ac.bd', 'NULL'),
 (12, '011182033', 'kamado tanjiro', 'python', 'CSE', 'tan@bscse.uiu.ac.bd', '018xxxxxxxx'),
 (13, '011182033', 'kamado tanjiro', 'laravel', 'CSE', 'tan@bscse.uiu.ac.bd', '018xxxxxxxx'),
-(14, '011182000', 'a', 'laravel', 'EEE', 'a@bseee.uiu.ac.bd', 'NULL'),
-(15, '011182000', 'a', 'django', 'EEE', 'a@bseee.uiu.ac.bd', 'NULL'),
+(14, '011182000', 'Fahim Islam', 'laravel', 'EEE', 'a@bseee.uiu.ac.bd', 'NULL'),
+(15, '011182000', 'Fahim Islam', 'django', 'EEE', 'a@bseee.uiu.ac.bd', 'NULL'),
 (16, '011183040', 'Abdullah Masud', 'Node JS', 'CSE', 'aa@bscse.uiu.ac.bd', 'NULL'),
 (17, '011183040', 'Abdullah Masud', 'JavaScript', 'CSE', 'aa@bscse.uiu.ac.bd', 'NULL'),
 (18, '011182035', 'Anika Tahsin', 'C++', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx'),
