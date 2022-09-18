@@ -476,13 +476,12 @@ body.dark .home .text{
 
 .postbox{
     background-color: #ffffff !important;
-    min-height: 230px;
     height: auto;
     width: 1010px !important;
     color: rgb(0, 0, 0) !important;
     border-radius: 18px !important;
     border: 0px !important;
-    padding: 5px !important;
+    padding: 1rem !important;
 }
 
 .textline{
