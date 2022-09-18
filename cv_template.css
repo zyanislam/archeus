@@ -7,6 +7,8 @@
     list-style: none;
 }
 
+
+
 .category {
     position: relative;
     color: #9b9b9b !important;
@@ -95,8 +97,21 @@
     align-content: center;
 }
 
+.dl_button{
+    margin-bottom: 20px!important;
+}
 
+.dl_pdf{
+    position: absolute;
+    left: -4%;
+    color: #8178ff;
+    cursor: pointer;
+    
+}
 
+body .scale_cv{
+    
+}
 
 
 
@@ -114,12 +129,12 @@
 .page {
     width: 21cm;
     min-height: 29.7cm;
-    padding: 0px 10px 0 15px;
+    padding: 0px 15px 0 15px;
     margin: 1cm auto;
     border: 1px #D3D3D3 solid;
     border-radius: 5px;
     background: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(58, 57, 57, 0.1);
 }
 
 .subpage {
