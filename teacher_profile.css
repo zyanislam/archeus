@@ -6,7 +6,6 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     color: rgb(255, 255, 255);
-    /* background-color: #1d1d25; */
 }
 
 :root {
@@ -27,12 +26,11 @@
 
 body {
     min-height: 100vh;
-    background-color: var(--body-color);
+    /* background-color: var(--body-color); */
     transition: var(--tran-05);
     /* background-image: url("images/Bg3.png"); */
     background-repeat: no-repeat;
     background-size: fill;
-    background-color: #2D2D2D;
 }
 
 ::selection {
@@ -45,7 +43,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #1d1d25;
+    background-color: #8178ff;
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
@@ -134,8 +132,8 @@ body {
     flex-direction: row;
     align-items: center;
     height: auto;
-    width: 2200px;
-    /* background-color: #27272c !important; */
+    width: 1920px;
+    background-color: #27272c !important;
     top: 75px;
     border-radius: 38px;
     border: 0px;
@@ -181,25 +179,23 @@ body {
 
 .user_name {
     font-size: 40px;
-    color: white;
     margin: 10px;
 }
 
 .user_id {
     font-size: 40px;
-    color: white;
     margin: 10px;
 }
 
 .user_uni {
     font-size: 30px;
-    color: white;
     margin: 10px;
 }
 
 .iconbox {
     font-size: 40px !important;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .basicdiv {
@@ -208,6 +204,11 @@ body {
     font-size: 24px;
 }
 
+/* .user_phone{
+    color: #1d1d25;
+} */
+
+
 
 
 ::selection {
@@ -215,7 +216,7 @@ body {
 }
 
 .wrapper {
-    width: 2200px;
+    width: 1860px;
     margin: 150px auto;
     padding: 25px 30px 30px 30px;
     border-radius: 25px;
@@ -269,12 +270,12 @@ input[type="radio"] {
 }
 
 #basic_info:checked~nav .slider {
-    left: 10%;
+    left: 7%;
 }
 
 
 #skills:checked~nav .slider {
-    left: 60%;
+    left: 57%;
 }
 
 #projects:checked~nav .slider {
@@ -301,7 +302,7 @@ section .content {
 
 .info{
     display: flex;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 80px;
     margin: 30px 0px 0px 300px;
 }
@@ -319,8 +320,8 @@ section .content {
 
 .skills{
     display: flex;
-    font-size: 30px;
-    line-height: 80px;
+    font-size: 26px;
+    line-height: 60px;
     margin: 30px 0px 0px 300px;
 }
 
