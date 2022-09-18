@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2022 at 08:04 PM
+-- Generation Time: Sep 18, 2022 at 08:17 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -395,17 +395,18 @@ INSERT INTO `tags_student` (`id`, `post_student_id`, `st_name`, `tag_name`, `tag
 (5, '011182035', 'Anika Tahsin', 'laravel', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx'),
 (6, '011183070', 'Fahad Al Islam', 'html', 'CSE', 'fislam@bscse.uiu.ac.bd', '016xxxxxxxx'),
 (7, '011183070', 'Fahad Al Islam', 'css', 'CSE', 'fislam@bscse.uiu.ac.bd', '016xxxxxxxx'),
-(9, '011183013', 'Sadman Sakib', 'laravel', 'EEE', 'x@bseee.uiu.ac.bd', '01xxxxxxxxx'),
+(9, '011183013', 'Sadman Sakib', 'laravel', 'EEE', 'x@bseee.uiu.ac.bd', '017xxxxxxxx'),
 (10, '011183013', 'Sadman Sakib', 'django', 'CSE', 'ssakib@bscse.uiu.ac.bd', '017xxxxxxxx'),
-(11, '011183021', 'Azwad Zarif', 'php', 'CSE', 'azarif@bscse.uiu.ac.bd', 'NULL'),
+(11, '011183021', 'Azwad Zarif', 'php', 'CSE', 'azarif@bscse.uiu.ac.bd', '019xxxxxxxx'),
 (12, '011182033', 'kamado tanjiro', 'python', 'CSE', 'tan@bscse.uiu.ac.bd', '018xxxxxxxx'),
 (13, '011182033', 'kamado tanjiro', 'laravel', 'CSE', 'tan@bscse.uiu.ac.bd', '018xxxxxxxx'),
-(14, '011182000', 'Fahim Islam', 'laravel', 'EEE', 'a@bseee.uiu.ac.bd', 'NULL'),
-(15, '011182000', 'Fahim Islam', 'django', 'EEE', 'a@bseee.uiu.ac.bd', 'NULL'),
-(16, '011183040', 'Abdullah Masud', 'Node JS', 'CSE', 'aa@bscse.uiu.ac.bd', 'NULL'),
-(17, '011183040', 'Abdullah Masud', 'JavaScript', 'CSE', 'aa@bscse.uiu.ac.bd', 'NULL'),
+(14, '011182000', 'Fahim Islam', 'laravel', 'EEE', 'a@bseee.uiu.ac.bd', '017xxxxxxxx'),
+(15, '011182000', 'Fahim Islam', 'django', 'EEE', 'a@bseee.uiu.ac.bd', '017xxxxxxxx'),
+(16, '011183040', 'Abdullah Masud', 'Node JS', 'CSE', 'aa@bscse.uiu.ac.bd', '017xxxxxxxx'),
+(17, '011183040', 'Abdullah Masud', 'JavaScript', 'CSE', 'aa@bscse.uiu.ac.bd', '017xxxxxxxx'),
 (18, '011182035', 'Anika Tahsin', 'C++', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx'),
-(19, '011182035', 'Anika Tahsin', 'C#', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx');
+(19, '011182035', 'Anika Tahsin', 'C#', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx'),
+(21, '011182035', 'Anika Tahsin', 'JS', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx');
 
 -- --------------------------------------------------------
 
@@ -687,7 +688,7 @@ ALTER TABLE `student_log`
 -- AUTO_INCREMENT for table `tags_student`
 --
 ALTER TABLE `tags_student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tags_teacher`
