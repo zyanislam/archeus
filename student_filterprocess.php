@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="student_home.css">
+    <link rel="stylesheet" href="student_filterprocess.css">
 
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -27,7 +27,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
     <script src="custom_tags_input.js"></script>
-    <title>Student Home | Archeus</title>
+    <title>Student Filter | Archeus</title>
 </head>
 
 <body class="dark">
@@ -151,54 +151,115 @@
             <div class="bg_contentbox">
 
                 <div class="contentbox">
-
-                    <span class="spaceboxv"></span>
-
-                    <!-- here is the feed-post BackEnd Part -->
                     <?php
-                    try {
+                    try{
                         $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                        $sqlquery = "SELECT * FROM post_teacher ORDER BY tpost_datetime DESC";
-                        $returnobj = $conn->query($sqlquery);
+                        ?>
+                        <form class="form_div" action="student_filterprocess.php" method="GET" enctype="multipart/form-data">
+                            <div class="filter">
+                                <select class="field" name="tags" id="tags">
+                                    <option value="">Tags</option>
+                                    <?php
+                                        $sqlquery = "SELECT DISTINCT tag_name FROM tags_teacher ORDER BY tag_name ASC";
+                                        $returnobj = $conn->query($sqlquery);
 
-                        if ($returnobj->rowCount() == 0) {
-                            ///no data found
-                            echo "No data found";
-                        } else {
-                            /*<?php echo $row['id'];?>*/
-                            //tpost_id,t_username, t_name,tpost_title, tpost_desc
-                            $tabledata = $returnobj->fetchAll();
-                            foreach ($tabledata as $row) {
-                    ?>
-                                <div class="ui card postbox">
-                                    <div class="content">
-                                        <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
-                                        <div class="header" id="post_title"><?php echo $row['tpost_title']; ?></div>
-                                        <div class="header" id="author_name"><?php echo $row['t_name']; ?> | Author</div>
-
-                                        <div class="description">
-                                            <p id="post_desc"><?php echo $row['tpost_desc']; ?></p>
-                                        </div>
-                                    </div>
-                                </div>
-                    <?php
-                            }
-                        }
-                    } catch (PDOException $ex) {
-                        //if found error forward to login page
-                        // echo"<script>location.assign('welcome.php')</script>";
+                                        if ($returnobj->rowCount() == 0) {
+                                            ///no data found
+                                            echo "No data found";
+                                        } else {
+                                            /*<?php echo $row['id'];?>*/
+                                            //tpost_id,t_username, t_name,tpost_title, tpost_desc
+                                            $tabledata = $returnobj->fetchAll();
+                                            foreach ($tabledata as $row) {
+                                    ?>
+                                                <option value="<?php echo $row['tag_name']; ?>"><?php echo $row['tag_name']; ?></option>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+        
+                            <div align="right">
+                                <button class="ui secondary button huge" id="buttonbox2" type="submit" name="submit">Filter</button>
+                            </div>
+                        </form>
+                        <?php
+                    }
+                    catch (PDOException $ex) {
                         echo '<script>
-                        alert("Found error");
-                        window.location = "welcome.php";
+                                alert("Found error");
+                                window.location = "teacher_filter.php";
                         </script>';
                     }
+                           
+                    ?>  
+                    
+                    <span class="spaceboxv2"></span>
+                    <?php
+                    if ($_SERVER['REQUEST_METHOD'] == "GET") {
+                        try{
+                            if( isset($_GET['tags'])){
+                                $tag = $_GET['tags'];
+
+                                $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
+                                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                                if (empty($tag)){
+                                    echo "<script>location.assign('student_filter.php')</script>";
+                                }
+                                else if(!empty($tag)){
+                                    $sqlquery = "SELECT post_teacher.*, tags_teacher.*
+                                     FROM post_teacher
+                                     INNER JOIN tags_teacher
+                                     ON post_teacher.tpost_id = tags_teacher.post_teacher_id 
+                                     WHERE tag_name='$tag'
+                                     ORDER BY post_teacher.t_name";
+                                     $count = 1;
+                                    
+                                    $returnobj = $conn->query($sqlquery);
+                                }
+
+                                $returnobj=$conn->query($sqlquery);
+                                if ($returnobj->rowCount() == 0){
+                                    // no data
+                                }
+                                else{
+                                    $searchdata1 = $returnobj->fetchAll();
+                                    foreach ($searchdata1 as $row) {
+                                        ?>
+                                                <div class="ui card postbox">
+                                                    <div class="content">
+                                                        <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
+                                                        <div class="header" id="post_title"><?php echo $row['tpost_title']; ?></div>
+                                                        <div class="header" id="author_name"><?php echo $row['t_name']; ?> | Author</div>
+
+                                                        <div class="description">
+                                                            <p id="post_desc"><?php echo $row['tpost_desc']; ?></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span class="spaceboxv"></span>
+                                            <?php
+                                    }
+                                }
+                            }
+
+                        }catch (PDOException $ex) {
+                                    //if found error forward to register page
+                                    echo '<script>alert("Oops!! Caught An Error");</script>';
+                                    echo "<script>location.assign('teacher_filter.php')</script>";
+                        }
+                    }
+                    else{
+                        echo '<script>alert("Not GET Method");</script>';
+                        echo "<script>location.assign('teacher_filter.php')</scrpit>";
+                    }
                     ?>
-                    <!-- BackEnd ends here -->
 
                 </div>
-
             </div>
 
             <div class="bg_contentbox2">
@@ -219,7 +280,7 @@
                         </li>
 
                         <li class="nav-link" id="link_list">
-                                <a id="rightitems" href="#">
+                                <a href="#">
                                     <i class='bx bx-filter-alt iconbox' style='color:#4873ff'></i>
                                     <span class="text nav-text" onclick="window.location.href = 'student_filter.php';" id="menuitems2">Filter Post</span>
                                 </a>

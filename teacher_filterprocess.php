@@ -315,7 +315,8 @@
                                                 </div>
                                                 <span class="spaceboxv"></span>
                                             <?php
-                                        }else if($count == 2){
+                                        }
+                                        else if($count == 2){
                                             ?>
                                                 <div class="ui card profilebox">
                                                     <div class="imgdiv">
