@@ -75,6 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 echo '<script>alert("Invalid email address. Try again.");</script>';
                 echo "<script>location.assign('student_signup.php')</script>";
             } else {
+                
 
                 //Enable verbose debug output
                     $mail->SMTPDebug = 0;//SMTP::DEBUG_SERVER;
