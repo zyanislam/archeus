@@ -57,7 +57,6 @@
 
                 <div class="midinfo">
                     <div class="imgdiv">
-                        <i class='bx bxs-bookmark-alt iconbox' style='color:#7b7fed'></i>
                         <i class='bx bx-file iconbox' style='color:#f8881a'></i>
                     </div>
                 </div>
