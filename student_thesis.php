@@ -76,10 +76,13 @@
                         <div class="menu-bar">
                             <div class="menu">
 
-                                <li class="search-box">
-                                    <i class='bx bx-search icon'></i>
-                                    <input type="text" placeholder="Search...">
-                                </li>
+                                <!-- search here -->
+                                <form action="student_searchpage.php" method="GET" enctype="multipart/form-data">
+                                    <li class="search-box">
+                                        <i class='bx bx-search icon'></i>
+                                        <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
+                                    </li>
+                                </form>
 
                                 <ul class="menu-links">
                                     <li class="nav-link" id="link_list">
@@ -228,19 +231,15 @@
                     <div class="bg_contentbox2">
                         <div class="contentbox2">
                             <ul class="menu-links">
-                                <li class="nav-link" id="link_list">
+                                
+
+                            <li class="nav-link" id="link_list">
                                     <a id="rightitems" href="#">
-                                        <i class='bx bxs-copy-alt iconbox' style='color:#ffffff'></i>
-                                        <span class="text nav-text" onclick="window.location.href = '';" id="menuitems2">Bookmark</span>
+                                        <i class='bx bx-duplicate iconbox' style='color:#fc3f5b' ></i>
+                                        <span class="text nav-text" onclick="window.location.href = 'student_thesis.php';" id="menuitems2">Student Thesis Posts</span>
                                     </a>
                                 </li>
 
-                                <li class="nav-link" id="link_list">
-                                    <a id="rightitems" href="#">
-                                        <i class='bx bx-duplicate iconbox' style='color:#fc3f5b' ></i>
-                                        <span class="text nav-text" onclick="window.location.href = '';" id="menuitems2">Student Thesis Posts</span>
-                                    </a>
-                                </li>
 
                                 <li class="nav-link" id="link_list">
                                         <a id="rightitems" href="#">

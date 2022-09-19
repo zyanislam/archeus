@@ -70,8 +70,9 @@
                                 <div class="field">
                                     <select class="inup_ddd" name="t_dept" id="t_dept">
                                         <option value="">Faculty Name</option>
-                                        <option value="EEE">EEE</option>
-
+                                        <option value="EEE">Abir Ahsan</option>
+                                        <option value="EEE">Shakkhar Shatabda</option>
+                                        <option value="EEE">Adiba Shaira</option>
                                     </select>
                                 </div>
 

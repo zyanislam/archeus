@@ -4,6 +4,7 @@
  if(
     isset($_SESSION['t_user']) && !empty($_SESSION['t_user'])
  ){
+    $id = $_SESSION['t_user'];
     ?>        
         <!DOCTYPE html>
         <html lang="en">
@@ -64,11 +65,30 @@
                     <nav class="sidebar open">
                         <header>
                             <div class="image-text">
+                                <?php
+                                try{
+                                    include "db_connect.php";
+                                    $sqlquery1 = "SELECT * FROM teacher WHERE t_username = '$id'";
 
-                                <div class="text logo-text">
-                                    <span class="name">Archeus</span>
-                                    <span class="profession">Teacher Home</span>
-                                </div>
+                                    $infoget = mysqli_query($conn, $sqlquery1);
+                                    $info = mysqli_fetch_array($infoget,MYSQLI_ASSOC);
+
+                                    $name = $info['t_name'];
+                                    ?>
+                                    <div class="text logo-text">
+                                        <span class="profession"><?php echo $name; ?></span>
+                                    </div>
+                                    <?php
+                                }catch (PDOException $ex){
+                                    //if found error forward to register page
+                                    echo '<script>
+                                    alert("Oops!! Caught An Error");
+                                    </script>';
+                                    echo "<script>location.assign('teacher_home.php')</script>";
+                                }
+                                ?>
+
+                                
                             </div>
 
                         </header>
