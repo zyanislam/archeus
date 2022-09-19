@@ -8,6 +8,7 @@
         <?php
         //Database connect:
         include "db_connect.php";
+        
 
         //Queries to fetch needed student data:
         $getskill="SELECT * FROM cv_tech_skill WHERE st_username='011183021'";

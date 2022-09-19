@@ -14,7 +14,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
             <!----======== CSS ======== -->
-            <link rel="stylesheet" href="student_home.css">
+            <link rel="stylesheet" href="student_thesis.css">
 
             <!----===== Boxicons CSS ===== -->
             <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -152,6 +152,37 @@
 
                         <div class="contentbox">
 
+                            <span class="spaceboxv2"></span>
+
+                            <form action="teacher_newpostprocess.php" method="POST" enctype="multipart/form-data">
+
+                                <div class="ui card newpostbox">
+
+                                    <p id="write">Write about an upcoming opportunity</p>
+
+                                    <input class="inup" type="text" name="post_title" id="post_title" placeholder="Title Of Your Post">
+
+                                    <span class="spaceboxv"></span>
+
+                                    <textarea class="form-control" placeholder="Describe The Opportunity For The Students" name="newpost" id="newpost" style="height: 80px;"></textarea>
+
+                                    <span class="spaceboxv2"></span>
+
+                                    <label class="col-xs-3 control-label">
+                                        <h2>Tags:</h2>
+                                    </label>
+                                    <div class="col-xs-8 tagbox">
+                                        <input type="text" id="skills" name="skills" data-role="tagsinput" />
+                                    </div>
+
+                                    <div align="right">
+                                        <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Post</button>
+                                    </div>
+
+                                </div>
+
+                            </form>
+
                             <span class="spaceboxv"></span>
 
                             <!-- here is the feed-post BackEnd Part -->
@@ -214,7 +245,7 @@
                                 <li class="nav-link" id="link_list">
                                     <a id="rightitems" href="#">
                                         <i class='bx bx-duplicate iconbox' style='color:#fc3f5b' ></i>
-                                        <span class="text nav-text" onclick="window.location.href = 'student_thesis.php';" id="menuitems2">Student Thesis Posts</span>
+                                        <span class="text nav-text" onclick="window.location.href = '';" id="menuitems2">Student Thesis Posts</span>
                                     </a>
                                 </li>
 
