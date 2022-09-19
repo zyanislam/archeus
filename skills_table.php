@@ -185,12 +185,14 @@
                     <tbody>
                         <?php 
                                 while($x=mysqli_fetch_assoc($result1)){
+                                    $uid = $x['tech_skill_id'] ;
                                     ?>
                         <tr>
                             <td><?php echo $x['tech_skill_name']; ?></td>
                             <td><?php echo $x['tech_skill_verification']; ?></td>
                             <td>
-                                <button class="request_btn"  onclick="window.location.href = 'request_validation.php';">Request</button>
+                                
+                                <button class="request_btn"  onclick="window.location.href = 'request_validation.php?data=<?php echo $uid?>';">Request</button>
                             </td>
 
 

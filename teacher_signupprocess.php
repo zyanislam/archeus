@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $mail->Username = 'archeusuiu@gmail.com';
 
             //SMTP password
-            $mail->Password = 'dxtbgvsumpspqicr';
+            $mail->Password = 'xpdziutywtfkuvij';
 
             //Enable TLS encryption;
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
