@@ -367,11 +367,17 @@ body.dark .home .text{
     font-family: Helvetica, sans-serif;
     font-weight: 500;
     background-color:#8178ff;
-    margin-left: 55px !important;
 }
 
 #link_list{
     margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+#rightitems{
+    display: flex;
+    align-items: center;
 }
 
 #bottomdev{
@@ -408,11 +414,10 @@ body.dark .home .text{
 .contentbox{
     display: flex;
     position: relative;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     height: auto;
-    width: 1400px;
+    width: 1160px;
     background-color: #27272c !important;
     top: 75px;
     left: 570px;
@@ -421,6 +426,29 @@ body.dark .home .text{
     padding: 20px;
 }
 
+.contentbox2{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    height: 1420px;
+    width: 900px;
+    background-color: #27272c !important;
+    top: 85px;
+    left: 1755px;
+    border-radius: 38px;
+    border: 0px;
+    padding: 20px;
+}
+
+.newpostbox{
+    background-color: #8983d3 !important;
+    min-height: 230vh;
+    width: 1010px !important;
+    color: rgb(255, 255, 255) !important;
+    border-radius: 22px !important;
+    border: 0px #8178ff;
+    padding: 20px 30px !important;
+}
 
 #write{
     font-size: 22px;
@@ -448,13 +476,12 @@ body.dark .home .text{
 
 .postbox{
     background-color: #ffffff !important;
-    min-height: 230px;
     height: auto;
     width: 1010px !important;
     color: rgb(0, 0, 0) !important;
     border-radius: 18px !important;
     border: 0px !important;
-    padding: 5px !important;
+    padding: 1rem !important;
 }
 
 .textline{
@@ -482,7 +509,7 @@ body.dark .home .text{
 }
 
 .iconbox{
-    font-size: 30px !important;
+    font-size: 45px !important;
 }
 
 .home_button{
@@ -495,35 +522,20 @@ body.dark .home .text{
     background-color:#695CFE !important;
 }
 
-#post_teacher{
-    font-size: 25px;
-    padding: 10px;
-    padding-left: 15px;
+.tag{
+    color: black !important;
+    font-size: 16px;
+    background-color:#877cff !important;
+    padding: 2px;
     margin: 5px;
+    border-radius: 10px;
 }
 
-.field{
-    width: 300px;
-    height: 55px;
-    left: 1263px;
-    top: 474px;
-    border: 0px;
-    border-radius: 44px !important;
-    padding: 5px;
-    padding-left: 10px;
-    opacity: 2 !important;
-    font-size: 18px;
-}
-
-.filter{
-    margin: 20px;
-}
-
-.form_div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+#menuitems2{
+    font-size: 26px;
+    color:#fff;
+    font-weight: 500;
+    margin-left: 20px !important;
 }
 
 .profession{
