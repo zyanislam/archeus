@@ -417,10 +417,10 @@ body.dark .home .text{
     flex-direction: column;
     align-items: center;
     height: auto;
-    width: auto;
+    width: 1600px;
     background-color: #27272c !important;
     top: 75px;
-    left: 570px;
+    left: 130px;
     border-radius: 38px;
     border: 0px;
     padding: 20px;
@@ -543,26 +543,24 @@ body.dark .home .text{
 
 .dashboard {
     position: relative;
-    left: 20%;
     background-color: var(--panel-color);
-    height: 300px;
-    width: 1200px;
-    padding: 10px 14px;
+    color: white;
+    height: auto;
     transition: var(--tran-05);
 }
 
 
 .styled-table {
-    margin: 25px 0;
     font-size: 18px;
     font-family: sans-serif;
-    width: auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 0 10px 0 10px;
+    width: 1500px;
+
 }
 
 .styled-table thead tr {
-    background-color: #8178ff;
-    color: #ffffff;
+    background-color: #ccc;
+    color: #000;
     text-align: center;
 }
 
@@ -575,19 +573,23 @@ body.dark .home .text{
     border-bottom: 1px solid #dddddd;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
+/* .styled-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
-}
+} */
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #8178ff;
+    border-bottom: 2px solid #ccc;
 }
 
 .request_btn{
     width: 100px;
     height: 50px;
     border-radius: 25px;
-    color: #ddd;
+    color: #fff;
     background-color: #8178ff;
     border: none;
+}
+
+.styled-table tbody{
+    text-align: center;
 }
