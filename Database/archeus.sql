@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2022 at 02:30 AM
+-- Generation Time: Sep 19, 2022 at 07:38 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -103,7 +103,7 @@ CREATE TABLE `cv_eca` (
 --
 
 INSERT INTO `cv_eca` (`eca_id`, `st_username`, `eca_name`, `eca_desc`, `eca_link`) VALUES
-(1, '011182035', 'Sketch', '', ''),
+(1, '011182035', 'Sketch', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam.', 'https://github.com/anikatahsin3?tab=projects'),
 (5, '011183070', '', '', ''),
 (6, '011183013', '', '', ''),
 (7, '011183021', '', '', ''),
@@ -186,7 +186,7 @@ CREATE TABLE `cv_publication` (
 --
 
 INSERT INTO `cv_publication` (`pub_id`, `st_username`, `pub_title`, `pub_year_published`, `pub_link`) VALUES
-(1, '011182035', '*Publication Title1*', '0000-00-00', ''),
+(1, '011182035', '*Publication Title1*', '0000-00-00', 'https://github.com/anikatahsin3?tab=projects'),
 (2, '011183070', '*Publication Title2*', '0000-00-00', ''),
 (3, '011183013', '*Publication Title3*', '0000-00-00', ''),
 (4, '011183021', '*Publication Title4*', '0000-00-00', ''),
@@ -211,14 +211,14 @@ CREATE TABLE `cv_soft_skill` (
 --
 
 INSERT INTO `cv_soft_skill` (`soft_skill_id`, `st_username`, `soft_skill_name`, `soft_skill_verification`, `soft_skill_toggle`) VALUES
-(2, '011183013', 'laravel', 1, 0),
-(6, '011182035', 'php', 0, 0),
-(7, '011182035', 'laravel', 0, 0),
+(2, '011183013', 'laravel', 1, 1),
+(6, '011182035', 'php', 0, 1),
+(7, '011182035', 'laravel', 0, 1),
 (8, '011183070', 'html', 0, 0),
 (9, '011183070', 'css', 0, 0),
 (10, '011183013', 'django', 0, 0),
 (11, '011183021', 'php', 0, 0),
-(12, '011182035', 'JS', 0, 0);
+(12, '011182035', 'JS', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -241,14 +241,14 @@ CREATE TABLE `cv_tech_skill` (
 --
 
 INSERT INTO `cv_tech_skill` (`tech_skill_id`, `st_username`, `tech_skill_name`, `tech_skill_desc`, `tech_skill_related_project`, `tech_skill_verification`, `tech_skill_toggle`) VALUES
-(1, '011182035', 'C++', 'Has Experience on C++', '', 0, 0),
+(1, '011182035', 'C++', 'Has Experience on C++', '', 1, 1),
 (5, '011183070', 'C#', 'Has Experience on C#', '', 0, 0),
-(6, '011182035', 'VS Code', 'Has experience on VS Code', '', 0, 0),
+(6, '011182035', 'VS Code', 'Has experience on VS Code', '', 1, 1),
 (7, '011183070', 'Figma', 'Has experience on Figma', NULL, 0, 0),
 (8, '011183013', 'Technical writing', '', '', 0, 0),
 (9, '011183021', 'Swift', 'Has Experience on Swift', '', 0, 0),
-(10, '011182035', 'C++', 'Has Experience on C++', '', 0, 0),
-(11, '011182035', 'C#', 'Has Experience on C# ', '', 0, 0);
+(10, '011182035', 'C++', 'Has Experience on C++', '', 1, 1),
+(11, '011182035', 'C#', 'Has Experience on C# ', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -270,7 +270,10 @@ CREATE TABLE `post_student` (
 --
 
 INSERT INTO `post_student` (`stpost_id`, `st_username`, `st_name`, `stpost_title`, `stpost_desc`, `stpost_datetime`) VALUES
-('1', '011182035', 'Anika', 'Need one member for fydp', 'All the requirements here...', '2022-09-11 00:33:21');
+('1', '011182035', 'Anika', 'Need one member for fydp', 'All the requirements here...', '2022-09-11 00:33:21'),
+('6327e2467650c', '011182035', 'Anika Tahsin', 'new post', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam.', '2022-09-19 09:30:14'),
+('6327e2553647a', '011182035', 'Anika Tahsin', 'new post 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam.', '2022-09-19 09:30:29'),
+('6327e2f893104', '011183070', 'Fahad Al Islam', 'new post 3', 'Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. ', '2022-09-19 09:33:12');
 
 -- --------------------------------------------------------
 
@@ -302,7 +305,8 @@ INSERT INTO `post_teacher` (`tpost_id`, `t_username`, `t_name`, `tpost_title`, `
 ('6316f02a6bdba', 'AH', 'Abir Hasan', 'Job vacancy at United', '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque.”', '2022-09-06 01:00:58'),
 ('6316f0e9be51b', 'AH', 'Abir Hasan', 'Need BackEnd Developer at Beximco', 'Rrow itself, let it be sorrow; let him love it; let him pursue it, ishing for its acquisitiendum. Because he will ab hold, uniess but through concer, and also of those who resist. Now a pure snore disturbeded sum dust. He ejjnoyes, in order that somewon, also with a severe one, unless of life. May a cusstums offficer somewon nothing of a poison-filled. Until, from a twho, twho chaffinch may also pursue it, not even a lump. But as twho, as a tank; a proverb, yeast; or else they tinscribe nor. Yet yet dewlap bed.”', '2022-09-06 01:04:09'),
 ('6316f86897eeb', 'FAI', 'Fahad Al Islam', 'Need RA', 'It\'s difficult to find examples of lorem ipsum in use before Letraset made it popular as a dummy text in the 1960s, although McClintock says he remembers coming across the lorem ipsum passage in a book of old metal type samples.', '2022-09-06 01:36:08'),
-('63203729a157d', 'AT', 'Anika Tahsin', 'Need Intern', 'So far he hasn\'t relocated where he once saw the passage, but the popularity of Cicero in the 15th century supports the theory that the filler text has been used for centuries.', '2022-09-13 01:54:17');
+('63203729a157d', 'AT', 'Anika Tahsin', 'Need Intern', 'So far he hasn\'t relocated where he once saw the passage, but the popularity of Cicero in the 15th century supports the theory that the filler text has been used for centuries.', '2022-09-13 01:54:17'),
+('6327f01e2370a', 'AT', 'Anika Tahsin', 'new post 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis.', '2022-09-19 10:29:18');
 
 -- --------------------------------------------------------
 
@@ -364,8 +368,8 @@ CREATE TABLE `student_log` (
 
 INSERT INTO `student_log` (`stlog_id`, `st_username`, `st_name`, `stlog_login_date_time`, `stlog_logout_date_time`) VALUES
 (6, '011182033', 'kamado tanjiro', '2022-08-30 01:33:30', '2022-08-30 01:35:55'),
-(7, '011182035', 'Anika Tahsin', '2022-09-19 05:16:27', '2022-09-19 05:16:40'),
-(8, '011183070', 'Fahad Islam', '2022-08-30 01:38:14', '2022-08-30 01:38:40'),
+(7, '011182035', 'Anika Tahsin', '2022-09-19 10:52:49', '0000-00-00 00:00:00'),
+(8, '011183070', 'Fahad Islam', '2022-09-19 09:32:52', '2022-09-19 10:06:47'),
 (43, '011183040', 'Abdullah Masud', NULL, NULL),
 (44, '011183013', 'Sadman Sakib', '2022-09-13 07:54:16', '2022-09-13 07:54:16'),
 (45, '011183021', 'Azwad Zarif', '2022-09-13 07:54:16', '2022-09-13 07:54:16'),
@@ -436,7 +440,10 @@ INSERT INTO `tags_teacher` (`id`, `post_teacher_id`, `tag_name`, `created_at`) V
 (6, '6316f0e9be51b', 'php', '2022-09-06 01:04:09'),
 (7, '6316f86897eeb', 'laravel', '2022-09-06 01:36:08'),
 (8, '6316f86897eeb', 'php', '2022-09-06 01:36:08'),
-(12, '63203729a157d', 'HTML', '2022-09-13 01:54:17');
+(12, '63203729a157d', 'HTML', '2022-09-13 01:54:17'),
+(13, '6327f01e2370a', 'c', '2022-09-19 10:29:18'),
+(14, '6327f01e2370a', 'nodeJS', '2022-09-19 10:29:18'),
+(15, '6327f01e2370a', 'excel', '2022-09-19 10:29:18');
 
 -- --------------------------------------------------------
 
@@ -492,7 +499,7 @@ INSERT INTO `teacher_log` (`tlog_id`, `t_username`, `tlog_name`, `tlog_login_dat
 (4, 'KSM', 'Kazi Sajeed Mehrab', NULL, NULL),
 (5, 'SS', 'Shakkhar Shatabda', NULL, NULL),
 (6, 'FAI', 'Fahad Al Islam', '2022-09-13 07:51:41', '2022-09-13 07:51:41'),
-(7, 'AT', 'Anika Tahsin', '2022-09-19 03:57:26', '2022-09-19 03:57:47'),
+(7, 'AT', 'Anika Tahsin', '2022-09-19 10:54:43', '2022-09-19 10:52:02'),
 (8, 'AS', 'Adiba Shaira', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -717,7 +724,7 @@ ALTER TABLE `tags_student`
 -- AUTO_INCREMENT for table `tags_teacher`
 --
 ALTER TABLE `tags_teacher`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `teacher`
