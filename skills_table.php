@@ -28,7 +28,8 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" />
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
@@ -38,7 +39,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
     <script src="custom_tags_input.js"></script>
-    <title>Student Home | Archeus</title>
+    <title>Skills Page| Archeus</title>
 </head>
 
 <body class="dark">
@@ -72,7 +73,7 @@
 
                         <div class="text logo-text">
                             <span class="name">Archeus</span>
-                            <span class="profession">Student Home</span>
+                            <span class="profession">Skills Page</span>
                         </div>
                     </div>
 
@@ -158,11 +159,12 @@
         </div>
 
         <div class="container">
-            <section class="dashboard">
-                <div class="col">
-                    <h1>Verification List</h1>
-                </div>
-                <?php
+            <div class="contentbox">
+                <section class="dashboard">
+                    <div class="col">
+                        <h1>Verification List</h1>
+                    </div>
+                    <?php
                     try{
                         include "db_connect.php";
                         $id = $_SESSION['st_user'];
@@ -172,51 +174,53 @@
                     $result1 = mysqli_query($conn, $sqlquery1);
 
                     ?>
-                <table class="styled-table">
-                    <thead>
-                        <tr>
-                            <th>Skill Name</th>
-                            <th>Status</th>
-                            <th>Verification</th>
-                            <th>Active</th>
-                            <!-- <th></th> -->
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php 
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Skill Name</th>
+                                <th>Status</th>
+                                <th>Verification</th>
+                                <th>Active</th>
+                                <!-- <th></th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
                                 while($x=mysqli_fetch_assoc($result1)){
                                     ?>
-                        <tr>
-                            <td><?php echo $x['tech_skill_name']; ?></td>
-                            <td><?php echo $x['tech_skill_verification']; ?></td>
-                            <td>
-                                <button class="request_btn"  onclick="window.location.href = 'request_validation.php';">Request</button>
-                            </td>
+                            <tr>
+                                <td><?php echo $x['tech_skill_name']; ?></td>
+                                <td><?php echo $x['tech_skill_verification']; ?></td>
+                                <td>
+                                    <button class="request_btn"
+                                        onclick="window.location.href = 'request_validation.php';">Request</button>
+                                </td>
 
 
-                            <td>
-                                <center>
-                                    <div class="form-check form-switch">
-                                        <input type="checkbox" class="form-check-input"
-                                            <?php if($x['tech_skill_toggle']=='1'){echo "checked";}?>
-                                            onclick="toggleStatus1(<?php echo $x['tech_skill_id']?>)" id="check">
-                                    </div>
-                                </center>
-                            </td>
-                            
-                        </tr>
-                        <?php
+                                <td>
+                                    <center>
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" class="form-check-input"
+                                                <?php if($x['tech_skill_toggle']=='1'){echo "checked";}?>
+                                                onclick="toggleStatus1(<?php echo $x['tech_skill_id']?>)" id="check">
+                                        </div>
+                                    </center>
+                                </td>
+
+                            </tr>
+                            <?php
                                 }
                             ?>
-                        <!-- and so on... -->
-                    </tbody>
-                </table>
-                <?php
+                            <!-- and so on... -->
+                        </tbody>
+                    </table>
+                    <?php
                 }catch (PDOException $ex) {
                     echo '<script>alert("Found error");window.location = "welcome.php";</script>';
                 }
                 ?>
-            </section>
+                </section>
+            </div>
         </div>
     </div>
 
@@ -249,32 +253,35 @@
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.0.min.js"</script>
+    <script>
+        src = "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.0.min.js"
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     <script>
-                function toggleStatus1(id){
-                    var id =id;
-                    $.ajax({
-                        url:"/Archeus/toggle1.php",
-                        type:"post",
-                        data:{tech_id:id},
-                        success:function(data){
-                                $hell = data.slice(-1);
-                                if($hell=='1'){
-                                    swal("Status Active!");
-                                }
-                                else{
-                                    swal("Status Inactive!");
-                                }
-                            }
-                    });
-
-
-
+        function toggleStatus1(id) {
+            var id = id;
+            $.ajax({
+                url: "/Archeus/toggle1.php",
+                type: "post",
+                data: {
+                    tech_id: id
+                },
+                success: function (data) {
+                    $hell = data.slice(-1);
+                    if ($hell == '1') {
+                        swal("Status Active!");
+                    } else {
+                        swal("Status Inactive!");
+                    }
                 }
-            </script>
-                    
+            });
+
+
+
+        }
+    </script>
+
 </body>
 
 </html>
