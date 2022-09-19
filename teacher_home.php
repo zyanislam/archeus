@@ -233,7 +233,7 @@
                             <?php
                                     }
                                 }
-                            } catch (PDOException $ex) {
+                            }catch (PDOException $ex) {
                                 //if found error forward to login page
                                 // echo"<script>location.assign('welcome.php')</script>";
                                 echo '<script>

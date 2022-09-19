@@ -43,7 +43,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #8178ff;
+    background-color: #d0d0d9;
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
