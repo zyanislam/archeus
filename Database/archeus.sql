@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2022 at 01:21 AM
+-- Generation Time: Sep 19, 2022 at 02:30 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -161,11 +161,11 @@ CREATE TABLE `cv_project` (
 --
 
 INSERT INTO `cv_project` (`project_id`, `st_username`, `project_name`, `project_desc`) VALUES
-(1, '011182035', '', ''),
-(2, '011183070', '', ''),
-(3, '011183013', '', ''),
-(4, '011183021', '', ''),
-(5, '011182035', '', '');
+(1, '011182035', 'name1', '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. '),
+(2, '011183070', 'name2', 'Nunc posuere purus rhoncus pulvinar aliquam.'),
+(3, '011183013', 'name3', 'Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis.'),
+(4, '011183021', 'name4', 'Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat.'),
+(5, '011182035', 'name5', 'Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus.');
 
 -- --------------------------------------------------------
 
@@ -335,13 +335,14 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`st_id`, `st_username`, `st_name`, `st_email`, `st_pass`, `st_dept`, `st_contact`, `st_dob`, `st_gender`, `profile_picture`, `role`, `status`, `st_point`, `st_github`, `verification_code`, `email_verified_at`, `st_year`) VALUES
-(3, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '1234', 'CSE', '015xxxxxxxx', '1996-10-26', 'Female', NULL, 'student', 1, 0, 'https://github.com/anikatahsin3', '', '2022-09-19 06:31:32', '4th'),
-(4, '011183070', 'Fahad Al Islam', 'fislam183070@bscse.uiu.ac.bd', '1234', 'CSE', '016xxxxxxxx', '2022-08-22', 'Male', NULL, 'student', 1, 0, 'https://github.com/zyanislam', '', NULL, '4th'),
-(19, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-08-25', 'Male', NULL, 'student', 1, 0, 'https://github.com/sakib-sadman', '', NULL, '4th'),
-(24, '011182033', 'kamado tanjiro', 'tan@bscse.uiu.ac.bd', '1234', 'CSE', '018xxxxxxxx', '2022-08-30', 'Male', NULL, 'student', 1, 0, 'https://github.com/tanjiro280', '', NULL, '2nd'),
-(26, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '1234', 'CSE', '019xxxxxxxx', '2022-09-06', 'Male', NULL, 'student', 1, 0, 'https://github.com/Shredder280998', '', NULL, '4th'),
-(28, '011182000', 'Fahim Islam', 'fahim@bseee.uiu.ac.bd', '1234', 'EEE', '017xxxxxxxx', '2022-09-06', 'male', NULL, 'student', 1, 0, 'https://github.com/a', '', NULL, '1st'),
-(31, '011183040', 'Abdullah Masud', 'aa@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-09-13', 'Male', NULL, 'student', 1, 0, 'https://github.com/masud', '', NULL, '1st');
+(3, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '1234', 'CSE', '015xxxxxxxx', '1996-10-26', 'Female', NULL, 'student', 1, 0, 'https://github.com/anikatahsin3', '154642', '2022-09-19 06:31:32', '4th'),
+(4, '011183070', 'Fahad Al Islam', 'fislam183070@bscse.uiu.ac.bd', '1234', 'CSE', '016xxxxxxxx', '2022-08-22', 'Male', NULL, 'student', 1, 0, 'https://github.com/zyanislam', '154641', '2022-09-19 07:21:54', '4th'),
+(19, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-08-25', 'Male', NULL, 'student', 1, 0, 'https://github.com/sakib-sadman', '154640', '2022-09-19 09:22:05', '4th'),
+(24, '011182033', 'kamado tanjiro', 'tan@bscse.uiu.ac.bd', '1234', 'CSE', '018xxxxxxxx', '2022-08-30', 'Male', NULL, 'student', 1, 0, 'https://github.com/tanjiro280', '154639', '2022-09-19 09:22:11', '2nd'),
+(26, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '1234', 'CSE', '019xxxxxxxx', '2022-09-06', 'Male', NULL, 'student', 1, 0, 'https://github.com/Shredder280998', '154638', '2022-09-19 07:22:15', '4th'),
+(28, '011182000', 'Fahim Islam', 'fahim@bseee.uiu.ac.bd', '1234', 'EEE', '017xxxxxxxx', '2022-09-06', 'male', NULL, 'student', 1, 0, 'https://github.com/a', '154637', '2022-09-19 07:22:18', '1st'),
+(31, '011183040', 'Abdullah Masud', 'aa@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-09-13', 'Male', NULL, 'student', 1, 0, 'https://github.com/masud', '154636', '2022-09-19 10:22:21', '1st'),
+(32, '011163035', 'Nezuko', 'nez@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-09-19', 'Female', NULL, 'student', 1, 0, NULL, '154635', '2022-09-19 05:57:08', '1st');
 
 -- --------------------------------------------------------
 
@@ -368,7 +369,8 @@ INSERT INTO `student_log` (`stlog_id`, `st_username`, `st_name`, `stlog_login_da
 (43, '011183040', 'Abdullah Masud', NULL, NULL),
 (44, '011183013', 'Sadman Sakib', '2022-09-13 07:54:16', '2022-09-13 07:54:16'),
 (45, '011183021', 'Azwad Zarif', '2022-09-13 07:54:16', '2022-09-13 07:54:16'),
-(46, '011182000', 'Fahim Islam', '2022-09-13 07:55:45', '2022-09-13 07:55:45');
+(46, '011182000', 'Fahim Islam', '2022-09-13 07:55:45', '2022-09-13 07:55:45'),
+(47, '011163035', 'Nezuko', '2022-09-19 05:56:33', '2022-09-19 05:57:58');
 
 -- --------------------------------------------------------
 
@@ -462,9 +464,10 @@ CREATE TABLE `teacher` (
 INSERT INTO `teacher` (`t_id`, `t_username`, `t_name`, `t_email`, `t_pass`, `t_dept`, `t_des`, `t_room`, `role`, `t_joined_date`) VALUES
 (1, 'FAI', 'Fahad Al Islam', 'fai@uiu.ac.bd', '54321', 'CSE', 'Lecturer', '201', 'teacher', '2022-09-13 01:52:26'),
 (2, 'AT', 'Anika Tahsin', 'at@uiu.ac.bd', 'anika', 'CSE', 'Professor', '638/B', 'teacher', '2022-09-13 01:52:26'),
-(10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', '54321', 'CSE', 'lecturer', '', 'teacher', '2022-09-13 01:52:26'),
-(11, 'KSM', 'Kazi Sajeed Mehrab', 'ksm@uiu.ac.bd', '1234', 'CSE', 'Lecturer', '', 'teacher', '2022-09-13 01:52:26'),
-(12, 'SS', 'Shakkhar Shatabda', 'ss@uiu.ac.bd', '1234', 'CSE', 'Associate Professor', '', 'teacher', '2022-09-13 01:58:19');
+(10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', '54321', 'CSE', 'lecturer', '636', 'teacher', '2022-09-13 01:52:26'),
+(11, 'KSM', 'Kazi Sajeed Mehrab', 'ksm@uiu.ac.bd', '1234', 'CSE', 'Lecturer', '418', 'teacher', '2022-09-13 01:52:26'),
+(12, 'SS', 'Shakkhar Shatabda', 'ss@uiu.ac.bd', '1234', 'CSE', 'Associate Professor', '428', 'teacher', '2022-09-13 01:58:19'),
+(13, 'AS', 'Adiba Shaira', 'as@uiu.ac.bd', '1234', 'CSE', 'Lecturer', '419', 'teacher', '2022-09-19 05:59:36');
 
 -- --------------------------------------------------------
 
@@ -489,7 +492,21 @@ INSERT INTO `teacher_log` (`tlog_id`, `t_username`, `tlog_name`, `tlog_login_dat
 (4, 'KSM', 'Kazi Sajeed Mehrab', NULL, NULL),
 (5, 'SS', 'Shakkhar Shatabda', NULL, NULL),
 (6, 'FAI', 'Fahad Al Islam', '2022-09-13 07:51:41', '2022-09-13 07:51:41'),
-(7, 'AT', 'Anika Tahsin', '2022-09-19 03:57:26', '2022-09-19 03:57:47');
+(7, 'AT', 'Anika Tahsin', '2022-09-19 03:57:26', '2022-09-19 03:57:47'),
+(8, 'AS', 'Adiba Shaira', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `verification_request`
+--
+
+CREATE TABLE `verification_request` (
+  `id` int(11) NOT NULL,
+  `st_username` varchar(255) NOT NULL,
+  `st_name` varchar(255) NOT NULL,
+  `t_username` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -615,6 +632,12 @@ ALTER TABLE `teacher_log`
   ADD KEY `fk5` (`t_username`);
 
 --
+-- Indexes for table `verification_request`
+--
+ALTER TABLE `verification_request`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -676,13 +699,13 @@ ALTER TABLE `cv_tech_skill`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `st_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `st_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `student_log`
 --
 ALTER TABLE `student_log`
-  MODIFY `stlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `stlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `tags_student`
@@ -700,13 +723,19 @@ ALTER TABLE `tags_teacher`
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `teacher_log`
 --
 ALTER TABLE `teacher_log`
-  MODIFY `tlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `tlog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `verification_request`
+--
+ALTER TABLE `verification_request`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
