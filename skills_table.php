@@ -27,6 +27,8 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
@@ -196,8 +198,8 @@
                                 <center>
                                     <div class="form-check form-switch">
                                         <input type="checkbox" class="form-check-input"
-                                            <?php if($x['status']=='1'){echo "checked";}?>
-                                            onclick="toggleStatus(<?php echo $x['st_username']?>)" id="check">
+                                            <?php if($x['tech_skill_toggle']=='1'){echo "checked";}?>
+                                            onclick="toggleStatus1(<?php echo $x['tech_skill_id']?>)" id="check">
                                     </div>
                                 </center>
                             </td>
@@ -246,7 +248,33 @@
             }
         });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.0.min.js"</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
+    <script>
+                function toggleStatus1(id){
+                    var id =id;
+                    $.ajax({
+                        url:"/Archeus/toggle1.php",
+                        type:"post",
+                        data:{tech_id:id},
+                        success:function(data){
+                                $hell = data.slice(-1);
+                                if($hell=='1'){
+                                    swal("Status Active!");
+                                }
+                                else{
+                                    swal("Status Inactive!");
+                                }
+                            }
+                    });
+
+
+
+                }
+            </script>
+                    
 </body>
 
 </html>
