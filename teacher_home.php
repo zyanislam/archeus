@@ -229,9 +229,9 @@ if (
                             //if found error forward to login page
                             // echo"<script>location.assign('welcome.php')</script>";
                             echo '<script>
-                                alert("Found error");
-                                window.location = "welcome.php";
-                                </script>';
+                            alert("Found error");
+                            window.location = "welcome.php";
+                            </script>';
                         }
                         ?>
                         <!-- BackEnd ends here -->

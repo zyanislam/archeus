@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2022 at 07:38 PM
+-- Generation Time: Sep 19, 2022 at 10:47 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -212,10 +212,10 @@ CREATE TABLE `cv_soft_skill` (
 
 INSERT INTO `cv_soft_skill` (`soft_skill_id`, `st_username`, `soft_skill_name`, `soft_skill_verification`, `soft_skill_toggle`) VALUES
 (2, '011183013', 'laravel', 1, 1),
-(6, '011182035', 'php', 0, 1),
-(7, '011182035', 'laravel', 0, 1),
-(8, '011183070', 'html', 0, 0),
-(9, '011183070', 'css', 0, 0),
+(6, '011182035', 'php', 1, 1),
+(7, '011182035', 'laravel', 1, 1),
+(8, '011183070', 'html', 1, 0),
+(9, '011183070', 'css', 1, 0),
 (10, '011183013', 'django', 0, 0),
 (11, '011183021', 'php', 0, 0),
 (12, '011182035', 'JS', 0, 1);
@@ -242,11 +242,11 @@ CREATE TABLE `cv_tech_skill` (
 
 INSERT INTO `cv_tech_skill` (`tech_skill_id`, `st_username`, `tech_skill_name`, `tech_skill_desc`, `tech_skill_related_project`, `tech_skill_verification`, `tech_skill_toggle`) VALUES
 (1, '011182035', 'C++', 'Has Experience on C++', '', 1, 1),
-(5, '011183070', 'C#', 'Has Experience on C#', '', 0, 0),
+(5, '011183070', 'C#', 'Has Experience on C#', '', 1, 0),
 (6, '011182035', 'VS Code', 'Has experience on VS Code', '', 1, 1),
-(7, '011183070', 'Figma', 'Has experience on Figma', NULL, 0, 0),
-(8, '011183013', 'Technical writing', '', '', 0, 0),
-(9, '011183021', 'Swift', 'Has Experience on Swift', '', 0, 0),
+(7, '011183070', 'Figma', 'Has experience on Figma', NULL, 1, 0),
+(8, '011183013', 'Technical writing', '', '', 1, 0),
+(9, '011183021', 'Swift', 'Has Experience on Swift', '', 1, 0),
 (10, '011182035', 'C++', 'Has Experience on C++', '', 1, 1),
 (11, '011182035', 'C#', 'Has Experience on C# ', '', 1, 1);
 
@@ -368,7 +368,7 @@ CREATE TABLE `student_log` (
 
 INSERT INTO `student_log` (`stlog_id`, `st_username`, `st_name`, `stlog_login_date_time`, `stlog_logout_date_time`) VALUES
 (6, '011182033', 'kamado tanjiro', '2022-08-30 01:33:30', '2022-08-30 01:35:55'),
-(7, '011182035', 'Anika Tahsin', '2022-09-19 10:52:49', '0000-00-00 00:00:00'),
+(7, '011182035', 'Anika Tahsin', '2022-09-20 01:04:35', '0000-00-00 00:00:00'),
 (8, '011183070', 'Fahad Islam', '2022-09-19 09:32:52', '2022-09-19 10:06:47'),
 (43, '011183040', 'Abdullah Masud', NULL, NULL),
 (44, '011183013', 'Sadman Sakib', '2022-09-13 07:54:16', '2022-09-13 07:54:16'),
@@ -469,7 +469,7 @@ CREATE TABLE `teacher` (
 --
 
 INSERT INTO `teacher` (`t_id`, `t_username`, `t_name`, `t_email`, `t_pass`, `t_dept`, `t_des`, `t_room`, `role`, `t_joined_date`) VALUES
-(1, 'FAI', 'Fahad Al Islam', 'fai@uiu.ac.bd', '54321', 'CSE', 'Lecturer', '201', 'teacher', '2022-09-13 01:52:26'),
+(1, 'FAI', 'Fahad Al Islam', 'fai@uiu.ac.bd', '54321', 'EEE', 'Lecturer', '201', 'teacher', '2022-09-13 01:52:26'),
 (2, 'AT', 'Anika Tahsin', 'at@uiu.ac.bd', 'anika', 'CSE', 'Professor', '638/B', 'teacher', '2022-09-13 01:52:26'),
 (10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', '54321', 'CSE', 'lecturer', '636', 'teacher', '2022-09-13 01:52:26'),
 (11, 'KSM', 'Kazi Sajeed Mehrab', 'ksm@uiu.ac.bd', '1234', 'CSE', 'Lecturer', '418', 'teacher', '2022-09-13 01:52:26'),
@@ -499,7 +499,7 @@ INSERT INTO `teacher_log` (`tlog_id`, `t_username`, `tlog_name`, `tlog_login_dat
 (4, 'KSM', 'Kazi Sajeed Mehrab', NULL, NULL),
 (5, 'SS', 'Shakkhar Shatabda', NULL, NULL),
 (6, 'FAI', 'Fahad Al Islam', '2022-09-13 07:51:41', '2022-09-13 07:51:41'),
-(7, 'AT', 'Anika Tahsin', '2022-09-19 10:54:43', '2022-09-19 10:52:02'),
+(7, 'AT', 'Anika Tahsin', '2022-09-20 01:46:14', '0000-00-00 00:00:00'),
 (8, 'AS', 'Adiba Shaira', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -512,7 +512,8 @@ CREATE TABLE `verification_request` (
   `id` int(11) NOT NULL,
   `st_username` varchar(255) NOT NULL,
   `st_name` varchar(255) NOT NULL,
-  `t_username` varchar(255) NOT NULL
+  `t_username` varchar(255) NOT NULL,
+  `skill_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
