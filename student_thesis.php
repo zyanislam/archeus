@@ -154,26 +154,19 @@
 
                             <span class="spaceboxv2"></span>
 
-                            <form action="teacher_newpostprocess.php" method="POST" enctype="multipart/form-data">
+                            <form action="student_newpostprocess.php" method="POST" enctype="multipart/form-data">
 
                                 <div class="ui card newpostbox">
 
-                                    <p id="write">Write about an upcoming opportunity</p>
+                                    <p id="write">Need Thesis member?</p>
 
                                     <input class="inup" type="text" name="post_title" id="post_title" placeholder="Title Of Your Post">
 
                                     <span class="spaceboxv"></span>
 
-                                    <textarea class="form-control" placeholder="Describe The Opportunity For The Students" name="newpost" id="newpost" style="height: 80px;"></textarea>
+                                    <textarea class="form-control" placeholder="Describe Your Situation" name="newpost" id="newpost" style="height: 80px;"></textarea>
 
                                     <span class="spaceboxv2"></span>
-
-                                    <label class="col-xs-3 control-label">
-                                        <h2>Tags:</h2>
-                                    </label>
-                                    <div class="col-xs-8 tagbox">
-                                        <input type="text" id="skills" name="skills" data-role="tagsinput" />
-                                    </div>
 
                                     <div align="right">
                                         <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Post</button>
@@ -191,7 +184,7 @@
                                 $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                                $sqlquery = "SELECT * FROM post_teacher ORDER BY tpost_datetime DESC";
+                                $sqlquery = "SELECT * FROM post_student ORDER BY stpost_datetime DESC";
                                 $returnobj = $conn->query($sqlquery);
 
                                 if ($returnobj->rowCount() == 0) {
@@ -206,11 +199,11 @@
                                         <div class="ui card postbox">
                                             <div class="content">
                                                 <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
-                                                <div class="header" id="post_title"><?php echo $row['tpost_title']; ?></div>
-                                                <div class="header" id="author_name"><?php echo $row['t_name']; ?> | Author</div>
+                                                <div class="header" id="post_title"><?php echo $row['stpost_title']; ?></div>
+                                                <div class="header" id="author_name"><?php echo $row['st_name']; ?> | Author</div>
 
                                                 <div class="description">
-                                                    <p id="post_desc"><?php echo $row['tpost_desc']; ?></p>
+                                                    <p id="post_desc"><?php echo $row['stpost_desc']; ?></p>
                                                 </div>
                                             </div>
                                         </div>
