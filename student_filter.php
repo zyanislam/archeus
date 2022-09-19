@@ -98,15 +98,8 @@
 
                                     <li class="nav-link" id="link_list">
                                         <a href="#">
-                                            <i class='bx bx-bookmarks icon' style='color:#ffffff'></i>
-                                            <span class="text nav-text" id="menuitems">Bookmark</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-link" id="link_list">
-                                        <a href="#">
                                             <i class='bx bx-check icon' style='color:#4ecb71'></i>
-                                            <span class="text nav-text" id="menuitems">Validation Request</span>
+                                            <span class="text nav-text" id="menuitems" onclick="window.location.href = 'skills_table.php';">My Skills</span>
                                         </a>
                                     </li>
 
@@ -209,17 +202,12 @@
                     <div class="bg_contentbox2">
                         <div class="contentbox2">
                             <ul class="menu-links">
-                                <li class="nav-link" id="link_list">
-                                    <a id="rightitems" href="#">
-                                        <i class='bx bxs-copy-alt iconbox' style='color:#ffffff'></i>
-                                        <span class="text nav-text" onclick="window.location.href = '';" id="menuitems2">Bookmark</span>
-                                    </a>
-                                </li>
+                                
 
-                                <li class="nav-link" id="link_list">
+                            <li class="nav-link" id="link_list">
                                     <a id="rightitems" href="#">
                                         <i class='bx bx-duplicate iconbox' style='color:#fc3f5b' ></i>
-                                        <span class="text nav-text" onclick="window.location.href = '';" id="menuitems2">Student Thesis Posts</span>
+                                        <span class="text nav-text" onclick="window.location.href = 'student_thesis.php';" id="menuitems2">Student Thesis Posts</span>
                                     </a>
                                 </li>
 

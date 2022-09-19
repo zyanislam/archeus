@@ -537,3 +537,8 @@ body.dark .home .text{
     font-weight: 500;
     margin-left: 20px !important;
 }
+
+.profession{
+    font-size:26px !important;
+    padding: 20px !important;
+}
