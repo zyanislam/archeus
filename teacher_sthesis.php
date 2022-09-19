@@ -1,9 +1,10 @@
-<!-- $_SESSION['st_user'] -->
+<!-- $_SESSION['t_user'] -->
 <?php
 session_start();
 if (
-    isset($_SESSION['st_user']) && !empty($_SESSION['st_user'])
+    isset($_SESSION['t_user']) && !empty($_SESSION['t_user'])
 ) {
+    $id = $_SESSION['t_user'];
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -14,7 +15,7 @@ if (
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!----======== CSS ======== -->
-        <link rel="stylesheet" href="student_thesis.css">
+        <link rel="stylesheet" href="teacher_sthesis.css">
 
         <!----===== Boxicons CSS ===== -->
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -34,7 +35,7 @@ if (
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
         <script src="custom_tags_input.js"></script>
-        <title>Student Home | Archeus</title>
+        <title>Teacher Home | Archeus</title>
     </head>
 
     <body class="dark">
@@ -42,33 +43,42 @@ if (
 
             <nav class="navbar fixed-top navbar top">
                 <div id="top_title">
-                    <span class="home_button" onclick="window.location.href = 'student_home.php';">Archeus</span>
+                    <span class="home_button" onclick="window.location.href = 'teacher_home.php';">Archeus</span>
                 </div>
                 <div id="top_logout">
-                    <a class="ui orange button huge" name="logout" onclick="window.location.href = 'student_logoutprocess.php';" id="buttonbox2">Logout</a>
+                    <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
                 </div>
 
             </nav>
-
-            <!-- <div class="top">
-                    <div id="top_title">
-                        Archeus
-                    </div>
-
-                    <div id="top_logout">
-                        <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
-                    </div>
-                </div> -->
 
             <div class="mid">
                 <nav class="sidebar open">
                     <header>
                         <div class="image-text">
+                            <?php
+                            try {
+                                include "db_connect.php";
+                                $sqlquery1 = "SELECT * FROM teacher WHERE t_username = '$id'";
 
-                            <div class="text logo-text">
-                                <span class="name">Archeus</span>
-                                <span class="profession">Student Home</span>
-                            </div>
+                                $infoget = mysqli_query($conn, $sqlquery1);
+                                $info = mysqli_fetch_array($infoget, MYSQLI_ASSOC);
+
+                                $name = $info['t_name'];
+                            ?>
+                                <div class="text logo-text">
+                                    <span class="profession"><?php echo $name; ?></span>
+                                </div>
+                            <?php
+                            } catch (PDOException $ex) {
+                                //if found error forward to register page
+                                echo '<script>
+                                    alert("Oops!! Caught An Error");
+                                    </script>';
+                                echo "<script>location.assign('teacher_home.php')</script>";
+                            }
+                            ?>
+
+
                         </div>
 
                     </header>
@@ -77,7 +87,7 @@ if (
                         <div class="menu">
 
                             <!-- search here -->
-                            <form action="student_searchpage.php" method="GET" enctype="multipart/form-data">
+                            <form action="teacher_searchpage.php" method="GET" enctype="multipart/form-data">
                                 <li class="search-box">
                                     <i class='bx bx-search icon'></i>
                                     <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
@@ -88,35 +98,28 @@ if (
                                 <li class="nav-link" id="link_list">
                                     <a href="#">
                                         <i class='bx bx-home-smile icon' style='color:#857de7'></i>
-                                        <span class="text nav-text" onclick="window.location.href = 'student_home.php';" id="menuitems">Home Page</span>
+                                        <span class="text nav-text" onclick="window.location.href = 'teacher_home.php';" id="menuitems">Home Page</span>
                                     </a>
                                 </li>
 
                                 <li class="nav-link" id="link_list">
                                     <a href="#">
                                         <i class='bx bxs-pencil icon' style='color:#f24e1e'></i>
-                                        <span class="text nav-text" id="menuitems">Edit Profile</span>
+                                        <span class="text nav-text" onclick="window.location.href = 'teacher_editprofile.php';" id="menuitems">Edit Profile</span>
                                     </a>
                                 </li>
 
                                 <li class="nav-link" id="link_list">
                                     <a href="#">
-                                        <i class='bx bx-check icon' style='color:#4ecb71'></i>
-                                        <span class="text nav-text" id="menuitems" onclick="window.location.href = 'skills_table.php';">My Skills</span>
+                                        <i class="bx bx-check icon" style="color:#4ecb71"></i>
+                                        <span class="text nav-text" id="menuitems">Pending Validation Requests</span>
                                     </a>
                                 </li>
 
-                                <!-- <li class="nav-link" id="link_list">
-                                        <a href="#">
-                                            <i class='bx bxs-message-square-dots icon' style='color:#8490ff'></i>
-                                            <span class="text nav-text" id="menuitems">CV Drops</span>
-                                        </a>
-                                    </li> -->
-
                                 <li class="nav-link" id="link_list">
                                     <a href="#">
-                                        <i class='bx bx-message-square-dots icon' style='color:#ffffff'></i>
-                                        <span class="text nav-text" id="menuitems" onclick="window.location.href = 'cv_template.php';">View CV</span>
+                                        <i class='bx bx-filter-alt icon' style='color:#4873ff'></i>
+                                        <span class="text nav-text" onclick="window.location.href = 'teacher_filter.php';" id="menuitems">Filter</span>
                                     </a>
                                 </li>
 
@@ -126,15 +129,15 @@ if (
                         <div class="bottom-content">
 
                             <!-- <li class="mode">
-                                    <div class="sun-moon">
-                                        <i class='bx bx-moon icon moon'></i>
-                                        <i class='bx bx-sun icon sun'></i>
-                                    </div>
-                                    <span class="mode-text text">Dark mode</span>
+                                <div class="sun-moon">
+                                    <i class='bx bx-moon icon moon'></i>
+                                    <i class='bx bx-sun icon sun'></i>
+                                </div>
+                                <span class="mode-text text">Dark mode</span>
 
-                                    <div class="toggle-switch">
-                                        <span class="switch"></span>
-                                    </div>
+                                <div class="toggle-switch">
+                                    <span class="switch"></span>
+                                </div>
                                 </li> -->
                             <div id="bottomdev" align="right">
                                 <div>
@@ -157,31 +160,6 @@ if (
 
                         <span class="spaceboxv2"></span>
 
-                        <form action="student_newpostprocess.php" method="POST" enctype="multipart/form-data">
-
-                            <div class="ui card newpostbox">
-
-                                <p id="write">Need Thesis member?</p>
-
-                                <input class="inup" type="text" name="post_title" id="post_title" placeholder="Title Of Your Post">
-
-                                <span class="spaceboxv"></span>
-
-                                <textarea class="form-control" placeholder="Describe Your Situation" name="newpost" id="newpost" style="height: 80px;"></textarea>
-
-                                <span class="spaceboxv2"></span>
-
-                                <div align="right">
-                                    <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Post</button>
-                                </div>
-
-                            </div>
-
-                        </form>
-
-                        <span class="spaceboxv"></span>
-
-                        <!-- here is the feed-post BackEnd Part -->
                         <?php
                         try {
                             $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
@@ -222,7 +200,6 @@ if (
                                 </script>';
                         }
                         ?>
-                        <!-- BackEnd ends here -->
 
                     </div>
 
@@ -231,18 +208,11 @@ if (
                 <div class="bg_contentbox2">
                     <div class="contentbox2">
                         <ul class="menu-links">
+
                             <li class="nav-link" id="link_list">
                                 <a id="rightitems" href="#">
                                     <i class='bx bx-duplicate iconbox' style='color:#fc3f5b'></i>
-                                    <span class="text nav-text" onclick="window.location.href = 'student_thesis.php';" id="menuitems2">Student Thesis Posts</span>
-                                </a>
-                            </li>
-
-
-                            <li class="nav-link" id="link_list">
-                                <a id="rightitems" href="#">
-                                    <i class='bx bx-filter-alt iconbox' style='color:#4873ff'></i>
-                                    <span class="text nav-text" onclick="window.location.href = 'student_filter.php';" id="menuitems2">Filter Post</span>
+                                    <span class="text nav-text" onclick="window.location.href = 'teacher_sthesis.php';" id="menuitems2">Student Thesis Posts</span>
                                 </a>
                             </li>
 

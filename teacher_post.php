@@ -1,10 +1,10 @@
 <!-- $_SESSION['t_user'] -->
 <?php
+$id = $_GET['id'];
 session_start();
 if (
     isset($_SESSION['t_user']) && !empty($_SESSION['t_user'])
 ) {
-    $id = $_SESSION['t_user'];
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -15,7 +15,7 @@ if (
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!----======== CSS ======== -->
-        <link rel="stylesheet" href="teacher_filter.css">
+        <link rel="stylesheet" href="teacher_post.css">
 
         <!----===== Boxicons CSS ===== -->
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -30,47 +30,31 @@ if (
         <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
-        <title>Filter Page | Archeus</title>
+        <title>Post | Archeus</title>
     </head>
 
     <body class="dark">
         <div class="layout">
-            <div class="top">
+
+            <nav class="navbar fixed-top navbar top">
                 <div id="top_title">
                     <span class="home_button" onclick="window.location.href = 'teacher_home.php';">Archeus</span>
                 </div>
-
                 <div id="top_logout">
                     <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
                 </div>
-            </div>
+
+            </nav>
 
             <div class="mid">
                 <nav class="sidebar open">
                     <header>
                         <div class="image-text">
-                            <?php
-                            try {
-                                include "db_connect.php";
-                                $sqlquery1 = "SELECT * FROM teacher WHERE t_username = '$id'";
 
-                                $infoget = mysqli_query($conn, $sqlquery1);
-                                $info = mysqli_fetch_array($infoget, MYSQLI_ASSOC);
+                            <div class="text logo-text">
 
-                                $name = $info['t_name'];
-                            ?>
-                                <div class="text logo-text">
-                                    <span class="profession"><?php echo $name; ?></span>
-                                </div>
-                            <?php
-                            } catch (PDOException $ex) {
-                                //if found error forward to register page
-                                echo '<script>
-                                    alert("Oops!! Caught An Error");
-                                    </script>';
-                                echo "<script>location.assign('teacher_home.php')</script>";
-                            }
-                            ?>
+                                <span class="profession">Teacher Home</span>
+                            </div>
                         </div>
 
                     </header>
@@ -138,68 +122,45 @@ if (
                 <div class="bg_contentbox">
 
                     <div class="contentbox">
+
                         <?php
                         try {
-                            $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
-                            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            // $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
+                            // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            // $sqlquery = "SELECT * FROM post_teacher WHERE tpost_id = '$id'";
+                            // $returnobj = $conn->query($sqlquery);
+
+                            // $info = $returnobj->fetchAll();
+                            // echo "{$info['tpost_title']}";
+
+                            include "db_connect.php";
+                            $sqlquery1 = "SELECT * FROM post_teacher WHERE tpost_id = '$id' ";
+
+                            $infoget = mysqli_query($conn, $sqlquery1);
+                            $info = mysqli_fetch_array($infoget, MYSQLI_ASSOC);
+
+                            $name = $info['t_name'];
+                            $title = $info['tpost_title'];
+                            $desc = $info['tpost_desc'];
 
                         ?>
-                            <form class="form_div" action="teacher_filterprocess.php" method="GET" enctype="multipart/form-data">
-                                <div class="filter">
-                                    <select class="field" name="tags" id="tags">
-                                        <option value="">Tags</option>
-                                        <?php
-                                        $sqlquery = "SELECT DISTINCT tag_name FROM tags_student ORDER BY tag_name ASC";
-                                        $returnobj = $conn->query($sqlquery);
+                            <div class="ui card postbox">
+                                <div class="content">
 
-                                        if ($returnobj->rowCount() == 0) {
-                                            ///no data found
-                                            echo "No data found";
-                                        } else {
-                                            /*<?php echo $row['id'];?>*/
-                                            //tpost_id,t_username, t_name,tpost_title, tpost_desc
-                                            $tabledata = $returnobj->fetchAll();
-                                            foreach ($tabledata as $row) {
-                                        ?>
-                                                <option value="<?php echo $row['tag_name']; ?>"><?php echo $row['tag_name']; ?></option>
-                                        <?php
-                                            }
-                                        }
-                                        ?>
-                                    </select>
+                                    <div class="header" id="post_title"><?php echo "{$info['tpost_title']}"; ?></div>
+                                    <div class="header" id="author_name"><?php echo "{$info['t_name']}"; ?> | Author</div>
+
+                                    <div class="description">
+                                        <p id="post_desc"><?php echo $info['tpost_desc']; ?></p>
+                                    </div>
                                 </div>
-
-                                <div class="filter">
-                                    <select class="field" name="year" id="year">
-                                        <option value="">Year</option>
-                                        <option value="1st">1st Year</option>
-                                        <option value="2nd">2nd Year</option>
-                                        <option value="3rd">3rd Year</option>
-                                        <option value="4th">4th Year</option>
-                                    </select>
-                                </div>
-
-                                <div class="filter">
-                                    <select class="field" name="dept" id="dept">
-                                        <option value="">Department</option>
-                                        <option value="EEE">EEE</option>
-                                        <option value="CSE">CSE</option>
-                                        <option value="CE">CE</option>
-                                        <option value="BBA">BBA</option>
-                                        <option value="ECO">ECO</option>
-                                    </select>
-                                </div>
-
-
-                                <div align="right">
-                                    <button class="ui secondary button huge" id="buttonbox2" type="submit" name="submit">Filter</button>
-                                </div>
-                            </form>
+                            </div>
                         <?php
+
                         } catch (PDOException $ex) {
                             echo '<script>
                                         alert("Found error");
-                                        window.location = "teacher_filter.php";
+                                        window.location = "teacher_home.php";
                                 </script>';
                         }
 
