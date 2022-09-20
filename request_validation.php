@@ -100,7 +100,7 @@
                                     <div class="spaceboxv2"></div>
 
                                     <div>
-                                        <a class="ui orange button huge" name="signup" onclick="window.location.href = 'skills_table.php';" id="buttonbox2">Go Back</a>
+                                        <a class="ui orange button huge" name="signup" onclick="window.location.href = 'skills_tables.php';" id="buttonbox2">Go Back</a>
                                     </div>
 
                                 </div>

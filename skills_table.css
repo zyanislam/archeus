@@ -544,9 +544,10 @@ body.dark .home .text{
 .dashboard {
     position: relative;
     background-color: var(--panel-color);
-    color: white;
+    color: rgb(35, 34, 34);
     height: auto;
     transition: var(--tran-05);
+    left: 200px;
 }
 
 
