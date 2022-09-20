@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    color: #fff;
+    color: rgb(255, 255, 255);
     /* background-color: #1d1d25; */
 }
 
@@ -501,6 +501,7 @@ body.dark .home .text{
     padding-left: 15px !important;
     opacity: 2 !important;
     font-size: 18px;
+    color: white !important;
 }
 
 .filter{
@@ -521,11 +522,12 @@ body.dark .home .text{
 
 .labelfield{
     font-size: 25px;
+    color: white !important;
 }
 
 .labelfield2{
     font-size: 25px;
-    margin-right: 15px;;
+    margin-right: 15px;
 }
 
 .boxdiv1{
@@ -534,9 +536,24 @@ body.dark .home .text{
 
     justify-content: center;
     align-items: center;
+    color:rgb(0, 0, 0) !important;
 }
 
 .boxdivlabel{
     width: 250px;
     text-align: center;
 }
+
+::placeholder { 
+    color: rgb(0, 0, 0);
+}
+
+#post_cc{
+    color: white !important;
+}
+
+input[type=text],select{
+    color: black !important;
+}
+
+  

@@ -4,6 +4,7 @@
  if(
     isset($_SESSION['t_user']) && !empty($_SESSION['t_user'])
  ){
+    $id = $_SESSION['t_user'];
     ?>  
         <!DOCTYPE html>
         <html lang="en">
@@ -41,271 +42,308 @@
         </head>
 
         <body class="dark">
-            <div class="layout">
 
-                <nav class="navbar fixed-top navbar top">
-                    <div id="top_title">
-                        <span class="home_button" onclick="window.location.href = 'teacher_home.php';">Archeus</span>
-                    </div>
-                    <div id="top_logout">
-                        <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
-                    </div>
+            <?php
+            try{
+                include "db_connect.php";
+                $sqlquery1 = "SELECT * FROM teacher WHERE t_username = '$id'";
 
-                </nav>
+                $infoget = mysqli_query($conn, $sqlquery1);
+                $info = mysqli_fetch_array($infoget,MYSQLI_ASSOC);
 
-                <!-- <div class="top">
-                    <div id="top_title">
-                        Archeus
-                    </div>
+                $name = $info['t_name'];
+                $email = $info['t_email'];
+                $dept = $info['t_dept'];
+                $des = $info['t_des'];
+                $room = $info['t_room']; 
+                $contact = $info['t_contact'];
+                $gender = $info['t_gender'];
 
-                    <div id="top_logout">
-                        <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
-                    </div>
-                </div> -->
+            ?>
+                <div class="layout">
 
-                <div class="mid">
-                    <nav class="sidebar open">
-                        <header>
-                            <div class="image-text">
-
-                                <div class="text logo-text">
-                                    <span class="name">Archeus</span>
-                                    <span class="profession">Teacher Home</span>
-                                </div>
-                            </div>
-
-                        </header>
-
-                        <div class="menu-bar">
-                            <div class="menu">
-
-                                <!-- search here -->
-                                <form action="teacher_searchpage.php" method="GET" enctype="multipart/form-data">
-                                    <li class="search-box">
-                                        <i class='bx bx-search icon'></i>
-                                        <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
-                                    </li>
-                                </form>
-
-                                <ul class="menu-links">
-                                    <li class="nav-link" id="link_list">
-                                        <a href="#">
-                                            <i class='bx bx-home-smile icon' style='color:#857de7'></i>
-                                            <span class="text nav-text" onclick="window.location.href = 'teacher_home.php';" id="menuitems">Home Page</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-link" id="link_list">
-                                        <a href="#">
-                                            <i class='bx bxs-pencil icon' style='color:#f24e1e'></i>
-                                            <span class="text nav-text" onclick="window.location.href = 'teacher_editprofile.php';" id="menuitems">Edit Profile</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-link" id="link_list">
-                                        <a href="#">
-                                            <i class="bx bx-check icon" style="color:#4ecb71"></i>
-                                            <span class="text nav-text" id="menuitems">Pending Validation Requests</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-link" id="link_list">
-                                        <a href="#">
-                                            <i class='bx bx-filter-alt icon' style='color:#4873ff'></i>
-                                            <span class="text nav-text" onclick="window.location.href = 'teacher_filter.php';" id="menuitems">Filter</span>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-
-                            <div class="bottom-content">
-
-                                <!-- <li class="mode">
-                                <div class="sun-moon">
-                                    <i class='bx bx-moon icon moon'></i>
-                                    <i class='bx bx-sun icon sun'></i>
-                                </div>
-                                <span class="mode-text text">Dark mode</span>
-
-                                <div class="toggle-switch">
-                                    <span class="switch"></span>
-                                </div>
-                                </li> -->
-                                <div id="bottomdev" align="right">
-                                    <div>
-                                        Developed by
-                                    </div>
-                                    <div class="spaceboxv"></div>
-                                    <div>
-                                        Deadly Diamond Of Death | 2022
-                                    </div>
-                                </div>
-
-                            </div>
+                    <nav class="navbar fixed-top navbar top">
+                        <div id="top_title">
+                            <span class="home_button" onclick="window.location.href = 'teacher_home.php';">Archeus</span>
+                        </div>
+                        <div id="top_logout">
+                            <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
                         </div>
 
                     </nav>
 
-                    <div class="bg_contentbox">
+                    <!-- <div class="top">
+                        <div id="top_title">
+                            Archeus
+                        </div>
 
-                        <div class="contentbox">
+                        <div id="top_logout">
+                            <a class="ui orange button huge" name="logout" onclick="window.location.href = 'teacher_logoutprocess.php';" id="buttonbox2">Logout</a>
+                        </div>
+                    </div> -->
 
-                            <span class="spaceboxv"></span>
+                    <div class="mid">
+                        <nav class="sidebar open">
+                            <header>
+                                <div class="image-text">
 
-                            <h1 class="request_title">Edit Information</h1>
-
-                            <span class="spaceboxv2"></span>
-
-                            <div class="rowdiv">
-
-                                <div class="boxdiv1">
-                                    <div class="boxdivlabel">
-                                        <label class="labelfield">Name</label>
-                                    </div>
-
-                                    <div>
-                                        <input class="field" type="text" name="post_cc" id="post_cc" placeholder="Name of Teacher" disabled>
-                                    </div>
-                                </div>
-
-                                <div class="boxdiv1">
-                                    <div class="boxdivlabel">
-                                        <label class="labelfield">Email</label>
-                                    </div>
-
-                                    <div>
-                                        <input class="field" type="text" name="post_cc" id="post_cc" placeholder="Email" disabled>
+                                    <div class="text logo-text">
+                                        <span class="name">Archeus</span>
+                                        <span class="profession">Teacher Home</span>
                                     </div>
                                 </div>
 
-                            </div>
+                            </header>
 
-                            <span class="spaceboxv2"></span>
+                            <div class="menu-bar">
+                                <div class="menu">
 
+                                    <!-- search here -->
+                                    <form action="teacher_searchpage.php" method="GET" enctype="multipart/form-data">
+                                        <li class="search-box">
+                                            <i class='bx bx-search icon'></i>
+                                            <input type="text" placeholder="Search..." name="t_seacrh" id="t_seacrh">
+                                        </li>
+                                    </form>
 
-                            <div class="rowdiv">
+                                    <ul class="menu-links">
+                                        <li class="nav-link" id="link_list">
+                                            <a href="#">
+                                                <i class='bx bx-home-smile icon' style='color:#857de7'></i>
+                                                <span class="text nav-text" onclick="window.location.href = 'teacher_home.php';" id="menuitems">Home Page</span>
+                                            </a>
+                                        </li>
 
-                                <div class="boxdiv1">
-                                    <div class="boxdivlabel">
-                                        <label class="labelfield">User/ID</label>
-                                    </div>
+                                        <li class="nav-link" id="link_list">
+                                            <a href="#">
+                                                <i class='bx bxs-pencil icon' style='color:#f24e1e'></i>
+                                                <span class="text nav-text" onclick="window.location.href = 'teacher_editprofile.php';" id="menuitems">Edit Profile</span>
+                                            </a>
+                                        </li>
 
-                                    <div>
-                                        <input class="field" type="text" name="post_cc" id="post_cc" placeholder="User/ID" disabled>
-                                    </div>
+                                        <li class="nav-link" id="link_list">
+                                            <a href="#">
+                                                <i class="bx bx-check icon" style="color:#4ecb71"></i>
+                                                <span class="text nav-text" id="menuitems">Pending Validation Requests</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-link" id="link_list">
+                                            <a href="#">
+                                                <i class='bx bx-filter-alt icon' style='color:#4873ff'></i>
+                                                <span class="text nav-text" onclick="window.location.href = 'teacher_filter.php';" id="menuitems">Filter</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
                                 </div>
 
-                                <div class="boxdiv1">
-                                    <div class="boxdivlabel">
-                                        <label class="labelfield">Gender</label>
+                                <div class="bottom-content">
+
+                                    <!-- <li class="mode">
+                                    <div class="sun-moon">
+                                        <i class='bx bx-moon icon moon'></i>
+                                        <i class='bx bx-sun icon sun'></i>
+                                    </div>
+                                    <span class="mode-text text">Dark mode</span>
+
+                                    <div class="toggle-switch">
+                                        <span class="switch"></span>
+                                    </div>
+                                    </li> -->
+                                    <div id="bottomdev" align="right">
+                                        <div>
+                                            Developed by
+                                        </div>
+                                        <div class="spaceboxv"></div>
+                                        <div>
+                                            Deadly Diamond Of Death | 2022
+                                        </div>
                                     </div>
 
-                                    <div>
-                                        <input class="field" type="text" name="post_cc" id="post_cc" placeholder="Gender">
-                                    </div>
                                 </div>
-
                             </div>
 
-                            <span class="spaceboxv2"></span>
+                        </nav>
 
-                            <div class="rowdiv">
+                        <div class="bg_contentbox">
+                        
+                            <div class="contentbox">
+                                
+                                
+                                    <span class="spaceboxv"></span>
 
-                                <div class="boxdiv1">
-                                    <div class="boxdivlabel">
-                                        <label class="labelfield">Department</label>
+                                    <h1 class="request_title">Edit Information</h1>
+                                    
+                                        <span class="spaceboxv2"></span>
+
+                                        <div class="rowdiv">
+
+                                            <div class="boxdiv1">
+                                                <div class="boxdivlabel">
+                                                    <label class="labelfield">Name</label>
+                                                </div>
+
+                                                <div>
+                                                    <input class="field" type="text" name="t_name" id="post_cc" placeholder="<?php echo $name; ?>" disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="boxdiv1">
+                                                <div class="boxdivlabel">
+                                                    <label class="labelfield">Email</label>
+                                                </div>
+
+                                                <div>
+                                                    <input class="field" type="text" name="t_email" id="post_cc" placeholder="<?php echo $email; ?>" disabled>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <span class="spaceboxv2"></span>
+
+                                    <form action="teacher_editprofile_process.php" method="POST" enctype="multipart/form-data">
+                                        <div class="rowdiv">
+
+                                            <div class="boxdiv1">
+                                                <div class="boxdivlabel">
+                                                    <label class="labelfield">User/ID</label>
+                                                </div>
+
+                                                <div>
+                                                    <input class="field" type="text" name="t_id" id="post_cc" placeholder="<?php echo $id; ?>" disabled>
+                                                </div>
+                                            </div>
+
+                                        
+                                            <div class="boxdiv1">
+                                                <div class="boxdivlabel">
+                                                    <label class="labelfield">Gender</label>
+                                                </div>
+
+                                                <div>
+                                                    <input class="field" type="text" name="t_gender" id="post_cc" value="<?php echo $gender; ?>">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    
+                                        <span class="spaceboxv2"></span>
+
+                                        <div class="rowdiv">
+
+                                            <div class="boxdiv1">
+                                                <div class="boxdivlabel">
+                                                    <label class="labelfield">Department</label>
+                                                </div>
+
+                                                <div>
+                                                    <!-- placeholder="<?php echo $dept; ?>" -->
+                                                    <input class="field" type="text" name="t_dept" id="t_dept" value="<?php echo $dept; ?>">
+                                                </div>
+                                            </div>
+
+                                            <div class="boxdiv1">
+                                                <div class="boxdivlabel">
+                                                    <label class="labelfield">Room No</label>
+                                                </div>
+
+                                                <div>
+                                                    <input class="field" type="text" name="t_room" id="t_room" value="<?php echo $room; ?>">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <span class="spaceboxv2"></span>
+
+                                        <div class="rowdiv">
+
+                                            <div class="boxdiv1">
+                                                <div class="boxdivlabel">
+                                                    <label class="labelfield">Phone No</label>
+                                                </div>
+
+                                                <div>
+                                                    <input class="field" type="text" name="t_contact" id="t_contact" value="<?php echo $contact; ?>">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <span class="spaceboxv2"></span>
+                                        
+                                        <div align="right">
+                                            <button class="ui secondary button huge" id="buttonbox2" type="submit" name="submit">Save</button>
+                                        </div>
+                                    </form>
+
+                                <form action="teacher_editprofile.php" method="POST" enctype="multipart/form-data">
+                                        <span class="spaceboxv"></span>
+
+                                        <div align="right">
+                                            <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Cancel</button>
+                                        </div>
+                                </form>
+                                
+                                <span class="spaceboxv2"></span>
+
+                                <span class="spaceboxv2"></span>
+
+                                    <h1 class="request_title">Password</h1>
+
+                                    <span class="spaceboxv2"></span>
+
+
+                                <form action="teacher_editpassword_process.php" method="POST" enctype="multipart/form-data">
+                                    <div class="boxdiv1">
+
+                                        <input class="field" type="text" name="t_old" id="post_cc" placeholder="Old Password">
+
                                     </div>
 
-                                    <div>
-                                        <input class="field" type="text" name="post_cc" id="post_cc" placeholder="Department">
-                                    </div>
-                                </div>
+                                    <span class="spaceboxv2"></span>
 
-                                <div class="boxdiv1">
-                                    <div class="boxdivlabel">
-                                        <label class="labelfield">Room No</label>
+                                    <div class="boxdiv1">
+
+                                        <input class="field" type="text" name="t_new" id="post_cc" placeholder="New Password">
+
                                     </div>
 
-                                    <div>
-                                        <input class="field" type="text" name="post_cc" id="post_cc" placeholder="XXX/X">
+                                    <span class="spaceboxv2"></span>
+
+                                    <div align="right">
+                                        <button class="ui secondary button huge" id="buttonbox2" type="submit" name="submit">Save</button>
                                     </div>
-                                </div>
+                                </form>
+
+                                <form action="teacher_editprofile.php" method="POST" enctype="multipart/form-data">
+                                    <span class="spaceboxv"></span>
+
+                                    <div align="right">
+                                        <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Cancel</button>
+                                    </div>
+                                <form>
 
                             </div>
-
-                            <span class="spaceboxv2"></span>
-
-                            <div class="rowdiv">
-
-                                <div class="boxdiv1">
-                                    <div class="boxdivlabel">
-                                        <label class="labelfield">Phone No #1</label>
-                                    </div>
-
-                                    <div>
-                                        <input class="field" type="text" name="post_cc" id="post_cc" placeholder="01XXXXXXXXX">
-                                    </div>
-                                </div>
-
-                                <div class="boxdiv1">
-                                    <div class="boxdivlabel">
-                                        <label class="labelfield">Phone No #2</label>
-                                    </div>
-
-                                    <div>
-                                        <input class="field" type="text" name="post_cc" id="post_cc" placeholder="01XXXXXXXXX">
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <span class="spaceboxv2"></span>
-
-                            <span class="spaceboxv2"></span>
-
-                            <h1 class="request_title">Password</h1>
-
-                            <span class="spaceboxv2"></span>
-
-
-
-                            <div class="boxdiv1">
-
-                                <input class="field" type="text" name="post_cc" id="post_cc" placeholder="Old Password">
-
-                            </div>
-
-                            <span class="spaceboxv2"></span>
-
-                            <div class="boxdiv1">
-
-                                <input class="field" type="text" name="post_cc" id="post_cc" placeholder="New Password">
-
-                            </div>
-
-                            <span class="spaceboxv2"></span>
-
-                            <div align="right">
-                                <button class="ui secondary button huge" id="buttonbox2" type="submit" name="submit">Save</button>
-                            </div>
-
-                            <span class="spaceboxv"></span>
-
-                            <div align="right">
-                                <button class="ui secondary button huge" id="buttonbox1" type="submit" name="submit">Cancel</button>
-                            </div>
-
-
+                        
 
                         </div>
 
                     </div>
-
                 </div>
-            </div>
 
-
+            <?php
+            }catch (PDOException $ex) {
+                echo '<script>
+                    alert("Found error");
+                    window.location = "teacher_home.php";
+                    </script>';
+            }
+            ?>
+                
             <script>
                 const body = document.querySelector('body'),
                     sidebar = body.querySelector('nav'),
