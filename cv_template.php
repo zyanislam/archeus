@@ -8,30 +8,32 @@
         <?php
         //Database connect:
         include "db_connect.php";
+
+        $id = $_SESSION['st_user'];
         
 
         //Queries to fetch needed student data:
-        $getskill="SELECT * FROM cv_tech_skill WHERE st_username='011183021'";
+        $getskill="SELECT * FROM cv_tech_skill WHERE st_username=$id";
         $skillget=mysqli_query($conn, $getskill);
 
-        $getsskill="SELECT * FROM cv_soft_skill WHERE st_username='011183021'";
+        $getsskill="SELECT * FROM cv_soft_skill WHERE st_username=$id";
         $sskillget=mysqli_query($conn, $getsskill);
 
-        $getactivity="SELECT * FROM cv_eca WHERE st_username='011183021'";
+        $getactivity="SELECT * FROM cv_eca WHERE st_username=$id";
         $activityget=mysqli_query($conn, $getactivity);
 
-        $getproject="SELECT * FROM cv_project WHERE st_username='011183021'";
+        $getproject="SELECT * FROM cv_project WHERE st_username=$id";
         $projectget=mysqli_query($conn, $getproject);
 
-        $getpub="SELECT * FROM cv_publication WHERE st_username='011183021'";
+        $getpub="SELECT * FROM cv_publication WHERE st_username=$id";
         $pubget=mysqli_query($conn, $getpub);
 
 
-        $getbasic="SELECT * FROM cv_basic WHERE st_username='011183021'";
+        $getbasic="SELECT * FROM cv_basic WHERE st_username=$id";
         $infoget=mysqli_query($conn, $getbasic);
         $info = mysqli_fetch_array($infoget,MYSQLI_ASSOC);
 
-        $getedu="SELECT * FROM cv_edu WHERE st_username='011183021'";
+        $getedu="SELECT * FROM cv_edu WHERE st_username=$id";
         $eduget=mysqli_query($conn, $getedu);
         $info1 = mysqli_fetch_array($eduget,MYSQLI_ASSOC);
 

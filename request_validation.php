@@ -4,6 +4,18 @@
  if(
     isset($_SESSION['st_user']) && !empty($_SESSION['st_user'])
  ){
+    include "db_connect.php";
+    
+
+    $u_id = $_GET['data'];
+    $getskill="SELECT * FROM cv_tech_skill WHERE tech_skill_id =$u_id";
+    $skillget=mysqli_query($conn, $getskill);
+    $ts=mysqli_fetch_assoc($skillget);
+
+    $getteach="SELECT * FROM teacher ";
+    $teachget=mysqli_query($conn,  $getteach);
+    // $teach=mysqli_fetch_assoc($teachget);
+
     ?> 
         <!DOCTYPE html>
         <html lang="en">
@@ -49,10 +61,10 @@
                             <br>
                             <p class="welcometag">Skill Validation</p>
 
-                            <form action="request_validationprocess.php" method="POST" enctype="multipart/form-data">
+                            <form action="request_validationprocess.php?skill=<?php echo $ts['tech_skill_name'] ?>" method="POST" enctype="multipart/form-data">
                                 <div>
                                     <div class="field">
-                                        <input class="inup" type="text" placeholder="Skill Name" name="skill_name" id="skill_name">
+                                        <p class="welcometag"> <?php echo $ts['tech_skill_name'] ?> </p>
                                     </div>
                                 </div>
 
@@ -60,7 +72,7 @@
 
                                 <div>
                                     <div class="field">
-                                        <input class="inup" type="text" placeholder="Trimester" name="t_user" id="t_user">
+                                        <input class="inup" type="text" placeholder="Trimester" name="tri" id="tri">
                                     </div>
                                 </div>
 
@@ -68,11 +80,11 @@
 
                                 <!-- ddd = drop down department -->
                                 <div class="field">
-                                    <select class="inup_ddd" name="t_dept" id="t_dept">
-                                        <option value="">Faculty Name</option>
-                                        <option value="EEE">Abir Ahsan</option>
-                                        <option value="EEE">Shakkhar Shatabda</option>
-                                        <option value="EEE">Adiba Shaira</option>
+                                    <select class="inup_ddd" name="t_n" id="t_n">
+                                    <?php while($teach=mysqli_fetch_assoc($teachget)){ ?>
+                                        <option ><?php echo $teach['t_name'];?></option>
+                                    <?php }
+                                    ?>
                                     </select>
                                 </div>
 
@@ -88,7 +100,7 @@
                                     <div class="spaceboxv2"></div>
 
                                     <div>
-                                        <a class="ui orange button huge" name="signup" onclick="window.location.href = '_home.php';" id="buttonbox2">Go Back</a>
+                                        <a class="ui orange button huge" name="signup" onclick="window.location.href = 'skills_table.php';" id="buttonbox2">Go Back</a>
                                     </div>
 
                                 </div>
