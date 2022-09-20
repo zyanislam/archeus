@@ -5,12 +5,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    /* background-color: #1d1d25; */
+
 }
 
 :root{
     /* ===== Colors ===== */
-    /* --body-color: #E4E9F7; */
+    --body-color: #E4E9F7;
     --sidebar-color: #FFF;
     --primary-color: #695CFE;
     --primary-color-light: #F6F5FF;
@@ -28,10 +28,6 @@ body{
     min-height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
-    /* background-image: url("images/Bg3.png"); */
-    background-repeat: no-repeat;
-    background-size: fill;
-    background-color: #2D2D2D;
 }
 
 ::selection{
@@ -41,7 +37,7 @@ body{
 
 body.dark{
     --body-color: #18191a;
-    --sidebar-color: #27272c;
+    --sidebar-color: #242526;
     --primary-color: #3a3b3c;
     --primary-color-light: #3a3b3c;
     --toggle-color: #fff;
@@ -53,16 +49,21 @@ body.dark{
     position: fixed;
     top: 0;
     left: 0;
-    height: 1420px;
-    width: 550px;
-    margin-top: 85px;
+    height: 1220px;
+    width: 450px;
+    margin-top: 70px;
     padding: 10px 14px;
     padding-bottom: 90px;
-    border-radius: 0 38px 38px 0;
+    border-radius: 38px;
     border: 0px;
     background: var(--sidebar-color);
     transition: var(--tran-05);
     z-index: 100;  
+}
+
+
+.sidebar.close{
+    width: 88px;
 }
 
 /* ===== Reusable code - Here ===== */
@@ -87,7 +88,7 @@ body.dark{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 36px;
+    font-size: 33px;
 }
 
 .sidebar .text,
@@ -319,20 +320,17 @@ body.dark .home .text{
 
 .layout{
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #d6d6d6;
+    flex-direction: column;min-height: 100vh;
+    background-color: #1d1d25;
     background-repeat: no-repeat;
     background-size: cover;
-    height: auto;
 }
 
 .top{
     background-color: #2C2B39;
-    overflow: hidden;
     width: 100%;
     height: 70px;
-    position: relative;
+    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -349,16 +347,6 @@ body.dark .home .text{
     padding-left: 150px;
 }
 
-#buttonbox1{
-    width: 154px;
-    height: 54px;
-    border-radius: 29px !important;
-    font-size: 21px;
-    font-family: Helvetica, sans-serif;
-    font-weight: 500;
-    background-color: #2C2B39;
-}
-
 #buttonbox2{
     width: 145px;
     height: 52px;
@@ -371,19 +359,12 @@ body.dark .home .text{
 
 #link_list{
     margin: 20px 0;
-    display: flex;
-    align-items: center;
-}
-
-#rightitems{
-    display: flex;
-    align-items: center;
 }
 
 #bottomdev{
     display: flex;
     flex-direction: column;
-    margin-bottom: 215px;
+    margin-bottom: 140px;
     color: white;
     font-size: 18px;
     font-weight: 300;
@@ -393,203 +374,42 @@ body.dark .home .text{
     height: 10px;
 }
 
-.spaceboxv2{
-    height: 20px;
-}
-
 .mid{
     display: flex;
     flex-direction: row;
-    margin-top: 10px !important;
-    /* background-color: #2D2D2D; */
-    height:fit-content;
-    padding-bottom: 90px !important;
-}
-
-.bg_contentbox{
-    position: relative;
-    height: auto;
 }
 
 .contentbox{
     display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    width: 1600px;
-    top: 75px;
-    left: 130px;
-    border-radius: 38px;
-    border: 0px;
-    padding: 20px;
-}
-
-.contentbox2{
-    display: flex;
     position: fixed;
     flex-direction: column;
-    height: 1420px;
-    width: 900px;
-    background-color: #27272c !important;
-    top: 85px;
-    left: 1755px;
+    height: 985px;
+    width:1500px;
+    background-color: white;
+    top: 75px;
+    left: 470px;
     border-radius: 38px;
     border: 0px;
-    padding: 20px;
-}
-
-.newpostbox{
-    background-color: #8983d3 !important;
-    min-height: 230vh;
-    width: 1010px !important;
-    color: rgb(255, 255, 255) !important;
-    border-radius: 22px !important;
-    border: 0px #8178ff;
-    padding: 20px 30px !important;
-}
-
-#write{
-    font-size: 22px;
-}
-
-.inup{
-    width: auto;
-    height: 50px;
-    left: 1263px;
-    top: 474px;
-    border: 0px;
-    border-radius: 14px !important;
-    padding: 20px;
-    opacity: 2 !important;
-    font-size: 18px;
-}
-
-#newpost{
-    width: 100%;
-    border-radius: 18px !important;
-    min-height: 12vh;
-    padding: 20px;
-    font-size: 18px;
+    padding: 20px
 }
 
 .postbox{
-    background-color: #ffffff !important;
-    min-height: 230px;
-    height: auto;
-    width: 1010px !important;
-    color: rgb(0, 0, 0) !important;
+    background-color: #2C2B39 !important;
+    height: 150px;
+    width: 800px !important;
+    color: #fff !important;
     border-radius: 18px !important;
-    border: 0px !important;
-    padding: 5px !important;
 }
 
 .textline{
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 #textline{
-    color: rgb(0, 0, 0);
-}
-
-#post_title{
-    font-size: 30px;
-    margin: 5px;
-}
-
-#author_name{
-    font-size: 18px;
-    color: #989898;
-    margin: 5px;
-}
-
-#post_desc{
-    font-size: 23px;
-    margin: 5px;
-}
-
-.iconbox{
-    font-size: 45px !important;
+    color: white;
 }
 
 .home_button{
     cursor: pointer;
     
-}
-
-#skills{
-    color: black !important;
-    background-color:#695CFE !important;
-}
-
-.tag{
-    color: black !important;
-    font-size: 16px;
-    background-color:#877cff !important;
-    padding: 2px;
-    margin: 5px;
-    border-radius: 10px;
-}
-
-#menuitems2{
-    font-size: 26px;
-    color:#fff;
-    font-weight: 500;
-    margin-left: 20px !important;
-}
-
-
-
-.dashboard {
-    position: relative;
-    background-color: var(--panel-color);
-    color: rgb(35, 34, 34);
-    height: auto;
-    transition: var(--tran-05);
-    left: 500px;
-}
-
-
-.styled-table {
-    font-size: 18px;
-    font-family: sans-serif;
-    padding: 0 10px 0 10px;
-    width: 1500px;
-
-}
-
-.styled-table thead tr {
-    background-color: #ccc;
-    color: #000;
-    text-align: center;
-}
-
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-/* .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-} */
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #ccc;
-}
-
-.request_btn{
-    width: 100px;
-    height: 50px;
-    border-radius: 25px;
-    color: #fff;
-    background-color: #8178ff;
-    border: none;
-}
-
-.styled-table tbody{
-    text-align: center;
 }
