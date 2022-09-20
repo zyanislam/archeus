@@ -545,11 +545,7 @@ body.dark .home .text{
 }
 
 ::placeholder { 
-<<<<<<< Updated upstream
-    color: rgb(0, 0, 0);
-=======
     color: rgb(255, 255, 255);
->>>>>>> Stashed changes
 }
 
 #post_cc{
@@ -560,8 +556,6 @@ input[type=text],select{
     color: black !important;
 }
 
-<<<<<<< Updated upstream
-=======
 #genderdiv{
     color: black !important;
 }
@@ -578,5 +572,4 @@ input[type=text],select{
     font-size:26px !important;
     padding: 20px !important;
 }
->>>>>>> Stashed changes
   
