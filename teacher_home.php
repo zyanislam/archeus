@@ -110,7 +110,7 @@ if (
                                 <li class="nav-link" id="link_list">
                                     <a href="#">
                                         <i class="bx bx-check icon" style="color:#4ecb71"></i>
-                                        <span class="text nav-text" id="menuitems">Pending Validation Requests</span>
+                                        <span class="text nav-text" id="menuitems" onclick="window.location.href = 'teacher_requestpage.php';" >Pending Validation Requests</span>
                                     </a>
                                 </li>
 

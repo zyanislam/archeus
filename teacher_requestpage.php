@@ -191,7 +191,81 @@
             <div class="bg_contentbox">
 
                 <div class="contentbox">
+                <section class="dashboard">
+                    <div class="col">
+                        <h1>Request List</h1>
+                    </div>
+                    <?php
+                    try{
+                        include "db_connect.php";
+                        $id = $_SESSION['t_user'];
 
+                    $sqlquery1="SELECT * from verification_request WHERE t_username ='$name'";
+
+                    $result1 = mysqli_query($conn, $sqlquery1);
+
+                    
+
+                    ?>
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Student ID</th>
+                                <th>Skill name</th>
+                                <th>Action</th>
+                                <!-- <th></th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                                while($x=mysqli_fetch_assoc($result1)){
+                                    
+
+                                    $stid = $x['st_username'] ;
+                                    $sid = $x['skill_name'] ;
+
+                                    $sqlquery3="SELECT * from cv_tech_skill WHERE st_username ='$stid'and tech_skill_name = '$sid'";                                
+                                    $result3 = mysqli_query($conn, $sqlquery3);
+                                    $y=mysqli_fetch_assoc($result3)
+
+                            ?>
+
+                        <tr>
+                            <td><?php
+                            if($y['tech_skill_verification'] ='1'){
+                             echo $x['st_name'];
+                            } ?></td>
+                            <td><?php
+                            if($y['tech_skill_verification'] ='1'){
+                             echo $x['st_username']; 
+                            }?></td>
+                            <td><?php 
+                            if($y['tech_skill_verification'] ='1'){
+                            echo $x['skill_name'];
+                            } ?></td>
+                            <td>
+                            <?php if($y['tech_skill_verification'] ='0'){ ?>
+                                <button class="request_btn"  onclick="window.location.href = 'teacher_requestpageprocess.php?data=<?php echo $stid?>?data1=<?php echo $sid?>';">Validate</button>
+                                <?php } ?>
+                            </td>
+
+
+
+                            
+                        </tr>
+                        <?php
+                                }
+                         ?>
+                            <!-- and so on... -->
+                        </tbody>
+                    </table>
+                    <?php
+                }catch (PDOException $ex) {
+                    echo '<script>alert("Found error");window.location = "welcome.php";</script>';
+                }
+                ?>
+                </section>
                 </div>
 
             </div>
