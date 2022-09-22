@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
          <script> swal("Request Sent!") </script>
          <?php
          //after successful submition forwarding to skill_table page
-         echo "<script>location.assign('skills_tables.php')</script>";
+         echo "<script>location.assign('skills_table.php')</script>";
     }
     catch (PDOException $ex) {
         //if found error forward to register page

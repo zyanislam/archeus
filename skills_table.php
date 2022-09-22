@@ -160,7 +160,7 @@
 
         <div class="container">
             <div class="contentbox">
-                <section class="dashboard">
+                
                     <div class="col">
                         <h1>Verification List</h1>
                     </div>
@@ -220,7 +220,7 @@
                     echo '<script>alert("Found error");window.location = "welcome.php";</script>';
                 }
                 ?>
-                </section>
+                
             </div>
         </div>
     </div>
