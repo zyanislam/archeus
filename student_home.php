@@ -4,6 +4,7 @@
  if(
     isset($_SESSION['st_user']) && !empty($_SESSION['st_user'])
  ){
+    $id = $_SESSION['st_user'];
     ?>       
         <!DOCTYPE html>
         <html lang="en">
@@ -33,6 +34,8 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+
+            <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
             <script src="custom_tags_input.js"></script>
             <title>Student Home | Archeus</title>
         </head>
@@ -66,8 +69,29 @@
                             <div class="image-text">
 
                                 <div class="text logo-text">
-                                    <span class="name">Archeus</span>
-                                    <span class="profession">Student Home</span>
+                                <?php
+                            try {
+                                include "db_connect.php";
+                                $sqlquery1 = "SELECT * FROM student WHERE st_username = '$id'";
+
+                                $infoget = mysqli_query($conn, $sqlquery1);
+                                $info = mysqli_fetch_array($infoget, MYSQLI_ASSOC);
+
+                                $name = $info['st_name'];
+                            ?>
+                                <div class="text logo-text">
+                                    <span class="profession"><a href='student_profile.php?id={$row['stpost_id']}'><?php echo $name; ?></a></span>
+                                </div>
+                                <?php
+                            } catch (PDOException $ex) {
+                                //if found error forward to register page
+                                echo '<script>
+                                    alert("Oops!! Caught An Error");
+                                    </script>';
+                                echo "<script>location.assign('teacher_home.php')</script>";
+                            }
+                            ?>
+                            
                                 </div>
                             </div>
 
@@ -163,8 +187,23 @@
                                 $conn = new PDO('mysql:host=localhost:3306;dbname=archeus;', 'root', '');
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+
                                 $sqlquery = "SELECT * FROM post_teacher ORDER BY tpost_datetime DESC";
                                 $returnobj = $conn->query($sqlquery);
+
+                                // $getbasic="SELECT * FROM student WHERE st_username = $id";
+                                // $infoget=mysqli_query($conn, $getbasic);
+                                // $info = mysqli_fetch_array($infoget,MYSQLI_ASSOC);
+
+                                $sqlquery1 = "SELECT * FROM student WHERE st_username = $id";
+                                $returnobj1 = $conn->query($sqlquery1);
+
+                                $tabledata1 = $returnobj1->fetchAll();
+                                if($returnobj1->rowCount() != 0){
+                                    foreach($tabledata1 as $row1){
+                                        $name = $row1['st_name'];
+                                    }
+                                }                              
 
                                 if ($returnobj->rowCount() == 0) {
                                     ///no data found
@@ -177,10 +216,20 @@
                             ?>
                                         <div class="ui card postbox">
                                             <div class="content">
-                                                <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
-                                                <div class="header" id="post_title"><?php echo $row['tpost_title']; ?></div>
-                                                <div class="header" id="author_name"><?php echo $row['t_name']; ?> | Author</div>
-
+                                                <div id="topdivpost">
+                                                    <div id="headingdiv">
+                                                        <div class="header" id="post_title"><?php echo $row['tpost_title']; ?></div>
+                                                        <div class="header" id="author_name"><?php echo $row['t_name']; ?> | Author</div>
+                                                    </div>
+                                                    <div>
+                                                        <a href='student_dropcv.php?post_id=<?php echo $row['tpost_id']?>&st_id=<?php echo $id?>&st_name=<?php echo $name?>'><iconify-icon icon="academicons:cv-square" id='cvicon' style='font-size: 45px !important'></iconify-icon></a>
+                                                        <!-- <iconify-icon icon="academicons:cv-square" id='cvicon' style='font-size: 45px !important'></iconify-icon> -->
+                                                        <i class='right floated bx bx-star iconbox' style='color:#343400'></i>
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                                
                                                 <div class="description">
                                                     <p id="post_desc"><?php echo $row['tpost_desc']; ?></p>
                                                 </div>

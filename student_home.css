@@ -511,6 +511,24 @@ body.dark .home .text{
 
 .iconbox{
     font-size: 45px !important;
+    margin: 5px;
+}
+
+#cvicon{
+    text-align: right !important;
+    margin: 5px;
+}
+
+#topdivpost{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#headingdiv{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .home_button{
@@ -537,4 +555,9 @@ body.dark .home .text{
     color:#fff;
     font-weight: 500;
     margin-left: 20px !important;
+}
+
+.profession{
+    font-size:26px !important;
+    padding: 20px !important;
 }

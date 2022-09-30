@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2022 at 10:47 PM
+-- Generation Time: Sep 26, 2022 at 03:56 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -247,8 +247,35 @@ INSERT INTO `cv_tech_skill` (`tech_skill_id`, `st_username`, `tech_skill_name`, 
 (7, '011183070', 'Figma', 'Has experience on Figma', NULL, 1, 0),
 (8, '011183013', 'Technical writing', '', '', 1, 0),
 (9, '011183021', 'Swift', 'Has Experience on Swift', '', 1, 0),
-(10, '011182035', 'C++', 'Has Experience on C++', '', 1, 1),
 (11, '011182035', 'C#', 'Has Experience on C# ', '', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `drop_cv`
+--
+
+CREATE TABLE `drop_cv` (
+  `id` int(11) NOT NULL,
+  `post_id` varchar(255) NOT NULL,
+  `st_username` varchar(255) NOT NULL,
+  `st_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `drop_cv`
+--
+
+INSERT INTO `drop_cv` (`id`, `post_id`, `st_username`, `st_name`) VALUES
+(4, '6327f01e2370a', '011183070', 'Fahad Al Islam'),
+(5, '63203729a157d', '011183070', 'Fahad Al Islam'),
+(6, '6316f86897eeb', '011183070', 'Fahad Al Islam'),
+(7, '6316ef9b4055f', '011183070', 'Fahad Al Islam'),
+(10, '63203729a157d', '011182035', 'Anika Tahsin'),
+(11, '6316f86897eeb', '011182035', 'Anika Tahsin'),
+(12, '6316f0e9be51b', '011182035', 'Anika Tahsin'),
+(15, '6316f0e9be51b', '011183070', 'Fahad Al Islam'),
+(20, '6327f01e2370a', '011182035', 'Anika Tahsin');
 
 -- --------------------------------------------------------
 
@@ -296,17 +323,16 @@ CREATE TABLE `post_teacher` (
 
 INSERT INTO `post_teacher` (`tpost_id`, `t_username`, `t_name`, `tpost_title`, `tpost_desc`, `tpost_datetime`) VALUES
 ('1', 'AT', 'Anika Tahsin', 'Internship at BAT', '\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"', '2022-09-05 22:00:14'),
-('2', 'FAI', 'Fahad Al Islam', 'Need FrontEnd Developer at Robi', '\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ', '2022-09-05 22:02:14'),
 ('3', 'b', 'An', 'Job Vacancy at Grameen Phone', '\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia volupt', '2022-09-05 22:05:14'),
 ('4', 'X', 'Mr X', 'Fellowship at Google', '\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollit', '2022-09-05 22:07:14'),
-('5', 'FAI', 'Fahad Al Islam', 'Need FrontEnd Developer at UIU IT Dept', 'What I find remarkable is that this text has been the industry\'s standard dummy text ever since some printer in the 1500s took a galley of type and scrambled it to make a type specimen book; it has survived not only four centuries of letter-by-letter resetting but even the leap into electronic typesetting, essentially unchanged except for an occasional \'ing\' or \'y\' thrown in. It\'s ironic that when the then-understood Latin was scrambled, it became as incomprehensible as Greek;', '2022-09-05 22:09:14'),
 ('6', 'AT', 'Anika Tahsin', 'Need an Intern', '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet sodales felis. Duis nunc eros, mattis at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula eu.”', '2022-09-05 22:10:44'),
 ('6316ef9b4055f', 'AT', 'Anika Tahsin', 'Opportunity for Higher Studies', '“What I find remarkable is that this text has been the industry\'s standard dummy text ever since some printer in the 1500s took a galley of type and scrambled it to make a type specimen book; it has survived not only four centuries of letter-by-letter resetting but even the leap into electronic typesetting, essentially unchanged except for an occasional \'ing\' or \'y\' thrown in.', '2022-09-06 01:25:35'),
 ('6316f02a6bdba', 'AH', 'Abir Hasan', 'Job vacancy at United', '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque.”', '2022-09-06 01:00:58'),
 ('6316f0e9be51b', 'AH', 'Abir Hasan', 'Need BackEnd Developer at Beximco', 'Rrow itself, let it be sorrow; let him love it; let him pursue it, ishing for its acquisitiendum. Because he will ab hold, uniess but through concer, and also of those who resist. Now a pure snore disturbeded sum dust. He ejjnoyes, in order that somewon, also with a severe one, unless of life. May a cusstums offficer somewon nothing of a poison-filled. Until, from a twho, twho chaffinch may also pursue it, not even a lump. But as twho, as a tank; a proverb, yeast; or else they tinscribe nor. Yet yet dewlap bed.”', '2022-09-06 01:04:09'),
-('6316f86897eeb', 'FAI', 'Fahad Al Islam', 'Need RA', 'It\'s difficult to find examples of lorem ipsum in use before Letraset made it popular as a dummy text in the 1960s, although McClintock says he remembers coming across the lorem ipsum passage in a book of old metal type samples.', '2022-09-06 01:36:08'),
+('6316f86897eeb', 'AH', 'Abir Hasan', 'Need RA', 'It\'s difficult to find examples of lorem ipsum in use before Letraset made it popular as a dummy text in the 1960s, although McClintock says he remembers coming across the lorem ipsum passage in a book of old metal type samples.', '2022-09-06 01:36:08'),
 ('63203729a157d', 'AT', 'Anika Tahsin', 'Need Intern', 'So far he hasn\'t relocated where he once saw the passage, but the popularity of Cicero in the 15th century supports the theory that the filler text has been used for centuries.', '2022-09-13 01:54:17'),
-('6327f01e2370a', 'AT', 'Anika Tahsin', 'new post 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis.', '2022-09-19 10:29:18');
+('6327f01e2370a', 'AH', 'Abir Hasan', 'Opportunity to work at Unilever', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis.', '2022-09-19 10:29:18'),
+('632c9bab9242a', 'AH', 'Abir Hasan', 'new post', 'this is new post', '2022-09-22 11:30:19');
 
 -- --------------------------------------------------------
 
@@ -342,11 +368,10 @@ INSERT INTO `student` (`st_id`, `st_username`, `st_name`, `st_email`, `st_pass`,
 (3, '011182035', 'Anika Tahsin', 'atahsin182035@bscse.uiu.ac.bd', '1234', 'CSE', '015xxxxxxxx', '1996-10-26', 'Female', NULL, 'student', 1, 0, 'https://github.com/anikatahsin3', '154642', '2022-09-19 06:31:32', '4th'),
 (4, '011183070', 'Fahad Al Islam', 'fislam183070@bscse.uiu.ac.bd', '1234', 'CSE', '016xxxxxxxx', '2022-08-22', 'Male', NULL, 'student', 1, 0, 'https://github.com/zyanislam', '154641', '2022-09-19 07:21:54', '4th'),
 (19, '011183013', 'Sadman Sakib', 'ssakib@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-08-25', 'Male', NULL, 'student', 1, 0, 'https://github.com/sakib-sadman', '154640', '2022-09-19 09:22:05', '4th'),
-(24, '011182033', 'kamado tanjiro', 'tan@bscse.uiu.ac.bd', '1234', 'CSE', '018xxxxxxxx', '2022-08-30', 'Male', NULL, 'student', 1, 0, 'https://github.com/tanjiro280', '154639', '2022-09-19 09:22:11', '2nd'),
+(24, '011182033', 'kamado tanjiro', 'tan@bscse.uiu.ac.bd', '1234', 'CSE', '018xxxxxxxx', '2022-08-30', 'Male', NULL, 'student', 0, 0, 'https://github.com/tanjiro280', '154639', '2022-09-19 09:22:11', '2nd'),
 (26, '011183021', 'Azwad Zarif', 'azarif@bscse.uiu.ac.bd', '1234', 'CSE', '019xxxxxxxx', '2022-09-06', 'Male', NULL, 'student', 1, 0, 'https://github.com/Shredder280998', '154638', '2022-09-19 07:22:15', '4th'),
 (28, '011182000', 'Fahim Islam', 'fahim@bseee.uiu.ac.bd', '1234', 'EEE', '017xxxxxxxx', '2022-09-06', 'male', NULL, 'student', 1, 0, 'https://github.com/a', '154637', '2022-09-19 07:22:18', '1st'),
-(31, '011183040', 'Abdullah Masud', 'aa@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-09-13', 'Male', NULL, 'student', 1, 0, 'https://github.com/masud', '154636', '2022-09-19 10:22:21', '1st'),
-(32, '011163035', 'Nezuko', 'nez@bscse.uiu.ac.bd', '1234', 'CSE', NULL, '2022-09-19', 'Female', NULL, 'student', 1, 0, NULL, '154635', '2022-09-19 05:57:08', '1st');
+(31, '011183040', 'Abdullah Masud', 'aa@bscse.uiu.ac.bd', '1234', 'CSE', '017xxxxxxxx', '2022-09-13', 'Male', NULL, 'student', 1, 0, 'https://github.com/masud', '154636', '2022-09-19 10:22:21', '1st');
 
 -- --------------------------------------------------------
 
@@ -368,13 +393,12 @@ CREATE TABLE `student_log` (
 
 INSERT INTO `student_log` (`stlog_id`, `st_username`, `st_name`, `stlog_login_date_time`, `stlog_logout_date_time`) VALUES
 (6, '011182033', 'kamado tanjiro', '2022-08-30 01:33:30', '2022-08-30 01:35:55'),
-(7, '011182035', 'Anika Tahsin', '2022-09-20 01:04:35', '0000-00-00 00:00:00'),
-(8, '011183070', 'Fahad Islam', '2022-09-19 09:32:52', '2022-09-19 10:06:47'),
+(7, '011182035', 'Anika Tahsin', '2022-09-22 11:33:40', '0000-00-00 00:00:00'),
+(8, '011183070', 'Fahad Islam', '2022-09-22 07:34:29', '2022-09-22 08:18:45'),
 (43, '011183040', 'Abdullah Masud', NULL, NULL),
 (44, '011183013', 'Sadman Sakib', '2022-09-13 07:54:16', '2022-09-13 07:54:16'),
-(45, '011183021', 'Azwad Zarif', '2022-09-13 07:54:16', '2022-09-13 07:54:16'),
-(46, '011182000', 'Fahim Islam', '2022-09-13 07:55:45', '2022-09-13 07:55:45'),
-(47, '011163035', 'Nezuko', '2022-09-19 05:56:33', '2022-09-19 05:57:58');
+(45, '011183021', 'Azwad Zarif', '2022-09-22 05:50:48', '0000-00-00 00:00:00'),
+(46, '011182000', 'Fahim Islam', '2022-09-13 07:55:45', '2022-09-13 07:55:45');
 
 -- --------------------------------------------------------
 
@@ -399,14 +423,14 @@ CREATE TABLE `tags_student` (
 INSERT INTO `tags_student` (`id`, `post_student_id`, `st_name`, `tag_name`, `tag_st_dept`, `tag_st_email`, `tag_st_contact`) VALUES
 (4, '011182035', 'Anika Tahsin', 'php', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx'),
 (5, '011182035', 'Anika Tahsin', 'laravel', 'CSE', 'atahsin182035@bscse.uiu.ac.bd', '015xxxxxxxx'),
-(6, '011183070', 'Fahad Al Islam', 'html', 'CSE', 'fislam@bscse.uiu.ac.bd', '016xxxxxxxx'),
+(6, '011183070', 'Fahad Al Islam', 'php', 'CSE', 'fislam@bscse.uiu.ac.bd', '016xxxxxxxx'),
 (7, '011183070', 'Fahad Al Islam', 'css', 'CSE', 'fislam@bscse.uiu.ac.bd', '016xxxxxxxx'),
 (9, '011183013', 'Sadman Sakib', 'laravel', 'EEE', 'x@bseee.uiu.ac.bd', '017xxxxxxxx'),
 (10, '011183013', 'Sadman Sakib', 'django', 'CSE', 'ssakib@bscse.uiu.ac.bd', '017xxxxxxxx'),
 (11, '011183021', 'Azwad Zarif', 'php', 'CSE', 'azarif@bscse.uiu.ac.bd', '019xxxxxxxx'),
 (12, '011182033', 'kamado tanjiro', 'python', 'CSE', 'tan@bscse.uiu.ac.bd', '018xxxxxxxx'),
 (13, '011182033', 'kamado tanjiro', 'laravel', 'CSE', 'tan@bscse.uiu.ac.bd', '018xxxxxxxx'),
-(14, '011182000', 'Fahim Islam', 'laravel', 'EEE', 'a@bseee.uiu.ac.bd', '017xxxxxxxx'),
+(14, '011182000', 'Fahim Islam', 'php', 'EEE', 'a@bseee.uiu.ac.bd', '017xxxxxxxx'),
 (15, '011182000', 'Fahim Islam', 'django', 'EEE', 'a@bseee.uiu.ac.bd', '017xxxxxxxx'),
 (16, '011183040', 'Abdullah Masud', 'Node JS', 'CSE', 'aa@bscse.uiu.ac.bd', '017xxxxxxxx'),
 (17, '011183040', 'Abdullah Masud', 'JavaScript', 'CSE', 'aa@bscse.uiu.ac.bd', '017xxxxxxxx'),
@@ -433,7 +457,6 @@ CREATE TABLE `tags_teacher` (
 
 INSERT INTO `tags_teacher` (`id`, `post_teacher_id`, `tag_name`, `created_at`) VALUES
 (1, '6316ef9b4055f', 'laravel', '2022-09-06 12:58:35'),
-(2, '6316ef9b4055f', 'php', '2022-09-06 12:58:35'),
 (3, '6316f02a6bdba', 'reactnative', '2022-09-06 01:00:58'),
 (4, '6316f02a6bdba', ' jquery', '2022-09-06 01:00:58'),
 (5, '6316f02a6bdba', ' express JS', '2022-09-06 01:00:58'),
@@ -443,7 +466,9 @@ INSERT INTO `tags_teacher` (`id`, `post_teacher_id`, `tag_name`, `created_at`) V
 (12, '63203729a157d', 'HTML', '2022-09-13 01:54:17'),
 (13, '6327f01e2370a', 'c', '2022-09-19 10:29:18'),
 (14, '6327f01e2370a', 'nodeJS', '2022-09-19 10:29:18'),
-(15, '6327f01e2370a', 'excel', '2022-09-19 10:29:18');
+(15, '6327f01e2370a', 'excel', '2022-09-19 10:29:18'),
+(25, '632c9bab9242a', 'reactJS', '2022-09-22 11:30:19'),
+(26, '632c9bab9242a', 'Ajax', '2022-09-22 11:30:19');
 
 -- --------------------------------------------------------
 
@@ -461,20 +486,21 @@ CREATE TABLE `teacher` (
   `t_des` varchar(255) NOT NULL,
   `t_room` varchar(255) NOT NULL,
   `role` varchar(255) NOT NULL,
-  `t_joined_date` datetime NOT NULL DEFAULT current_timestamp()
+  `t_joined_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `t_contact` varchar(255) DEFAULT NULL,
+  `t_gender` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `teacher`
 --
 
-INSERT INTO `teacher` (`t_id`, `t_username`, `t_name`, `t_email`, `t_pass`, `t_dept`, `t_des`, `t_room`, `role`, `t_joined_date`) VALUES
-(1, 'FAI', 'Fahad Al Islam', 'fai@uiu.ac.bd', '54321', 'EEE', 'Lecturer', '201', 'teacher', '2022-09-13 01:52:26'),
-(2, 'AT', 'Anika Tahsin', 'at@uiu.ac.bd', 'anika', 'CSE', 'Professor', '638/B', 'teacher', '2022-09-13 01:52:26'),
-(10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', '54321', 'CSE', 'lecturer', '636', 'teacher', '2022-09-13 01:52:26'),
-(11, 'KSM', 'Kazi Sajeed Mehrab', 'ksm@uiu.ac.bd', '1234', 'CSE', 'Lecturer', '418', 'teacher', '2022-09-13 01:52:26'),
-(12, 'SS', 'Shakkhar Shatabda', 'ss@uiu.ac.bd', '1234', 'CSE', 'Associate Professor', '428', 'teacher', '2022-09-13 01:58:19'),
-(13, 'AS', 'Adiba Shaira', 'as@uiu.ac.bd', '1234', 'CSE', 'Lecturer', '419', 'teacher', '2022-09-19 05:59:36');
+INSERT INTO `teacher` (`t_id`, `t_username`, `t_name`, `t_email`, `t_pass`, `t_dept`, `t_des`, `t_room`, `role`, `t_joined_date`, `t_contact`, `t_gender`) VALUES
+(2, 'AT', 'Anika Tahsin', 'at@uiu.ac.bd', 'anika', 'CSE', 'Professor', '638/A', 'teacher', '2022-09-13 01:52:26', '015xxxxxxxx', 'female'),
+(10, 'AH', 'Abir Hasan', 'abir@uiu.ac.bd', 'abir', 'CSE', 'lecturer', '636/b', 'teacher', '2022-09-13 01:52:26', '', 'Male'),
+(11, 'KSM', 'Kazi Sajeed Mehrab', 'ksm@uiu.ac.bd', '1234', 'CSE', 'Lecturer', '418', 'teacher', '2022-09-13 01:52:26', NULL, 'Male'),
+(12, 'SS', 'Shakkhar Shatabda', 'ss@uiu.ac.bd', '1234', 'CSE', 'Associate Professor', '428', 'teacher', '2022-09-13 01:58:19', NULL, 'Male'),
+(13, 'AS', 'Adiba Shaira', 'as@uiu.ac.bd', '1234', 'CSE', 'Lecturer', '419', 'teacher', '2022-09-19 05:59:36', NULL, 'Female');
 
 -- --------------------------------------------------------
 
@@ -495,11 +521,10 @@ CREATE TABLE `teacher_log` (
 --
 
 INSERT INTO `teacher_log` (`tlog_id`, `t_username`, `tlog_name`, `tlog_login_date_time`, `tlog_logout_date_time`) VALUES
-(3, 'AH', 'Abir Hasan', '2022-09-19 03:55:00', '2022-09-19 03:57:15'),
+(3, 'AH', 'Abir Hasan', '2022-09-22 11:29:38', '0000-00-00 00:00:00'),
 (4, 'KSM', 'Kazi Sajeed Mehrab', NULL, NULL),
 (5, 'SS', 'Shakkhar Shatabda', NULL, NULL),
-(6, 'FAI', 'Fahad Al Islam', '2022-09-13 07:51:41', '2022-09-13 07:51:41'),
-(7, 'AT', 'Anika Tahsin', '2022-09-20 01:46:14', '0000-00-00 00:00:00'),
+(7, 'AT', 'Anika Tahsin', '2022-09-22 05:40:57', '2022-09-22 07:28:33'),
 (8, 'AS', 'Adiba Shaira', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -513,8 +538,20 @@ CREATE TABLE `verification_request` (
   `st_username` varchar(255) NOT NULL,
   `st_name` varchar(255) NOT NULL,
   `t_username` varchar(255) NOT NULL,
-  `skill_name` varchar(255) NOT NULL
+  `skill_name` varchar(255) NOT NULL,
+  `trimester` varchar(255) NOT NULL,
+  `verified` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `verification_request`
+--
+
+INSERT INTO `verification_request` (`id`, `st_username`, `st_name`, `t_username`, `skill_name`, `trimester`, `verified`) VALUES
+(1, '011182035', 'Anika Tahsin', 'Abir Hasan', 'C  ', ' 4th', 0),
+(2, '011183070', 'Fahad Al Islam', 'Anika Tahsin', 'C', ' 4th', 0),
+(4, '011183021', 'Azwad Zarif', 'Anika Tahsin', 'Swift', ' 10', 0),
+(7, '011182035', 'Anika Tahsin', 'Abir Hasan', 'VS Code', ' 12th', 0);
 
 --
 -- Indexes for dumped tables
@@ -581,6 +618,12 @@ ALTER TABLE `cv_soft_skill`
 ALTER TABLE `cv_tech_skill`
   ADD PRIMARY KEY (`tech_skill_id`),
   ADD KEY `fk4` (`st_username`);
+
+--
+-- Indexes for table `drop_cv`
+--
+ALTER TABLE `drop_cv`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `post_student`
@@ -704,6 +747,12 @@ ALTER TABLE `cv_tech_skill`
   MODIFY `tech_skill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT for table `drop_cv`
+--
+ALTER TABLE `drop_cv`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
@@ -725,7 +774,7 @@ ALTER TABLE `tags_student`
 -- AUTO_INCREMENT for table `tags_teacher`
 --
 ALTER TABLE `tags_teacher`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `teacher`
@@ -743,7 +792,7 @@ ALTER TABLE `teacher_log`
 -- AUTO_INCREMENT for table `verification_request`
 --
 ALTER TABLE `verification_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
