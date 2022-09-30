@@ -542,3 +542,9 @@ body.dark .home .text{
     font-size:26px !important;
     padding: 20px !important;
 }
+
+.cvdrops{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+}

@@ -96,7 +96,7 @@
                                     $name = $info['t_name'];
                                     ?>
                             <div class="text logo-text">
-                                <span class="profession"><?php echo $name; ?></span>
+                                <span class="profession"><a href='teacher_profile.php?id={$row['tpost_id']}'><?php echo $name; ?></a></span>
                             </div>
                             <?php
                                 }catch (PDOException $ex){
@@ -194,13 +194,14 @@
                 <section class="dashboard">
                     <div class="col">
                         <h1>Request List</h1>
+                        <span class="spaceboxv2"></span>
                     </div>
                     <?php
                     try{
                         include "db_connect.php";
                         $id = $_SESSION['t_user'];
 
-                    $sqlquery1="SELECT * from verification_request WHERE t_username ='$name'";
+                    $sqlquery1="SELECT * from verification_request WHERE t_username ='$name' AND verified=0 ";
 
                     $result1 = mysqli_query($conn, $sqlquery1);
 
@@ -245,9 +246,9 @@
                             echo $x['skill_name'];
                             } ?></td>
                             <td>
-                            <?php if($y['tech_skill_verification'] ='0'){ ?>
-                                <button class="request_btn"  onclick="window.location.href = 'teacher_requestpageprocess.php?data=<?php echo $stid?>?data1=<?php echo $sid?>';">Validate</button>
-                                <?php } ?>
+                                <div>
+                                    <a class="ui orange button huge" name="signup" onclick="window.location.href = 'teacher_requestpageprocess.php';" id="buttonbox2">Validate</a>
+                                </div>
                             </td>
 
 

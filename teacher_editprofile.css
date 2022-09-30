@@ -545,7 +545,7 @@ body.dark .home .text{
 }
 
 ::placeholder { 
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 #post_cc{

@@ -101,7 +101,7 @@
                                     $name = $info['t_name'];
                                     ?>
                             <div class="text logo-text">
-                                <span class="profession"><a href='teacher_profile.php?id={$row['tpost_id']}'><?php echo $name; ?></a>;</span>
+                                <span class="profession"><a href='teacher_profile.php?id={$row['tpost_id']}'><?php echo $name; ?></a></span>
                             </div>
                             <?php
                                 }catch (PDOException $ex){

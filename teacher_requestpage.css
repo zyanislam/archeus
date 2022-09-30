@@ -593,3 +593,8 @@ body.dark .home .text{
 .styled-table tbody{
     text-align: center;
 }
+
+.profession{
+    font-size:26px !important;
+    padding: 20px !important;
+}

@@ -5,6 +5,7 @@ session_start();
 if (
     isset($_SESSION['t_user']) && !empty($_SESSION['t_user'])
 ) {
+    $t_id = $_SESSION['t_user'];
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -50,11 +51,28 @@ if (
                 <nav class="sidebar open">
                     <header>
                         <div class="image-text">
+                        <?php
+                            try {
+                                include "db_connect.php";
+                                $sqlquery1 = "SELECT * FROM teacher WHERE t_username = '$t_id'";
 
-                            <div class="text logo-text">
+                                $infoget = mysqli_query($conn, $sqlquery1);
+                                $info = mysqli_fetch_array($infoget, MYSQLI_ASSOC);
 
-                                <span class="profession">Teacher Home</span>
-                            </div>
+                                $name = $info['t_name'];
+                            ?>
+                                <div class="text logo-text">
+                                    <span class="profession"><a href='teacher_profile.php?id={$row['tpost_id']}'><?php echo $name; ?></a></span>
+                                </div>
+                            <?php
+                            } catch (PDOException $ex) {
+                                //if found error forward to register page
+                                echo '<script>
+                                    alert("Oops!! Caught An Error");
+                                    </script>';
+                                echo "<script>location.assign('teacher_home.php')</script>";
+                            }
+                            ?>
                         </div>
 
                     </header>
@@ -135,13 +153,23 @@ if (
 
                             include "db_connect.php";
                             $sqlquery1 = "SELECT * FROM post_teacher WHERE tpost_id = '$id' ";
-
                             $infoget = mysqli_query($conn, $sqlquery1);
                             $info = mysqli_fetch_array($infoget, MYSQLI_ASSOC);
 
                             $name = $info['t_name'];
                             $title = $info['tpost_title'];
                             $desc = $info['tpost_desc'];
+
+                            $sqlquery2 = "SELECT * FROM drop_cv WHERE post_id = '$id'";
+                            $infoget2 = mysqli_query($conn, $sqlquery2);
+                            // $info2 = mysqli_fetch_array($infoget2, MYSQLI_ASSOC);
+
+                            // $st_id = $info2['st_username'];
+                            // $st_name = $info2['st_name'];
+
+                            // $sqlquery3 = "SELECT * FROM student WHERE st_username = '$st_id'";
+                            // $infoget3 = mysqli_query($conn, $sqlquery3);
+                            // $info3 = mysqli_fetch_array($infoget3, MYSQLI_ASSOC);
 
                         ?>
                             <div class="ui card postbox">
@@ -155,7 +183,21 @@ if (
                                     </div>
                                 </div>
                             </div>
+
                         <?php
+                        while ($info2 = mysqli_fetch_array($infoget2,MYSQLI_ASSOC)) {                           
+                            // echo "<p><strong>" . strtoupper($info2['st_username']) . "</strong></p>";
+                            ?>
+                            <div class="ui card postbox cvdrops">
+                                <div class="cvdetails" id="post_title"><?php echo "{$info2['st_username']}"; ?></div>
+                                <div class="cvdetails" id="post_title"><?php echo "{$info2['st_name']}"; ?></div>
+                                <div class="text logo-text">
+                                    <span class="profession"><a href='teacher_viewcv.php?id=<?php echo "{$info2['st_username']}";?>'>CV</a></span>
+                                </div>
+                            </div>
+                            <?php
+                            
+                        }
 
                         } catch (PDOException $ex) {
                             echo '<script>
